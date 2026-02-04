@@ -19,17 +19,23 @@
   "author": "Karl <karl@karl-ai-dev>",
   "license": "MIT",
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
     "@types/node": "^25.2.0",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.24",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
+    "lucide-react": "^0.563.0",
     "next": "^14.2.35",
     "postcss": "^8.5.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "recharts": "^3.7.0",
+    "tailwind-merge": "^3.4.0",
     "tailwindcss": "^3.4.19",
+    "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }

@@ -2,57 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #0b0e11;
-  --surface: #12161c;
-  --surface-elevated: #1a1f26;
-  --border: #2b3139;
-  --text-primary: #eaecef;
-  --text-secondary: #848e9c;
-  --text-muted: #5e6673;
-  --accent: #6366f1;
-  --accent-hover: #818cf8;
-  /* Binance-style vivid colors */
-  --positive: #0ecb81;
-  --positive-bg: rgba(14, 203, 129, 0.15);
-  --negative: #f6465d;
-  --negative-bg: rgba(246, 70, 93, 0.15);
-  --honey: #fcd535;
-  --honey-bg: rgba(252, 213, 53, 0.15);
-  /* CTA colors */
-  --cta-primary: #fcd535;
-  --cta-primary-hover: #ffe566;
-  --cta-text: #0b0e11;
+@layer base {
+  :root {
+    /* === 전반꿀 연구소 Design Tokens === */
+    
+    /* Background & Surfaces (Binance-style dark) */
+    --background: 220 20% 4%;           /* #0b0e11 */
+    --foreground: 220 10% 93%;          /* #eaecef */
+    
+    --card: 220 18% 8%;                 /* #12161c */
+    --card-foreground: 220 10% 93%;
+    
+    --popover: 220 16% 10%;             /* #1a1f26 */
+    --popover-foreground: 220 10% 93%;
+    
+    /* Primary - Honey (꿀) 🍯 */
+    --primary: 48 97% 60%;              /* #fcd535 */
+    --primary-foreground: 220 20% 4%;   /* dark text on honey */
+    
+    /* Secondary */
+    --secondary: 220 14% 14%;           /* #1f242b */
+    --secondary-foreground: 220 10% 93%;
+    
+    /* Muted */
+    --muted: 220 14% 16%;               /* #242a33 */
+    --muted-foreground: 220 8% 45%;     /* #6b7280 */
+    
+    /* Accent - same as primary for consistency */
+    --accent: 48 97% 60%;
+    --accent-foreground: 220 20% 4%;
+    
+    /* Destructive - Bearish Red */
+    --destructive: 354 70% 54%;         /* #f6465d */
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 220 12% 20%;              /* #2b3139 */
+    --input: 220 12% 20%;
+    --ring: 48 97% 60%;                 /* honey glow */
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* === Status Colors === */
+    --bullish: 160 84% 39%;             /* #0ecb81 */
+    --bullish-foreground: 0 0% 100%;
+    --bullish-bg: 160 84% 39% / 0.15;
+    
+    --bearish: 354 70% 54%;             /* #f6465d */
+    --bearish-foreground: 0 0% 100%;
+    --bearish-bg: 354 70% 54% / 0.15;
+    
+    --pending: 48 97% 60%;              /* #fcd535 */
+    --pending-foreground: 220 20% 4%;
+    --pending-bg: 48 97% 60% / 0.15;
+    
+    /* === Brand Colors === */
+    --honey: 48 97% 60%;                /* #fcd535 */
+    --honey-glow: 0 0 30px hsl(48 97% 60% / 0.4);
+    
+    /* === Charts === */
+    --chart-1: 160 84% 39%;             /* bullish green */
+    --chart-2: 354 70% 54%;             /* bearish red */
+    --chart-3: 48 97% 60%;              /* honey */
+    --chart-4: 231 76% 60%;             /* indigo accent */
+    --chart-5: 220 8% 45%;              /* muted */
+  }
+  
+  /* Force dark mode - no light theme */
+  .dark {
+    /* Same as root - we only support dark mode */
+  }
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: var(--background);
-  color: var(--text-primary);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Custom scrollbar */
+/* === Custom Scrollbar === */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--surface);
+  @apply bg-card;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
+  @apply bg-border rounded;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  @apply bg-muted-foreground;
+}
+
+/* === Utility Classes === */
+@layer utilities {
+  /* Glow effects */
+  .glow-honey {
+    box-shadow: 0 0 20px hsl(var(--honey) / 0.3);
+  }
+  
+  .glow-bullish {
+    box-shadow: 0 0 20px hsl(var(--bullish) / 0.3);
+  }
+  
+  .glow-bearish {
+    box-shadow: 0 0 20px hsl(var(--bearish) / 0.3);
+  }
+  
+  /* Status backgrounds */
+  .bg-bullish-subtle {
+    background-color: hsl(var(--bullish-bg));
+  }
+  
+  .bg-bearish-subtle {
+    background-color: hsl(var(--bearish-bg));
+  }
+  
+  .bg-pending-subtle {
+    background-color: hsl(var(--pending-bg));
+  }
+  
+  /* Text colors */
+  .text-bullish {
+    color: hsl(var(--bullish));
+  }
+  
+  .text-bearish {
+    color: hsl(var(--bearish));
+  }
+  
+  .text-honey {
+    color: hsl(var(--honey));
+  }
+  
+  /* Bento grid */
+  .bento-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @screen md {
+    .bento-grid {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  
+  @screen lg {
+    .bento-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
 }
