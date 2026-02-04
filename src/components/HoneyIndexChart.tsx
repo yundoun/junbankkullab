@@ -51,18 +51,15 @@ export function HoneyIndexChart({ currentValue, data, totalPredictions }: HoneyI
   const COLORS = {
     honey: '#fcd535',
     positive: '#0ecb81',
-    muted: '#5e6673',
+    negative: '#f6465d',
     border: '#2b3139',
     textMuted: '#5e6673',
+    surfaceElevated: '#1a1f26',
+    textSecondary: '#848e9c',
   }
 
-  const getStatusColor = (value: number) => {
-    if (value >= 70) return COLORS.honey
-    if (value >= 55) return COLORS.positive
-    return COLORS.muted
-  }
-
-  const statusColor = getStatusColor(currentValue)
+  // Always use honey color for the main chart
+  const chartColor = COLORS.honey
 
   return (
     <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl overflow-hidden h-full flex flex-col">
@@ -80,11 +77,11 @@ export function HoneyIndexChart({ currentValue, data, totalPredictions }: HoneyI
             <div className="flex items-baseline gap-1">
               <span 
                 className="text-4xl font-bold tabular-nums"
-                style={{ color: statusColor }}
+                style={{ color: chartColor }}
               >
                 {currentValue.toFixed(1)}
               </span>
-              <span className="text-lg text-[var(--text-muted)]">%</span>
+              <span className="text-lg" style={{ color: chartColor }}>%</span>
             </div>
             <p className="text-xs text-[var(--text-muted)] mt-1">
               {totalPredictions}개 예측 기준
@@ -110,8 +107,8 @@ export function HoneyIndexChart({ currentValue, data, totalPredictions }: HoneyI
           <AreaChart data={chartData} margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
             <defs>
               <linearGradient id="honeyGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor={statusColor} stopOpacity={0.3}/>
-                <stop offset="95%" stopColor={statusColor} stopOpacity={0}/>
+                <stop offset="5%" stopColor={chartColor} stopOpacity={0.4}/>
+                <stop offset="95%" stopColor={chartColor} stopOpacity={0.05}/>
               </linearGradient>
             </defs>
             <XAxis 
@@ -161,8 +158,8 @@ export function HoneyIndexChart({ currentValue, data, totalPredictions }: HoneyI
             <Area
               type="monotone"
               dataKey="value"
-              stroke={statusColor}
-              strokeWidth={2}
+              stroke={chartColor}
+              strokeWidth={2.5}
               fill="url(#honeyGradient)"
             />
           </AreaChart>
