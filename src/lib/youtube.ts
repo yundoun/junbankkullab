@@ -1,5 +1,5 @@
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY
-const CHANNEL_ID = 'UCRKOyFCFOEPcJ9BQhJbOqPQ' // 전인구경제연구소
+const CHANNEL_ID = 'UCznImSIaxZR7fdLCICLdgaQ' // 전인구경제연구소
 
 interface YouTubeVideo {
   id: string

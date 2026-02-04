@@ -1,0 +1,628 @@
+{
+  "collectedAt": "2026-02-04T09:24:19.111Z",
+  "stats": {
+    "totalVideos": 500,
+    "totalPredictions": 43,
+    "completePredictions": 8,
+    "honeyIndex": 50,
+    "honeyCount": 4,
+    "assetStats": [
+      {
+        "asset": "Bitcoin",
+        "honeyIndex": 50,
+        "predictions": 8
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "id": "IztMJoUZB5s",
+      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
+      "thumbnail": "https://i.ytimg.com/vi/IztMJoUZB5s/hqdefault.jpg",
+      "publishedAt": "2026-02-03T11:09:42Z",
+      "assets": [
+        "KOSPI",
+        "Samsung"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "IztMJoUZB5s",
+      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
+      "thumbnail": "https://i.ytimg.com/vi/IztMJoUZB5s/hqdefault.jpg",
+      "publishedAt": "2026-02-03T11:09:42Z",
+      "assets": [
+        "KOSPI",
+        "Samsung"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Samsung"
+    },
+    {
+      "id": "baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "assets": [
+        "KOSPI",
+        "Samsung"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 2,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "assets": [
+        "KOSPI",
+        "Samsung"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 2,
+      "bearishScore": 1,
+      "asset": "Samsung"
+    },
+    {
+      "id": "4ut8089Ra7k",
+      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
+      "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
+      "publishedAt": "2026-01-26T00:14:16Z",
+      "assets": [
+        "Samsung"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "Samsung"
+    },
+    {
+      "id": "_FmmRrEwwG8",
+      "title": "(속보) 코스피 5000 성공, 예상 이유와 이제 조심해야 할 것",
+      "thumbnail": "https://i.ytimg.com/vi/_FmmRrEwwG8/hqdefault.jpg",
+      "publishedAt": "2026-01-22T00:48:10Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "OK7RMCqPD10",
+      "title": "코스피 이제 팔자/ 환율조림 이야기 / 비트코인과 해외거래소 차단 / 미국 은행주 폭락",
+      "thumbnail": "https://i.ytimg.com/vi/OK7RMCqPD10/hqdefault_live.jpg",
+      "publishedAt": "2026-01-15T11:07:48Z",
+      "assets": [
+        "Bitcoin",
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "Bitcoin",
+      "priceAtPublish": 96981.65,
+      "priceAfter24h": 95458.55,
+      "priceChange": -1.5705032859308865,
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "id": "OK7RMCqPD10",
+      "title": "코스피 이제 팔자/ 환율조림 이야기 / 비트코인과 해외거래소 차단 / 미국 은행주 폭락",
+      "thumbnail": "https://i.ytimg.com/vi/OK7RMCqPD10/hqdefault_live.jpg",
+      "publishedAt": "2026-01-15T11:07:48Z",
+      "assets": [
+        "Bitcoin",
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "aLY3A8D1EcQ",
+      "title": "은과 환율이 급락하고, 코스피만 오르는 이유",
+      "thumbnail": "https://i.ytimg.com/vi/aLY3A8D1EcQ/hqdefault.jpg",
+      "publishedAt": "2025-12-29T10:13:47Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "Q58k3PYpqEE",
+      "title": "미국주식 팔고 한국주식 사면 100% 양도세 감면(ft.환율급락)",
+      "thumbnail": "https://i.ytimg.com/vi/Q58k3PYpqEE/hqdefault.jpg",
+      "publishedAt": "2025-12-24T06:00:05Z",
+      "assets": [
+        "KOSPI",
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "Q58k3PYpqEE",
+      "title": "미국주식 팔고 한국주식 사면 100% 양도세 감면(ft.환율급락)",
+      "thumbnail": "https://i.ytimg.com/vi/Q58k3PYpqEE/hqdefault.jpg",
+      "publishedAt": "2025-12-24T06:00:05Z",
+      "assets": [
+        "KOSPI",
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "qyXMu0tBmwM",
+      "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
+      "thumbnail": "https://i.ytimg.com/vi/qyXMu0tBmwM/hqdefault.jpg",
+      "publishedAt": "2025-12-16T10:12:58Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "f1M9yCPrko0",
+      "title": "엔비디아는 AI버블론을 혼자 막아낼 수 있을까?",
+      "thumbnail": "https://i.ytimg.com/vi/f1M9yCPrko0/hqdefault.jpg",
+      "publishedAt": "2025-11-19T10:01:13Z",
+      "assets": [
+        "Nvidia"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "Nvidia"
+    },
+    {
+      "id": "bU6hmVesgdY",
+      "title": "앱스타인 나비효과로 무너지는 증시, 비트코인(ft.트럼프)",
+      "thumbnail": "https://i.ytimg.com/vi/bU6hmVesgdY/hqdefault.jpg",
+      "publishedAt": "2025-11-18T03:21:17Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "Bitcoin",
+      "priceAtPublish": 90081.9,
+      "priceAfter24h": 91163.2,
+      "priceChange": 1.200352124011597,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "id": "ed-E5XuoGjU",
+      "title": "비트코인이 하락하면 안 되는 이유",
+      "thumbnail": "https://i.ytimg.com/vi/ed-E5XuoGjU/hqdefault.jpg",
+      "publishedAt": "2025-11-16T21:00:42Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "Bitcoin",
+      "priceAtPublish": 94183.36,
+      "priceAfter24h": 92247.63,
+      "priceChange": -2.0552781298097624,
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "id": "PwdTH55izu8",
+      "title": "코스피 버블에 대한 솔직한 생각 (ft.김종봉 작가 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/PwdTH55izu8/hqdefault.jpg",
+      "publishedAt": "2025-11-16T10:05:19Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "ww1cO9JGJhw",
+      "title": "도망가는 외국인과 의심스러운 환율(ft.코스피, 선물 동시 매도)",
+      "thumbnail": "https://i.ytimg.com/vi/ww1cO9JGJhw/hqdefault.jpg",
+      "publishedAt": "2025-11-14T03:35:13Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "86M35UU6MLs",
+      "title": "환율 상승을 막으려면 코스피 밖에 없습니다",
+      "thumbnail": "https://i.ytimg.com/vi/86M35UU6MLs/hqdefault.jpg",
+      "publishedAt": "2025-11-09T08:54:28Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "9630fQTsmQQ",
+      "title": "코스피 4000 숨고르기와 AI버블 논란",
+      "thumbnail": "https://i.ytimg.com/vi/9630fQTsmQQ/hqdefault.jpg",
+      "publishedAt": "2025-11-05T00:58:53Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "MA2pCxgR3nM",
+      "title": "코스피4000 장중붕괴 된 이유(ft.조정? 악재?)",
+      "thumbnail": "https://i.ytimg.com/vi/MA2pCxgR3nM/hqdefault.jpg",
+      "publishedAt": "2025-10-28T07:54:31Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 3,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "qDxns-qy57I",
+      "title": "삼성전자 호재, 외국인들은 연휴전에 미리 알았다",
+      "thumbnail": "https://i.ytimg.com/vi/qDxns-qy57I/hqdefault.jpg",
+      "publishedAt": "2025-10-10T06:58:55Z",
+      "assets": [
+        "Samsung"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Samsung"
+    },
+    {
+      "id": "c168cbbRa8E",
+      "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
+      "thumbnail": "https://i.ytimg.com/vi/c168cbbRa8E/hqdefault.jpg",
+      "publishedAt": "2025-09-26T05:21:13Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "IbePY33AgO0",
+      "title": "미국주식 버블 아닙니다 더 사서 모으세요(ft.박민수 작가 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/IbePY33AgO0/hqdefault.jpg",
+      "publishedAt": "2025-08-19T03:24:14Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "5f97Ap2_108",
+      "title": "비트코인 지금이라도 사야합니다(ft.강승구 부대표 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/5f97Ap2_108/hqdefault.jpg",
+      "publishedAt": "2025-08-07T02:58:38Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Bitcoin",
+      "priceAtPublish": 114546.03,
+      "priceAfter24h": 116737.35,
+      "priceChange": 1.9130475320707379,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "id": "OK9b1Y-rDkk",
+      "title": "미국증시마저 하락한 이유(ft.무너지는 일자리)",
+      "thumbnail": "https://i.ytimg.com/vi/OK9b1Y-rDkk/hqdefault.jpg",
+      "publishedAt": "2025-08-02T05:49:26Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 2,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "oiwcJmhJrVY",
+      "title": "코스피가 3% 넘게 하락한 이유",
+      "thumbnail": "https://i.ytimg.com/vi/oiwcJmhJrVY/hqdefault.jpg",
+      "publishedAt": "2025-08-01T05:37:58Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "lLIRyxdZdaY",
+      "title": "[단독라이브] 잠시 상승 멈춘 한국, 미국 증시 더 오를 수 있을까?",
+      "thumbnail": "https://i.ytimg.com/vi/lLIRyxdZdaY/hqdefault.jpg",
+      "publishedAt": "2025-07-20T12:18:25Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "YvDAoZ8tlzo",
+      "title": "코스피 연말 4000까지 가지 않을까?(ft.급등이유)",
+      "thumbnail": "https://i.ytimg.com/vi/YvDAoZ8tlzo/hqdefault.jpg",
+      "publishedAt": "2025-06-16T08:00:38Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "UFEczU1Mpqg",
+      "title": "지금은 미국 주식 팔고 한국 주식 사야 합니다(ft.이경민 2부)",
+      "thumbnail": "https://i.ytimg.com/vi/UFEczU1Mpqg/hqdefault.jpg",
+      "publishedAt": "2025-06-09T23:19:11Z",
+      "assets": [
+        "KOSPI",
+        "NASDAQ"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "UFEczU1Mpqg",
+      "title": "지금은 미국 주식 팔고 한국 주식 사야 합니다(ft.이경민 2부)",
+      "thumbnail": "https://i.ytimg.com/vi/UFEczU1Mpqg/hqdefault.jpg",
+      "publishedAt": "2025-06-09T23:19:11Z",
+      "assets": [
+        "KOSPI",
+        "NASDAQ"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "2l1WZv4oN1A",
+      "title": "테슬라 14% 급락, 트럼프와 머스크가 싸운 이유",
+      "thumbnail": "https://i.ytimg.com/vi/2l1WZv4oN1A/hqdefault.jpg",
+      "publishedAt": "2025-06-06T01:27:02Z",
+      "assets": [
+        "Tesla"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "Tesla"
+    },
+    {
+      "id": "gKtY9L5egcs",
+      "title": "어쩌면 코인에 진심인 남자(ft.비트100k돌파 기념)",
+      "thumbnail": "https://i.ytimg.com/vi/gKtY9L5egcs/hqdefault.jpg",
+      "publishedAt": "2025-05-20T03:11:42Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Bitcoin",
+      "priceAtPublish": 106219.99,
+      "priceAfter24h": 107287,
+      "priceChange": 1.0045284319834664,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "id": "CqtsheWiKbc",
+      "title": "삼성전자가 급등한 3가지 이유(ft.미중무역합의)",
+      "thumbnail": "https://i.ytimg.com/vi/CqtsheWiKbc/hqdefault.jpg",
+      "publishedAt": "2025-05-12T07:43:59Z",
+      "assets": [
+        "Samsung"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Samsung"
+    },
+    {
+      "id": "AD0I1IIL4ww",
+      "title": "비트코인 기축통화됩니다 마지막 기회입니다(ft.오태민 교수 풀버전)",
+      "thumbnail": "https://i.ytimg.com/vi/AD0I1IIL4ww/hqdefault.jpg",
+      "publishedAt": "2025-03-30T00:12:23Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Bitcoin",
+      "priceAtPublish": 82941.13,
+      "priceAfter24h": 81953.03,
+      "priceChange": -1.1913269086157927,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "id": "XrwmY743_Uk",
+      "title": "하락장 시작인가?(ft.미국주식)",
+      "thumbnail": "https://i.ytimg.com/vi/XrwmY743_Uk/hqdefault.jpg",
+      "publishedAt": "2025-03-29T10:00:40Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "MQhtDX_cBKc",
+      "title": "코인 상용화 됩니다 지금이 기회입니다",
+      "thumbnail": "https://i.ytimg.com/vi/MQhtDX_cBKc/hqdefault.jpg",
+      "publishedAt": "2025-03-24T05:27:36Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Bitcoin",
+      "priceAtPublish": 87113.37,
+      "priceAfter24h": 86534.5,
+      "priceChange": -0.6645019013728839,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "id": "WN49PAzCyH4",
+      "title": "비트코인 이제 꽉 잡아야 합니다. 마지막 기회인 이유(ft.오태민 작가 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/WN49PAzCyH4/hqdefault.jpg",
+      "publishedAt": "2025-03-22T05:39:23Z",
+      "assets": [
+        "Bitcoin"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "Bitcoin",
+      "priceAtPublish": 84335.83,
+      "priceAfter24h": 84242.24,
+      "priceChange": -0.11097299925784392,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "id": "Orv9LKMpAWs",
+      "title": "코스피 상장 4개월만에 무너진 백종원 신화",
+      "thumbnail": "https://i.ytimg.com/vi/Orv9LKMpAWs/hqdefault.jpg",
+      "publishedAt": "2025-03-17T08:07:58Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "gOC9xNnFUR4",
+      "title": "코스피상장 4개월만에 무너진 백종원 신화, 우연일까?",
+      "thumbnail": "https://i.ytimg.com/vi/gOC9xNnFUR4/hqdefault.jpg",
+      "publishedAt": "2025-03-16T11:09:42Z",
+      "assets": [
+        "KOSPI"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "KOSPI"
+    },
+    {
+      "id": "6WaEufvRXig",
+      "title": "블랙먼데이 충격, 미국 증시가 무너지고 있습니다",
+      "thumbnail": "https://i.ytimg.com/vi/6WaEufvRXig/hqdefault.jpg",
+      "publishedAt": "2025-03-11T02:52:47Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "Q_VvvbJkWkI",
+      "title": "나스닥 폭락이유, 엔캐리 청산 3가지 요건이 완성됐습니다",
+      "thumbnail": "https://i.ytimg.com/vi/Q_VvvbJkWkI/hqdefault.jpg",
+      "publishedAt": "2025-03-06T23:37:56Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "t5vJCBcrKho",
+      "title": "아무도 모르는 나스닥 급등 이유(ft.젤렌스키, 트럼프)",
+      "thumbnail": "https://i.ytimg.com/vi/t5vJCBcrKho/hqdefault.jpg",
+      "publishedAt": "2025-03-01T09:20:51Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bullish",
+      "bullishScore": 1,
+      "bearishScore": 0,
+      "asset": "NASDAQ"
+    },
+    {
+      "id": "0zlxKqXWi4A",
+      "title": "미국증시는 왜 떨어지는 걸까?(ft.제번스의 역설)",
+      "thumbnail": "https://i.ytimg.com/vi/0zlxKqXWi4A/hqdefault.jpg",
+      "publishedAt": "2025-02-27T23:36:50Z",
+      "assets": [
+        "NASDAQ"
+      ],
+      "sentiment": "bearish",
+      "bullishScore": 0,
+      "bearishScore": 1,
+      "asset": "NASDAQ"
+    }
+  ]
+}

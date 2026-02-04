@@ -11,8 +11,8 @@ out/
 .env.local
 .env.*.local
 
-# Data
-data/
+# Data (keep predictions.json for now)
+# data/
 *.db
 *.sqlite
 

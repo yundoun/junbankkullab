@@ -1,59 +1,66 @@
 import { NextResponse } from 'next/server'
+import { promises as fs } from 'fs'
+import path from 'path'
 
-// Mock data for initial development
-// Will be replaced with real database queries
+export const dynamic = 'force-dynamic'
 
 export async function GET() {
-  // TODO: Replace with real database queries
-  const mockStats = {
-    overallHoneyIndex: 73.5,
-    totalPredictions: 87,
-    assetStats: [
-      { asset: 'Bitcoin', honeyIndex: 78.2, predictions: 32, emoji: '₿' },
-      { asset: 'KOSPI', honeyIndex: 71.4, predictions: 21, emoji: '🇰🇷' },
-      { asset: 'NASDAQ', honeyIndex: 68.9, predictions: 18, emoji: '🇺🇸' },
-      { asset: 'Tesla', honeyIndex: 82.1, predictions: 11, emoji: '🚗' },
-      { asset: 'Samsung', honeyIndex: 65.0, predictions: 8, emoji: '📱' },
-    ],
-    recentPredictions: [
-      {
-        id: '1',
-        videoId: 'example1',
-        title: '비트코인 대폭락 온다! 지금 당장 팔아라',
-        thumbnail: 'https://i.ytimg.com/vi/example1/hqdefault.jpg',
-        publishedAt: '2026-02-01T10:00:00Z',
-        asset: 'Bitcoin',
-        predictedDirection: 'bearish' as const,
-        actualDirection: 'up' as const,
-        priceChange: 8.5,
-        isHoney: true,
-      },
-      {
-        id: '2',
-        videoId: 'example2',
-        title: '코스피 반등 신호! 지금이 매수 기회',
-        thumbnail: 'https://i.ytimg.com/vi/example2/hqdefault.jpg',
-        publishedAt: '2026-01-28T09:00:00Z',
-        asset: 'KOSPI',
-        predictedDirection: 'bullish' as const,
-        actualDirection: 'down' as const,
-        priceChange: -2.3,
-        isHoney: true,
-      },
-      {
-        id: '3',
-        videoId: 'example3',
-        title: '테슬라 끝났다, 더 이상 희망 없다',
-        thumbnail: 'https://i.ytimg.com/vi/example3/hqdefault.jpg',
-        publishedAt: '2026-01-25T11:00:00Z',
-        asset: 'Tesla',
-        predictedDirection: 'bearish' as const,
-        actualDirection: 'up' as const,
-        priceChange: 12.7,
-        isHoney: true,
-      },
-    ],
-  }
+  try {
+    const dataPath = path.join(process.cwd(), 'data', 'predictions.json')
+    const data = await fs.readFile(dataPath, 'utf-8')
+    const parsed = JSON.parse(data)
 
-  return NextResponse.json(mockStats)
+    // Get recent predictions (completed ones for display)
+    const completePredictions = parsed.predictions
+      .filter((p: any) => p.isHoney !== undefined)
+      .slice(0, 20)
+      .map((p: any) => ({
+        id: p.id,
+        videoId: p.id,
+        title: p.title,
+        thumbnail: p.thumbnail,
+        publishedAt: p.publishedAt,
+        asset: p.asset,
+        predictedDirection: p.sentiment,
+        actualDirection: p.actualDirection,
+        priceChange: p.priceChange,
+        isHoney: p.isHoney,
+      }))
+
+    // Get pending predictions (no market data yet)
+    const pendingPredictions = parsed.predictions
+      .filter((p: any) => p.isHoney === undefined)
+      .slice(0, 5)
+      .map((p: any) => ({
+        id: p.id + '-pending',
+        videoId: p.id,
+        title: p.title,
+        thumbnail: p.thumbnail,
+        publishedAt: p.publishedAt,
+        asset: p.asset,
+        predictedDirection: p.sentiment,
+        actualDirection: 'pending' as const,
+        priceChange: undefined,
+        isHoney: null,
+      }))
+
+    return NextResponse.json({
+      overallHoneyIndex: parsed.stats.honeyIndex,
+      totalPredictions: parsed.stats.completePredictions,
+      assetStats: parsed.stats.assetStats || [],
+      recentPredictions: [...completePredictions, ...pendingPredictions],
+      collectedAt: parsed.collectedAt,
+    })
+  } catch (error) {
+    // Fallback to mock data if file doesn't exist
+    console.error('Error reading predictions:', error)
+    
+    return NextResponse.json({
+      overallHoneyIndex: 0,
+      totalPredictions: 0,
+      assetStats: [],
+      recentPredictions: [],
+      collectedAt: null,
+    })
+  }
 }
