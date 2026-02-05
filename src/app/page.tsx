@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Beaker, TrendingUp, TrendingDown, Target, Flame } from 'lucide-react'
+import { Beaker, TrendingUp, TrendingDown, Target, Flame, BarChart3, Clock } from 'lucide-react'
 import { 
   BentoGrid, 
   BentoCard, 
@@ -10,15 +10,231 @@ import {
   BentoCardContent,
   BentoCardValue,
   HoneyIndexChart,
-  VoteCard,
   PredictionCard,
+  TimelineChart,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
+import { Progress } from '@/components/ui/progress'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { Pagination } from '@/components/ui/pagination'
+
+interface AssetStat {
+  asset: string
+  total: number
+  honey: number
+  honeyIndex: number
+}
+
+interface Prediction {
+  videoId: string
+  title: string
+  thumbnail: string
+  publishedAt: string
+  asset: string
+  predictedDirection: 'bullish' | 'bearish'
+  actualDirection?: 'bullish' | 'bearish'
+  isHoney?: boolean
+  status: 'correct' | 'incorrect' | 'pending'
+}
+
+interface TimelineData {
+  label: string
+  year: number
+  month: number
+  predictions: number
+  honeyIndex: number
+}
+
+interface Stats {
+  overallHoneyIndex: number
+  totalPredictions: number
+  honeyCount: number
+  totalVideos: number
+  totalMentions: number
+  pendingReviewCount: number
+  assetStats: AssetStat[]
+  timeline: TimelineData[]
+  honeyHits: Prediction[]
+  jigHits: Prediction[]
+  pendingReviews: Prediction[]
+  recentPredictions: Prediction[]
+  updatedAt: string | null
+}
+
+// 종목 이름 매핑
+const ASSET_NAMES: Record<string, string> = {
+  KOSPI: '코스피',
+  SP500: 'S&P 500',
+  NASDAQ: '나스닥',
+  Samsung: '삼성전자',
+  SKHynix: 'SK하이닉스',
+  Nvidia: '엔비디아',
+  Tesla: '테슬라',
+  Bitcoin: '비트코인',
+}
+
+const ITEMS_PER_PAGE = 10
+
+// 예측 탭 컴포넌트
+function PredictionTabs({ stats }: { stats: Stats | null }) {
+  const [honeyPage, setHoneyPage] = useState(1)
+  const [jigPage, setJigPage] = useState(1)
+  const [pendingPage, setPendingPage] = useState(1)
+
+  if (!stats) return null
+
+  const honeyHits = stats.honeyHits || []
+  const jigHits = stats.jigHits || []
+  const pendingReviews = stats.pendingReviews || []
+
+  const honeyTotalPages = Math.ceil(honeyHits.length / ITEMS_PER_PAGE)
+  const jigTotalPages = Math.ceil(jigHits.length / ITEMS_PER_PAGE)
+  const pendingTotalPages = Math.ceil(pendingReviews.length / ITEMS_PER_PAGE)
+
+  const paginatedHoney = honeyHits.slice((honeyPage - 1) * ITEMS_PER_PAGE, honeyPage * ITEMS_PER_PAGE)
+  const paginatedJig = jigHits.slice((jigPage - 1) * ITEMS_PER_PAGE, jigPage * ITEMS_PER_PAGE)
+  const paginatedPending = pendingReviews.slice((pendingPage - 1) * ITEMS_PER_PAGE, pendingPage * ITEMS_PER_PAGE)
+
+  return (
+    <section>
+      <Tabs defaultValue="honey">
+        <div className="flex items-center justify-between mb-4">
+          <TabsList>
+            <TabsTrigger value="honey" className="gap-1.5">
+              <span>🍯</span>
+              <span>전반꿀 적중</span>
+              <Badge variant="honey" className="ml-1 text-xs">{honeyHits.length}</Badge>
+            </TabsTrigger>
+            <TabsTrigger value="jig" className="gap-1.5">
+              <span>📈</span>
+              <span>전인구 적중</span>
+              <Badge variant="outline" className="ml-1 text-xs">{jigHits.length}</Badge>
+            </TabsTrigger>
+            <TabsTrigger value="pending" className="gap-1.5">
+              <span>🔍</span>
+              <span>검토 대기</span>
+              <Badge variant="pending" className="ml-1 text-xs">{pendingReviews.length}</Badge>
+            </TabsTrigger>
+          </TabsList>
+        </div>
+
+        <TabsContent value="honey">
+          {paginatedHoney.length > 0 ? (
+            <>
+              <div className="space-y-3">
+                {paginatedHoney.map((prediction, idx) => (
+                  <a
+                    key={`honey-${prediction.videoId}-${idx}`}
+                    href={`https://youtube.com/watch?v=${prediction.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PredictionCard
+                      title={prediction.title}
+                      thumbnail={prediction.thumbnail}
+                      publishedAt={prediction.publishedAt}
+                      asset={ASSET_NAMES[prediction.asset] || prediction.asset}
+                      predictedDirection={prediction.predictedDirection}
+                      status={prediction.status}
+                      actualDirection={prediction.actualDirection}
+                    />
+                  </a>
+                ))}
+              </div>
+              <Pagination
+                currentPage={honeyPage}
+                totalPages={honeyTotalPages}
+                onPageChange={setHoneyPage}
+                className="mt-6"
+              />
+            </>
+          ) : (
+            <div className="text-center py-12 text-muted-foreground">
+              아직 전반꿀 적중 데이터가 없습니다
+            </div>
+          )}
+        </TabsContent>
+
+        <TabsContent value="jig">
+          {paginatedJig.length > 0 ? (
+            <>
+              <div className="space-y-3">
+                {paginatedJig.map((prediction, idx) => (
+                  <a
+                    key={`jig-${prediction.videoId}-${idx}`}
+                    href={`https://youtube.com/watch?v=${prediction.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PredictionCard
+                      title={prediction.title}
+                      thumbnail={prediction.thumbnail}
+                      publishedAt={prediction.publishedAt}
+                      asset={ASSET_NAMES[prediction.asset] || prediction.asset}
+                      predictedDirection={prediction.predictedDirection}
+                      status={prediction.status}
+                      actualDirection={prediction.actualDirection}
+                    />
+                  </a>
+                ))}
+              </div>
+              <Pagination
+                currentPage={jigPage}
+                totalPages={jigTotalPages}
+                onPageChange={setJigPage}
+                className="mt-6"
+              />
+            </>
+          ) : (
+            <div className="text-center py-12 text-muted-foreground">
+              아직 전인구 적중 데이터가 없습니다
+            </div>
+          )}
+        </TabsContent>
+
+        <TabsContent value="pending">
+          {paginatedPending.length > 0 ? (
+            <>
+              <div className="space-y-3">
+                {paginatedPending.map((prediction, idx) => (
+                  <a
+                    key={`pending-${prediction.videoId}-${idx}`}
+                    href={`https://youtube.com/watch?v=${prediction.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PredictionCard
+                      title={prediction.title}
+                      thumbnail={prediction.thumbnail}
+                      publishedAt={prediction.publishedAt}
+                      asset={ASSET_NAMES[prediction.asset] || prediction.asset}
+                      predictedDirection={prediction.predictedDirection as any}
+                      status="pending"
+                    />
+                  </a>
+                ))}
+              </div>
+              <Pagination
+                currentPage={pendingPage}
+                totalPages={pendingTotalPages}
+                onPageChange={setPendingPage}
+                className="mt-6"
+              />
+            </>
+          ) : (
+            <div className="text-center py-12 text-muted-foreground">
+              검토 대기 항목이 없습니다
+            </div>
+          )}
+        </TabsContent>
+      </Tabs>
+    </section>
+  )
+}
 
 export default function Home() {
-  const [stats, setStats] = useState<any>(null)
+  const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(true)
-  const [userVotes, setUserVotes] = useState<Record<string, 'up' | 'down' | null>>({})
 
   useEffect(() => {
     fetch('/api/stats')
@@ -29,13 +245,6 @@ export default function Home() {
       })
       .catch(() => setLoading(false))
   }, [])
-
-  const handleVote = (videoId: string, direction: 'up' | 'down') => {
-    setUserVotes(prev => ({
-      ...prev,
-      [videoId]: prev[videoId] === direction ? null : direction
-    }))
-  }
 
   if (loading) {
     return (
@@ -48,8 +257,8 @@ export default function Home() {
     )
   }
 
-  const latestPrediction = stats?.recentPredictions?.[0]
-  const honeyIndex = stats?.overallHoneyIndex ?? 50
+  const honeyIndex = stats?.overallHoneyIndex ?? 0
+  const isHoneyValid = honeyIndex >= 50 // 50% 이상이면 역지표 가설 유효
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -57,7 +266,6 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                 <Beaker className="w-5 h-5 text-primary" />
@@ -65,11 +273,10 @@ export default function Home() {
               <span className="font-bold text-lg">전반꿀 연구소</span>
             </div>
             
-            {/* Right side - placeholder for auth */}
             <div className="flex items-center gap-4">
-              <Badge variant="honey" className="gap-1.5">
+              <Badge variant={isHoneyValid ? "honey" : "outline"} className="gap-1.5">
                 <span>🍯</span>
-                <span className="font-bold">0</span>
+                <span className="font-bold">{honeyIndex.toFixed(1)}%</span>
               </Badge>
             </div>
           </div>
@@ -77,33 +284,43 @@ export default function Home() {
       </header>
       
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Section - Bento Grid */}
+        {/* Hero Section */}
         <BentoGrid className="mb-8">
-          {/* Vote Card - Large */}
-          {latestPrediction && (
-            <BentoCard size="lg" className="p-0">
-              <VoteCard
-                videoId={latestPrediction.videoId}
-                title={latestPrediction.title}
-                thumbnail={latestPrediction.thumbnail}
-                publishedAt={latestPrediction.publishedAt}
-                asset={latestPrediction.asset}
-                predictedDirection={latestPrediction.predictedDirection}
-                userVote={userVotes[latestPrediction.videoId]}
-                upVotes={127}
-                downVotes={89}
-                onVote={(dir) => handleVote(latestPrediction.videoId, dir)}
-                className="h-full border-0"
-              />
-            </BentoCard>
-          )}
-          
           {/* Honey Index Chart - Large */}
           <BentoCard size="lg" className="p-0 overflow-hidden">
             <HoneyIndexChart 
               currentValue={honeyIndex}
               totalPredictions={stats?.totalPredictions ?? 0}
             />
+          </BentoCard>
+          
+          {/* 핵심 설명 카드 */}
+          <BentoCard size="lg" className="flex flex-col justify-center">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <span className="text-4xl">🍯</span>
+                <h2 className="text-2xl font-bold">전반꿀 지수란?</h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                전인구경제연구소의 예측이 <strong className="text-foreground">역지표</strong>로 
+                얼마나 유효한지 측정한 지수입니다.
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="p-3 rounded-lg bg-bullish/10 border border-bullish/20">
+                  <p className="text-sm text-muted-foreground">긍정적 언급 후</p>
+                  <p className="font-semibold text-bullish">하락하면 🍯</p>
+                </div>
+                <div className="p-3 rounded-lg bg-bearish/10 border border-bearish/20">
+                  <p className="text-sm text-muted-foreground">부정적 언급 후</p>
+                  <p className="font-semibold text-bearish">상승하면 🍯</p>
+                </div>
+              </div>
+              {isHoneyValid && (
+                <Badge variant="honey" className="mt-2">
+                  ✓ 50% 이상 = 역지표 가설 유효
+                </Badge>
+              )}
+            </div>
           </BentoCard>
           
           {/* Stats Cards - Small */}
@@ -114,82 +331,109 @@ export default function Home() {
             </BentoCardHeader>
             <BentoCardContent>
               <BentoCardValue>{stats?.totalPredictions ?? 0}</BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">분석된 예측</p>
+              <p className="text-sm text-muted-foreground mt-1">유효 분석 건수</p>
             </BentoCardContent>
           </BentoCard>
           
           <BentoCard size="sm">
             <BentoCardHeader>
-              <BentoCardTitle>적중률</BentoCardTitle>
+              <BentoCardTitle>역지표 적중</BentoCardTitle>
               <TrendingUp className="w-4 h-4 text-bullish" />
             </BentoCardHeader>
             <BentoCardContent>
               <BentoCardValue className="text-bullish">
-                {stats?.assetStats?.[0]?.honeyIndex?.toFixed(1) ?? '0'}%
+                {stats?.honeyCount ?? 0}
               </BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">역상관 적중</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                {stats?.totalPredictions ? 
+                  `${stats.totalPredictions}개 중 ${stats.honeyCount}개` : 
+                  '데이터 없음'}
+              </p>
             </BentoCardContent>
           </BentoCard>
           
           <BentoCard size="sm">
             <BentoCardHeader>
-              <BentoCardTitle>분석 종목</BentoCardTitle>
+              <BentoCardTitle>분석 영상</BentoCardTitle>
               <Flame className="w-4 h-4 text-primary" />
             </BentoCardHeader>
             <BentoCardContent>
-              <BentoCardValue>{stats?.assetStats?.length ?? 0}</BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">활성 종목</p>
+              <BentoCardValue>{stats?.totalVideos ?? 0}</BentoCardValue>
+              <p className="text-sm text-muted-foreground mt-1">수집된 영상</p>
             </BentoCardContent>
           </BentoCard>
           
           <BentoCard size="sm">
             <BentoCardHeader>
-              <BentoCardTitle>최근 결과</BentoCardTitle>
-              <TrendingDown className="w-4 h-4 text-bearish" />
+              <BentoCardTitle>검토 대기</BentoCardTitle>
+              <Clock className="w-4 h-4 text-pending" />
             </BentoCardHeader>
             <BentoCardContent>
-              <div className="flex gap-1">
-                {/* Mock recent results */}
-                {['correct', 'correct', 'incorrect', 'correct', 'pending'].map((result, i) => (
-                  <div
-                    key={i}
-                    className={`w-3 h-3 rounded-full ${
-                      result === 'correct' ? 'bg-bullish' :
-                      result === 'incorrect' ? 'bg-bearish' :
-                      'bg-pending'
-                    }`}
-                  />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-2">최근 5개</p>
+              <BentoCardValue className="text-pending">
+                {stats?.pendingReviewCount ?? 0}
+              </BentoCardValue>
+              <p className="text-sm text-muted-foreground mt-1">수동 검토 필요</p>
             </BentoCardContent>
           </BentoCard>
         </BentoGrid>
         
-        {/* Recent Predictions */}
-        {stats?.recentPredictions?.length > 1 && (
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">최근 예측 분석</h2>
-              <Badge variant="outline">{stats.recentPredictions.length}개</Badge>
+        {/* 종목별 통계 */}
+        {stats?.assetStats && stats.assetStats.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center gap-2 mb-4">
+              <BarChart3 className="w-5 h-5 text-muted-foreground" />
+              <h2 className="text-lg font-semibold">종목별 꿀지수</h2>
             </div>
-            <div className="space-y-3">
-              {stats.recentPredictions.slice(1, 6).map((prediction: any) => (
-                <PredictionCard
-                  key={prediction.videoId}
-                  title={prediction.title}
-                  thumbnail={prediction.thumbnail}
-                  publishedAt={prediction.publishedAt}
-                  asset={prediction.asset}
-                  predictedDirection={prediction.predictedDirection || 'neutral'}
-                  status={prediction.status || 'pending'}
-                  actualDirection={prediction.actualDirection}
-                  priceChange={prediction.priceChange}
-                />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {stats.assetStats
+                .sort((a, b) => b.honeyIndex - a.honeyIndex)
+                .map((asset) => (
+                <div 
+                  key={asset.asset}
+                  className="p-4 rounded-lg border border-border bg-card"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-medium">
+                      {ASSET_NAMES[asset.asset] || asset.asset}
+                    </span>
+                    <Badge variant={asset.honeyIndex >= 50 ? "honey" : "outline"}>
+                      {asset.honeyIndex.toFixed(1)}%
+                    </Badge>
+                  </div>
+                  <Progress 
+                    value={asset.honeyIndex} 
+                    className="h-2 mb-2"
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    {asset.honey}/{asset.total} 적중
+                  </p>
+                </div>
               ))}
             </div>
           </section>
         )}
+        
+        {/* 월별 타임라인 */}
+        {stats?.timeline && stats.timeline.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-muted-foreground" />
+                <h2 className="text-lg font-semibold">월별 꿀지수 추이</h2>
+              </div>
+              <Badge variant="outline">
+                50% 이상 = 역지표 유효
+              </Badge>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-4">
+              <TimelineChart data={stats.timeline} />
+            </div>
+          </section>
+        )}
+        
+        {/* 예측 분석 탭 */}
+        <PredictionTabs stats={stats} />
+      
       </main>
 
       {/* Footer */}
@@ -200,13 +444,13 @@ export default function Home() {
               본 사이트는 엔터테인먼트 목적으로 제작되었습니다. 투자 조언이 아닙니다.
             </p>
             <div className="flex items-center gap-4">
-              {stats?.collectedAt && (
+              {stats?.updatedAt && (
                 <span>
-                  마지막 업데이트: {new Date(stats.collectedAt).toLocaleDateString('ko-KR')}
+                  마지막 업데이트: {new Date(stats.updatedAt).toLocaleDateString('ko-KR')}
                 </span>
               )}
               <a 
-                href="https://github.com/karl-ai-dev/junbankkullab" 
+                href="https://github.com/yundoun/junbankkullab" 
                 className="hover:text-foreground transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"

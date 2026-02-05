@@ -67,6 +67,7 @@
     --chart-3: 48 97% 60%;              /* honey */
     --chart-4: 231 76% 60%;             /* indigo accent */
     --chart-5: 220 8% 45%;              /* muted */
+    --chart-honey: 48 97% 60%;          /* honey for charts */
   }
   
   /* Force dark mode - no light theme */
