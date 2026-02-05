@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T01:52:57.760Z",
+  "updatedAt": "2026-02-05T01:58:49.227Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -14,40 +14,46 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 30,
-    "honeyCount": 6,
-    "honeyIndex": 20
+    "totalPredictions": 38,
+    "honeyCount": 11,
+    "honeyIndex": 28.9
   },
   "assetStats": [
     {
-      "asset": "Samsung",
-      "total": 5,
+      "asset": "Nvidia",
+      "total": 2,
       "honey": 1,
-      "honeyIndex": 20
-    },
-    {
-      "asset": "Tesla",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
+      "honeyIndex": 50
     },
     {
       "asset": "KOSPI",
-      "total": 16,
-      "honey": 3,
-      "honeyIndex": 18.8
+      "total": 19,
+      "honey": 6,
+      "honeyIndex": 31.6
+    },
+    {
+      "asset": "NASDAQ",
+      "total": 2,
+      "honey": 1,
+      "honeyIndex": 50
+    },
+    {
+      "asset": "Samsung",
+      "total": 6,
+      "honey": 1,
+      "honeyIndex": 16.7
+    },
+    {
+      "asset": "Tesla",
+      "total": 2,
+      "honey": 0,
+      "honeyIndex": 0
     },
     {
       "asset": "Bitcoin",
       "total": 4,
       "honey": 1,
       "honeyIndex": 25
-    },
-    {
-      "asset": "Nvidia",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
     },
     {
       "asset": "SKHynix",
@@ -57,6 +63,42 @@
     }
   ],
   "periods": [
+    {
+      "year": 2025,
+      "month": 1,
+      "predictions": 1,
+      "honeyIndex": 100
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "predictions": 0,
+      "honeyIndex": 0
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "predictions": 4,
+      "honeyIndex": 75
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "predictions": 0,
+      "honeyIndex": 0
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "predictions": 1,
+      "honeyIndex": 0
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "predictions": 2,
+      "honeyIndex": 50
+    },
     {
       "year": 2025,
       "month": 7,

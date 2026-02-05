@@ -1,0 +1,92 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 3
+  },
+  "stats": {
+    "totalVideos": 48,
+    "validPredictions": 4,
+    "honeyCount": 3,
+    "honeyIndex": 75,
+    "assetStats": [
+      {
+        "asset": "KOSPI",
+        "total": 2,
+        "honey": 2,
+        "honeyIndex": 100
+      },
+      {
+        "asset": "NASDAQ",
+        "total": 2,
+        "honey": 1,
+        "honeyIndex": 50
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "Orv9LKMpAWs",
+      "videoUrl": "https://youtube.com/watch?v=Orv9LKMpAWs",
+      "title": "코스피 상장 4개월만에 무너진 백종원 신화",
+      "thumbnail": "https://i.ytimg.com/vi/Orv9LKMpAWs/hqdefault.jpg",
+      "publishedAt": "2025-03-17T08:07:58Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 2627.55,
+      "priceAfter24h": 2639.1201,
+      "priceChange": 0.44,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "gOC9xNnFUR4",
+      "videoUrl": "https://youtube.com/watch?v=gOC9xNnFUR4",
+      "title": "코스피상장 4개월만에 무너진 백종원 신화, 우연일까?",
+      "thumbnail": "https://i.ytimg.com/vi/gOC9xNnFUR4/hqdefault.jpg",
+      "publishedAt": "2025-03-16T11:09:42Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 2603.53,
+      "priceAfter24h": 2627.55,
+      "priceChange": 0.92,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "Q_VvvbJkWkI",
+      "videoUrl": "https://youtube.com/watch?v=Q_VvvbJkWkI",
+      "title": "나스닥 폭락이유, 엔캐리 청산 3가지 요건이 완성됐습니다",
+      "thumbnail": "https://i.ytimg.com/vi/Q_VvvbJkWkI/hqdefault.jpg",
+      "publishedAt": "2025-03-06T23:37:56Z",
+      "asset": "NASDAQ",
+      "symbol": "NASDAQ",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 18044.4609,
+      "priceAfter24h": 18193.1621,
+      "priceChange": 0.82,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "t5vJCBcrKho",
+      "videoUrl": "https://youtube.com/watch?v=t5vJCBcrKho",
+      "title": "아무도 모르는 나스닥 급등 이유(ft.젤렌스키, 트럼프)",
+      "thumbnail": "https://i.ytimg.com/vi/t5vJCBcrKho/hqdefault.jpg",
+      "publishedAt": "2025-03-01T09:20:51Z",
+      "asset": "NASDAQ",
+      "symbol": "NASDAQ",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 18809.9121,
+      "priceAfter24h": 18809.9121,
+      "priceChange": 0,
+      "actualDirection": "up",
+      "isHoney": false
+    }
+  ]
+}

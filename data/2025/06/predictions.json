@@ -1,0 +1,60 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 6
+  },
+  "stats": {
+    "totalVideos": 44,
+    "validPredictions": 2,
+    "honeyCount": 1,
+    "honeyIndex": 50,
+    "assetStats": [
+      {
+        "asset": "KOSPI",
+        "total": 1,
+        "honey": 1,
+        "honeyIndex": 100
+      },
+      {
+        "asset": "Tesla",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "YvDAoZ8tlzo",
+      "videoUrl": "https://youtube.com/watch?v=YvDAoZ8tlzo",
+      "title": "코스피 연말 4000까지 가지 않을까?(ft.급등이유)",
+      "thumbnail": "https://i.ytimg.com/vi/YvDAoZ8tlzo/hqdefault.jpg",
+      "publishedAt": "2025-06-16T08:00:38Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 2989.8,
+      "priceAfter24h": 2952.1899,
+      "priceChange": -1.26,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "videoId": "2l1WZv4oN1A",
+      "videoUrl": "https://youtube.com/watch?v=2l1WZv4oN1A",
+      "title": "테슬라 14% 급락, 트럼프와 머스크가 싸운 이유",
+      "thumbnail": "https://i.ytimg.com/vi/2l1WZv4oN1A/hqdefault.jpg",
+      "publishedAt": "2025-06-06T01:27:02Z",
+      "asset": "Tesla",
+      "symbol": "Tesla",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 301.54,
+      "priceAfter24h": 295.125,
+      "priceChange": -2.13,
+      "actualDirection": "down",
+      "isHoney": false
+    }
+  ]
+}

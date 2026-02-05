@@ -1,0 +1,14 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 2
+  },
+  "stats": {
+    "totalVideos": 38,
+    "validPredictions": 0,
+    "honeyCount": 0,
+    "honeyIndex": 0,
+    "assetStats": []
+  },
+  "predictions": []
+}

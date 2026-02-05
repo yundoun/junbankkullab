@@ -1,0 +1,38 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 1
+  },
+  "stats": {
+    "totalVideos": 53,
+    "validPredictions": 1,
+    "honeyCount": 1,
+    "honeyIndex": 100,
+    "assetStats": [
+      {
+        "asset": "Nvidia",
+        "total": 1,
+        "honey": 1,
+        "honeyIndex": 100
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "W4_xxhw_8Bk",
+      "videoUrl": "https://youtube.com/watch?v=W4_xxhw_8Bk",
+      "title": "중국산AI에 무너지는 미국증시(ft.엔비디아, 딥시크)",
+      "thumbnail": "https://i.ytimg.com/vi/W4_xxhw_8Bk/hqdefault.jpg",
+      "publishedAt": "2025-01-27T09:58:46Z",
+      "asset": "Nvidia",
+      "symbol": "Nvidia",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 121.77,
+      "priceAfter24h": 124,
+      "priceChange": 1.83,
+      "actualDirection": "up",
+      "isHoney": true
+    }
+  ]
+}

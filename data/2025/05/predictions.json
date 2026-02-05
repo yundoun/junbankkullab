@@ -1,0 +1,38 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 5
+  },
+  "stats": {
+    "totalVideos": 62,
+    "validPredictions": 1,
+    "honeyCount": 0,
+    "honeyIndex": 0,
+    "assetStats": [
+      {
+        "asset": "Samsung",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "CqtsheWiKbc",
+      "videoUrl": "https://youtube.com/watch?v=CqtsheWiKbc",
+      "title": "삼성전자가 급등한 3가지 이유(ft.미중무역합의)",
+      "thumbnail": "https://i.ytimg.com/vi/CqtsheWiKbc/hqdefault.jpg",
+      "publishedAt": "2025-05-12T07:43:59Z",
+      "asset": "Samsung",
+      "symbol": "Samsung",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 57100,
+      "priceAfter24h": 57100,
+      "priceChange": 0,
+      "actualDirection": "up",
+      "isHoney": false
+    }
+  ]
+}

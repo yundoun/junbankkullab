@@ -1,37 +1,43 @@
 {
-  "generatedAt": "2026-02-05T01:52:57.760Z",
-  "honeyIndex": 20,
-  "totalPredictions": 30,
+  "generatedAt": "2026-02-05T01:58:49.227Z",
+  "honeyIndex": 28.9,
+  "totalPredictions": 38,
   "assetStats": [
     {
-      "asset": "Samsung",
-      "total": 5,
+      "asset": "Nvidia",
+      "total": 2,
       "honey": 1,
-      "honeyIndex": 20
-    },
-    {
-      "asset": "Tesla",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
+      "honeyIndex": 50
     },
     {
       "asset": "KOSPI",
-      "total": 16,
-      "honey": 3,
-      "honeyIndex": 18.8
+      "total": 19,
+      "honey": 6,
+      "honeyIndex": 31.6
+    },
+    {
+      "asset": "NASDAQ",
+      "total": 2,
+      "honey": 1,
+      "honeyIndex": 50
+    },
+    {
+      "asset": "Samsung",
+      "total": 6,
+      "honey": 1,
+      "honeyIndex": 16.7
+    },
+    {
+      "asset": "Tesla",
+      "total": 2,
+      "honey": 0,
+      "honeyIndex": 0
     },
     {
       "asset": "Bitcoin",
       "total": 4,
       "honey": 1,
       "honeyIndex": 25
-    },
-    {
-      "asset": "Nvidia",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
     },
     {
       "asset": "SKHynix",
