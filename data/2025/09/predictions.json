@@ -1,0 +1,76 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 9
+  },
+  "stats": {
+    "totalVideos": 32,
+    "validPredictions": 3,
+    "honeyCount": 0,
+    "honeyIndex": 0,
+    "assetStats": [
+      {
+        "asset": "KOSPI",
+        "total": 2,
+        "honey": 0,
+        "honeyIndex": 0
+      },
+      {
+        "asset": "Nvidia",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "c168cbbRa8E",
+      "videoUrl": "https://youtube.com/watch?v=c168cbbRa8E",
+      "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
+      "thumbnail": "https://i.ytimg.com/vi/c168cbbRa8E/hqdefault.jpg",
+      "publishedAt": "2025-09-26T05:21:13Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 3465.4099,
+      "priceAfter24h": 3386.6299,
+      "priceChange": -2.27,
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "videoId": "MRnZ74Fe_Ao",
+      "videoUrl": "https://youtube.com/watch?v=MRnZ74Fe_Ao",
+      "title": "코스피는 사상최고치인데 환율은 불안한 이유",
+      "thumbnail": "https://i.ytimg.com/vi/MRnZ74Fe_Ao/hqdefault.jpg",
+      "publishedAt": "2025-09-13T13:34:47Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 3405.8899,
+      "priceAfter24h": 3405.8899,
+      "priceChange": 0,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "5n82kbE9U8E",
+      "videoUrl": "https://youtube.com/watch?v=5n82kbE9U8E",
+      "title": "브로드컴 주가가 급등하고 엔비디아는 하락한 이유",
+      "thumbnail": "https://i.ytimg.com/vi/5n82kbE9U8E/hqdefault.jpg",
+      "publishedAt": "2025-09-08T10:00:08Z",
+      "asset": "Nvidia",
+      "symbol": "Nvidia",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 168.08,
+      "priceAfter24h": 177.65,
+      "priceChange": 5.69,
+      "actualDirection": "up",
+      "isHoney": false
+    }
+  ]
+}

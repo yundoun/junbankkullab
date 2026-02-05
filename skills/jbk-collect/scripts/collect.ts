@@ -30,7 +30,7 @@ try {
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY
 const CHANNEL_ID = 'UCznImSIaxZR7fdLCICLdgaQ' // 전인구경제연구소
 
-// 6개 타겟 종목
+// 8개 타겟 종목
 const TARGET_ASSETS: Record<string, { patterns: RegExp[], symbol: string, ticker: string }> = {
   KOSPI: { patterns: [/코스피/i, /kospi/i], symbol: 'KOSPI', ticker: '^KS11' },
   SP500: { patterns: [/s&p/i, /에스앤피/i, /S&P\s*\d+/i], symbol: 'SP500', ticker: '^GSPC' },
@@ -38,6 +38,8 @@ const TARGET_ASSETS: Record<string, { patterns: RegExp[], symbol: string, ticker
   Samsung: { patterns: [/삼성전자/i, /삼전(?!자)/i], symbol: 'Samsung', ticker: '005930.KS' },
   SKHynix: { patterns: [/sk하이닉스/i, /하이닉스/i, /sk\s*하이닉스/i], symbol: 'SKHynix', ticker: '000660.KS' },
   Nvidia: { patterns: [/엔비디아/i, /nvidia/i, /nvda/i], symbol: 'Nvidia', ticker: 'NVDA' },
+  Bitcoin: { patterns: [/비트코인/i, /btc/i, /비코/i], symbol: 'Bitcoin', ticker: 'BTC-USD' },
+  Tesla: { patterns: [/테슬라/i, /tesla/i, /tsla/i], symbol: 'Tesla', ticker: 'TSLA' },
 }
 
 // 부정 패턴
@@ -68,6 +70,17 @@ const BULLISH_PATTERNS = [
   { pattern: /크게\s*오르/i, weight: 2 },
   { pattern: /쌉니다/i, weight: 1 },
   { pattern: /바닥/i, weight: 1 },
+  // 추가 패턴
+  { pattern: /갈\s*수\s*밖에/i, weight: 1.5 },   // "5000 갈 수 밖에"
+  { pattern: /올라갈/i, weight: 1 },             // "올라갈 이유"
+  { pattern: /상승할/i, weight: 1 },             // "상승할 전망"
+  { pattern: /오를/i, weight: 1 },               // "오를 것"
+  { pattern: /베팅/i, weight: 1 },               // "베팅한"
+  { pattern: /랠리/i, weight: 1.5 },             // "랠리"
+  { pattern: /질주/i, weight: 1.5 },             // "질주"
+  { pattern: /불장/i, weight: 1.5 },             // "불장"
+  { pattern: /강세/i, weight: 1 },               // "강세"
+  { pattern: /상방/i, weight: 1 },               // "상방"
 ]
 
 // Bearish 패턴
@@ -86,6 +99,16 @@ const BEARISH_PATTERNS = [
   { pattern: /천장/i, weight: 1 },
   { pattern: /끝났/i, weight: 1 },
   { pattern: /무너/i, weight: 1.5 },
+  // 추가 패턴
+  { pattern: /심상치\s*않/i, weight: 1.5 },      // "심상치 않은"
+  { pattern: /빠질/i, weight: 1 },               // "빠질 수 있다"
+  { pattern: /내려갈/i, weight: 1 },             // "내려갈"
+  { pattern: /불안/i, weight: 0.5 },             // "불안한"
+  { pattern: /우려/i, weight: 0.5 },             // "우려"
+  { pattern: /경고/i, weight: 1 },               // "경고"
+  { pattern: /주의/i, weight: 0.5 },             // "주의"
+  { pattern: /약세/i, weight: 1 },               // "약세"
+  { pattern: /하방/i, weight: 1 },               // "하방"
 ]
 
 interface Video {

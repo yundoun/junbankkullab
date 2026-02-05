@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T01:17:27.716Z",
+  "updatedAt": "2026-02-05T01:52:57.760Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -14,22 +14,40 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 12,
-    "honeyCount": 3,
-    "honeyIndex": 25
+    "totalPredictions": 30,
+    "honeyCount": 6,
+    "honeyIndex": 20
   },
   "assetStats": [
     {
-      "asset": "KOSPI",
-      "total": 6,
+      "asset": "Samsung",
+      "total": 5,
       "honey": 1,
-      "honeyIndex": 16.7
+      "honeyIndex": 20
     },
     {
-      "asset": "Samsung",
-      "total": 3,
+      "asset": "Tesla",
+      "total": 1,
+      "honey": 0,
+      "honeyIndex": 0
+    },
+    {
+      "asset": "KOSPI",
+      "total": 16,
+      "honey": 3,
+      "honeyIndex": 18.8
+    },
+    {
+      "asset": "Bitcoin",
+      "total": 4,
       "honey": 1,
-      "honeyIndex": 33.3
+      "honeyIndex": 25
+    },
+    {
+      "asset": "Nvidia",
+      "total": 1,
+      "honey": 0,
+      "honeyIndex": 0
     },
     {
       "asset": "SKHynix",
@@ -41,15 +59,45 @@
   "periods": [
     {
       "year": 2025,
-      "month": 12,
+      "month": 7,
+      "predictions": 4,
+      "honeyIndex": 0
+    },
+    {
+      "year": 2025,
+      "month": 8,
       "predictions": 2,
+      "honeyIndex": 0
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "predictions": 3,
+      "honeyIndex": 0
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "predictions": 2,
+      "honeyIndex": 50
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "predictions": 4,
+      "honeyIndex": 25
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "predictions": 4,
       "honeyIndex": 50
     },
     {
       "year": 2026,
       "month": 1,
-      "predictions": 10,
-      "honeyIndex": 20
+      "predictions": 11,
+      "honeyIndex": 18.2
     }
   ]
 }

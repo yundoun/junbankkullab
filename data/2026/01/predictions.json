@@ -5,23 +5,35 @@
   },
   "stats": {
     "totalVideos": 40,
-    "validPredictions": 10,
+    "validPredictions": 11,
     "honeyCount": 2,
-    "honeyIndex": 20,
-    "assetStats": {
-      "KOSPI": {
+    "honeyIndex": 18.2,
+    "assetStats": [
+      {
+        "asset": "KOSPI",
         "total": 4,
-        "honey": 0
+        "honey": 0,
+        "honeyIndex": 0
       },
-      "Samsung": {
+      {
+        "asset": "Samsung",
         "total": 3,
-        "honey": 1
+        "honey": 1,
+        "honeyIndex": 33.3
       },
-      "SKHynix": {
+      {
+        "asset": "SKHynix",
         "total": 3,
-        "honey": 1
+        "honey": 1,
+        "honeyIndex": 33.3
+      },
+      {
+        "asset": "Bitcoin",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
       }
-    }
+    ]
   },
   "predictions": [
     {
@@ -31,6 +43,7 @@
       "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
       "publishedAt": "2026-01-30T02:35:30Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 5228.79,
@@ -46,6 +59,7 @@
       "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
       "publishedAt": "2026-01-30T02:35:30Z",
       "asset": "Samsung",
+      "symbol": "Samsung",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 161650,
@@ -61,6 +75,7 @@
       "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
       "publishedAt": "2026-01-30T02:35:30Z",
       "asset": "SKHynix",
+      "symbol": "SKHynix",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 901000,
@@ -76,6 +91,7 @@
       "thumbnail": "https://i.ytimg.com/vi/cvMngriiriA/hqdefault.jpg",
       "publishedAt": "2026-01-29T00:24:47Z",
       "asset": "Samsung",
+      "symbol": "Samsung",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 161900,
@@ -91,6 +107,7 @@
       "thumbnail": "https://i.ytimg.com/vi/cvMngriiriA/hqdefault.jpg",
       "publishedAt": "2026-01-29T00:24:47Z",
       "asset": "SKHynix",
+      "symbol": "SKHynix",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 855000,
@@ -106,6 +123,7 @@
       "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
       "publishedAt": "2026-01-26T00:14:16Z",
       "asset": "Samsung",
+      "symbol": "Samsung",
       "predictedDirection": "bullish",
       "hasNegation": true,
       "priceAtPublish": 152900,
@@ -121,6 +139,7 @@
       "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
       "publishedAt": "2026-01-26T00:14:16Z",
       "asset": "SKHynix",
+      "symbol": "SKHynix",
       "predictedDirection": "bullish",
       "hasNegation": true,
       "priceAtPublish": 747000,
@@ -136,6 +155,7 @@
       "thumbnail": "https://i.ytimg.com/vi/_FmmRrEwwG8/hqdefault.jpg",
       "publishedAt": "2026-01-22T00:48:10Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 4998.8501,
@@ -151,6 +171,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vBuUo34mdSY/hqdefault.jpg",
       "publishedAt": "2026-01-19T23:33:57Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 4852.3501,
@@ -166,11 +187,28 @@
       "thumbnail": "https://i.ytimg.com/vi/OK7RMCqPD10/hqdefault_live.jpg",
       "publishedAt": "2026-01-15T11:07:48Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 4833.9199,
       "priceAfter24h": 4825.5498,
       "priceChange": -0.17,
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "videoId": "OK7RMCqPD10",
+      "videoUrl": "https://youtube.com/watch?v=OK7RMCqPD10",
+      "title": "코스피 이제 팔자/ 환율조림 이야기 / 비트코인과 해외거래소 차단 / 미국 은행주 폭락",
+      "thumbnail": "https://i.ytimg.com/vi/OK7RMCqPD10/hqdefault_live.jpg",
+      "publishedAt": "2026-01-15T11:07:48Z",
+      "asset": "Bitcoin",
+      "symbol": "Bitcoin",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 95548.5234,
+      "priceAfter24h": 95443.8594,
+      "priceChange": -0.11,
       "actualDirection": "down",
       "isHoney": false
     }

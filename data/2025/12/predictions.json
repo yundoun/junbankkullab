@@ -5,15 +5,15 @@
   },
   "stats": {
     "totalVideos": 49,
-    "validPredictions": 2,
-    "honeyCount": 1,
+    "validPredictions": 4,
+    "honeyCount": 2,
     "honeyIndex": 50,
     "assetStats": [
       {
         "asset": "KOSPI",
-        "honeyIndex": 50,
-        "total": 2,
-        "honey": 1
+        "total": 4,
+        "honey": 2,
+        "honeyIndex": 50
       }
     ]
   },
@@ -25,6 +25,7 @@
       "thumbnail": "https://i.ytimg.com/vi/aLY3A8D1EcQ/hqdefault.jpg",
       "publishedAt": "2025-12-29T10:13:47Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 4213.8398,
@@ -34,12 +35,29 @@
       "isHoney": false
     },
     {
+      "videoId": "fIyQXZ4W4o8",
+      "videoUrl": "https://youtube.com/watch?v=fIyQXZ4W4o8",
+      "title": "코스피 1만까지 오를 수 있습니다(ft.소현철 교수 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/fIyQXZ4W4o8/hqdefault.jpg",
+      "publishedAt": "2025-12-21T00:38:52Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 4094.3201,
+      "priceAfter24h": 4088.3101,
+      "priceChange": -0.15,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
       "videoId": "qyXMu0tBmwM",
       "videoUrl": "https://youtube.com/watch?v=qyXMu0tBmwM",
       "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
       "thumbnail": "https://i.ytimg.com/vi/qyXMu0tBmwM/hqdefault.jpg",
       "publishedAt": "2025-12-16T10:12:58Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 4004.3701,
@@ -47,6 +65,22 @@
       "priceChange": 0.51,
       "actualDirection": "up",
       "isHoney": true
+    },
+    {
+      "videoId": "s_fzguS0IFQ",
+      "videoUrl": "https://youtube.com/watch?v=s_fzguS0IFQ",
+      "title": "코스피 더 오를 겁니다. 이 기업이 제일 기대됩니다.(ft. 염승환 이사 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/s_fzguS0IFQ/hqdefault.jpg",
+      "publishedAt": "2025-12-03T10:01:37Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 4001.8899,
+      "priceAfter24h": 4043.28,
+      "priceChange": 1.03,
+      "actualDirection": "up",
+      "isHoney": false
     }
   ]
 }

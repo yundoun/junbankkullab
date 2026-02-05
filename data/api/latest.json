@@ -1,19 +1,37 @@
 {
-  "generatedAt": "2026-02-05T01:17:27.717Z",
-  "honeyIndex": 25,
-  "totalPredictions": 12,
+  "generatedAt": "2026-02-05T01:52:57.760Z",
+  "honeyIndex": 20,
+  "totalPredictions": 30,
   "assetStats": [
     {
-      "asset": "KOSPI",
-      "total": 6,
+      "asset": "Samsung",
+      "total": 5,
       "honey": 1,
-      "honeyIndex": 16.7
+      "honeyIndex": 20
     },
     {
-      "asset": "Samsung",
-      "total": 3,
+      "asset": "Tesla",
+      "total": 1,
+      "honey": 0,
+      "honeyIndex": 0
+    },
+    {
+      "asset": "KOSPI",
+      "total": 16,
+      "honey": 3,
+      "honeyIndex": 18.8
+    },
+    {
+      "asset": "Bitcoin",
+      "total": 4,
       "honey": 1,
-      "honeyIndex": 33.3
+      "honeyIndex": 25
+    },
+    {
+      "asset": "Nvidia",
+      "total": 1,
+      "honey": 0,
+      "honeyIndex": 0
     },
     {
       "asset": "SKHynix",
@@ -30,6 +48,7 @@
       "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
       "publishedAt": "2026-01-30T02:35:30Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 5228.79,
@@ -45,6 +64,7 @@
       "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
       "publishedAt": "2026-01-30T02:35:30Z",
       "asset": "Samsung",
+      "symbol": "Samsung",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 161650,
@@ -60,6 +80,7 @@
       "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
       "publishedAt": "2026-01-30T02:35:30Z",
       "asset": "SKHynix",
+      "symbol": "SKHynix",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 901000,
@@ -75,6 +96,7 @@
       "thumbnail": "https://i.ytimg.com/vi/cvMngriiriA/hqdefault.jpg",
       "publishedAt": "2026-01-29T00:24:47Z",
       "asset": "Samsung",
+      "symbol": "Samsung",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 161900,
@@ -90,6 +112,7 @@
       "thumbnail": "https://i.ytimg.com/vi/cvMngriiriA/hqdefault.jpg",
       "publishedAt": "2026-01-29T00:24:47Z",
       "asset": "SKHynix",
+      "symbol": "SKHynix",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 855000,
@@ -105,6 +128,7 @@
       "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
       "publishedAt": "2026-01-26T00:14:16Z",
       "asset": "Samsung",
+      "symbol": "Samsung",
       "predictedDirection": "bullish",
       "hasNegation": true,
       "priceAtPublish": 152900,
@@ -120,6 +144,7 @@
       "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
       "publishedAt": "2026-01-26T00:14:16Z",
       "asset": "SKHynix",
+      "symbol": "SKHynix",
       "predictedDirection": "bullish",
       "hasNegation": true,
       "priceAtPublish": 747000,
@@ -135,6 +160,7 @@
       "thumbnail": "https://i.ytimg.com/vi/_FmmRrEwwG8/hqdefault.jpg",
       "publishedAt": "2026-01-22T00:48:10Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 4998.8501,
@@ -150,6 +176,7 @@
       "thumbnail": "https://i.ytimg.com/vi/vBuUo34mdSY/hqdefault.jpg",
       "publishedAt": "2026-01-19T23:33:57Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bullish",
       "hasNegation": false,
       "priceAtPublish": 4852.3501,
@@ -165,6 +192,7 @@
       "thumbnail": "https://i.ytimg.com/vi/OK7RMCqPD10/hqdefault_live.jpg",
       "publishedAt": "2026-01-15T11:07:48Z",
       "asset": "KOSPI",
+      "symbol": "KOSPI",
       "predictedDirection": "bearish",
       "hasNegation": false,
       "priceAtPublish": 4833.9199,

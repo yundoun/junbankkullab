@@ -28,6 +28,7 @@ SYMBOL_MAP = {
     'Tesla': 'TSLA',
     'Nvidia': 'NVDA',
     'Apple': 'AAPL',
+    'Bitcoin': 'BTC-USD',
 }
 
 def get_price_at(symbol: str, timestamp_ms: int, hours_after: int = 24):

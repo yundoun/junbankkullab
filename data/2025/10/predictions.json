@@ -1,0 +1,60 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 10
+  },
+  "stats": {
+    "totalVideos": 40,
+    "validPredictions": 2,
+    "honeyCount": 1,
+    "honeyIndex": 50,
+    "assetStats": [
+      {
+        "asset": "KOSPI",
+        "total": 1,
+        "honey": 1,
+        "honeyIndex": 100
+      },
+      {
+        "asset": "Samsung",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "MA2pCxgR3nM",
+      "videoUrl": "https://youtube.com/watch?v=MA2pCxgR3nM",
+      "title": "코스피4000 장중붕괴 된 이유(ft.조정? 악재?)",
+      "thumbnail": "https://i.ytimg.com/vi/MA2pCxgR3nM/hqdefault.jpg",
+      "publishedAt": "2025-10-28T07:54:31Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 4027.6201,
+      "priceAfter24h": 4120.29,
+      "priceChange": 2.3,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "qDxns-qy57I",
+      "videoUrl": "https://youtube.com/watch?v=qDxns-qy57I",
+      "title": "삼성전자 호재, 외국인들은 연휴전에 미리 알았다",
+      "thumbnail": "https://i.ytimg.com/vi/qDxns-qy57I/hqdefault.jpg",
+      "publishedAt": "2025-10-10T06:58:55Z",
+      "asset": "Samsung",
+      "symbol": "Samsung",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 93850,
+      "priceAfter24h": 94100,
+      "priceChange": 0.27,
+      "actualDirection": "up",
+      "isHoney": false
+    }
+  ]
+}

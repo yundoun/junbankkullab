@@ -1,0 +1,98 @@
+{
+  "period": {
+    "year": 2025,
+    "month": 7
+  },
+  "stats": {
+    "totalVideos": 44,
+    "validPredictions": 4,
+    "honeyCount": 0,
+    "honeyIndex": 0,
+    "assetStats": [
+      {
+        "asset": "Samsung",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
+      },
+      {
+        "asset": "Tesla",
+        "total": 1,
+        "honey": 0,
+        "honeyIndex": 0
+      },
+      {
+        "asset": "KOSPI",
+        "total": 2,
+        "honey": 0,
+        "honeyIndex": 0
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "VwDR-WB3fqY",
+      "videoUrl": "https://youtube.com/watch?v=VwDR-WB3fqY",
+      "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
+      "thumbnail": "https://i.ytimg.com/vi/VwDR-WB3fqY/hqdefault.jpg",
+      "publishedAt": "2025-07-28T10:04:28Z",
+      "asset": "Samsung",
+      "symbol": "Samsung",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 69900,
+      "priceAfter24h": 72400,
+      "priceChange": 3.58,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "VwDR-WB3fqY",
+      "videoUrl": "https://youtube.com/watch?v=VwDR-WB3fqY",
+      "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
+      "thumbnail": "https://i.ytimg.com/vi/VwDR-WB3fqY/hqdefault.jpg",
+      "publishedAt": "2025-07-28T10:04:28Z",
+      "asset": "Tesla",
+      "symbol": "Tesla",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 319.33,
+      "priceAfter24h": 322.215,
+      "priceChange": 0.9,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "JcbsEP_6z6s",
+      "videoUrl": "https://youtube.com/watch?v=JcbsEP_6z6s",
+      "title": "코스피 5000 갈 수 밖에 없는 이유(ft.이소영 국회의원 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/JcbsEP_6z6s/hqdefault.jpg",
+      "publishedAt": "2025-07-17T05:47:37Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 3186.6001,
+      "priceAfter24h": 3186.76,
+      "priceChange": 0.01,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "L8SM0ieN8X0",
+      "videoUrl": "https://youtube.com/watch?v=L8SM0ieN8X0",
+      "title": "트럼프 관세 발언이 심상치 않은 이유(ft.코스피)",
+      "thumbnail": "https://i.ytimg.com/vi/L8SM0ieN8X0/hqdefault.jpg",
+      "publishedAt": "2025-07-04T06:00:29Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 3096.3101,
+      "priceAfter24h": 3057.0801,
+      "priceChange": -1.27,
+      "actualDirection": "down",
+      "isHoney": false
+    }
+  ]
+}
