@@ -11,6 +11,7 @@ import {
   BentoCardValue,
   HoneyIndexChart,
   PredictionCard,
+  TimelineChart,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
@@ -34,6 +35,14 @@ interface Prediction {
   status: 'correct' | 'incorrect' | 'pending'
 }
 
+interface TimelineData {
+  label: string
+  year: number
+  month: number
+  predictions: number
+  honeyIndex: number
+}
+
 interface Stats {
   overallHoneyIndex: number
   totalPredictions: number
@@ -42,6 +51,7 @@ interface Stats {
   totalMentions: number
   pendingReview: number
   assetStats: AssetStat[]
+  timeline: TimelineData[]
   recentPredictions: Prediction[]
   updatedAt: string | null
 }
@@ -235,6 +245,24 @@ export default function Home() {
                   </p>
                 </div>
               ))}
+            </div>
+          </section>
+        )}
+        
+        {/* 월별 타임라인 */}
+        {stats?.timeline && stats.timeline.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-muted-foreground" />
+                <h2 className="text-lg font-semibold">월별 꿀지수 추이</h2>
+              </div>
+              <Badge variant="outline">
+                50% 이상 = 역지표 유효
+              </Badge>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-4">
+              <TimelineChart data={stats.timeline} />
             </div>
           </section>
         )}

@@ -4,6 +4,23 @@ import path from 'path'
 
 export const dynamic = 'force-dynamic'
 
+interface Period {
+  year: number
+  month: number
+  predictions: number
+  honeyIndex: number
+}
+
+interface OverallStats {
+  updatedAt: string
+  stats: {
+    totalPredictions: number
+    honeyCount: number
+    honeyIndex: number
+  }
+  periods: Period[]
+}
+
 interface Mention {
   videoId: string
   title: string
@@ -37,9 +54,21 @@ interface HybridAnalysis {
 
 export async function GET() {
   try {
-    const dataPath = path.join(process.cwd(), 'data', 'stats', 'hybrid-analysis.json')
-    const data = await fs.readFile(dataPath, 'utf-8')
-    const parsed: HybridAnalysis = JSON.parse(data)
+    // 하이브리드 분석 데이터
+    const hybridPath = path.join(process.cwd(), 'data', 'stats', 'hybrid-analysis.json')
+    const hybridData = await fs.readFile(hybridPath, 'utf-8')
+    const parsed: HybridAnalysis = JSON.parse(hybridData)
+    
+    // 전체 통계 (월별 타임라인 포함)
+    const overallPath = path.join(process.cwd(), 'data', 'stats', 'overall.json')
+    let periods: Period[] = []
+    try {
+      const overallData = await fs.readFile(overallPath, 'utf-8')
+      const overall: OverallStats = JSON.parse(overallData)
+      periods = overall.periods || []
+    } catch {
+      // overall.json 없으면 무시
+    }
 
     // 실제 방향을 PredictionDirection으로 변환
     const mapDirection = (dir?: 'up' | 'down' | 'flat' | 'no_data'): 'bullish' | 'bearish' | undefined => {
@@ -80,6 +109,15 @@ export async function GET() {
       
       // 종목별 통계
       assetStats: parsed.assetStats,
+      
+      // 월별 타임라인
+      timeline: periods.map(p => ({
+        label: `${p.year}.${String(p.month).padStart(2, '0')}`,
+        year: p.year,
+        month: p.month,
+        predictions: p.predictions,
+        honeyIndex: p.honeyIndex,
+      })),
       
       // 최근 예측
       recentPredictions,
