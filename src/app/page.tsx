@@ -3,15 +3,10 @@
 import { useState, useEffect } from 'react'
 import { Beaker, TrendingUp, TrendingDown, Target, Flame, BarChart3, Clock } from 'lucide-react'
 import { 
-  BentoGrid, 
-  BentoCard, 
-  BentoCardHeader, 
-  BentoCardTitle, 
-  BentoCardContent,
-  BentoCardValue,
   HoneyIndexChart,
   PredictionCard,
   TimelineChart,
+  VoteCard,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
@@ -98,21 +93,21 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
   return (
     <section>
       <Tabs defaultValue="honey">
-        <div className="flex items-center justify-between mb-4">
-          <TabsList>
-            <TabsTrigger value="honey" className="gap-1.5">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+          <TabsList className="w-full sm:w-auto flex-wrap">
+            <TabsTrigger value="honey" className="gap-1 text-xs sm:text-sm">
               <span>🍯</span>
-              <span>전반꿀 적중</span>
+              <span className="hidden sm:inline">전반꿀</span>
               <Badge variant="honey" className="ml-1 text-xs">{honeyHits.length}</Badge>
             </TabsTrigger>
-            <TabsTrigger value="jig" className="gap-1.5">
+            <TabsTrigger value="jig" className="gap-1 text-xs sm:text-sm">
               <span>📈</span>
-              <span>전인구 적중</span>
+              <span className="hidden sm:inline">전인구</span>
               <Badge variant="outline" className="ml-1 text-xs">{jigHits.length}</Badge>
             </TabsTrigger>
-            <TabsTrigger value="pending" className="gap-1.5">
+            <TabsTrigger value="pending" className="gap-1 text-xs sm:text-sm">
               <span>🔍</span>
-              <span>검토 대기</span>
+              <span className="hidden sm:inline">검토</span>
               <Badge variant="pending" className="ml-1 text-xs">{pendingReviews.length}</Badge>
             </TabsTrigger>
           </TabsList>
@@ -128,6 +123,7 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
                     href={`https://youtube.com/watch?v=${prediction.videoId}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block"
                   >
                     <PredictionCard
                       title={prediction.title}
@@ -165,6 +161,7 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
                     href={`https://youtube.com/watch?v=${prediction.videoId}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block"
                   >
                     <PredictionCard
                       title={prediction.title}
@@ -202,6 +199,7 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
                     href={`https://youtube.com/watch?v=${prediction.videoId}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block"
                   >
                     <PredictionCard
                       title={prediction.title}
@@ -235,6 +233,7 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
 export default function Home() {
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(true)
+  const [userVote, setUserVote] = useState<'up' | 'down' | null>(null)
 
   useEffect(() => {
     fetch('/api/stats')
@@ -245,6 +244,11 @@ export default function Home() {
       })
       .catch(() => setLoading(false))
   }, [])
+
+  const handleVote = (direction: 'up' | 'down') => {
+    setUserVote(prev => prev === direction ? null : direction)
+    // TODO: Supabase 연동 시 여기서 투표 저장
+  }
 
   if (loading) {
     return (
@@ -258,142 +262,132 @@ export default function Home() {
   }
 
   const honeyIndex = stats?.overallHoneyIndex ?? 0
-  const isHoneyValid = honeyIndex >= 50 // 50% 이상이면 역지표 가설 유효
+  const isHoneyValid = honeyIndex >= 50
+  const latestPending = stats?.pendingReviews?.[0]
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-14 sm:h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Beaker className="w-5 h-5 text-primary" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Beaker className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
               </div>
-              <span className="font-bold text-lg">전반꿀 연구소</span>
+              <span className="font-bold text-base sm:text-lg">전반꿀 연구소</span>
             </div>
             
-            <div className="flex items-center gap-4">
-              <Badge variant={isHoneyValid ? "honey" : "outline"} className="gap-1.5">
-                <span>🍯</span>
-                <span className="font-bold">{honeyIndex.toFixed(1)}%</span>
-              </Badge>
-            </div>
+            <Badge variant={isHoneyValid ? "honey" : "outline"} className="gap-1">
+              <span>🍯</span>
+              <span className="font-bold">{honeyIndex.toFixed(1)}%</span>
+            </Badge>
           </div>
         </div>
       </header>
       
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
-        {/* Hero Section */}
-        <BentoGrid className="mb-8">
-          {/* Honey Index Chart - Large */}
-          <BentoCard size="lg" className="p-0 overflow-hidden">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        {/* Hero Section - 반응형 2열 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          {/* 꿀지수 게이지 */}
+          <div className="rounded-2xl border border-border bg-card overflow-hidden">
             <HoneyIndexChart 
               currentValue={honeyIndex}
               totalPredictions={stats?.totalPredictions ?? 0}
             />
-          </BentoCard>
+          </div>
           
-          {/* 핵심 설명 카드 */}
-          <BentoCard size="lg" className="flex flex-col justify-center">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="text-4xl">🍯</span>
-                <h2 className="text-2xl font-bold">전반꿀 지수란?</h2>
-              </div>
-              <p className="text-muted-foreground leading-relaxed">
-                전인구경제연구소의 예측이 <strong className="text-foreground">역지표</strong>로 
-                얼마나 유효한지 측정한 지수입니다.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-2">
-                <div className="p-3 rounded-lg bg-bullish/10 border border-bullish/20">
-                  <p className="text-sm text-muted-foreground">긍정적 언급 후</p>
-                  <p className="font-semibold text-bullish">하락하면 🍯</p>
+          {/* 투표 카드 */}
+          {latestPending ? (
+            <VoteCard
+              videoId={latestPending.videoId}
+              title={latestPending.title}
+              thumbnail={latestPending.thumbnail}
+              publishedAt={latestPending.publishedAt}
+              asset={ASSET_NAMES[latestPending.asset] || latestPending.asset}
+              userVote={userVote}
+              upVotes={42}
+              downVotes={31}
+              onVote={handleVote}
+            />
+          ) : (
+            <div className="rounded-2xl border border-border bg-card p-6 flex flex-col justify-center">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-3xl sm:text-4xl">🍯</span>
+                  <h2 className="text-xl sm:text-2xl font-bold">전반꿀 지수란?</h2>
                 </div>
-                <div className="p-3 rounded-lg bg-bearish/10 border border-bearish/20">
-                  <p className="text-sm text-muted-foreground">부정적 언급 후</p>
-                  <p className="font-semibold text-bearish">상승하면 🍯</p>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  전인구경제연구소의 예측이 <strong className="text-foreground">역지표</strong>로 
+                  얼마나 유효한지 측정한 지수입니다.
+                </p>
+                <div className="grid grid-cols-2 gap-3 pt-2">
+                  <div className="p-2 sm:p-3 rounded-lg bg-bullish/10 border border-bullish/20">
+                    <p className="text-xs sm:text-sm text-muted-foreground">긍정적 언급 후</p>
+                    <p className="text-sm sm:text-base font-semibold text-bullish">하락하면 🍯</p>
+                  </div>
+                  <div className="p-2 sm:p-3 rounded-lg bg-bearish/10 border border-bearish/20">
+                    <p className="text-xs sm:text-sm text-muted-foreground">부정적 언급 후</p>
+                    <p className="text-sm sm:text-base font-semibold text-bearish">상승하면 🍯</p>
+                  </div>
                 </div>
               </div>
-              {isHoneyValid && (
-                <Badge variant="honey" className="mt-2">
-                  ✓ 50% 이상 = 역지표 가설 유효
-                </Badge>
-              )}
             </div>
-          </BentoCard>
-          
-          {/* Stats Cards - Small */}
-          <BentoCard size="sm">
-            <BentoCardHeader>
-              <BentoCardTitle>총 예측</BentoCardTitle>
+          )}
+        </div>
+
+        {/* Stats Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <div className="p-4 rounded-xl border border-border bg-card">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs sm:text-sm text-muted-foreground">총 예측</span>
               <Target className="w-4 h-4 text-muted-foreground" />
-            </BentoCardHeader>
-            <BentoCardContent>
-              <BentoCardValue>{stats?.totalPredictions ?? 0}</BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">유효 분석 건수</p>
-            </BentoCardContent>
-          </BentoCard>
+            </div>
+            <p className="text-xl sm:text-2xl font-bold">{stats?.totalPredictions ?? 0}</p>
+          </div>
           
-          <BentoCard size="sm">
-            <BentoCardHeader>
-              <BentoCardTitle>역지표 적중</BentoCardTitle>
+          <div className="p-4 rounded-xl border border-border bg-card">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs sm:text-sm text-muted-foreground">역지표 적중</span>
               <TrendingUp className="w-4 h-4 text-bullish" />
-            </BentoCardHeader>
-            <BentoCardContent>
-              <BentoCardValue className="text-bullish">
-                {stats?.honeyCount ?? 0}
-              </BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">
-                {stats?.totalPredictions ? 
-                  `${stats.totalPredictions}개 중 ${stats.honeyCount}개` : 
-                  '데이터 없음'}
-              </p>
-            </BentoCardContent>
-          </BentoCard>
+            </div>
+            <p className="text-xl sm:text-2xl font-bold text-bullish">{stats?.honeyCount ?? 0}</p>
+          </div>
           
-          <BentoCard size="sm">
-            <BentoCardHeader>
-              <BentoCardTitle>분석 영상</BentoCardTitle>
+          <div className="p-4 rounded-xl border border-border bg-card">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs sm:text-sm text-muted-foreground">분석 영상</span>
               <Flame className="w-4 h-4 text-primary" />
-            </BentoCardHeader>
-            <BentoCardContent>
-              <BentoCardValue>{stats?.totalVideos ?? 0}</BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">수집된 영상</p>
-            </BentoCardContent>
-          </BentoCard>
+            </div>
+            <p className="text-xl sm:text-2xl font-bold">{stats?.totalVideos ?? 0}</p>
+          </div>
           
-          <BentoCard size="sm">
-            <BentoCardHeader>
-              <BentoCardTitle>검토 대기</BentoCardTitle>
+          <div className="p-4 rounded-xl border border-border bg-card">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs sm:text-sm text-muted-foreground">검토 대기</span>
               <Clock className="w-4 h-4 text-pending" />
-            </BentoCardHeader>
-            <BentoCardContent>
-              <BentoCardValue className="text-pending">
-                {stats?.pendingReviewCount ?? 0}
-              </BentoCardValue>
-              <p className="text-sm text-muted-foreground mt-1">수동 검토 필요</p>
-            </BentoCardContent>
-          </BentoCard>
-        </BentoGrid>
+            </div>
+            <p className="text-xl sm:text-2xl font-bold text-pending">{stats?.pendingReviewCount ?? 0}</p>
+          </div>
+        </div>
         
         {/* 종목별 통계 */}
         {stats?.assetStats && stats.assetStats.length > 0 && (
-          <section className="mb-8">
+          <section className="mb-6 sm:mb-8">
             <div className="flex items-center gap-2 mb-4">
               <BarChart3 className="w-5 h-5 text-muted-foreground" />
-              <h2 className="text-lg font-semibold">종목별 꿀지수</h2>
+              <h2 className="text-base sm:text-lg font-semibold">종목별 꿀지수</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {stats.assetStats
                 .sort((a, b) => b.honeyIndex - a.honeyIndex)
                 .map((asset) => (
                 <div 
                   key={asset.asset}
-                  className="p-4 rounded-lg border border-border bg-card"
+                  className="p-4 rounded-xl border border-border bg-card"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium">
+                    <span className="font-medium text-sm sm:text-base">
                       {ASSET_NAMES[asset.asset] || asset.asset}
                     </span>
                     <Badge variant={asset.honeyIndex >= 50 ? "honey" : "outline"}>
@@ -415,13 +409,13 @@ export default function Home() {
         
         {/* 월별 타임라인 */}
         {stats?.timeline && stats.timeline.length > 0 && (
-          <section className="mb-8">
-            <div className="flex items-center justify-between mb-4">
+          <section className="mb-6 sm:mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
               <div className="flex items-center gap-2">
                 <TrendingUp className="w-5 h-5 text-muted-foreground" />
-                <h2 className="text-lg font-semibold">월별 꿀지수 추이</h2>
+                <h2 className="text-base sm:text-lg font-semibold">월별 꿀지수 추이</h2>
               </div>
-              <Badge variant="outline">
+              <Badge variant="outline" className="w-fit">
                 50% 이상 = 역지표 유효
               </Badge>
             </div>
@@ -433,20 +427,19 @@ export default function Home() {
         
         {/* 예측 분석 탭 */}
         <PredictionTabs stats={stats} />
-      
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-6 mt-auto">
+      <footer className="border-t border-border py-4 sm:py-6 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-            <p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+            <p className="text-center sm:text-left">
               본 사이트는 엔터테인먼트 목적으로 제작되었습니다. 투자 조언이 아닙니다.
             </p>
             <div className="flex items-center gap-4">
               {stats?.updatedAt && (
                 <span>
-                  마지막 업데이트: {new Date(stats.updatedAt).toLocaleDateString('ko-KR')}
+                  업데이트: {new Date(stats.updatedAt).toLocaleDateString('ko-KR')}
                 </span>
               )}
               <a 
