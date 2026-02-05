@@ -46,6 +46,20 @@ function setStoredVote(key: string, vote: "up" | "down") {
   }
 }
 
+// 시간 포맷 함수
+function formatTimeAgo(date: Date): string {
+  const now = new Date()
+  const diffMs = now.getTime() - date.getTime()
+  const diffMins = Math.floor(diffMs / (1000 * 60))
+  const diffHours = Math.floor(diffMs / (1000 * 60 * 60))
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+  
+  if (diffMins < 1) return "방금 전"
+  if (diffMins < 60) return `${diffMins}분 전`
+  if (diffHours < 24) return `${diffHours}시간 전`
+  return `${diffDays}일 전`
+}
+
 export function VoteCard({
   videoId,
   title,
@@ -104,11 +118,10 @@ export function VoteCard({
 
   // 시간 계산
   const publishedDate = new Date(publishedAt)
-  const now = new Date()
-  const hoursAgo = Math.floor((now.getTime() - publishedDate.getTime()) / (1000 * 60 * 60))
-  const timeLabel = hoursAgo < 1 ? "방금 전" : hoursAgo < 24 ? `${hoursAgo}시간 전` : `${Math.floor(hoursAgo / 24)}일 전`
+  const timeLabel = formatTimeAgo(publishedDate)
 
   // 남은 시간 계산
+  const now = new Date()
   const expiresDate = expiresAt ? new Date(expiresAt) : new Date(publishedDate.getTime() + 24 * 60 * 60 * 1000)
   const remainingMs = Math.max(0, expiresDate.getTime() - now.getTime())
   const remainingHours = Math.floor(remainingMs / (1000 * 60 * 60))
@@ -165,40 +178,12 @@ export function VoteCard({
       )}
 
       <div className="relative z-10 flex flex-col p-4 sm:p-5">
-        {/* 상단: 메타 정보 */}
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            <span className="text-xs font-bold text-primary tracking-wide">LIVE</span>
-            {asset && (
-              <>
-                <span className="text-muted-foreground/50">·</span>
-                <span className="text-sm font-bold text-foreground">{asset}</span>
-              </>
-            )}
-            <span className="text-muted-foreground/50">·</span>
-            <span className="text-xs text-muted-foreground">{timeLabel}</span>
-          </div>
-          
-          <a
-            href={`https://youtube.com/watch?v=${videoId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors duration-300 hover:scale-110"
-          >
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-
-        {/* 썸네일 미리보기 (작게) */}
+        {/* 썸네일 */}
         <a
           href={`https://youtube.com/watch?v=${videoId}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="thumbnail-container relative w-full aspect-[16/9] rounded-lg overflow-hidden mb-3 group/thumb"
+          className="thumbnail-container relative w-full aspect-[2/1] rounded-lg overflow-hidden mb-3 group/thumb"
         >
           <img
             src={thumbnailUrl}
@@ -207,16 +192,25 @@ export function VoteCard({
             loading="lazy"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover/thumb:opacity-100 transition-all duration-300">
-            <div className="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center transform scale-75 group-hover/thumb:scale-100 transition-transform duration-300 shadow-xl">
-              <Play className="w-6 h-6 text-black ml-0.5" fill="currentColor" />
+            <div className="w-10 h-10 rounded-full bg-white/95 flex items-center justify-center transform scale-75 group-hover/thumb:scale-100 transition-transform duration-300 shadow-xl">
+              <Play className="w-5 h-5 text-black ml-0.5" fill="currentColor" />
             </div>
           </div>
+          {/* 종목 뱃지 */}
+          {asset && (
+            <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/60 backdrop-blur-sm rounded text-xs font-bold text-white">
+              {asset}
+            </div>
+          )}
         </a>
 
-        {/* 제목 */}
-        <p className="text-sm text-muted-foreground text-center mb-4 line-clamp-2 px-1">
-          {title}
-        </p>
+        {/* 영상 제목 + 업로드 시간 */}
+        <div className="mb-4">
+          <h3 className="text-base font-semibold text-foreground line-clamp-2 mb-1">
+            {title}
+          </h3>
+          <p className="text-sm text-muted-foreground">{timeLabel}</p>
+        </div>
 
         {/* 투표 버튼 */}
         <div className="grid grid-cols-2 gap-3 mb-3">
@@ -289,57 +283,41 @@ export function VoteCard({
           </Button>
         </div>
 
-        {/* 투표 결과 바 - 내 선택 강조 */}
+        {/* 투표 결과 바 - 내 선택 색상 강조 */}
         {hasVoted && (
           <div className="space-y-2 animate-fade-up">
-            <div className="relative flex h-3 rounded-full overflow-hidden bg-muted/30">
+            <div className="relative flex h-5 rounded-full overflow-hidden bg-muted/20">
               {/* 상승 바 */}
               <div
                 className={cn(
-                  "relative transition-all duration-1000 ease-out",
+                  "transition-all duration-1000 ease-out rounded-l-full",
                   userVote === "up" 
-                    ? "bg-gradient-to-r from-bullish via-bullish to-bullish/90 shadow-[0_0_12px_rgba(14,203,129,0.5)]" 
-                    : "bg-bullish/60"
+                    ? "bg-bullish" 
+                    : "bg-bullish/30"
                 )}
                 style={{ width: `${upPercent}%` }}
-              >
-                {/* 내 선택 표시 - 상승 */}
-                {userVote === "up" && (
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-full bg-white/80 rounded-full animate-pulse" />
-                )}
-              </div>
+              />
               {/* 하락 바 */}
               <div
                 className={cn(
-                  "relative transition-all duration-1000 ease-out",
+                  "transition-all duration-1000 ease-out rounded-r-full",
                   userVote === "down" 
-                    ? "bg-gradient-to-r from-bearish/90 via-bearish to-bearish shadow-[0_0_12px_rgba(246,70,93,0.5)]" 
-                    : "bg-bearish/60"
+                    ? "bg-bearish" 
+                    : "bg-bearish/30"
                 )}
                 style={{ width: `${downPercent}%` }}
-              >
-                {/* 내 선택 표시 - 하락 */}
-                {userVote === "down" && (
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-full bg-white/80 rounded-full animate-pulse" />
-                )}
-              </div>
+              />
             </div>
             <div className="flex justify-between text-xs font-medium">
               <span className={cn(
-                "transition-all duration-300",
-                userVote === "up" 
-                  ? "text-bullish font-bold scale-105" 
-                  : "text-bullish/70"
+                userVote === "up" ? "text-bullish font-bold" : "text-muted-foreground"
               )}>
-                {userVote === "up" && "👆 "}상승 {upPercent}%
+                상승 {upPercent}%
               </span>
               <span className={cn(
-                "transition-all duration-300",
-                userVote === "down" 
-                  ? "text-bearish font-bold scale-105" 
-                  : "text-bearish/70"
+                userVote === "down" ? "text-bearish font-bold" : "text-muted-foreground"
               )}>
-                하락 {downPercent}%{userVote === "down" && " 👆"}
+                하락 {downPercent}%
               </span>
             </div>
           </div>
