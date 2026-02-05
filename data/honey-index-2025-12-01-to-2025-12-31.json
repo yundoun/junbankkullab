@@ -1,0 +1,67 @@
+{
+  "collectedAt": "2026-02-05T01:12:35.004Z",
+  "period": {
+    "start": "2025-12-01",
+    "end": "2025-12-31"
+  },
+  "methodology": {
+    "assets": [
+      "KOSPI",
+      "SP500",
+      "NASDAQ",
+      "Samsung",
+      "SKHynix",
+      "Nvidia"
+    ],
+    "timeframe": "24시간",
+    "source": "전인구경제연구소 유튜브",
+    "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
+  },
+  "stats": {
+    "totalVideos": 49,
+    "validPredictions": 2,
+    "predictionsWithData": 2,
+    "honeyCount": 1,
+    "honeyIndex": 50
+  },
+  "assetStats": [
+    {
+      "asset": "KOSPI",
+      "honeyIndex": 50,
+      "total": 2,
+      "honey": 1
+    }
+  ],
+  "predictions": [
+    {
+      "videoId": "aLY3A8D1EcQ",
+      "videoUrl": "https://youtube.com/watch?v=aLY3A8D1EcQ",
+      "title": "은과 환율이 급락하고, 코스피만 오르는 이유",
+      "thumbnail": "https://i.ytimg.com/vi/aLY3A8D1EcQ/hqdefault.jpg",
+      "publishedAt": "2025-12-29T10:13:47Z",
+      "asset": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 4213.8398,
+      "priceAfter24h": 4212.2402,
+      "priceChange": -0.04,
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "videoId": "qyXMu0tBmwM",
+      "videoUrl": "https://youtube.com/watch?v=qyXMu0tBmwM",
+      "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
+      "thumbnail": "https://i.ytimg.com/vi/qyXMu0tBmwM/hqdefault.jpg",
+      "publishedAt": "2025-12-16T10:12:58Z",
+      "asset": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 4004.3701,
+      "priceAfter24h": 4024.8401,
+      "priceChange": 0.51,
+      "actualDirection": "up",
+      "isHoney": true
+    }
+  ]
+}

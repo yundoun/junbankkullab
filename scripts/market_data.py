@@ -24,6 +24,7 @@ SYMBOL_MAP = {
     'NASDAQ': '^IXIC',
     'SP500': '^GSPC',
     'Samsung': '005930.KS',
+    'SKHynix': '000660.KS',
     'Tesla': 'TSLA',
     'Nvidia': 'NVDA',
     'Apple': 'AAPL',
