@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          pip install yfinance
+          pip install yfinance pandas_market_calendars
 
       - name: Create .env.local
         run: |
@@ -43,21 +43,25 @@ jobs:
           echo "year=$(date +'%Y')" >> $GITHUB_OUTPUT
           echo "month=$(date +'%-m')" >> $GITHUB_OUTPUT
 
-      - name: Collect current month data
+      # Step 1: YouTube에서 영상 수집
+      - name: Collect videos from YouTube
         run: |
           npx tsx skills/jbk-collect/scripts/collect.ts --year ${{ steps.date.outputs.year }} --month ${{ steps.date.outputs.month }}
 
-      - name: Run hybrid analysis
+      # Step 2: 톤 분석 + 시장 데이터 조회
+      - name: Analyze data
         run: |
-          # Create venv for yfinance
-          python -m venv venv
-          source venv/bin/activate
-          pip install yfinance
-          npx tsx scripts/hybrid-analysis.ts
+          npx tsx scripts/analyze.ts
 
+      # Step 3: 통계 생성
+      - name: Generate stats
+        run: |
+          npx tsx scripts/generate-stats.ts
+
+      # Step 4: 검토 대기 항목 추출
       - name: Extract neutral mentions
         run: |
-          npx tsx scripts/extract-neutral.ts
+          npx tsx scripts/extract-neutral.ts || true
 
       - name: Check for changes
         id: changes
@@ -70,5 +74,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git commit -m "chore: auto-collect data $(date +'%Y-%m-%d %H:%M')"
+          git commit -m "chore: auto-collect $(date +'%Y-%m-%d %H:%M KST')"
           git push
