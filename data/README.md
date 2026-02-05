@@ -12,6 +12,10 @@ data/
 ├── stats/            # 통계 결과 (하이브리드 분석)
 ├── review/           # 검토 대기 데이터
 └── {YYYY}/{MM}/      # 월별 수집 데이터
+    ├── videos.json       # 전체 영상 목록
+    ├── analyzed.json     # 분석 완료 (톤+시장결과)
+    ├── unanalyzed.json   # 톤 미확정 (종목 언급은 있으나 톤 판단 불가)
+    └── excluded.json     # 제외 항목 (알트코인 등)
 ```
 
 ---
@@ -154,11 +158,11 @@ data/
 }]
 ```
 
-### `predictions.json`
-> 🔮 **예측 분석 결과** - 월간 분석 데이터
+### `analyzed.json`
+> ✅ **분석 완료** - 톤 + 시장 결과 확정
 
-- **내용**: 해당 월의 종목별 예측 및 검증 결과
-- **생성**: `scripts/collect.ts` 또는 `scripts/analyze-2026.ts`
+- **내용**: 해당 월의 종목별 예측 및 검증 결과 (톤과 시장 데이터 모두 있음)
+- **생성**: `scripts/collect.ts` 또는 `scripts/hybrid-analysis.ts`
 - **사용처**: `scripts/hybrid-analysis.ts`에서 통합 분석
 
 ```typescript
@@ -190,6 +194,40 @@ data/
 }
 ```
 
+### `unanalyzed.json`
+> 🔍 **톤 미확정** - 종목 언급은 있으나 톤 판단 불가
+
+- **내용**: 종목은 감지되었으나 톤(긍정/부정)을 판단할 수 없는 항목
+- **생성**: 분석 과정에서 neutral로 판정된 항목
+- **사용처**: 추후 수동 레이블링 대상
+
+```typescript
+[{
+  videoId: string,
+  title: string,
+  publishedAt: string,
+  asset: string,
+  detectedKeywords: string[],
+}]
+```
+
+### `excluded.json`
+> ❌ **제외 항목** - 분석 대상 제외
+
+- **내용**: 알트코인, 부동산 등 분석 대상이 아닌 종목 언급
+- **생성**: 분석 과정에서 필터링
+- **사용처**: 참고용 (분석에서 제외됨)
+
+```typescript
+[{
+  videoId: string,
+  title: string,
+  publishedAt: string,
+  asset: string,
+  reason: "altcoin" | "real_estate" | "other",
+}]
+```
+
 ---
 
 ## 🔄 데이터 흐름
@@ -200,7 +238,9 @@ YouTube API
 scripts/collect.ts (또는 GitHub Actions)
     ↓
 data/{YYYY}/{MM}/videos.json
-data/{YYYY}/{MM}/predictions.json
+data/{YYYY}/{MM}/analyzed.json
+data/{YYYY}/{MM}/unanalyzed.json
+data/{YYYY}/{MM}/excluded.json
     ↓
 scripts/hybrid-analysis.ts
     ↓

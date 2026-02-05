@@ -4,20 +4,25 @@
 
 ---
 
-## 📁 파일 목록
+## 📁 현재 파일 목록
 
 | 파일 | 용도 | 실행 방법 |
 |------|------|----------|
 | `collect.ts` | 30일 영상 수집 + 분석 | `npx tsx scripts/collect.ts` |
-| `collect-2026.ts` | 2026년 전체 수집 | `npx tsx scripts/collect-2026.ts` |
-| `analyze-2026.ts` | 2026년 분석 | `npx tsx scripts/analyze-2026.ts` |
 | `hybrid-analysis.ts` | 하이브리드 분석 | `npx tsx scripts/hybrid-analysis.ts` |
-| `final-analysis.ts` | 6종목 정밀 분석 | `npx tsx scripts/final-analysis.ts` |
 | `extract-neutral.ts` | 검토 대기 추출 | `npx tsx scripts/extract-neutral.ts` |
 | `count-valid.ts` | 유효 예측 카운트 | `npx tsx scripts/count-valid.ts` |
-| `restructure-data.ts` | 데이터 구조 변환 | `npx tsx scripts/restructure-data.ts` |
 | `market_data.py` | 시장 데이터 조회 | Python 내부 호출용 |
 | `get_direction.py` | 가격 방향 계산 | Python 내부 호출용 |
+
+### 📂 `legacy/` (레거시)
+
+더 이상 사용하지 않는 스크립트들:
+- `collect-2026.ts` - 2026년 전체 수집 (collect.ts로 통합)
+- `analyze-2026.ts` - 2026년 분석 (hybrid-analysis.ts로 대체)
+- `final-analysis.ts` - 6종목 정밀 분석 (hybrid-analysis.ts로 대체)
+- `restructure-data.ts` - 구버전 데이터 구조 변환 (완료)
+- `migrate-data-structure.ts` - predictions.json → analyzed.json 마이그레이션 (완료)
 
 ---
 
@@ -31,7 +36,11 @@
 2. 영상 제목에서 종목 언급 + 감성 분석
 3. yfinance/Binance API로 24시간 후 시장 데이터 조회
 4. 예측 적중 여부 계산 (꿀지수)
-5. `data/{YYYY}/{MM}/videos.json` 및 `predictions.json` 저장
+5. `data/{YYYY}/{MM}/` 폴더에 저장:
+   - `videos.json` - 전체 영상
+   - `analyzed.json` - 분석 완료 (톤+시장결과)
+   - `unanalyzed.json` - 톤 미확정
+   - `excluded.json` - 제외 항목
 
 **사용처**: 
 - GitHub Actions 자동 수집 (`.github/workflows/collect.yml`)
@@ -39,30 +48,6 @@
 
 **환경변수**:
 - `YOUTUBE_API_KEY`: YouTube Data API 키 (.env.local)
-
----
-
-### `collect-2026.ts`
-> 📅 **연도별 전체 수집** - 2026년 데이터 일괄 수집
-
-**역할**:
-- 2026년 1월~현재까지 모든 영상 수집
-- playlistItems API 사용 (전체 영상 접근)
-- 월별로 `data/2026/{MM}/` 에 저장
-
-**사용처**: 초기 데이터 구축 또는 재수집 시
-
----
-
-### `analyze-2026.ts`
-> 🔬 **2026년 분석** - 수집된 데이터 분석
-
-**역할**:
-- 기존 `data/2026/{MM}/videos.json` 읽어서 분석
-- 시장 데이터 조회 + 꿀지수 계산
-- `predictions.json` 업데이트
-
-**사용처**: 영상은 있는데 분석 안 된 경우
 
 ---
 
@@ -91,18 +76,6 @@
 
 ---
 
-### `final-analysis.ts`
-> 🎯 **정밀 분석** - 6종목 타겟 분석
-
-**역할**:
-- 6개 핵심 종목만 분석 (KOSPI, S&P500, NASDAQ, 삼성전자, SK하이닉스, 엔비디아)
-- 가중치 기반 감성 분석 (bullish/bearish 패턴)
-- 부정어 감지 (톤 반전)
-
-**사용처**: 정밀한 분석이 필요할 때 수동 실행
-
----
-
 ### `extract-neutral.ts`
 > 🔍 **검토 항목 추출** - 자동 분류 실패 케이스
 
@@ -125,17 +98,6 @@
 - 종목별/월별 분포 확인
 
 **사용처**: 데이터 현황 파악용
-
----
-
-### `restructure-data.ts`
-> 🔧 **데이터 마이그레이션** - 구조 변환
-
-**역할**:
-- 구버전 데이터 형식을 신버전으로 변환
-- 디렉토리 구조 재정리
-
-**사용처**: 데이터 구조 변경 시 1회성 실행
 
 ---
 
