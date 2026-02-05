@@ -1,15 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Beaker, TrendingUp, Target, Flame, BarChart3, Clock, Sparkles } from 'lucide-react'
+import { Beaker, TrendingUp, BarChart3, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { 
   HeroChart,
   PredictionCard,
   VoteCard,
+  AnalysisFunnel,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Pagination } from '@/components/ui/pagination'
 
@@ -50,6 +50,14 @@ interface VotableItem {
   expiresAt: string
 }
 
+interface FunnelData {
+  totalVideos: number
+  withMentions: number
+  withTone: number
+  withMarketData: number
+  honeyHits: number
+}
+
 interface Stats {
   overallHoneyIndex: number
   totalPredictions: number
@@ -65,6 +73,9 @@ interface Stats {
   pendingReviews: Prediction[]
   recentPredictions: Prediction[]
   updatedAt: string | null
+  funnel?: FunnelData
+  unanalyzedCount?: number
+  excludedCount?: number
 }
 
 // 종목 이름 매핑
@@ -81,35 +92,6 @@ const ASSET_NAMES: Record<string, string> = {
 }
 
 const ITEMS_PER_PAGE = 10
-
-// Animated counter hook
-function useAnimatedNumber(target: number, duration: number = 1000) {
-  const [current, setCurrent] = useState(0)
-  
-  useEffect(() => {
-    const startTime = Date.now()
-    const startValue = current
-    
-    const animate = () => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      
-      // Easing function (ease-out)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      const value = startValue + (target - startValue) * eased
-      
-      setCurrent(value)
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
-    }
-    
-    requestAnimationFrame(animate)
-  }, [target, duration])
-  
-  return current
-}
 
 // 예측 탭 컴포넌트
 function PredictionTabs({ stats }: { stats: Stats | null }) {
@@ -256,44 +238,6 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
   )
 }
 
-// Stat Card Component with animation
-function StatCard({ 
-  label, 
-  value, 
-  icon: Icon, 
-  iconColor = "text-muted-foreground",
-  valueColor = "text-foreground",
-  delay = 0 
-}: { 
-  label: string
-  value: number
-  icon: any
-  iconColor?: string
-  valueColor?: string
-  delay?: number
-}) {
-  const animatedValue = useAnimatedNumber(value, 1500)
-  
-  return (
-    <div 
-      className={cn(
-        "p-4 rounded-xl border border-border bg-card/50 backdrop-blur-sm",
-        "card-hover animate-fade-up fill-backwards",
-        "hover:glow-honey"
-      )}
-      style={{ animationDelay: `${delay}ms` }}
-    >
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-xs sm:text-sm text-muted-foreground">{label}</span>
-        <Icon className={cn("w-4 h-4 transition-all duration-300", iconColor)} />
-      </div>
-      <p className={cn("text-xl sm:text-2xl font-bold tabular-nums", valueColor)}>
-        {Math.round(animatedValue)}
-      </p>
-    </div>
-  )
-}
-
 export default function Home() {
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(true)
@@ -415,38 +359,16 @@ export default function Home() {
           </section>
         )}
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-          <StatCard 
-            label="총 예측"
-            value={stats?.totalPredictions ?? 0}
-            icon={Target}
-            delay={300}
-          />
-          <StatCard 
-            label="역지표 적중"
-            value={stats?.honeyCount ?? 0}
-            icon={TrendingUp}
-            iconColor="text-bullish"
-            valueColor="text-bullish"
-            delay={350}
-          />
-          <StatCard 
-            label="분석 영상"
-            value={stats?.totalVideos ?? 0}
-            icon={Flame}
-            iconColor="text-primary"
-            delay={400}
-          />
-          <StatCard 
-            label="검토 대기"
-            value={stats?.pendingReviewCount ?? 0}
-            icon={Clock}
-            iconColor="text-pending"
-            valueColor="text-pending"
-            delay={450}
-          />
-        </div>
+        {/* 📊 분석 퍼널 */}
+        {stats?.funnel && (
+          <div className="mb-6 sm:mb-8 animate-fade-up fill-backwards delay-300">
+            <AnalysisFunnel
+              funnel={stats.funnel}
+              unanalyzedCount={stats.unanalyzedCount ?? 0}
+              excludedCount={stats.excludedCount ?? 0}
+            />
+          </div>
+        )}
         
         {/* 종목별 통계 */}
         {stats?.assetStats && stats.assetStats.length > 0 && (

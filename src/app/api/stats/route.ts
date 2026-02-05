@@ -310,6 +310,13 @@ export async function GET() {
     // 하위 호환성을 위한 recentPredictions
     const recentPredictions = sortedMentions.slice(0, 20).map(mapMention)
 
+    // 수동 레이블에서 skip 개수 계산 (제외 항목)
+    const manualLabels = await getManualLabels()
+    const excludedCount = Object.values(manualLabels).filter(v => v === 'skip').length
+
+    // 톤 미확정 수 = 전체 멘션 - 분석 가능 멘션
+    const unanalyzedCount = parsed.stats.totalMentions - parsed.stats.analyzableMentions
+
     return NextResponse.json({
       // 핵심 지표
       overallHoneyIndex: parsed.stats.honeyIndex,
@@ -320,6 +327,19 @@ export async function GET() {
       totalVideos: parsed.stats.totalVideos,
       totalMentions: parsed.stats.totalMentions,
       pendingReviewCount: pendingReviews.length,
+
+      // 🆕 분석 퍼널
+      funnel: {
+        totalVideos: parsed.stats.totalVideos,           // 전체 영상 수
+        withMentions: parsed.stats.totalMentions,        // 종목 언급 수
+        withTone: parsed.stats.analyzableMentions,       // 톤 분석 완료 수
+        withMarketData: parsed.stats.validMentions,      // 시장 데이터 확인 수
+        honeyHits: parsed.stats.honeyCount,              // 역지표 적중 수
+      },
+
+      // 🆕 제외/미분석
+      unanalyzedCount,    // 톤 미확정 수
+      excludedCount,      // 제외 항목 수 (알트코인 등)
       
       // 종목별 통계
       assetStats: parsed.assetStats,
