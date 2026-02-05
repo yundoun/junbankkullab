@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-02-05T06:02:31.115Z",
+  "updatedAt": "2026-02-05T07:02:28.616Z",
   "methodology": "v2",
   "description": "종목 언급 + 톤 분석 + 미국 장 종가 기준",
   "stats": {
-    "totalVideos": 588,
+    "totalVideos": 589,
     "analyzed": 47,
     "unanalyzed": 63,
     "excluded": 5,
