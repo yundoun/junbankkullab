@@ -245,7 +245,6 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
 export default function Home() {
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(true)
-  const [userVotes, setUserVotes] = useState<Record<string, 'up' | 'down' | null>>({})
 
   useEffect(() => {
     fetch('/api/stats')
@@ -256,14 +255,6 @@ export default function Home() {
       })
       .catch(() => setLoading(false))
   }, [])
-
-  const handleVote = (itemKey: string, direction: 'up' | 'down') => {
-    setUserVotes(prev => ({
-      ...prev,
-      [itemKey]: prev[itemKey] === direction ? null : direction
-    }))
-    // TODO: Supabase 연동 시 여기서 투표 저장
-  }
 
   if (loading) {
     return (
@@ -338,10 +329,7 @@ export default function Home() {
                     publishedAt={item.publishedAt}
                     asset={ASSET_NAMES[item.asset] || item.asset}
                     predictedDirection={item.predictedDirection}
-                    userVote={userVotes[itemKey] ?? null}
-                    upVotes={Math.floor(Math.random() * 50) + 10}
-                    downVotes={Math.floor(Math.random() * 50) + 10}
-                    onVote={(dir) => handleVote(itemKey, dir)}
+                    expiresAt={item.expiresAt}
                   />
                 )
               })}
@@ -350,7 +338,9 @@ export default function Home() {
         ) : (
           <section className="mb-6 sm:mb-8">
             <div className="rounded-2xl border border-dashed border-border bg-card/50 p-8 text-center">
-              <span className="text-4xl mb-3 block">🗳️</span>
+              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-muted-foreground" />
+              </div>
               <h3 className="font-semibold text-lg mb-2">현재 진행 중인 투표가 없습니다</h3>
               <p className="text-sm text-muted-foreground">
                 새 영상이 업로드되고 종목 예측이 감지되면 투표가 시작됩니다.
