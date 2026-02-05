@@ -9,6 +9,24 @@
     "negativeScore": 0
   },
   {
+    "videoId": "aLY3A8D1EcQ",
+    "title": "은과 환율이 급락하고, 코스피만 오르는 이유",
+    "publishedAt": "2025-12-29T10:13:47Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 1
+  },
+  {
+    "videoId": "Q58k3PYpqEE",
+    "title": "미국주식 팔고 한국주식 사면 100% 양도세 감면(ft.환율급락)",
+    "publishedAt": "2025-12-24T06:00:05Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 1
+  },
+  {
     "videoId": "fIyQXZ4W4o8",
     "title": "코스피 1만까지 오를 수 있습니다(ft.소현철 교수 1부)",
     "publishedAt": "2025-12-21T00:38:52Z",
@@ -34,6 +52,15 @@
     "reason": "no_tone",
     "positiveScore": 0,
     "negativeScore": 0
+  },
+  {
+    "videoId": "qyXMu0tBmwM",
+    "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
+    "publishedAt": "2025-12-16T10:12:58Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 1
   },
   {
     "videoId": "s_fzguS0IFQ",

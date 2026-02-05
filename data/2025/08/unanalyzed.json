@@ -1,5 +1,14 @@
 [
   {
+    "videoId": "IJ1KD9svbVU",
+    "title": "조선주를 사야하는 이유(ft.박민수 작가 3부)",
+    "publishedAt": "2025-08-28T05:59:34Z",
+    "asset": "Shipbuilding",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
+  },
+  {
     "videoId": "zfoKREVGfbQ",
     "title": "두근두근 엔비디아 실적예상",
     "publishedAt": "2025-08-27T10:03:15Z",
@@ -34,5 +43,32 @@
     "reason": "no_tone",
     "positiveScore": 0,
     "negativeScore": 0
+  },
+  {
+    "videoId": "5f97Ap2_108",
+    "title": "비트코인 지금이라도 사야합니다(ft.강승구 부대표 1부)",
+    "publishedAt": "2025-08-07T02:58:38Z",
+    "asset": "Bitcoin",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
+  },
+  {
+    "videoId": "OK9b1Y-rDkk",
+    "title": "미국증시마저 하락한 이유(ft.무너지는 일자리)",
+    "publishedAt": "2025-08-02T05:49:26Z",
+    "asset": "NASDAQ",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 2
+  },
+  {
+    "videoId": "oiwcJmhJrVY",
+    "title": "코스피가 3% 넘게 하락한 이유",
+    "publishedAt": "2025-08-01T05:37:58Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 1
   }
 ]

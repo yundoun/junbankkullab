@@ -1,144 +1,47 @@
 [
   {
-    "videoId": "jQNki0YFenY",
-    "title": "이 주식으로 4,000만 원에서 55억을 만들었습니다(임인홍 저자 2부)",
-    "publishedAt": "2025-06-21T10:43:16Z",
-    "reason": "unknown_asset: neutral",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:38:13.981Z",
-      "detectedAssets": [
-        {
-          "asset": "neutral",
-          "ticker": "UNKNOWN",
-          "matchedText": "이 주식",
-          "confidence": 0.8,
-          "reasoning": "제목에서 특정 종목이 언급되지 않아 일반적인 주식으로 해석됨"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "4,000만 원",
-          "55억"
-        ],
-        "reasoning": "주식으로 큰 수익을 얻었다는 내용이 긍정적인 전망을 나타냄"
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"neutral\",\n      \"matchedText\": \"이 주식\",\n      \"confidence\": 0.8,\n      \"reasoning\": \"제목에서 특정 종목이 언급되지 않아 일반적인 주식으로 해석됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"4,000만 원\", \"55억\"],\n    \"reasoning\": \"주식으로 큰 수익을 얻었다는 내용이 긍정적인 전망을 나타냄\"\n  }\n}"
-    }
+    "videoId": "YvDAoZ8tlzo",
+    "title": "코스피 연말 4000까지 가지 않을까?(ft.급등이유)",
+    "publishedAt": "2025-06-16T08:00:38Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
   },
   {
-    "videoId": "EjvxIuwPyXk",
-    "title": "미국과 중국이 스테이블 코인 전쟁을 하는 이유 (ft.조경엽 박사 2부)",
-    "publishedAt": "2025-06-15T02:45:20Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:45:10.117Z",
-      "detectedAssets": [
-        {
-          "asset": "Ethereum",
-          "ticker": "ETH-USD",
-          "matchedText": "스테이블 코인",
-          "confidence": 0.85,
-          "reasoning": "스테이블 코인은 암호화폐의 일종으로, 일반적으로 특정 자산에 가치가 연동되어 안정성을 추구하는 특징이 있습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "전쟁",
-          "이유"
-        ],
-        "reasoning": "전쟁이라는 단어는 부정적인 뉘앙스를 가질 수 있지만, '이유'라는 단어는 중립적인 설명을 나타내므로 전체적으로 판단하기 어려운 상황입니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"스테이블 코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"스테이블 코인은 암호화폐의 일종으로, 일반적으로 특정 자산에 가치가 연동되어 안정성을 추구하는 특징이 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"전쟁\", \"이유\"],\n    \"reasoning\": \"전쟁이라는 단어는 부정적인 뉘앙스를 가질 수 있지만, '이유'라는 단어는 중립적인 설명을 나타내므로 전체적으로 판단하기 어려운 상황입니다.\"\n  }\n}"
-    }
+    "videoId": "UFEczU1Mpqg",
+    "title": "지금은 미국 주식 팔고 한국 주식 사야 합니다(ft.이경민 2부)",
+    "publishedAt": "2025-06-09T23:19:11Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
   },
   {
-    "videoId": "ztOXnU2IaNg",
-    "title": "이재명 정부 부동산 정책 분석 여기 사야 돈 법니다(ft.채상욱 대표 1부)",
-    "publishedAt": "2025-06-10T10:05:16Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:45:38.984Z",
-      "detectedAssets": [
-        {
-          "asset": "Construction",
-          "ticker": "000720.KS",
-          "matchedText": "부동산",
-          "confidence": 0.95,
-          "reasoning": "부동산은 건설 섹터와 밀접한 관련이 있습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "분석"
-        ],
-        "reasoning": "부동산 정책 분석이라는 내용은 긍정적 또는 부정적 전망을 제시하지 않으므로 중립적입니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Construction\",\n      \"matchedText\": \"부동산\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"부동산은 건설 섹터와 밀접한 관련이 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"분석\"],\n    \"reasoning\": \"부동산 정책 분석이라는 내용은 긍정적 또는 부정적 전망을 제시하지 않으므로 중립적입니다.\"\n  }\n}"
-    }
+    "videoId": "2l1WZv4oN1A",
+    "title": "테슬라 14% 급락, 트럼프와 머스크가 싸운 이유",
+    "publishedAt": "2025-06-06T01:27:02Z",
+    "asset": "Tesla",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 1
   },
   {
-    "videoId": "l4ZIrpDj7kg",
-    "title": "스테이블코인 열풍에 대한 생각(ft.서클, USDC)",
-    "publishedAt": "2025-06-07T09:34:05Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:45:59.966Z",
-      "detectedAssets": [
-        {
-          "asset": "Ethereum",
-          "ticker": "ETH-USD",
-          "matchedText": "스테이블코인",
-          "confidence": 0.85,
-          "reasoning": "스테이블코인은 암호화폐의 한 종류로, USDC는 스테이블코인 중 하나로 언급됨."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "생각"
-        ],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없음."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"스테이블코인은 암호화폐의 한 종류로, USDC는 스테이블코인 중 하나로 언급됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"생각\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없음.\"\n  }\n}"
-    }
+    "videoId": "2VFSyDzNbXs",
+    "title": "코스피 빨리 사세요! 코스피 3000 넘길 이재명 정부 정책들(ft.이경민 부장 1부)",
+    "publishedAt": "2025-06-04T09:22:04Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
   },
   {
     "videoId": "pRhPswdBbzk",
     "title": "엔비디아 투자자도 모르는 히든 정보",
     "publishedAt": "2025-06-02T07:00:47Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:46:21.395Z",
-      "detectedAssets": [
-        {
-          "asset": "Nvidia",
-          "ticker": "NVDA",
-          "matchedText": "엔비디아",
-          "confidence": 0.95,
-          "reasoning": "제목에 '엔비디아'라는 특정 종목이 언급되어 있어 이를 기반으로 추출하였습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "히든 정보"
-        ],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔비디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '엔비디아'라는 특정 종목이 언급되어 있어 이를 기반으로 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"히든 정보\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
-    }
+    "asset": "Nvidia",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   }
 ]

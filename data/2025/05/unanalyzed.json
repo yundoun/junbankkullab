@@ -3,230 +3,36 @@
     "videoId": "qWLfz45ELYM",
     "title": "방산주, 조선주 투자자는 꼭 가봐야 하는 MADEX 2025에서 발견한 것",
     "publishedAt": "2025-05-30T08:49:48Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:34:53.358Z",
-      "detectedAssets": [
-        {
-          "asset": "Defense",
-          "ticker": "012450.KS",
-          "matchedText": "방산주",
-          "confidence": 0.95,
-          "reasoning": "방산주라는 용어는 방위 산업과 관련된 주식을 의미하며, 이는 Defense 섹터에 해당합니다."
-        },
-        {
-          "asset": "Shipbuilding",
-          "ticker": "009540.KS",
-          "matchedText": "조선주",
-          "confidence": 0.95,
-          "reasoning": "조선주라는 용어는 조선 산업과 관련된 주식을 의미하며, 이는 Shipbuilding 섹터에 해당합니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Defense\",\n      \"matchedText\": \"방산주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"방산주라는 용어는 방위 산업과 관련된 주식을 의미하며, 이는 Defense 섹터에 해당합니다.\"\n    },\n    {\n      \"asset\": \"Shipbuilding\",\n      \"matchedText\": \"조선주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"조선주라는 용어는 조선 산업과 관련된 주식을 의미하며, 이는 Shipbuilding 섹터에 해당합니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
-    }
+    "asset": "Shipbuilding",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
-    "videoId": "PwtokNXa99M",
-    "title": "양자컴퓨터 진짜 상승이 시작된 이유(ft.가을바람월드)",
-    "publishedAt": "2025-05-29T22:00:26Z",
-    "reason": "unknown_asset: QuantumComputing",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:35:00.180Z",
-      "detectedAssets": [
-        {
-          "asset": "QuantumComputing",
-          "ticker": "UNKNOWN",
-          "matchedText": "양자컴퓨터",
-          "confidence": 0.95,
-          "reasoning": "양자컴퓨터는 새로운 기술 분야로, 상승이 시작된 이유에 대한 언급이 있어 이를 'QuantumComputing'으로 식별함."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "상승",
-          "시작된"
-        ],
-        "reasoning": "제목에서 '상승이 시작된'이라는 긍정적인 표현이 있어 긍정적인 전망으로 판단함."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"QuantumComputing\",\n      \"matchedText\": \"양자컴퓨터\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"양자컴퓨터는 새로운 기술 분야로, 상승이 시작된 이유에 대한 언급이 있어 이를 'QuantumComputing'으로 식별함.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"상승\", \"시작된\"],\n    \"reasoning\": \"제목에서 '상승이 시작된'이라는 긍정적인 표현이 있어 긍정적인 전망으로 판단함.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "e0BkWZ1aBro",
-    "title": "나는 버크셔 주식을 단 한 주도 팔지 않을 겁니다.(ft.워런버핏)",
-    "publishedAt": "2025-05-15T07:00:42Z",
-    "reason": "unknown_asset: US Stock",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:36:23.087Z",
-      "detectedAssets": [
-        {
-          "asset": "US Stock",
-          "ticker": "UNKNOWN",
-          "matchedText": "버크셔",
-          "confidence": 0.95,
-          "reasoning": "버크셔는 버크셔 해서웨이(Berkshire Hathaway)의 줄임말로, 주식으로 분류됨."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "팔지 않을",
-          "주식"
-        ],
-        "reasoning": "주식을 팔지 않겠다는 의지는 긍정적인 전망을 나타냄."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"US Stock\",\n      \"matchedText\": \"버크셔\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"버크셔는 버크셔 해서웨이(Berkshire Hathaway)의 줄임말로, 주식으로 분류됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"팔지 않을\", \"주식\"],\n    \"reasoning\": \"주식을 팔지 않겠다는 의지는 긍정적인 전망을 나타냄.\"\n  }\n}"
-    }
+    "videoId": "6IEp9lWuJj8",
+    "title": "시총 1위가 될 주식 이렇게 찾아냅니다(ft.엔비디아 젠슨황)",
+    "publishedAt": "2025-05-16T09:00:08Z",
+    "asset": "Nvidia",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
     "videoId": "ZeQ6eeLWhZs",
     "title": "엔비디아를 위협하는 기업이 있습니다(ft.임준서 교수 2부)",
     "publishedAt": "2025-05-15T02:36:24Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:36:26.567Z",
-      "detectedAssets": [
-        {
-          "asset": "Nvidia",
-          "ticker": "NVDA",
-          "matchedText": "엔비디아",
-          "confidence": 0.95,
-          "reasoning": "제목에서 '엔비디아'라는 기업명이 직접 언급되었습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "위협"
-        ],
-        "reasoning": "위협이라는 단어는 부정적인 의미를 내포하고 있지만, 구체적인 긍정적 또는 부정적 전망이 제시되지 않아 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔비디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '엔비디아'라는 기업명이 직접 언급되었습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"위협\"],\n    \"reasoning\": \"위협이라는 단어는 부정적인 의미를 내포하고 있지만, 구체적인 긍정적 또는 부정적 전망이 제시되지 않아 판단이 불가합니다.\"\n  }\n}"
-    }
+    "asset": "Nvidia",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
-    "videoId": "T_JaUGrlOgc",
-    "title": "지금 당장 미국 ETF 이거 사세요. 부자 될 수 있습니다(ft.김지훈 작가 1부)",
-    "publishedAt": "2025-05-13T22:41:03Z",
-    "reason": "unknown_asset: ETF",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:36:35.022Z",
-      "detectedAssets": [
-        {
-          "asset": "ETF",
-          "ticker": "UNKNOWN",
-          "matchedText": "미국 ETF",
-          "confidence": 0.9,
-          "reasoning": "제목에서 '미국 ETF'가 언급되어 있어 이를 ETF로 식별함."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "부자",
-          "사세요"
-        ],
-        "reasoning": "부자가 될 수 있다는 긍정적인 표현이 포함되어 있어 긍정적인 톤으로 판단됨."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"미국 ETF\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"제목에서 '미국 ETF'가 언급되어 있어 이를 ETF로 식별함.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"부자\", \"사세요\"],\n    \"reasoning\": \"부자가 될 수 있다는 긍정적인 표현이 포함되어 있어 긍정적인 톤으로 판단됨.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "la6DcSk7TJA",
-    "title": "포스코퓨처엠 1.1조 유상증자, 벌써 3번째",
-    "publishedAt": "2025-05-13T08:02:16Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:36:38.188Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11",
-          "matchedText": "포스코퓨처엠",
-          "confidence": 0.95,
-          "reasoning": "포스코퓨처엠은 한국의 기업으로, KOSPI에 상장된 종목입니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "유상증자"
-        ],
-        "reasoning": "유상증자는 기업의 자본 조달 방법으로, 긍정적 또는 부정적일 수 있어 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"포스코퓨처엠\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"포스코퓨처엠은 한국의 기업으로, KOSPI에 상장된 종목입니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"유상증자\"],\n    \"reasoning\": \"유상증자는 기업의 자본 조달 방법으로, 긍정적 또는 부정적일 수 있어 판단이 불가합니다.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "okPdYzTvOk8",
-    "title": "SKT 유심해킹사건 모두 잘못 알고 계십니다(ft.최경진교수)",
-    "publishedAt": "2025-05-06T09:01:22Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:37:27.383Z",
-      "detectedAssets": [
-        {
-          "asset": "Telecom",
-          "ticker": "017670.KS",
-          "matchedText": "SKT",
-          "confidence": 0.95,
-          "reasoning": "SKT는 통신업체로, Telecom 섹터에 해당합니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "잘못 알고 계십니다"
-        ],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없기 때문에 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Telecom\",\n      \"matchedText\": \"SKT\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"SKT는 통신업체로, Telecom 섹터에 해당합니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"잘못 알고 계십니다\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없기 때문에 판단이 불가합니다.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "B2Nh3ofLYiA",
-    "title": "반도체는 지정학 전쟁입니다(ft.임준서 교수 1부)",
-    "publishedAt": "2025-05-01T10:36:04Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:37:51.194Z",
-      "detectedAssets": [
-        {
-          "asset": "Semiconductor",
-          "ticker": "005930.KS",
-          "matchedText": "반도체",
-          "confidence": 0.95,
-          "reasoning": "제목에서 '반도체'라는 단어가 명시적으로 언급되어 있어 해당 섹터로 분류됨."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가함."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"반도체\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '반도체'라는 단어가 명시적으로 언급되어 있어 해당 섹터로 분류됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가함.\"\n  }\n}"
-    }
+    "videoId": "CqtsheWiKbc",
+    "title": "삼성전자가 급등한 3가지 이유(ft.미중무역합의)",
+    "publishedAt": "2025-05-12T07:43:59Z",
+    "asset": "Samsung",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
   }
 ]

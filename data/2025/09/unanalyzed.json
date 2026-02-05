@@ -18,12 +18,30 @@
     "negativeScore": 0
   },
   {
+    "videoId": "c168cbbRa8E",
+    "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
+    "publishedAt": "2025-09-26T05:21:13Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 1
+  },
+  {
     "videoId": "yt6JeYqGC7A",
     "title": "해킹당한 비트코인도 찾아주는 Inca Digital",
     "publishedAt": "2025-09-24T10:07:13Z",
     "asset": "Bitcoin",
     "reason": "no_tone",
     "positiveScore": 0,
+    "negativeScore": 0
+  },
+  {
+    "videoId": "MRnZ74Fe_Ao",
+    "title": "코스피는 사상최고치인데 환율은 불안한 이유",
+    "publishedAt": "2025-09-13T13:34:47Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 1,
     "negativeScore": 0
   },
   {

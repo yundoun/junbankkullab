@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-02-05T07:50:57.348Z",
+  "updatedAt": "2026-02-05T08:54:01.516Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
     "totalVideos": 589,
-    "totalMentions": 180,
-    "analyzableMentions": 191,
+    "totalMentions": 136,
+    "analyzableMentions": 199,
     "validMentions": 83,
     "honeyCount": 28,
     "honeyIndex": 33.7
   },
   "funnel": {
     "totalVideos": 589,
-    "withMentions": 180,
+    "withMentions": 136,
     "withTone": 83,
     "withMarketData": 83,
     "honeyHits": 28
   },
-  "unanalyzedCount": 108,
-  "excludedCount": 10,
+  "unanalyzedCount": 116,
+  "excludedCount": 12,
   "assetStats": [
     {
       "asset": "Steel",

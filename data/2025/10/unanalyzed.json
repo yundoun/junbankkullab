@@ -1,5 +1,14 @@
 [
   {
+    "videoId": "MA2pCxgR3nM",
+    "title": "코스피4000 장중붕괴 된 이유(ft.조정? 악재?)",
+    "publishedAt": "2025-10-28T07:54:31Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 2
+  },
+  {
     "videoId": "tUo1dWHURsU",
     "title": "코스피 4000 넘었습니다 이제 이 주식이 오릅니다(ft. 차영주 소장 1부)",
     "publishedAt": "2025-10-28T03:05:41Z",
@@ -33,6 +42,15 @@
     "asset": "KOSPI",
     "reason": "no_tone",
     "positiveScore": 0,
+    "negativeScore": 0
+  },
+  {
+    "videoId": "qDxns-qy57I",
+    "title": "삼성전자 호재, 외국인들은 연휴전에 미리 알았다",
+    "publishedAt": "2025-10-10T06:58:55Z",
+    "asset": "Samsung",
+    "reason": "no_market_data",
+    "positiveScore": 1,
     "negativeScore": 0
   },
   {

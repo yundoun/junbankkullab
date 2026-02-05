@@ -1,394 +1,92 @@
 [
   {
-    "videoId": "BltHZUfK5Fw",
-    "title": "화장품 주식 관세 피해? 걱정 말고 이 주식을 사세요(ft.박종대 애널리스트 2부)",
-    "publishedAt": "2025-07-29T02:35:25Z",
-    "reason": "unknown_asset: Cosmetics",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:46:50.916Z",
-      "detectedAssets": [
-        {
-          "asset": "Cosmetics",
-          "ticker": "UNKNOWN",
-          "matchedText": "화장품 주식",
-          "confidence": 0.95,
-          "reasoning": "제목에서 '화장품 주식'이 언급되어 있어 해당 섹터로 분류됨"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "사세요"
-        ],
-        "reasoning": "제목에서 '걱정 말고 이 주식을 사세요'라는 긍정적인 표현이 사용되어 매수 권유로 해석됨"
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Cosmetics\",\n      \"matchedText\": \"화장품 주식\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '화장품 주식'이 언급되어 있어 해당 섹터로 분류됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"사세요\"],\n    \"reasoning\": \"제목에서 '걱정 말고 이 주식을 사세요'라는 긍정적인 표현이 사용되어 매수 권유로 해석됨\"\n  }\n}"
-    }
+    "videoId": "z1BJXG91YQE",
+    "title": "미국 주식 말고 한국 주식 하세요(ft.홍춘욱 대표 1부)",
+    "publishedAt": "2025-07-30T03:08:05Z",
+    "asset": "KOSPI",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
+  },
+  {
+    "videoId": "vQF3_EEDxbA",
+    "title": "지금 미국 주식 말고 한국 주식 해야 하는 이유(ft. 양양 스승님 5부)",
+    "publishedAt": "2025-07-29T09:11:34Z",
+    "asset": "KOSPI",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
     "videoId": "VwDR-WB3fqY",
     "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
     "publishedAt": "2025-07-28T10:04:28Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:46:53.385Z",
-      "detectedAssets": [
-        {
-          "asset": "Tesla",
-          "ticker": "TSLA",
-          "matchedText": "테슬라",
-          "confidence": 0.95,
-          "reasoning": "영상 제목에 테슬라가 언급되어 있어 명확하게 식별됨."
-        },
-        {
-          "asset": "Samsung",
-          "ticker": "005930.KS",
-          "matchedText": "삼성전자",
-          "confidence": 0.95,
-          "reasoning": "영상 제목에 삼성전자가 언급되어 있어 명확하게 식별됨."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "베팅",
-          "시나리오"
-        ],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적이라고 판단됨."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Tesla\",\n      \"matchedText\": \"테슬라\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"영상 제목에 테슬라가 언급되어 있어 명확하게 식별됨.\"\n    },\n    {\n      \"asset\": \"Samsung\",\n      \"matchedText\": \"삼성전자\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"영상 제목에 삼성전자가 언급되어 있어 명확하게 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"베팅\", \"시나리오\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적이라고 판단됨.\"\n  }\n}"
-    }
+    "asset": "Samsung",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
-    "videoId": "FK1jsWfH8EI",
-    "title": "K-화장품 앞으로 더 오르는 이유 이 주식을 사세요(ft.박종대 애널리스트 1부)",
-    "publishedAt": "2025-07-25T02:02:42Z",
-    "reason": "unknown_asset: K-Beauty",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:47:07.238Z",
-      "detectedAssets": [
-        {
-          "asset": "K-Beauty",
-          "ticker": "UNKNOWN",
-          "matchedText": "K-화장품",
-          "confidence": 0.95,
-          "reasoning": "K-화장품은 한국 화장품 산업을 의미하며, 이는 K-Beauty 섹터로 분류될 수 있습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "오르는",
-          "사세요"
-        ],
-        "reasoning": "제목에서 '더 오르는 이유'와 '이 주식을 사세요'라는 표현이 긍정적인 전망을 나타냅니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"K-Beauty\",\n      \"matchedText\": \"K-화장품\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"K-화장품은 한국 화장품 산업을 의미하며, 이는 K-Beauty 섹터로 분류될 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"오르는\", \"사세요\"],\n    \"reasoning\": \"제목에서 '더 오르는 이유'와 '이 주식을 사세요'라는 표현이 긍정적인 전망을 나타냅니다.\"\n  }\n}"
-    }
+    "videoId": "VwDR-WB3fqY",
+    "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
+    "publishedAt": "2025-07-28T10:04:28Z",
+    "asset": "Tesla",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
     "videoId": "zs94j8AxSmE",
     "title": "테슬라 구글 실적 예상결과",
     "publishedAt": "2025-07-23T12:14:29Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:47:15.301Z",
-      "detectedAssets": [
-        {
-          "asset": "Tesla",
-          "ticker": "TSLA",
-          "matchedText": "테슬라",
-          "confidence": 0.95,
-          "reasoning": "제목에 '테슬라'라는 단어가 명시되어 있어 해당 종목으로 판단됨."
-        },
-        {
-          "asset": "Google",
-          "ticker": "GOOGL",
-          "matchedText": "구글",
-          "confidence": 0.95,
-          "reasoning": "제목에 '구글'이라는 단어가 명시되어 있어 해당 종목으로 판단됨."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "실적",
-          "예상결과"
-        ],
-        "reasoning": "실적 예상이라는 표현은 긍정적 또는 부정적 전망을 포함하지 않으므로 중립적이라고 판단됨."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Tesla\",\n      \"matchedText\": \"테슬라\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '테슬라'라는 단어가 명시되어 있어 해당 종목으로 판단됨.\"\n    },\n    {\n      \"asset\": \"Google\",\n      \"matchedText\": \"구글\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '구글'이라는 단어가 명시되어 있어 해당 종목으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"실적\", \"예상결과\"],\n    \"reasoning\": \"실적 예상이라는 표현은 긍정적 또는 부정적 전망을 포함하지 않으므로 중립적이라고 판단됨.\"\n  }\n}"
-    }
+    "asset": "Google",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
-    "videoId": "EusbGuCyMBg",
-    "title": "조선, 원전 다음은 여기입니다(ft. 양양 스승님 3부)",
-    "publishedAt": "2025-07-23T07:22:04Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:47:19.113Z",
-      "detectedAssets": [
-        {
-          "asset": "Shipbuilding",
-          "ticker": "009540.KS",
-          "matchedText": "조선",
-          "confidence": 0.95,
-          "reasoning": "조선은 조선주를 의미하며, 해당 섹터를 명확히 나타냅니다."
-        },
-        {
-          "asset": "Nuclear",
-          "ticker": "034020.KS",
-          "matchedText": "원전",
-          "confidence": 0.95,
-          "reasoning": "원전은 원자력 관련 섹터를 의미하며, 해당 섹터를 명확히 나타냅니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Shipbuilding\",\n      \"matchedText\": \"조선\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"조선은 조선주를 의미하며, 해당 섹터를 명확히 나타냅니다.\"\n    },\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"원전\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"원전은 원자력 관련 섹터를 의미하며, 해당 섹터를 명확히 나타냅니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
-    }
+    "videoId": "zs94j8AxSmE",
+    "title": "테슬라 구글 실적 예상결과",
+    "publishedAt": "2025-07-23T12:14:29Z",
+    "asset": "Tesla",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
-    "videoId": "kjApYvMBpUY",
-    "title": "2차전지 주가가 오르는 이유(ft.리튬)",
-    "publishedAt": "2025-07-20T01:30:37Z",
-    "reason": "unknown_asset: Lithium",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:47:41.073Z",
-      "detectedAssets": [
-        {
-          "asset": "Battery",
-          "ticker": "373220.KS",
-          "matchedText": "2차전지",
-          "confidence": 0.95,
-          "reasoning": "2차전지는 배터리 섹터에 해당하며, 주가 상승과 관련된 내용이므로 추출함."
-        },
-        {
-          "asset": "Lithium",
-          "ticker": "UNKNOWN",
-          "matchedText": "리튬",
-          "confidence": 0.95,
-          "reasoning": "리튬은 2차전지의 주요 원자재로, 관련성이 높아 추출함."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "오르는",
-          "이유"
-        ],
-        "reasoning": "주가가 오르는 이유에 대한 언급이 있어 긍정적인 전망으로 판단됨."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Battery\",\n      \"matchedText\": \"2차전지\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"2차전지는 배터리 섹터에 해당하며, 주가 상승과 관련된 내용이므로 추출함.\"\n    },\n    {\n      \"asset\": \"Lithium\",\n      \"matchedText\": \"리튬\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"리튬은 2차전지의 주요 원자재로, 관련성이 높아 추출함.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"오르는\", \"이유\"],\n    \"reasoning\": \"주가가 오르는 이유에 대한 언급이 있어 긍정적인 전망으로 판단됨.\"\n  }\n}"
-    }
+    "videoId": "lLIRyxdZdaY",
+    "title": "[단독라이브] 잠시 상승 멈춘 한국, 미국 증시 더 오를 수 있을까?",
+    "publishedAt": "2025-07-20T12:18:25Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
   },
   {
-    "videoId": "y6p6a6EaJ8k",
-    "title": "스테이블코인으로 30조를 번 버핏, 서클주가 고평가 의견",
-    "publishedAt": "2025-07-19T10:39:54Z",
-    "reason": "unknown_asset: Circle",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:47:47.542Z",
-      "detectedAssets": [
-        {
-          "asset": "Bitcoin",
-          "ticker": "BTC-USD",
-          "matchedText": "스테이블코인",
-          "confidence": 0.85,
-          "reasoning": "스테이블코인은 암호화폐의 일종으로, 일반적으로 비트코인과 같은 암호화폐와 관련이 있습니다."
-        },
-        {
-          "asset": "Circle",
-          "ticker": "UNKNOWN",
-          "matchedText": "서클주",
-          "confidence": 0.95,
-          "reasoning": "서클은 스테이블코인 발행사로, 주식으로 언급된 것으로 판단됩니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "keywords": [
-          "고평가"
-        ],
-        "reasoning": "서클주가 고평가라는 언급이 있어 부정적인 전망으로 판단했습니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"스테이블코인은 암호화폐의 일종으로, 일반적으로 비트코인과 같은 암호화폐와 관련이 있습니다.\"\n    },\n    {\n      \"asset\": \"Circle\",\n      \"matchedText\": \"서클주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"서클은 스테이블코인 발행사로, 주식으로 언급된 것으로 판단됩니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"negative\",\n    \"keywords\": [\"고평가\"],\n    \"reasoning\": \"서클주가 고평가라는 언급이 있어 부정적인 전망으로 판단했습니다.\"\n  }\n}"
-    }
+    "videoId": "lLIRyxdZdaY",
+    "title": "[단독라이브] 잠시 상승 멈춘 한국, 미국 증시 더 오를 수 있을까?",
+    "publishedAt": "2025-07-20T12:18:25Z",
+    "asset": "NASDAQ",
+    "reason": "no_market_data",
+    "positiveScore": 1,
+    "negativeScore": 0
   },
   {
-    "videoId": "jDQs4qu-ikA",
-    "title": "트럼프가 농산물 강매를 요구하는 이유(ft.보잉,GE,디어)",
-    "publishedAt": "2025-07-17T10:01:13Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:47:52.264Z",
-      "detectedAssets": [
-        {
-          "asset": "Defense",
-          "ticker": "012450.KS",
-          "matchedText": "보잉",
-          "confidence": 0.95,
-          "reasoning": "보잉은 방산 및 항공 분야에서 활동하는 기업으로, 방산주로 분류될 수 있습니다."
-        },
-        {
-          "asset": "Auto",
-          "ticker": "005380.KS",
-          "matchedText": "디어",
-          "confidence": 0.95,
-          "reasoning": "디어는 농기계 및 관련 제품을 제조하는 회사로, 자동차 및 농업 기계 섹터와 관련이 있습니다."
-        },
-        {
-          "asset": "Chemical",
-          "ticker": "051910.KS",
-          "matchedText": "GE",
-          "confidence": 0.95,
-          "reasoning": "GE는 다양한 산업에 걸쳐 활동하는 기업으로, 화학 및 에너지 분야와 관련이 있습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "강매",
-          "요구"
-        ],
-        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없기 때문에 중립적으로 판단했습니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Defense\",\n      \"matchedText\": \"보잉\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"보잉은 방산 및 항공 분야에서 활동하는 기업으로, 방산주로 분류될 수 있습니다.\"\n    },\n    {\n      \"asset\": \"Auto\",\n      \"matchedText\": \"디어\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"디어는 농기계 및 관련 제품을 제조하는 회사로, 자동차 및 농업 기계 섹터와 관련이 있습니다.\"\n    },\n    {\n      \"asset\": \"Chemical\",\n      \"matchedText\": \"GE\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"GE는 다양한 산업에 걸쳐 활동하는 기업으로, 화학 및 에너지 분야와 관련이 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"강매\", \"요구\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없기 때문에 중립적으로 판단했습니다.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "FvACciiKGjM",
-    "title": "미중 스테이블코인 전쟁이 시작됐습니다(ft.지니어스액트)",
-    "publishedAt": "2025-07-14T03:30:11Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:48:09.975Z",
-      "detectedAssets": [
-        {
-          "asset": "Ethereum",
-          "ticker": "ETH-USD",
-          "matchedText": "스테이블코인",
-          "confidence": 0.85,
-          "reasoning": "스테이블코인은 암호화폐의 한 종류로, 일반적으로 특정 자산에 가치가 고정되어 있는 암호화폐를 의미합니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "전쟁"
-        ],
-        "reasoning": "전쟁이라는 단어는 긍정적이거나 부정적인 의미를 모두 내포할 수 있어 판단이 불가합니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"스테이블코인은 암호화폐의 한 종류로, 일반적으로 특정 자산에 가치가 고정되어 있는 암호화폐를 의미합니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"전쟁\"],\n    \"reasoning\": \"전쟁이라는 단어는 긍정적이거나 부정적인 의미를 모두 내포할 수 있어 판단이 불가합니다.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "vP22My_MB5o",
-    "title": "원화 스테이블 코인이 한국을 살릴 겁니다(ft.민병덕 의원)",
-    "publishedAt": "2025-07-10T10:03:32Z",
-    "reason": "unknown_asset: Crypto",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:48:16.916Z",
-      "detectedAssets": [
-        {
-          "asset": "Crypto",
-          "ticker": "UNKNOWN",
-          "matchedText": "원화 스테이블 코인",
-          "confidence": 0.9,
-          "reasoning": "원화 스테이블 코인은 암호화폐의 일종으로, 한국 경제와 관련된 새로운 형태의 자산으로 해석될 수 있습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "살릴",
-          "기대"
-        ],
-        "reasoning": "제목에서 '살릴'이라는 긍정적인 표현이 사용되어 한국 경제에 대한 긍정적인 전망을 나타냅니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Crypto\",\n      \"matchedText\": \"원화 스테이블 코인\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"원화 스테이블 코인은 암호화폐의 일종으로, 한국 경제와 관련된 새로운 형태의 자산으로 해석될 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"살릴\", \"기대\"],\n    \"reasoning\": \"제목에서 '살릴'이라는 긍정적인 표현이 사용되어 한국 경제에 대한 긍정적인 전망을 나타냅니다.\"\n  }\n}"
-    }
-  },
-  {
-    "videoId": "VEULw7MFah0",
-    "title": "가치주 추세 추종투자만으로도 부자될 수 있습니다 (ft. 깡토 1부)",
-    "publishedAt": "2025-07-06T01:09:31Z",
-    "reason": "unknown_asset: Value",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:48:23.019Z",
-      "detectedAssets": [
-        {
-          "asset": "Value",
-          "ticker": "UNKNOWN",
-          "matchedText": "가치주",
-          "confidence": 0.95,
-          "reasoning": "제목에서 '가치주'라는 용어가 사용되어 가치주에 대한 언급이 명확함."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "부자",
-          "투자"
-        ],
-        "reasoning": "제목에서 '부자될 수 있습니다'라는 긍정적인 표현이 사용되어 긍정적인 전망으로 판단됨."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Value\",\n      \"matchedText\": \"가치주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '가치주'라는 용어가 사용되어 가치주에 대한 언급이 명확함.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"부자\", \"투자\"],\n    \"reasoning\": \"제목에서 '부자될 수 있습니다'라는 긍정적인 표현이 사용되어 긍정적인 전망으로 판단됨.\"\n  }\n}"
-    }
+    "videoId": "JcbsEP_6z6s",
+    "title": "코스피 5000 갈 수 밖에 없는 이유(ft.이소영 국회의원 1부)",
+    "publishedAt": "2025-07-17T05:47:37Z",
+    "asset": "KOSPI",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   },
   {
     "videoId": "L8SM0ieN8X0",
     "title": "트럼프 관세 발언이 심상치 않은 이유(ft.코스피)",
     "publishedAt": "2025-07-04T06:00:29Z",
-    "reason": "neutral_tone",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-05T07:48:27.649Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11",
-          "matchedText": "코스피",
-          "confidence": 0.95,
-          "reasoning": "제목에 '코스피'라는 지수가 명시되어 있어 확실하게 추출됨."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "neutral",
-        "keywords": [
-          "관세",
-          "발언",
-          "심상치 않은"
-        ],
-        "reasoning": "관세 발언이 심상치 않다는 표현은 부정적이거나 긍정적이지 않으며, 상황에 대한 중립적인 경고로 해석될 수 있음."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '코스피'라는 지수가 명시되어 있어 확실하게 추출됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"관세\", \"발언\", \"심상치 않은\"],\n    \"reasoning\": \"관세 발언이 심상치 않다는 표현은 부정적이거나 긍정적이지 않으며, 상황에 대한 중립적인 경고로 해석될 수 있음.\"\n  }\n}"
-    }
+    "asset": "KOSPI",
+    "reason": "no_tone",
+    "positiveScore": 0,
+    "negativeScore": 0
   }
 ]
