@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-02-05T02:21:00.085Z",
+  "updatedAt": "2026-02-05T04:20:28.068Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표",
   "stats": {
-    "totalVideos": 580,
-    "totalMentions": 125,
-    "analyzableMentions": 44,
-    "validMentions": 28,
-    "honeyCount": 21,
-    "honeyIndex": 75
+    "totalVideos": 588,
+    "totalMentions": 133,
+    "analyzableMentions": 47,
+    "validMentions": 31,
+    "honeyCount": 22,
+    "honeyIndex": 71
   },
   "assetStats": [
     {
@@ -25,21 +25,21 @@
     },
     {
       "asset": "Bitcoin",
-      "total": 8,
-      "honey": 4,
-      "honeyIndex": 50
+      "total": 9,
+      "honey": 5,
+      "honeyIndex": 55.6
     },
     {
       "asset": "Samsung",
-      "total": 3,
+      "total": 4,
       "honey": 3,
-      "honeyIndex": 100
+      "honeyIndex": 75
     },
     {
       "asset": "KOSPI",
-      "total": 9,
+      "total": 10,
       "honey": 6,
-      "honeyIndex": 66.7
+      "honeyIndex": 60
     },
     {
       "asset": "SKHynix",
@@ -299,6 +299,33 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "videoId": "IztMJoUZB5s",
+      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
+      "publishedAt": "2026-02-03T11:09:42Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "IztMJoUZB5s",
+      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
+      "publishedAt": "2026-02-03T11:09:42Z",
+      "asset": "Samsung",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "_QjymTGZsHY",
+      "title": "점점 커지는 케빈워시 충격, 비트코인 다음은 어디일까?",
+      "publishedAt": "2026-02-01T04:04:07Z",
+      "asset": "Bitcoin",
+      "tone": "negative",
+      "actualDirection": "up",
       "isHoney": true
     }
   ]

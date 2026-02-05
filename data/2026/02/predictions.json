@@ -1,0 +1,92 @@
+{
+  "period": {
+    "year": 2026,
+    "month": 2
+  },
+  "stats": {
+    "totalVideos": 8,
+    "validPredictions": 4,
+    "honeyCount": 4,
+    "honeyIndex": 100,
+    "assetStats": [
+      {
+        "asset": "KOSPI",
+        "total": 3,
+        "honey": 3,
+        "honeyIndex": 100
+      },
+      {
+        "asset": "Samsung",
+        "total": 1,
+        "honey": 1,
+        "honeyIndex": 100
+      }
+    ]
+  },
+  "predictions": [
+    {
+      "videoId": "IztMJoUZB5s",
+      "videoUrl": "https://youtube.com/watch?v=IztMJoUZB5s",
+      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
+      "thumbnail": "https://i.ytimg.com/vi/IztMJoUZB5s/hqdefault.jpg",
+      "publishedAt": "2026-02-03T11:09:42Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 5277.0498,
+      "priceAfter24h": 5256.6499,
+      "priceChange": -0.39,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "videoId": "IztMJoUZB5s",
+      "videoUrl": "https://youtube.com/watch?v=IztMJoUZB5s",
+      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
+      "thumbnail": "https://i.ytimg.com/vi/IztMJoUZB5s/hqdefault.jpg",
+      "publishedAt": "2026-02-03T11:09:42Z",
+      "asset": "Samsung",
+      "symbol": "Samsung",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 163500,
+      "priceAfter24h": 162700,
+      "priceChange": -0.49,
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "videoId": "_U0euAqzloU",
+      "videoUrl": "https://youtube.com/watch?v=_U0euAqzloU",
+      "title": "코스피 5000 붕괴 사야할 때인가? 팔 때 인가? / 팔란티어 실적에 달린 미래",
+      "thumbnail": "https://i.ytimg.com/vi/_U0euAqzloU/hqdefault.jpg",
+      "publishedAt": "2026-02-02T11:11:06Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 5158.6201,
+      "priceAfter24h": 5277.0498,
+      "priceChange": 2.3,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "1aOwkzHvqsQ",
+      "videoUrl": "https://youtube.com/watch?v=1aOwkzHvqsQ",
+      "title": "코스피 5000 붕괴, 반등하려면 이 방법밖에 없습니다.",
+      "thumbnail": "https://i.ytimg.com/vi/1aOwkzHvqsQ/hqdefault.jpg",
+      "publishedAt": "2026-02-02T06:11:41Z",
+      "asset": "KOSPI",
+      "symbol": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 5158.6201,
+      "priceAfter24h": 5277.0498,
+      "priceChange": 2.3,
+      "actualDirection": "up",
+      "isHoney": true
+    }
+  ]
+}
