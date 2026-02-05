@@ -114,22 +114,6 @@ export function HeroChart({
           )} 
         />
         
-        {/* Sparkle particles */}
-        {isValid && isVisible && (
-          <div className="absolute inset-0">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-1 bg-primary/60 rounded-full animate-ping-slow"
-                style={{
-                  left: `${20 + Math.random() * 60}%`,
-                  top: `${20 + Math.random() * 60}%`,
-                  animationDelay: `${i * 500}ms`,
-                }}
-              />
-            ))}
-          </div>
-        )}
       </div>
 
       <div className="relative z-10 p-6 sm:p-8">

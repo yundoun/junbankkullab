@@ -114,7 +114,6 @@ export function VoteCard({
   const remainingHours = Math.floor(remainingMs / (1000 * 60 * 60))
   const remainingMins = Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60))
 
-  const isBullish = predictedDirection === "bullish"
   const thumbnailUrl = thumbnail || `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
   
   // Stagger delay
@@ -139,7 +138,7 @@ export function VoteCard({
         <img
           src={thumbnailUrl}
           alt=""
-          className="w-full h-full object-cover opacity-15 blur-2xl scale-125 transition-all duration-700"
+          className="w-full h-full object-cover opacity-10 blur-2xl scale-125 transition-all duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/95 to-card/80" />
       </div>
@@ -165,13 +164,13 @@ export function VoteCard({
         </div>
       )}
 
-      <div className="relative z-10 flex flex-col p-5 sm:p-6">
+      <div className="relative z-10 flex flex-col p-4 sm:p-5">
         {/* 상단: 메타 정보 */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <span className="relative flex h-2.5 w-2.5">
+            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
             <span className="text-xs font-bold text-primary tracking-wide">LIVE</span>
             {asset && (
@@ -194,12 +193,12 @@ export function VoteCard({
           </a>
         </div>
 
-        {/* 썸네일 미리보기 */}
+        {/* 썸네일 미리보기 (작게) */}
         <a
           href={`https://youtube.com/watch?v=${videoId}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="thumbnail-container relative w-full aspect-video rounded-xl overflow-hidden mb-4 group/thumb"
+          className="thumbnail-container relative w-full aspect-[16/9] rounded-lg overflow-hidden mb-3 group/thumb"
         >
           <img
             src={thumbnailUrl}
@@ -208,55 +207,26 @@ export function VoteCard({
             loading="lazy"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover/thumb:opacity-100 transition-all duration-300">
-            <div className="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center transform scale-75 group-hover/thumb:scale-100 transition-transform duration-300 shadow-xl">
-              <Play className="w-7 h-7 text-black ml-1" fill="currentColor" />
+            <div className="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center transform scale-75 group-hover/thumb:scale-100 transition-transform duration-300 shadow-xl">
+              <Play className="w-6 h-6 text-black ml-0.5" fill="currentColor" />
             </div>
           </div>
         </a>
 
-        {/* 핵심: 전인구 예측 */}
-        <div className="text-center py-4">
-          <p className="text-xs text-muted-foreground mb-2 tracking-wide">전인구 예측</p>
-          <div 
-            className={cn(
-              "inline-flex items-center gap-3 px-6 py-3 rounded-xl",
-              "transition-all duration-500",
-              "transform hover:scale-105",
-              isBullish 
-                ? "bg-bullish/10 border-2 border-bullish/30 hover:border-bullish/50 hover:shadow-lg hover:shadow-bullish/20" 
-                : "bg-bearish/10 border-2 border-bearish/30 hover:border-bearish/50 hover:shadow-lg hover:shadow-bearish/20"
-            )}
-          >
-            {isBullish ? (
-              <TrendingUp className="w-7 h-7 text-bullish animate-bounce-subtle" />
-            ) : (
-              <TrendingDown className="w-7 h-7 text-bearish animate-bounce-subtle" />
-            )}
-            <span 
-              className={cn(
-                "text-2xl sm:text-3xl font-black tracking-tight",
-                isBullish ? "text-bullish" : "text-bearish"
-              )}
-            >
-              {isBullish ? "상승" : "하락"}
-            </span>
-          </div>
-        </div>
-
-        {/* 제목 (작게) */}
-        <p className="text-sm text-muted-foreground text-center mb-5 line-clamp-2 px-2">
+        {/* 제목 */}
+        <p className="text-sm text-muted-foreground text-center mb-4 line-clamp-2 px-1">
           {title}
         </p>
 
         {/* 투표 버튼 */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
+        <div className="grid grid-cols-2 gap-3 mb-3">
           <Button
             variant="outline"
             size="lg"
             disabled={hasVoted}
             onClick={() => handleVote("up")}
             className={cn(
-              "relative h-16 flex-col gap-1.5 border-2 transition-all duration-300",
+              "relative h-14 flex-col gap-1 border-2 transition-all duration-300",
               "hover:scale-[1.02] active:scale-[0.98]",
               hasVoted && userVote === "up" && "border-bullish bg-bullish/15 shadow-lg shadow-bullish/20",
               !hasVoted && "hover:border-bullish hover:bg-bullish/10 hover:shadow-md hover:shadow-bullish/10"
@@ -290,7 +260,7 @@ export function VoteCard({
             disabled={hasVoted}
             onClick={() => handleVote("down")}
             className={cn(
-              "relative h-16 flex-col gap-1.5 border-2 transition-all duration-300",
+              "relative h-14 flex-col gap-1 border-2 transition-all duration-300",
               "hover:scale-[1.02] active:scale-[0.98]",
               hasVoted && userVote === "down" && "border-bearish bg-bearish/15 shadow-lg shadow-bearish/20",
               !hasVoted && "hover:border-bearish hover:bg-bearish/10 hover:shadow-md hover:shadow-bearish/10"
@@ -319,28 +289,64 @@ export function VoteCard({
           </Button>
         </div>
 
-        {/* 투표 결과 바 */}
+        {/* 투표 결과 바 - 내 선택 강조 */}
         {hasVoted && (
           <div className="space-y-2 animate-fade-up">
-            <div className="flex h-2.5 rounded-full overflow-hidden bg-muted/50">
+            <div className="relative flex h-3 rounded-full overflow-hidden bg-muted/30">
+              {/* 상승 바 */}
               <div
-                className="bg-gradient-to-r from-bullish to-bullish/80 transition-all duration-1000 ease-out"
+                className={cn(
+                  "relative transition-all duration-1000 ease-out",
+                  userVote === "up" 
+                    ? "bg-gradient-to-r from-bullish via-bullish to-bullish/90 shadow-[0_0_12px_rgba(14,203,129,0.5)]" 
+                    : "bg-bullish/60"
+                )}
                 style={{ width: `${upPercent}%` }}
-              />
+              >
+                {/* 내 선택 표시 - 상승 */}
+                {userVote === "up" && (
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-full bg-white/80 rounded-full animate-pulse" />
+                )}
+              </div>
+              {/* 하락 바 */}
               <div
-                className="bg-gradient-to-r from-bearish/80 to-bearish transition-all duration-1000 ease-out"
+                className={cn(
+                  "relative transition-all duration-1000 ease-out",
+                  userVote === "down" 
+                    ? "bg-gradient-to-r from-bearish/90 via-bearish to-bearish shadow-[0_0_12px_rgba(246,70,93,0.5)]" 
+                    : "bg-bearish/60"
+                )}
                 style={{ width: `${downPercent}%` }}
-              />
+              >
+                {/* 내 선택 표시 - 하락 */}
+                {userVote === "down" && (
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-full bg-white/80 rounded-full animate-pulse" />
+                )}
+              </div>
             </div>
-            <div className="flex justify-between text-xs text-muted-foreground font-medium">
-              <span className="text-bullish">상승 {upPercent}%</span>
-              <span className="text-bearish">하락 {downPercent}%</span>
+            <div className="flex justify-between text-xs font-medium">
+              <span className={cn(
+                "transition-all duration-300",
+                userVote === "up" 
+                  ? "text-bullish font-bold scale-105" 
+                  : "text-bullish/70"
+              )}>
+                {userVote === "up" && "👆 "}상승 {upPercent}%
+              </span>
+              <span className={cn(
+                "transition-all duration-300",
+                userVote === "down" 
+                  ? "text-bearish font-bold scale-105" 
+                  : "text-bearish/70"
+              )}>
+                하락 {downPercent}%{userVote === "down" && " 👆"}
+              </span>
             </div>
           </div>
         )}
 
         {/* 하단 정보 */}
-        <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/30 text-xs text-muted-foreground">
+        <div className="flex items-center justify-between mt-3 pt-3 border-t border-border/30 text-xs text-muted-foreground">
           <span className="font-medium">{totalVotes}명 참여</span>
           {remainingMs > 0 ? (
             <span className="flex items-center gap-1">
