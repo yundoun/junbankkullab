@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Beaker, TrendingUp, TrendingDown, Target, Flame, BarChart3, Clock } from 'lucide-react'
+import { Beaker, TrendingUp, Target, Flame, BarChart3, Clock } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { 
-  HoneyIndexChart,
+  HeroChart,
   PredictionCard,
-  TimelineChart,
   VoteCard,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
@@ -303,42 +303,16 @@ export default function Home() {
       </header>
       
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-        {/* Hero Section - 꿀지수 게이지 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          {/* 꿀지수 게이지 */}
-          <div className="rounded-2xl border border-border bg-card overflow-hidden">
-            <HoneyIndexChart 
-              currentValue={honeyIndex}
-              totalPredictions={stats?.totalPredictions ?? 0}
-            />
-          </div>
-          
-          {/* 설명 카드 */}
-          <div className="rounded-2xl border border-border bg-card p-6 flex flex-col justify-center">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="text-3xl sm:text-4xl">🍯</span>
-                <h2 className="text-xl sm:text-2xl font-bold">전반꿀 지수란?</h2>
-              </div>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                전인구경제연구소의 예측이 <strong className="text-foreground">역지표</strong>로 
-                얼마나 유효한지 측정한 지수입니다.
-              </p>
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="p-2 sm:p-3 rounded-lg bg-bullish/10 border border-bullish/20">
-                  <p className="text-xs sm:text-sm text-muted-foreground">긍정적 언급 후</p>
-                  <p className="text-sm sm:text-base font-semibold text-bullish">하락하면 🍯</p>
-                </div>
-                <div className="p-2 sm:p-3 rounded-lg bg-bearish/10 border border-bearish/20">
-                  <p className="text-xs sm:text-sm text-muted-foreground">부정적 언급 후</p>
-                  <p className="text-sm sm:text-base font-semibold text-bearish">상승하면 🍯</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Hero: 전반꿀 지수 차트 (전체 너비) */}
+        <HeroChart
+          currentIndex={honeyIndex}
+          totalPredictions={stats?.totalPredictions ?? 0}
+          honeyCount={stats?.honeyCount ?? 0}
+          timeline={stats?.timeline ?? []}
+          className="mb-6 sm:mb-8"
+        />
 
-        {/* 투표 섹션 */}
+        {/* 투표 섹션 - 반응형 그리드 */}
         {hasVotableItems ? (
           <section className="mb-6 sm:mb-8">
             <div className="flex items-center gap-2 mb-4">
@@ -346,12 +320,14 @@ export default function Home() {
               <h2 className="text-base sm:text-lg font-semibold">진행 중인 투표</h2>
               <Badge variant="honey">{votableItems.length}개</Badge>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className={cn(
+              "grid gap-4",
+              votableItems.length === 1 && "grid-cols-1",
+              votableItems.length === 2 && "grid-cols-1 md:grid-cols-2",
+              votableItems.length >= 3 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            )}>
               {votableItems.map((item) => {
                 const itemKey = `${item.videoId}_${item.asset}`
-                const remainingMs = new Date(item.expiresAt).getTime() - Date.now()
-                const remainingHours = Math.max(0, Math.floor(remainingMs / (1000 * 60 * 60)))
-                const remainingMins = Math.max(0, Math.floor((remainingMs % (1000 * 60 * 60)) / (1000 * 60)))
                 
                 return (
                   <VoteCard
@@ -450,24 +426,6 @@ export default function Home() {
                   </p>
                 </div>
               ))}
-            </div>
-          </section>
-        )}
-        
-        {/* 월별 타임라인 */}
-        {stats?.timeline && stats.timeline.length > 0 && (
-          <section className="mb-6 sm:mb-8">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-muted-foreground" />
-                <h2 className="text-base sm:text-lg font-semibold">월별 꿀지수 추이</h2>
-              </div>
-              <Badge variant="outline" className="w-fit">
-                50% 이상 = 역지표 유효
-              </Badge>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-4">
-              <TimelineChart data={stats.timeline} />
             </div>
           </section>
         )}
