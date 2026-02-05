@@ -4,35 +4,55 @@
     "title": "미중 감정싸움 시작과 엔비디아 피해액 계산",
     "publishedAt": "2025-04-16T11:23:47Z",
     "asset": "Nvidia",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '미중 감정싸움 시작'과 '엔비디아 피해액 계산'이라는 표현이 사용되었습니다. 이는 미중 간의 갈등이 시작되었고, 이로 인해 엔비디아가 피해를 입을 수 있다는 부정적인 전망을 암시합니다. '피해액 계산'이라는 부분은 손실이나 부정적인 영향을 강조하는 표현으로 해석될 수 있습니다.",
+      "confidence": 0.85
+    }
   },
   {
     "videoId": "qQ3nRdIkuug",
     "title": "이번 증시하락에 반등이 없는 이유(ft.나스닥, 엔비디아, 은행주)",
     "publishedAt": "2025-04-04T03:56:32Z",
     "asset": "NASDAQ",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 1,
-    "negativeScore": 1
+    "negativeScore": 1,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '증시하락에 반등이 없는 이유'라는 표현은 시장이 하락세에 있으며, 반등의 가능성이 낮다는 부정적인 전망을 나타냅니다. 특히 '반등이 없는 이유'라는 부분은 현재 상황이 개선되지 않을 것이라는 뉘앙스를 주고 있습니다.",
+      "confidence": 0.9
+    }
   },
   {
     "videoId": "qQ3nRdIkuug",
     "title": "이번 증시하락에 반등이 없는 이유(ft.나스닥, 엔비디아, 은행주)",
     "publishedAt": "2025-04-04T03:56:32Z",
     "asset": "Nvidia",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 1,
-    "negativeScore": 1
+    "negativeScore": 1,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '증시하락에 반등이 없는 이유'라는 표현은 시장이 하락세에 있으며, 반등의 가능성이 낮다는 부정적인 전망을 나타냅니다. 특히 '반등이 없는 이유'라는 부분은 현재 상황이 개선되지 않을 것이라는 뉘앙스를 주고 있습니다.",
+      "confidence": 0.9
+    }
   },
   {
     "videoId": "SfcntEFAGj0",
     "title": "중국이 엔비디아 필요없다고 한 이유(ft.오광진 편집장1부)",
     "publishedAt": "2025-04-02T04:52:30Z",
     "asset": "Nvidia",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '중국이 엔비디아 필요없다고 한 이유'라는 표현은 엔비디아에 대한 부정적인 뉘앙스를 내포하고 있습니다. 이는 중국이 엔비디아의 기술이나 제품을 더 이상 필요로 하지 않는다는 의미로 해석될 수 있으며, 이는 엔비디아의 시장 전망에 부정적인 영향을 미칠 수 있습니다.",
+      "confidence": 0.8
+    }
   }
 ]

@@ -1,59 +1,5 @@
 [
   {
-    "videoId": "z1BJXG91YQE",
-    "title": "미국 주식 말고 한국 주식 하세요(ft.홍춘욱 대표 1부)",
-    "publishedAt": "2025-07-30T03:08:05Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "vQF3_EEDxbA",
-    "title": "지금 미국 주식 말고 한국 주식 해야 하는 이유(ft. 양양 스승님 5부)",
-    "publishedAt": "2025-07-29T09:11:34Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "VwDR-WB3fqY",
-    "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
-    "publishedAt": "2025-07-28T10:04:28Z",
-    "asset": "Samsung",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "VwDR-WB3fqY",
-    "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
-    "publishedAt": "2025-07-28T10:04:28Z",
-    "asset": "Tesla",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "zs94j8AxSmE",
-    "title": "테슬라 구글 실적 예상결과",
-    "publishedAt": "2025-07-23T12:14:29Z",
-    "asset": "Google",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "zs94j8AxSmE",
-    "title": "테슬라 구글 실적 예상결과",
-    "publishedAt": "2025-07-23T12:14:29Z",
-    "asset": "Tesla",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "lLIRyxdZdaY",
     "title": "[단독라이브] 잠시 상승 멈춘 한국, 미국 증시 더 오를 수 있을까?",
     "publishedAt": "2025-07-20T12:18:25Z",
@@ -72,21 +18,115 @@
     "negativeScore": 0
   },
   {
+    "videoId": "z1BJXG91YQE",
+    "title": "미국 주식 말고 한국 주식 하세요(ft.홍춘욱 대표 1부)",
+    "publishedAt": "2025-07-30T03:08:05Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '미국 주식 말고 한국 주식 하세요'라는 표현은 한국 주식에 대한 긍정적인 전망을 암시합니다. 이는 한국 주식이 미국 주식보다 더 나은 선택이라는 뉘앙스를 주며, 홍춘욱 대표라는 전문가의 의견을 강조함으로써 신뢰성을 높이고 있습니다.",
+      "confidence": 0.9
+    }
+  },
+  {
+    "videoId": "vQF3_EEDxbA",
+    "title": "지금 미국 주식 말고 한국 주식 해야 하는 이유(ft. 양양 스승님 5부)",
+    "publishedAt": "2025-07-29T09:11:34Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '지금 미국 주식 말고 한국 주식 해야 하는 이유'라는 표현은 한국 주식에 대한 긍정적인 전망을 암시합니다. 특히 '해야 하는 이유'라는 부분은 한국 주식이 현재 매력적이거나 기회가 있다는 뉘앙스를 줍니다.",
+      "confidence": 0.85
+    }
+  },
+  {
+    "videoId": "VwDR-WB3fqY",
+    "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
+    "publishedAt": "2025-07-28T10:04:28Z",
+    "asset": "Samsung",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '테슬라가 삼성전자에 베팅한 이유'와 '삼전 15만원 시나리오'라는 표현이 사용되었습니다. '베팅'은 일반적으로 긍정적인 기대를 가지고 투자하는 것을 의미하며, '15만원 시나리오'는 주가 상승을 암시하는 것으로 해석될 수 있습니다. 따라서 제목은 삼성전자에 대한 긍정적인 전망을 담고 있다고 판단됩니다.",
+      "confidence": 0.85
+    }
+  },
+  {
+    "videoId": "VwDR-WB3fqY",
+    "title": "테슬라는 왜 삼성전자에 베팅한 걸까?(ft.삼전 15만원 시나리오)",
+    "publishedAt": "2025-07-28T10:04:28Z",
+    "asset": "Tesla",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '테슬라가 삼성전자에 베팅한 이유'와 '삼전 15만원 시나리오'라는 표현이 사용되었습니다. '베팅'은 일반적으로 긍정적인 기대를 가지고 투자하는 것을 의미하며, '15만원 시나리오'는 주가 상승을 암시하는 것으로 해석될 수 있습니다. 따라서 제목은 삼성전자에 대한 긍정적인 전망을 담고 있다고 판단됩니다.",
+      "confidence": 0.85
+    }
+  },
+  {
+    "videoId": "zs94j8AxSmE",
+    "title": "테슬라 구글 실적 예상결과",
+    "publishedAt": "2025-07-23T12:14:29Z",
+    "asset": "Google",
+    "reason": "still_neutral_after_gpt4o",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "neutral",
+      "reasoning": "제목에 '실적 예상결과'라는 표현만 있을 뿐, 긍정적이거나 부정적인 뉘앙스가 드러나지 않습니다. 실적에 대한 구체적인 평가나 전망이 포함되어 있지 않기 때문에 중립적인 정보 제공으로 판단됩니다.",
+      "confidence": 0.8
+    }
+  },
+  {
+    "videoId": "zs94j8AxSmE",
+    "title": "테슬라 구글 실적 예상결과",
+    "publishedAt": "2025-07-23T12:14:29Z",
+    "asset": "Tesla",
+    "reason": "still_neutral_after_gpt4o",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "neutral",
+      "reasoning": "제목에 '실적 예상결과'라는 표현만 있을 뿐, 긍정적이거나 부정적인 뉘앙스가 드러나지 않습니다. 실적에 대한 구체적인 평가나 전망이 포함되어 있지 않기 때문에 중립적인 정보 제공으로 판단됩니다.",
+      "confidence": 0.8
+    }
+  },
+  {
     "videoId": "JcbsEP_6z6s",
     "title": "코스피 5000 갈 수 밖에 없는 이유(ft.이소영 국회의원 1부)",
     "publishedAt": "2025-07-17T05:47:37Z",
     "asset": "KOSPI",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '코스피 5000 갈 수 밖에 없는 이유'라는 표현은 코스피 지수가 상승할 것이라는 낙관적인 전망을 담고 있습니다. '갈 수 밖에 없는 이유'라는 문구는 상승이 필연적이라는 강한 확신을 나타내며, 이는 긍정적인 전망으로 해석됩니다.",
+      "confidence": 0.9
+    }
   },
   {
     "videoId": "L8SM0ieN8X0",
     "title": "트럼프 관세 발언이 심상치 않은 이유(ft.코스피)",
     "publishedAt": "2025-07-04T06:00:29Z",
     "asset": "KOSPI",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '트럼프 관세 발언이 심상치 않은 이유'라는 표현은 부정적인 뉘앙스를 가지고 있습니다. '심상치 않다'는 표현은 일반적으로 좋지 않은 상황이나 문제를 암시할 때 사용됩니다. 특히 '관세 발언'은 경제에 부정적인 영향을 미칠 가능성이 있는 요소로 해석될 수 있습니다. 따라서 코스피에 대한 전망이 부정적일 가능성이 높습니다.",
+      "confidence": 0.8
+    }
   }
 ]

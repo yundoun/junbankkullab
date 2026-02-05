@@ -1,32 +1,5 @@
 [
   {
-    "videoId": "qWLfz45ELYM",
-    "title": "방산주, 조선주 투자자는 꼭 가봐야 하는 MADEX 2025에서 발견한 것",
-    "publishedAt": "2025-05-30T08:49:48Z",
-    "asset": "Shipbuilding",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "6IEp9lWuJj8",
-    "title": "시총 1위가 될 주식 이렇게 찾아냅니다(ft.엔비디아 젠슨황)",
-    "publishedAt": "2025-05-16T09:00:08Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "ZeQ6eeLWhZs",
-    "title": "엔비디아를 위협하는 기업이 있습니다(ft.임준서 교수 2부)",
-    "publishedAt": "2025-05-15T02:36:24Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "CqtsheWiKbc",
     "title": "삼성전자가 급등한 3가지 이유(ft.미중무역합의)",
     "publishedAt": "2025-05-12T07:43:59Z",
@@ -34,5 +7,47 @@
     "reason": "no_market_data",
     "positiveScore": 1,
     "negativeScore": 0
+  },
+  {
+    "videoId": "qWLfz45ELYM",
+    "title": "방산주, 조선주 투자자는 꼭 가봐야 하는 MADEX 2025에서 발견한 것",
+    "publishedAt": "2025-05-30T08:49:48Z",
+    "asset": "Shipbuilding",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '꼭 가봐야 하는'이라는 표현은 해당 이벤트나 장소가 중요하고 긍정적인 정보를 제공할 가능성이 높다는 뉘앙스를 줍니다. 특히 '발견한 것'이라는 표현은 새로운 기회나 긍정적인 요소를 발견했음을 암시할 수 있습니다. 따라서 방산주와 조선주에 대한 긍정적인 전망을 시사한다고 볼 수 있습니다.",
+      "confidence": 0.8
+    }
+  },
+  {
+    "videoId": "6IEp9lWuJj8",
+    "title": "시총 1위가 될 주식 이렇게 찾아냅니다(ft.엔비디아 젠슨황)",
+    "publishedAt": "2025-05-16T09:00:08Z",
+    "asset": "Nvidia",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '시총 1위가 될 주식'이라는 표현은 해당 주식이 매우 긍정적인 성과를 보일 것이라는 전망을 암시합니다. 또한 '이렇게 찾아냅니다'라는 표현은 투자자들에게 기회를 제공하는 긍정적인 뉘앙스를 가지고 있습니다. '엔비디아 젠슨황'이라는 인물의 언급도 기술 분야에서의 긍정적인 이미지를 강화합니다.",
+      "confidence": 0.9
+    }
+  },
+  {
+    "videoId": "ZeQ6eeLWhZs",
+    "title": "엔비디아를 위협하는 기업이 있습니다(ft.임준서 교수 2부)",
+    "publishedAt": "2025-05-15T02:36:24Z",
+    "asset": "Nvidia",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '엔비디아를 위협하는 기업이 있습니다'라는 표현은 엔비디아에 대한 부정적인 전망을 암시합니다. '위협'이라는 단어는 엔비디아의 시장 지위나 성과에 부정적인 영향을 미칠 수 있는 요소를 강조하고 있습니다.",
+      "confidence": 0.8
+    }
   }
 ]

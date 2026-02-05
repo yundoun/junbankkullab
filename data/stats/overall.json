@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T23:30:19.568Z",
+  "updatedAt": "2026-02-05T23:48:06.243Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -17,9 +17,9 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 127,
-    "honeyCount": 41,
-    "honeyIndex": 32.3
+    "totalPredictions": 136,
+    "honeyCount": 44,
+    "honeyIndex": 32.4
   },
   "assetStats": [
     {
@@ -59,6 +59,12 @@
       "honeyIndex": 66.7
     },
     {
+      "asset": "Samsung",
+      "total": 12,
+      "honey": 6,
+      "honeyIndex": 50
+    },
+    {
       "asset": "Semiconductor",
       "total": 6,
       "honey": 3,
@@ -89,12 +95,6 @@
       "honeyIndex": 42.9
     },
     {
-      "asset": "Samsung",
-      "total": 10,
-      "honey": 4,
-      "honeyIndex": 40
-    },
-    {
       "asset": "Nuclear",
       "total": 10,
       "honey": 3,
@@ -102,9 +102,9 @@
     },
     {
       "asset": "KOSPI",
-      "total": 32,
-      "honey": 8,
-      "honeyIndex": 25
+      "total": 37,
+      "honey": 9,
+      "honeyIndex": 24.3
     },
     {
       "asset": "Bio",
@@ -125,8 +125,14 @@
       "honeyIndex": 12.5
     },
     {
+      "asset": "Google",
+      "total": 2,
+      "honey": 0,
+      "honeyIndex": 0
+    },
+    {
       "asset": "SKHynix",
-      "total": 4,
+      "total": 5,
       "honey": 0,
       "honeyIndex": 0
     },
@@ -139,12 +145,6 @@
     {
       "asset": "Battery",
       "total": 4,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "Google",
-      "total": 1,
       "honey": 0,
       "honeyIndex": 0
     },
@@ -237,14 +237,14 @@
     {
       "year": 2026,
       "month": 1,
-      "predictions": 18,
+      "predictions": 21,
       "honeyIndex": 33.3
     },
     {
       "year": 2026,
       "month": 2,
-      "predictions": 6,
-      "honeyIndex": 16.7
+      "predictions": 12,
+      "honeyIndex": 25
     }
   ]
 }

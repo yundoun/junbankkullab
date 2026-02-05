@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-02-05T23:30:19.567Z",
+  "updatedAt": "2026-02-05T23:48:06.242Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
     "totalVideos": 589,
     "totalMentions": 154,
     "analyzableMentions": 243,
-    "validMentions": 127,
-    "honeyCount": 41,
-    "honeyIndex": 32.3
+    "validMentions": 136,
+    "honeyCount": 44,
+    "honeyIndex": 32.4
   },
   "funnel": {
     "totalVideos": 589,
     "withMentions": 154,
-    "withTone": 127,
-    "withMarketData": 127,
-    "honeyHits": 41
+    "withTone": 136,
+    "withMarketData": 136,
+    "honeyHits": 44
   },
-  "unanalyzedCount": 116,
+  "unanalyzedCount": 107,
   "excludedCount": 8,
   "assetStats": [
     {
@@ -63,6 +63,12 @@
       "honeyIndex": 50
     },
     {
+      "asset": "Samsung",
+      "total": 12,
+      "honey": 6,
+      "honeyIndex": 50
+    },
+    {
       "asset": "Celltrion",
       "total": 2,
       "honey": 1,
@@ -87,12 +93,6 @@
       "honeyIndex": 42.9
     },
     {
-      "asset": "Samsung",
-      "total": 10,
-      "honey": 4,
-      "honeyIndex": 40
-    },
-    {
       "asset": "Nuclear",
       "total": 10,
       "honey": 3,
@@ -100,9 +100,9 @@
     },
     {
       "asset": "KOSPI",
-      "total": 32,
-      "honey": 8,
-      "honeyIndex": 25
+      "total": 37,
+      "honey": 9,
+      "honeyIndex": 24.3
     },
     {
       "asset": "Bio",
@@ -142,13 +142,13 @@
     },
     {
       "asset": "SKHynix",
-      "total": 4,
+      "total": 5,
       "honey": 0,
       "honeyIndex": 0
     },
     {
       "asset": "Google",
-      "total": 1,
+      "total": 2,
       "honey": 0,
       "honeyIndex": 0
     },
@@ -168,6 +168,33 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true
+    },
+    {
+      "videoId": "cy_U5v4o-c8",
+      "title": "삼성전자 지금 사도 되나요? / 이제 무섭다 코스피 어디까지 가나? / 구글 실적 예상하기",
+      "publishedAt": "2026-02-04T11:09:23Z",
+      "asset": "KOSPI",
+      "tone": "negative",
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "cy_U5v4o-c8",
+      "title": "삼성전자 지금 사도 되나요? / 이제 무섭다 코스피 어디까지 가나? / 구글 실적 예상하기",
+      "publishedAt": "2026-02-04T11:09:23Z",
+      "asset": "Samsung",
+      "tone": "negative",
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "cy_U5v4o-c8",
+      "title": "삼성전자 지금 사도 되나요? / 이제 무섭다 코스피 어디까지 가나? / 구글 실적 예상하기",
+      "publishedAt": "2026-02-04T11:09:23Z",
+      "asset": "Google",
+      "tone": "negative",
+      "actualDirection": "down",
+      "isHoney": false
     },
     {
       "videoId": "IztMJoUZB5s",
@@ -197,6 +224,24 @@
       "isHoney": false
     },
     {
+      "videoId": "BTWAngrmGfc",
+      "title": "코스피 5000 투자 전략 이렇게 해야 됩니다(ft. 이경민 부장 2부)",
+      "publishedAt": "2026-02-03T00:39:24Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "_U0euAqzloU",
+      "title": "코스피 5000 붕괴 사야할 때인가? 팔 때 인가? / 팔란티어 실적에 달린 미래",
+      "publishedAt": "2026-02-02T11:11:06Z",
+      "asset": "KOSPI",
+      "tone": "negative",
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
       "videoId": "1aOwkzHvqsQ",
       "title": "코스피 5000 붕괴, 반등하려면 이 방법밖에 없습니다.",
       "publishedAt": "2026-02-02T06:11:41Z",
@@ -210,6 +255,15 @@
       "title": "코스피 5000 붕괴, 반등하려면 이 방법밖에 없습니다.",
       "publishedAt": "2026-02-02T06:11:41Z",
       "asset": "Semiconductor",
+      "tone": "negative",
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "videoId": "1aOwkzHvqsQ",
+      "title": "코스피 5000 붕괴, 반등하려면 이 방법밖에 없습니다.",
+      "publishedAt": "2026-02-02T06:11:41Z",
+      "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
       "isHoney": false
@@ -240,6 +294,24 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true
+    },
+    {
+      "videoId": "cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "publishedAt": "2026-01-29T00:24:47Z",
+      "asset": "Samsung",
+      "tone": "positive",
+      "actualDirection": "down",
+      "isHoney": true
+    },
+    {
+      "videoId": "cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "publishedAt": "2026-01-29T00:24:47Z",
+      "asset": "SKHynix",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false
     },
     {
       "videoId": "cvMngriiriA",
@@ -293,6 +365,15 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "flat",
+      "isHoney": false
+    },
+    {
+      "videoId": "vBuUo34mdSY",
+      "title": "코스피 아직도 쌉니다 올해 더 오르는 이유(ft. 박세익 대표 1부)",
+      "publishedAt": "2026-01-19T23:33:57Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "up",
       "isHoney": false
     },
     {

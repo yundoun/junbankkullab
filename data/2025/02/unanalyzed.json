@@ -13,35 +13,55 @@
     "title": "한국증시가 오른 이유",
     "publishedAt": "2025-02-19T11:07:58Z",
     "asset": "KOSPI",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에 '오른 이유'라는 표현이 사용되었으며, 이는 한국 증시가 상승했음을 의미합니다. 상승은 긍정적인 전망을 나타내는 단어이므로, 제목의 뉘앙스는 긍정적입니다.",
+      "confidence": 0.9
+    }
   },
   {
     "videoId": "pvpJWJ0Y1Ic",
     "title": "관세 전쟁에서 비트코인",
     "publishedAt": "2025-02-15T09:00:58Z",
     "asset": "Bitcoin",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '관세 전쟁'은 일반적으로 경제적 불확실성을 나타내지만, '비트코인'과 함께 언급될 때는 비트코인이 전통적인 금융 시스템의 불안정성에 대한 대안으로 긍정적으로 비춰질 수 있습니다. 따라서 비트코인이 관세 전쟁 속에서 기회로 작용할 가능성이 높아 보입니다.",
+      "confidence": 0.7
+    }
   },
   {
     "videoId": "dSiCgz6K_fA",
     "title": "트럼프가 비트코인에 진심인 이유",
     "publishedAt": "2025-02-14T07:40:04Z",
     "asset": "Bitcoin",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '트럼프가 비트코인에 진심인 이유'라는 표현은 트럼프가 비트코인에 대해 긍정적인 관심이나 지지를 보이고 있다는 의미로 해석될 수 있습니다. 이는 비트코인에 대한 긍정적인 전망을 암시할 수 있습니다.",
+      "confidence": 0.8
+    }
   },
   {
     "videoId": "XO7MTfGFL4E",
     "title": "비트코인, 50만달러까지 가는 이유(박종한 작가 1부)",
     "publishedAt": "2025-02-14T06:38:47Z",
     "asset": "Bitcoin",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '비트코인, 50만달러까지 가는 이유'라는 표현은 비트코인의 가격이 크게 상승할 가능성을 제시하고 있으며, 이는 긍정적인 전망을 나타냅니다. 특히 '가는 이유'라는 부분은 상승의 근거를 제시할 것임을 암시하여 낙관적인 뉘앙스를 줍니다.",
+      "confidence": 0.9
+    }
   }
 ]

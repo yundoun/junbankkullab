@@ -27,33 +27,6 @@
     "negativeScore": 2
   },
   {
-    "videoId": "cvMngriiriA",
-    "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-    "publishedAt": "2026-01-29T00:24:47Z",
-    "asset": "Samsung",
-    "reason": "no_tone",
-    "positiveScore": 1,
-    "negativeScore": 1
-  },
-  {
-    "videoId": "cvMngriiriA",
-    "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-    "publishedAt": "2026-01-29T00:24:47Z",
-    "asset": "SKHynix",
-    "reason": "no_tone",
-    "positiveScore": 1,
-    "negativeScore": 1
-  },
-  {
-    "videoId": "FLwd97yGfm0",
-    "title": "연준의장이 바뀌면 비트코인은 어떻게 될까?",
-    "publishedAt": "2026-01-26T22:00:15Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "4ut8089Ra7k",
     "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
     "publishedAt": "2026-01-26T00:14:16Z",
@@ -79,15 +52,6 @@
     "reason": "no_market_data",
     "positiveScore": 0,
     "negativeScore": 1
-  },
-  {
-    "videoId": "vBuUo34mdSY",
-    "title": "코스피 아직도 쌉니다 올해 더 오르는 이유(ft. 박세익 대표 1부)",
-    "publishedAt": "2026-01-19T23:33:57Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
   },
   {
     "videoId": "oOgX8LuqYys",
@@ -124,5 +88,19 @@
     "reason": "no_market_data",
     "positiveScore": 1,
     "negativeScore": 0
+  },
+  {
+    "videoId": "FLwd97yGfm0",
+    "title": "연준의장이 바뀌면 비트코인은 어떻게 될까?",
+    "publishedAt": "2026-01-26T22:00:15Z",
+    "asset": "Bitcoin",
+    "reason": "still_neutral_after_gpt4o",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "neutral",
+      "reasoning": "제목은 연준 의장의 교체가 비트코인에 미치는 영향을 질문 형식으로 제시하고 있으며, 긍정적 또는 부정적 전망을 명확히 드러내지 않고 있습니다. 따라서 정보 제공의 성격이 강하고, 특정한 방향성을 제시하지 않으므로 중립적인 뉘앙스로 판단됩니다.",
+      "confidence": 0.7
+    }
   }
 ]

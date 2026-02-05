@@ -1,14 +1,5 @@
 [
   {
-    "videoId": "oRPza9FG97E",
-    "title": "2026년 코스피 5000만들겠습니다. (ft.이소영 의원 풀버전)",
-    "publishedAt": "2025-12-31T23:51:38Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "aLY3A8D1EcQ",
     "title": "은과 환율이 급락하고, 코스피만 오르는 이유",
     "publishedAt": "2025-12-29T10:13:47Z",
@@ -27,33 +18,6 @@
     "negativeScore": 1
   },
   {
-    "videoId": "fIyQXZ4W4o8",
-    "title": "코스피 1만까지 오를 수 있습니다(ft.소현철 교수 1부)",
-    "publishedAt": "2025-12-21T00:38:52Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "L-SzNCM-Ej4",
-    "title": "배당소득 분리과세로 코스피 5000 만들겠습니다. (ft.이소영 의원 1부)",
-    "publishedAt": "2025-12-19T04:27:51Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "j4kFk-0kKyw",
-    "title": "테슬라 500달러 갔다, 적정주가 1000달러인 이유",
-    "publishedAt": "2025-12-17T09:43:46Z",
-    "asset": "Tesla",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "qyXMu0tBmwM",
     "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
     "publishedAt": "2025-12-16T10:12:58Z",
@@ -63,12 +27,73 @@
     "negativeScore": 1
   },
   {
+    "videoId": "oRPza9FG97E",
+    "title": "2026년 코스피 5000만들겠습니다. (ft.이소영 의원 풀버전)",
+    "publishedAt": "2025-12-31T23:51:38Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '2026년 코스피 5000만들겠습니다'라는 표현은 코스피 지수가 상승할 것이라는 긍정적인 전망을 나타냅니다. 특히 '만들겠습니다'라는 의지적인 표현은 목표를 달성하겠다는 낙관적인 뉘앙스를 주고 있습니다.",
+      "confidence": 0.9
+    }
+  },
+  {
+    "videoId": "fIyQXZ4W4o8",
+    "title": "코스피 1만까지 오를 수 있습니다(ft.소현철 교수 1부)",
+    "publishedAt": "2025-12-21T00:38:52Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '코스피 1만까지 오를 수 있습니다'라는 표현은 코스피 지수가 크게 상승할 가능성을 언급하고 있으며, 이는 긍정적인 전망을 나타냅니다. 특히 '오를 수 있습니다'라는 부분은 낙관적인 뉘앙스를 가지고 있습니다.",
+      "confidence": 0.9
+    }
+  },
+  {
+    "videoId": "L-SzNCM-Ej4",
+    "title": "배당소득 분리과세로 코스피 5000 만들겠습니다. (ft.이소영 의원 1부)",
+    "publishedAt": "2025-12-19T04:27:51Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '코스피 5000 만들겠습니다'라는 표현은 코스피 지수가 상승할 것이라는 낙관적인 전망을 나타내고 있습니다. '배당소득 분리과세'라는 정책이 긍정적인 영향을 미칠 것이라는 기대감을 드러내고 있으며, 이는 호재로 해석될 수 있습니다.",
+      "confidence": 0.9
+    }
+  },
+  {
+    "videoId": "j4kFk-0kKyw",
+    "title": "테슬라 500달러 갔다, 적정주가 1000달러인 이유",
+    "publishedAt": "2025-12-17T09:43:46Z",
+    "asset": "Tesla",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '테슬라 500달러 갔다, 적정주가 1000달러인 이유'라는 표현은 현재 주가가 500달러인데, 적정 주가가 1000달러라고 언급하며 상승 여력이 있다는 긍정적인 전망을 제시하고 있습니다. '적정주가 1000달러인 이유'라는 부분은 테슬라 주가가 더 오를 가능성이 있다는 낙관적인 뉘앙스를 담고 있습니다.",
+      "confidence": 0.9
+    }
+  },
+  {
     "videoId": "s_fzguS0IFQ",
     "title": "코스피 더 오를 겁니다. 이 기업이 제일 기대됩니다.(ft. 염승환 이사 1부)",
     "publishedAt": "2025-12-03T10:01:37Z",
     "asset": "KOSPI",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '코스피 더 오를 겁니다'라는 표현은 코스피 지수에 대한 긍정적인 전망을 나타내고 있으며, '이 기업이 제일 기대됩니다'라는 부분은 특정 기업에 대한 긍정적인 기대감을 드러내고 있습니다. 따라서 전반적으로 낙관적인 전망을 제시하고 있다고 판단할 수 있습니다.",
+      "confidence": 0.9
+    }
   }
 ]

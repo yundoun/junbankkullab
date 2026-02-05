@@ -1,14 +1,5 @@
 [
   {
-    "videoId": "P0dwt0kOlds",
-    "title": "코스피가 이것 때문에 못 오르고 있습니다!(ft.비즈넵)",
-    "publishedAt": "2025-03-31T22:30:07Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "AD0I1IIL4ww",
     "title": "비트코인 기축통화됩니다 마지막 기회입니다(ft.오태민 교수 풀버전)",
     "publishedAt": "2025-03-30T00:12:23Z",
@@ -24,15 +15,6 @@
     "asset": "Bitcoin",
     "reason": "no_market_data",
     "positiveScore": 1,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "QJ8gr3wXSFo",
-    "title": "코스피 7분간 거래정지, 의심가는 동양철관 주포",
-    "publishedAt": "2025-03-18T05:38:50Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
     "negativeScore": 0
   },
   {
@@ -88,5 +70,33 @@
     "reason": "no_market_data",
     "positiveScore": 1,
     "negativeScore": 0
+  },
+  {
+    "videoId": "P0dwt0kOlds",
+    "title": "코스피가 이것 때문에 못 오르고 있습니다!(ft.비즈넵)",
+    "publishedAt": "2025-03-31T22:30:07Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '코스피가 이것 때문에 못 오르고 있습니다!'라는 표현은 코스피 지수가 상승하지 못하고 있다는 부정적인 상황을 암시합니다. '못 오르고 있습니다'라는 부분이 특히 부정적인 뉘앙스를 가지고 있습니다.",
+      "confidence": 0.85
+    }
+  },
+  {
+    "videoId": "QJ8gr3wXSFo",
+    "title": "코스피 7분간 거래정지, 의심가는 동양철관 주포",
+    "publishedAt": "2025-03-18T05:38:50Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '코스피 7분간 거래정지'와 '의심가는 동양철관 주포'라는 표현은 시장에 부정적인 사건이 발생했음을 암시합니다. '거래정지'는 일반적으로 시장에 부정적인 영향을 미치는 사건으로 해석되며, '의심가는'이라는 표현은 특정 주식에 대한 불신이나 부정적인 시각을 나타낼 수 있습니다.",
+      "confidence": 0.8
+    }
   }
 ]

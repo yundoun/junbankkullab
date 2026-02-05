@@ -40,8 +40,13 @@
     "title": "엔비디아 투자자도 모르는 히든 정보",
     "publishedAt": "2025-06-02T07:00:47Z",
     "asset": "Nvidia",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에 '히든 정보'라는 표현이 사용되었는데, 이는 일반적으로 잘 알려지지 않은 긍정적인 정보를 암시할 때 사용됩니다. 특히 투자자들이 모르는 정보라는 점에서 투자 기회나 호재로 해석될 가능성이 높습니다.",
+      "confidence": 0.8
+    }
   }
 ]

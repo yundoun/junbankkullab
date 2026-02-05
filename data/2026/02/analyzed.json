@@ -295,5 +295,209 @@
       "isHoney": false,
       "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
+  },
+  {
+    "videoId": "cy_U5v4o-c8",
+    "title": "삼성전자 지금 사도 되나요? / 이제 무섭다 코스피 어디까지 가나? / 구글 실적 예상하기",
+    "publishedAt": "2026-02-04T11:09:23Z",
+    "analysis": {
+      "method": "llm-gpt4o-reanalysis",
+      "model": "gpt-4o",
+      "timestamp": "2026-02-05T23:47:25.642Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "reasoning": "제목에서 '이제 무섭다'라는 표현은 코스피 시장에 대한 불안감이나 부정적인 전망을 암시하는 것으로 해석될 수 있습니다. 또한 '어디까지 가나?'라는 질문은 하락에 대한 우려를 나타낼 수 있습니다. 따라서 전반적인 뉘앙스는 부정적입니다.",
+        "confidence": 0.8
+      }
+    },
+    "marketData": {
+      "asset": "KOSPI",
+      "ticker": "^KS11",
+      "closePrice": 5371.1001,
+      "previousClose": 5288.0801,
+      "direction": "up"
+    },
+    "judgment": {
+      "predictedDirection": "bearish",
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "GPT-4o 재분석: 부정 전망 → 실제 상승 → 역지표 적중!"
+    }
+  },
+  {
+    "videoId": "cy_U5v4o-c8",
+    "title": "삼성전자 지금 사도 되나요? / 이제 무섭다 코스피 어디까지 가나? / 구글 실적 예상하기",
+    "publishedAt": "2026-02-04T11:09:23Z",
+    "analysis": {
+      "method": "llm-gpt4o-reanalysis",
+      "model": "gpt-4o",
+      "timestamp": "2026-02-05T23:47:28.027Z",
+      "detectedAssets": [
+        {
+          "asset": "Samsung",
+          "ticker": "005930.KS"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "reasoning": "제목에서 '이제 무섭다'라는 표현은 코스피 시장에 대한 불안감이나 부정적인 전망을 암시하는 것으로 해석될 수 있습니다. 또한 '어디까지 가나?'라는 질문은 하락에 대한 우려를 나타낼 수 있습니다. 따라서 전반적인 뉘앙스는 부정적입니다.",
+        "confidence": 0.8
+      }
+    },
+    "marketData": {
+      "asset": "Samsung",
+      "ticker": "005930.KS",
+      "closePrice": 169100,
+      "previousClose": 167500,
+      "direction": "up"
+    },
+    "judgment": {
+      "predictedDirection": "bearish",
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "GPT-4o 재분석: 부정 전망 → 실제 상승 → 역지표 적중!"
+    }
+  },
+  {
+    "videoId": "cy_U5v4o-c8",
+    "title": "삼성전자 지금 사도 되나요? / 이제 무섭다 코스피 어디까지 가나? / 구글 실적 예상하기",
+    "publishedAt": "2026-02-04T11:09:23Z",
+    "analysis": {
+      "method": "llm-gpt4o-reanalysis",
+      "model": "gpt-4o",
+      "timestamp": "2026-02-05T23:47:29.295Z",
+      "detectedAssets": [
+        {
+          "asset": "Google",
+          "ticker": "GOOGL"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "reasoning": "제목에서 '이제 무섭다'라는 표현은 코스피 시장에 대한 불안감이나 부정적인 전망을 암시하는 것으로 해석될 수 있습니다. 또한 '어디까지 가나?'라는 질문은 하락에 대한 우려를 나타낼 수 있습니다. 따라서 전반적인 뉘앙스는 부정적입니다.",
+        "confidence": 0.8
+      }
+    },
+    "marketData": {
+      "asset": "Google",
+      "ticker": "GOOGL",
+      "closePrice": 333.04,
+      "previousClose": 339.71,
+      "direction": "down"
+    },
+    "judgment": {
+      "predictedDirection": "bearish",
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "GPT-4o 재분석: 부정 전망 → 실제 하락 → 예측대로"
+    }
+  },
+  {
+    "videoId": "BTWAngrmGfc",
+    "title": "코스피 5000 투자 전략 이렇게 해야 됩니다(ft. 이경민 부장 2부)",
+    "publishedAt": "2026-02-03T00:39:24Z",
+    "analysis": {
+      "method": "llm-gpt4o-reanalysis",
+      "model": "gpt-4o",
+      "timestamp": "2026-02-05T23:47:33.960Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "reasoning": "제목에 '코스피 5000'이라는 구체적인 목표 수치가 언급되며, '투자 전략 이렇게 해야 됩니다'라는 표현은 긍정적인 투자 기회를 제시하는 것으로 해석될 수 있습니다. 또한, 'ft. 이경민 부장 2부'라는 부분은 전문가의 의견을 바탕으로 한 전략 제시로 신뢰성을 높이는 요소로 작용할 수 있습니다.",
+        "confidence": 0.8
+      }
+    },
+    "marketData": {
+      "asset": "KOSPI",
+      "ticker": "^KS11",
+      "closePrice": 5288.0801,
+      "previousClose": 4949.6699,
+      "direction": "up"
+    },
+    "judgment": {
+      "predictedDirection": "bullish",
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "GPT-4o 재분석: 긍정 전망 → 실제 상승 → 예측대로"
+    }
+  },
+  {
+    "videoId": "_U0euAqzloU",
+    "title": "코스피 5000 붕괴 사야할 때인가? 팔 때 인가? / 팔란티어 실적에 달린 미래",
+    "publishedAt": "2026-02-02T11:11:06Z",
+    "analysis": {
+      "method": "llm-gpt4o-reanalysis",
+      "model": "gpt-4o",
+      "timestamp": "2026-02-05T23:47:38.658Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "reasoning": "제목에서 '코스피 5000 붕괴'라는 표현이 사용되어, 이는 코스피 지수가 하락하고 있다는 부정적인 상황을 암시합니다. '사야할 때인가? 팔 때 인가?'라는 질문은 투자자들이 매수와 매도 사이에서 고민하고 있음을 나타내며, 이는 시장의 불확실성을 반영합니다. 전반적으로 부정적인 뉘앙스가 강합니다.",
+        "confidence": 0.8
+      }
+    },
+    "marketData": {
+      "asset": "KOSPI",
+      "ticker": "^KS11",
+      "closePrice": 4949.6699,
+      "previousClose": 5224.3599,
+      "direction": "down"
+    },
+    "judgment": {
+      "predictedDirection": "bearish",
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "GPT-4o 재분석: 부정 전망 → 실제 하락 → 예측대로"
+    }
+  },
+  {
+    "videoId": "1aOwkzHvqsQ",
+    "title": "코스피 5000 붕괴, 반등하려면 이 방법밖에 없습니다.",
+    "publishedAt": "2026-02-02T06:11:41Z",
+    "analysis": {
+      "method": "llm-gpt4o-reanalysis",
+      "model": "gpt-4o",
+      "timestamp": "2026-02-05T23:47:43.905Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "reasoning": "제목에서 '코스피 5000 붕괴'라는 표현은 시장의 하락을 의미하며, 이는 부정적인 전망을 나타냅니다. '반등하려면 이 방법밖에 없습니다'라는 부분은 현재 상황이 부정적이며, 특정한 방법이 필요하다는 점에서 긍정적이지 않은 뉘앙스를 줍니다.",
+        "confidence": 0.85
+      }
+    },
+    "marketData": {
+      "asset": "KOSPI",
+      "ticker": "^KS11",
+      "closePrice": 4949.6699,
+      "previousClose": 5224.3599,
+      "direction": "down"
+    },
+    "judgment": {
+      "predictedDirection": "bearish",
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "GPT-4o 재분석: 부정 전망 → 실제 하락 → 예측대로"
+    }
   }
 ]

@@ -9,15 +9,6 @@
     "negativeScore": 0
   },
   {
-    "videoId": "f1M9yCPrko0",
-    "title": "엔비디아는 AI버블론을 혼자 막아낼 수 있을까?",
-    "publishedAt": "2025-11-19T10:01:13Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "GDJ7NF42RF8",
     "title": "조선주 내년이 마지막 매수 기회입니다(ft.한승한 연구원 1부)",
     "publishedAt": "2025-11-19T04:58:50Z",
@@ -45,24 +36,6 @@
     "negativeScore": 0
   },
   {
-    "videoId": "PwdTH55izu8",
-    "title": "코스피 버블에 대한 솔직한 생각 (ft.김종봉 작가 1부)",
-    "publishedAt": "2025-11-16T10:05:19Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "hjeAGLrELh4",
-    "title": "버핏의 마지막 인생베팅은 구글이었습니다",
-    "publishedAt": "2025-11-15T23:30:15Z",
-    "asset": "Google",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "ww1cO9JGJhw",
     "title": "도망가는 외국인과 의심스러운 환율(ft.코스피, 선물 동시 매도)",
     "publishedAt": "2025-11-14T03:35:13Z",
@@ -70,24 +43,6 @@
     "reason": "no_market_data",
     "positiveScore": 0,
     "negativeScore": 1
-  },
-  {
-    "videoId": "jP6slxFl_JY",
-    "title": "국민연금이 코스피를 더 사지 못하는 이유",
-    "publishedAt": "2025-11-13T10:01:19Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "qVUI8eku3uc",
-    "title": "셀트리온 50억 이후 삼성전자로 30억 벌었습니다(ft.윤버핏 2부)",
-    "publishedAt": "2025-11-13T03:40:42Z",
-    "asset": "Samsung",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
   },
   {
     "videoId": "86M35UU6MLs",
@@ -99,21 +54,101 @@
     "negativeScore": 1
   },
   {
+    "videoId": "f1M9yCPrko0",
+    "title": "엔비디아는 AI버블론을 혼자 막아낼 수 있을까?",
+    "publishedAt": "2025-11-19T10:01:13Z",
+    "asset": "Nvidia",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 'AI버블론'이라는 표현은 시장에 대한 과열된 상태나 거품을 암시하며, '혼자 막아낼 수 있을까?'라는 질문은 엔비디아가 이 상황을 극복하기 어려울 수도 있다는 부정적인 뉘앙스를 내포하고 있습니다. 이는 엔비디아와 관련된 시장 전망이 부정적일 가능성을 시사합니다.",
+      "confidence": 0.8
+    }
+  },
+  {
+    "videoId": "PwdTH55izu8",
+    "title": "코스피 버블에 대한 솔직한 생각 (ft.김종봉 작가 1부)",
+    "publishedAt": "2025-11-16T10:05:19Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에 '코스피 버블'이라는 표현이 사용되었습니다. '버블'은 일반적으로 자산 가격이 실제 가치보다 과대평가되어 있다는 부정적인 의미를 내포하고 있습니다. 또한 '솔직한 생각'이라는 표현은 비판적이거나 부정적인 의견을 제시할 가능성을 암시합니다.",
+      "confidence": 0.85
+    }
+  },
+  {
+    "videoId": "hjeAGLrELh4",
+    "title": "버핏의 마지막 인생베팅은 구글이었습니다",
+    "publishedAt": "2025-11-15T23:30:15Z",
+    "asset": "Google",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '버핏의 마지막 인생베팅'이라는 표현은 워렌 버핏이 구글에 대해 매우 긍정적이고 확신을 가지고 있다는 인상을 줍니다. '인생베팅'이라는 표현은 큰 신뢰와 기대를 나타내며, 이는 구글에 대한 긍정적인 전망을 암시합니다.",
+      "confidence": 0.9
+    }
+  },
+  {
+    "videoId": "jP6slxFl_JY",
+    "title": "국민연금이 코스피를 더 사지 못하는 이유",
+    "publishedAt": "2025-11-13T10:01:19Z",
+    "asset": "KOSPI",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "negative",
+      "reasoning": "제목에서 '국민연금이 코스피를 더 사지 못하는 이유'라는 표현은 국민연금이 코스피에 대한 추가 매수를 하지 못하는 부정적인 상황을 암시합니다. 이는 코스피 시장에 대한 부정적인 전망이나 제약이 있다는 것을 의미할 수 있습니다.",
+      "confidence": 0.8
+    }
+  },
+  {
+    "videoId": "qVUI8eku3uc",
+    "title": "셀트리온 50억 이후 삼성전자로 30억 벌었습니다(ft.윤버핏 2부)",
+    "publishedAt": "2025-11-13T03:40:42Z",
+    "asset": "Samsung",
+    "reason": "no_market_data",
+    "positiveScore": 0,
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '50억 이후'와 '30억 벌었습니다'라는 표현은 투자로 인해 큰 수익을 얻었다는 긍정적인 결과를 보여줍니다. 이는 투자에 대한 긍정적인 전망을 암시합니다.",
+      "confidence": 0.9
+    }
+  },
+  {
     "videoId": "9630fQTsmQQ",
     "title": "코스피 4000 숨고르기와 AI버블 논란",
     "publishedAt": "2025-11-05T00:58:53Z",
     "asset": "KOSPI",
-    "reason": "no_tone",
+    "reason": "still_neutral_after_gpt4o",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "neutral",
+      "reasoning": "제목에서 '코스피 4000 숨고르기'는 현재 코스피 지수가 높은 수준에 도달했음을 암시하지만, '숨고르기'라는 표현은 긍정적이거나 부정적인 방향성을 명확히 제시하지 않습니다. 또한 'AI버블 논란'은 AI 관련 주식이나 시장에 대한 우려를 나타낼 수 있지만, '논란'이라는 단어 자체가 긍정적 또는 부정적 방향을 명확히 제시하지 않습니다. 따라서 제목만으로는 시장에 대한 명확한 긍정적 또는 부정적 전망을 판단하기 어렵습니다.",
+      "confidence": 0.7
+    }
   },
   {
     "videoId": "O2gq3fEBjUs",
     "title": "비트코인처럼 리플 시대가 오는 이유(ft. 문창훈 작가 1부)",
     "publishedAt": "2025-11-01T05:03:39Z",
     "asset": "Bitcoin",
-    "reason": "no_tone",
+    "reason": "no_market_data",
     "positiveScore": 0,
-    "negativeScore": 0
+    "negativeScore": 0,
+    "gpt4oAnalysis": {
+      "tone": "positive",
+      "reasoning": "제목에서 '비트코인처럼 리플 시대가 오는 이유'라는 표현은 리플이 비트코인과 같이 긍정적인 주목을 받을 것이라는 전망을 암시합니다. '시대가 온다'는 표현은 일반적으로 긍정적인 변화나 기회를 의미합니다.",
+      "confidence": 0.9
+    }
   }
 ]
