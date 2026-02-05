@@ -77,24 +77,56 @@ export async function GET() {
       return undefined
     }
 
-    // 최근 예측 (isHoney가 정의된 것들)
-    const recentPredictions = parsed.mentions
+    // 멘션을 카드 형태로 변환
+    const mapMention = (m: Mention) => ({
+      videoId: m.videoId,
+      title: m.title,
+      thumbnail: `https://i.ytimg.com/vi/${m.videoId}/hqdefault.jpg`,
+      publishedAt: m.publishedAt,
+      asset: m.asset,
+      predictedDirection: m.tone === 'positive' ? 'bullish' : 'bearish',
+      actualDirection: mapDirection(m.actualDirection),
+      isHoney: m.isHoney,
+      status: m.isHoney !== undefined 
+        ? (m.isHoney ? 'correct' : 'incorrect')
+        : 'pending',
+    })
+
+    // 정렬 (최신순)
+    const sortedMentions = [...parsed.mentions]
       .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-      .slice(0, 20)
-      .map((m) => ({
+
+    // 🍯 전반꿀 적중 (역지표 성공)
+    const honeyHits = sortedMentions
+      .filter(m => m.isHoney === true)
+      .map(mapMention)
+
+    // 📈 전인구 적중 (예측대로 감)
+    const jigHits = sortedMentions
+      .filter(m => m.isHoney === false)
+      .map(mapMention)
+
+    // 검토 대기 목록 로드
+    let pendingReviews: any[] = []
+    try {
+      const reviewPath = path.join(process.cwd(), 'data', 'review', 'neutral-mentions.json')
+      const reviewData = await fs.readFile(reviewPath, 'utf-8')
+      const neutralMentions = JSON.parse(reviewData)
+      pendingReviews = neutralMentions.map((m: any) => ({
         videoId: m.videoId,
         title: m.title,
         thumbnail: `https://i.ytimg.com/vi/${m.videoId}/hqdefault.jpg`,
         publishedAt: m.publishedAt,
         asset: m.asset,
-        predictedDirection: m.tone === 'positive' ? 'bullish' : 'bearish',
-        actualDirection: mapDirection(m.actualDirection),
-        priceChange: undefined, // 상세 가격 변동은 별도 조회 필요
-        isHoney: m.isHoney,
-        status: m.isHoney !== undefined 
-          ? (m.isHoney ? 'correct' : 'incorrect')
-          : 'pending',
+        predictedDirection: 'neutral',
+        status: 'pending',
       }))
+    } catch {
+      // 검토 파일 없으면 무시
+    }
+
+    // 하위 호환성을 위한 recentPredictions
+    const recentPredictions = sortedMentions.slice(0, 20).map(mapMention)
 
     return NextResponse.json({
       // 핵심 지표
@@ -105,7 +137,7 @@ export async function GET() {
       // 메타 정보
       totalVideos: parsed.stats.totalVideos,
       totalMentions: parsed.stats.totalMentions,
-      pendingReview: parsed.stats.analyzableMentions - parsed.stats.validMentions,
+      pendingReviewCount: pendingReviews.length,
       
       // 종목별 통계
       assetStats: parsed.assetStats,
@@ -119,7 +151,12 @@ export async function GET() {
         honeyIndex: p.honeyIndex,
       })),
       
-      // 최근 예측
+      // 탭별 예측 목록
+      honeyHits,      // 🍯 전반꿀 적중
+      jigHits,        // 📈 전인구 적중
+      pendingReviews, // 🔍 검토 대기
+      
+      // 하위 호환
       recentPredictions,
       
       // 업데이트 시간

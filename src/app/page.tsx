@@ -15,6 +15,8 @@ import {
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { Pagination } from '@/components/ui/pagination'
 
 interface AssetStat {
   asset: string
@@ -49,9 +51,12 @@ interface Stats {
   honeyCount: number
   totalVideos: number
   totalMentions: number
-  pendingReview: number
+  pendingReviewCount: number
   assetStats: AssetStat[]
   timeline: TimelineData[]
+  honeyHits: Prediction[]
+  jigHits: Prediction[]
+  pendingReviews: Prediction[]
   recentPredictions: Prediction[]
   updatedAt: string | null
 }
@@ -66,6 +71,165 @@ const ASSET_NAMES: Record<string, string> = {
   Nvidia: '엔비디아',
   Tesla: '테슬라',
   Bitcoin: '비트코인',
+}
+
+const ITEMS_PER_PAGE = 10
+
+// 예측 탭 컴포넌트
+function PredictionTabs({ stats }: { stats: Stats | null }) {
+  const [honeyPage, setHoneyPage] = useState(1)
+  const [jigPage, setJigPage] = useState(1)
+  const [pendingPage, setPendingPage] = useState(1)
+
+  if (!stats) return null
+
+  const honeyHits = stats.honeyHits || []
+  const jigHits = stats.jigHits || []
+  const pendingReviews = stats.pendingReviews || []
+
+  const honeyTotalPages = Math.ceil(honeyHits.length / ITEMS_PER_PAGE)
+  const jigTotalPages = Math.ceil(jigHits.length / ITEMS_PER_PAGE)
+  const pendingTotalPages = Math.ceil(pendingReviews.length / ITEMS_PER_PAGE)
+
+  const paginatedHoney = honeyHits.slice((honeyPage - 1) * ITEMS_PER_PAGE, honeyPage * ITEMS_PER_PAGE)
+  const paginatedJig = jigHits.slice((jigPage - 1) * ITEMS_PER_PAGE, jigPage * ITEMS_PER_PAGE)
+  const paginatedPending = pendingReviews.slice((pendingPage - 1) * ITEMS_PER_PAGE, pendingPage * ITEMS_PER_PAGE)
+
+  return (
+    <section>
+      <Tabs defaultValue="honey">
+        <div className="flex items-center justify-between mb-4">
+          <TabsList>
+            <TabsTrigger value="honey" className="gap-1.5">
+              <span>🍯</span>
+              <span>전반꿀 적중</span>
+              <Badge variant="honey" className="ml-1 text-xs">{honeyHits.length}</Badge>
+            </TabsTrigger>
+            <TabsTrigger value="jig" className="gap-1.5">
+              <span>📈</span>
+              <span>전인구 적중</span>
+              <Badge variant="outline" className="ml-1 text-xs">{jigHits.length}</Badge>
+            </TabsTrigger>
+            <TabsTrigger value="pending" className="gap-1.5">
+              <span>🔍</span>
+              <span>검토 대기</span>
+              <Badge variant="pending" className="ml-1 text-xs">{pendingReviews.length}</Badge>
+            </TabsTrigger>
+          </TabsList>
+        </div>
+
+        <TabsContent value="honey">
+          {paginatedHoney.length > 0 ? (
+            <>
+              <div className="space-y-3">
+                {paginatedHoney.map((prediction, idx) => (
+                  <a
+                    key={`honey-${prediction.videoId}-${idx}`}
+                    href={`https://youtube.com/watch?v=${prediction.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PredictionCard
+                      title={prediction.title}
+                      thumbnail={prediction.thumbnail}
+                      publishedAt={prediction.publishedAt}
+                      asset={ASSET_NAMES[prediction.asset] || prediction.asset}
+                      predictedDirection={prediction.predictedDirection}
+                      status={prediction.status}
+                      actualDirection={prediction.actualDirection}
+                    />
+                  </a>
+                ))}
+              </div>
+              <Pagination
+                currentPage={honeyPage}
+                totalPages={honeyTotalPages}
+                onPageChange={setHoneyPage}
+                className="mt-6"
+              />
+            </>
+          ) : (
+            <div className="text-center py-12 text-muted-foreground">
+              아직 전반꿀 적중 데이터가 없습니다
+            </div>
+          )}
+        </TabsContent>
+
+        <TabsContent value="jig">
+          {paginatedJig.length > 0 ? (
+            <>
+              <div className="space-y-3">
+                {paginatedJig.map((prediction, idx) => (
+                  <a
+                    key={`jig-${prediction.videoId}-${idx}`}
+                    href={`https://youtube.com/watch?v=${prediction.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PredictionCard
+                      title={prediction.title}
+                      thumbnail={prediction.thumbnail}
+                      publishedAt={prediction.publishedAt}
+                      asset={ASSET_NAMES[prediction.asset] || prediction.asset}
+                      predictedDirection={prediction.predictedDirection}
+                      status={prediction.status}
+                      actualDirection={prediction.actualDirection}
+                    />
+                  </a>
+                ))}
+              </div>
+              <Pagination
+                currentPage={jigPage}
+                totalPages={jigTotalPages}
+                onPageChange={setJigPage}
+                className="mt-6"
+              />
+            </>
+          ) : (
+            <div className="text-center py-12 text-muted-foreground">
+              아직 전인구 적중 데이터가 없습니다
+            </div>
+          )}
+        </TabsContent>
+
+        <TabsContent value="pending">
+          {paginatedPending.length > 0 ? (
+            <>
+              <div className="space-y-3">
+                {paginatedPending.map((prediction, idx) => (
+                  <a
+                    key={`pending-${prediction.videoId}-${idx}`}
+                    href={`https://youtube.com/watch?v=${prediction.videoId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <PredictionCard
+                      title={prediction.title}
+                      thumbnail={prediction.thumbnail}
+                      publishedAt={prediction.publishedAt}
+                      asset={ASSET_NAMES[prediction.asset] || prediction.asset}
+                      predictedDirection={prediction.predictedDirection as any}
+                      status="pending"
+                    />
+                  </a>
+                ))}
+              </div>
+              <Pagination
+                currentPage={pendingPage}
+                totalPages={pendingTotalPages}
+                onPageChange={setPendingPage}
+                className="mt-6"
+              />
+            </>
+          ) : (
+            <div className="text-center py-12 text-muted-foreground">
+              검토 대기 항목이 없습니다
+            </div>
+          )}
+        </TabsContent>
+      </Tabs>
+    </section>
+  )
 }
 
 export default function Home() {
@@ -206,7 +370,7 @@ export default function Home() {
             </BentoCardHeader>
             <BentoCardContent>
               <BentoCardValue className="text-pending">
-                {stats?.pendingReview ?? 0}
+                {stats?.pendingReviewCount ?? 0}
               </BentoCardValue>
               <p className="text-sm text-muted-foreground mt-1">수동 검토 필요</p>
             </BentoCardContent>
@@ -267,32 +431,9 @@ export default function Home() {
           </section>
         )}
         
-        {/* Recent Predictions */}
-        {stats?.recentPredictions && stats.recentPredictions.length > 0 && (
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2">
-                <TrendingDown className="w-5 h-5 text-muted-foreground" />
-                <h2 className="text-lg font-semibold">최근 분석</h2>
-              </div>
-              <Badge variant="outline">{stats.recentPredictions.length}개</Badge>
-            </div>
-            <div className="space-y-3">
-              {stats.recentPredictions.slice(0, 10).map((prediction, idx) => (
-                <PredictionCard
-                  key={`${prediction.videoId}-${idx}`}
-                  title={prediction.title}
-                  thumbnail={prediction.thumbnail}
-                  publishedAt={prediction.publishedAt}
-                  asset={ASSET_NAMES[prediction.asset] || prediction.asset}
-                  predictedDirection={prediction.predictedDirection}
-                  status={prediction.status}
-                  actualDirection={prediction.actualDirection}
-                />
-              ))}
-            </div>
-          </section>
-        )}
+        {/* 예측 분석 탭 */}
+        <PredictionTabs stats={stats} />
+      
       </main>
 
       {/* Footer */}
