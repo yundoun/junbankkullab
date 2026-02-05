@@ -1,0 +1,55 @@
+{
+  "updatedAt": "2026-02-05T01:17:27.716Z",
+  "methodology": {
+    "assets": [
+      "KOSPI",
+      "SP500",
+      "NASDAQ",
+      "Samsung",
+      "SKHynix",
+      "Nvidia"
+    ],
+    "timeframe": "24시간",
+    "source": "전인구경제연구소 유튜브",
+    "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
+  },
+  "stats": {
+    "totalPredictions": 12,
+    "honeyCount": 3,
+    "honeyIndex": 25
+  },
+  "assetStats": [
+    {
+      "asset": "KOSPI",
+      "total": 6,
+      "honey": 1,
+      "honeyIndex": 16.7
+    },
+    {
+      "asset": "Samsung",
+      "total": 3,
+      "honey": 1,
+      "honeyIndex": 33.3
+    },
+    {
+      "asset": "SKHynix",
+      "total": 3,
+      "honey": 1,
+      "honeyIndex": 33.3
+    }
+  ],
+  "periods": [
+    {
+      "year": 2025,
+      "month": 12,
+      "predictions": 2,
+      "honeyIndex": 50
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "predictions": 10,
+      "honeyIndex": 20
+    }
+  ]
+}

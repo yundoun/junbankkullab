@@ -3,13 +3,14 @@
  * 전반꿀 데이터 수집 스크립트
  * 
  * Usage:
- *   npx tsx collect.ts --start 2025-12-01 --end 2025-12-31
+ *   npx tsx collect.ts --start YYYY-MM-DD --end YYYY-MM-DD
+ *   npx tsx collect.ts --year 2025 --month 12
  */
 
 import { execSync } from 'child_process'
 import * as path from 'path'
 import * as fs from 'fs/promises'
-import { readFileSync } from 'fs'
+import { readFileSync, existsSync } from 'fs'
 
 // Load env from project directory
 const PROJECT_DIR = process.cwd()
@@ -112,27 +113,33 @@ interface Prediction {
 }
 
 // Parse command line args
-function parseArgs(): { start: Date, end: Date } {
+function parseArgs(): { year: number, month: number } {
   const args = process.argv.slice(2)
-  let start: Date | null = null
-  let end: Date | null = null
+  let year: number | null = null
+  let month: number | null = null
 
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--start' && args[i + 1]) {
-      start = new Date(args[i + 1] + 'T00:00:00Z')
+    if (args[i] === '--year' && args[i + 1]) {
+      year = parseInt(args[i + 1])
       i++
-    } else if (args[i] === '--end' && args[i + 1]) {
-      end = new Date(args[i + 1] + 'T23:59:59Z')
+    } else if (args[i] === '--month' && args[i + 1]) {
+      month = parseInt(args[i + 1])
+      i++
+    } else if (args[i] === '--start' && args[i + 1]) {
+      const d = new Date(args[i + 1])
+      year = d.getFullYear()
+      month = d.getMonth() + 1
       i++
     }
   }
 
-  if (!start || !end) {
-    console.error('Usage: npx tsx collect.ts --start YYYY-MM-DD --end YYYY-MM-DD')
+  if (!year || !month) {
+    console.error('Usage: npx tsx collect.ts --year 2025 --month 12')
+    console.error('   or: npx tsx collect.ts --start 2025-12-01 --end 2025-12-31')
     process.exit(1)
   }
 
-  return { start, end }
+  return { year, month }
 }
 
 // Get uploads playlist ID
@@ -152,13 +159,17 @@ async function getUploadsPlaylistId(): Promise<string> {
   return data.items[0].contentDetails.relatedPlaylists.uploads
 }
 
-// Fetch videos in date range
-async function fetchVideosInRange(start: Date, end: Date): Promise<Video[]> {
+// Fetch videos for specific month
+async function fetchVideosForMonth(year: number, month: number): Promise<Video[]> {
   if (!YOUTUBE_API_KEY) throw new Error('YOUTUBE_API_KEY not set')
 
   const playlistId = await getUploadsPlaylistId()
-  console.log(`📺 Playlist: ${playlistId}`)
-  console.log(`📅 기간: ${start.toISOString().split('T')[0]} ~ ${end.toISOString().split('T')[0]}\n`)
+  
+  const start = new Date(Date.UTC(year, month - 1, 1))
+  const end = new Date(Date.UTC(year, month, 0, 23, 59, 59))
+  
+  console.log(`📺 채널: 전인구경제연구소`)
+  console.log(`📅 기간: ${year}년 ${month}월\n`)
 
   const videos: Video[] = []
   let pageToken = ''
@@ -185,13 +196,11 @@ async function fetchVideosInRange(start: Date, end: Date): Promise<Video[]> {
       
       const publishedAt = new Date(item.snippet.publishedAt)
       
-      // Skip if before range
       if (publishedAt < start) {
         foundOlderVideo = true
         break
       }
       
-      // Skip if after range
       if (publishedAt > end) continue
       
       videos.push({
@@ -253,8 +262,8 @@ function analyzeTitle(title: string) {
 // Get stock price via yfinance
 function getStockPrice(symbol: string, timestampMs: number, hoursAfter = 24): { priceAt: number, priceAfter: number, change: number, direction: 'up' | 'down' } | null {
   try {
-    const scriptPath = path.join(process.cwd(), 'scripts', 'market_data.py')
-    const pythonPath = path.join(process.cwd(), 'venv', 'bin', 'python')
+    const scriptPath = path.join(PROJECT_DIR, 'scripts', 'market_data.py')
+    const pythonPath = path.join(PROJECT_DIR, 'venv', 'bin', 'python')
     
     const result = execSync(`${pythonPath} ${scriptPath} ${symbol} ${timestampMs} ${hoursAfter}`, {
       encoding: 'utf-8',
@@ -276,19 +285,104 @@ function getStockPrice(symbol: string, timestampMs: number, hoursAfter = 24): { 
   }
 }
 
+// Update overall stats
+async function updateOverallStats(year: number, month: number, stats: any, predictions: any[]) {
+  const overallPath = './data/stats/overall.json'
+  let overall: any = {
+    updatedAt: new Date().toISOString(),
+    methodology: {
+      assets: Object.keys(TARGET_ASSETS),
+      timeframe: '24시간',
+      source: '전인구경제연구소 유튜브',
+      definition: '전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%',
+    },
+    stats: { totalPredictions: 0, honeyCount: 0, honeyIndex: 0 },
+    assetStats: [],
+    periods: [],
+  }
+
+  // Load existing if exists
+  try {
+    overall = JSON.parse(await fs.readFile(overallPath, 'utf-8'))
+  } catch {}
+
+  // Update or add period
+  const periodKey = `${year}-${month.toString().padStart(2, '0')}`
+  const periodIdx = overall.periods.findIndex((p: any) => p.year === year && p.month === month)
+  const periodData = { year, month, predictions: predictions.length, honeyIndex: stats.honeyIndex }
+  
+  if (periodIdx >= 0) {
+    overall.periods[periodIdx] = periodData
+  } else {
+    overall.periods.push(periodData)
+    overall.periods.sort((a: any, b: any) => (a.year * 100 + a.month) - (b.year * 100 + b.month))
+  }
+
+  // Recalculate overall stats from all periods
+  let allPredictions: any[] = []
+  for (const period of overall.periods) {
+    try {
+      const periodPath = `./data/${period.year}/${period.month.toString().padStart(2, '0')}/predictions.json`
+      const periodData = JSON.parse(await fs.readFile(periodPath, 'utf-8'))
+      allPredictions = allPredictions.concat(periodData.predictions)
+    } catch {}
+  }
+
+  const totalHoney = allPredictions.filter(p => p.isHoney).length
+  overall.stats.totalPredictions = allPredictions.length
+  overall.stats.honeyCount = totalHoney
+  overall.stats.honeyIndex = allPredictions.length > 0 
+    ? Math.round((totalHoney / allPredictions.length) * 1000) / 10 
+    : 0
+
+  // Asset stats
+  const assetMap: Record<string, { total: number, honey: number }> = {}
+  for (const p of allPredictions) {
+    if (!assetMap[p.asset]) assetMap[p.asset] = { total: 0, honey: 0 }
+    assetMap[p.asset].total++
+    if (p.isHoney) assetMap[p.asset].honey++
+  }
+  overall.assetStats = Object.entries(assetMap).map(([asset, s]) => ({
+    asset,
+    total: s.total,
+    honey: s.honey,
+    honeyIndex: s.total > 0 ? Math.round((s.honey / s.total) * 1000) / 10 : 0
+  }))
+
+  overall.updatedAt = new Date().toISOString()
+  await fs.writeFile(overallPath, JSON.stringify(overall, null, 2))
+  
+  // Update API latest
+  const latest = {
+    generatedAt: new Date().toISOString(),
+    honeyIndex: overall.stats.honeyIndex,
+    totalPredictions: overall.stats.totalPredictions,
+    assetStats: overall.assetStats,
+    recentPredictions: allPredictions
+      .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+      .slice(0, 10),
+  }
+  await fs.mkdir('./data/api', { recursive: true })
+  await fs.writeFile('./data/api/latest.json', JSON.stringify(latest, null, 2))
+}
+
 async function main() {
-  const { start, end } = parseArgs()
-  const startStr = start.toISOString().split('T')[0]
-  const endStr = end.toISOString().split('T')[0]
+  const { year, month } = parseArgs()
+  const monthStr = month.toString().padStart(2, '0')
   
   console.log('='.repeat(60))
-  console.log(`🍯 전반꿀 데이터 수집: ${startStr} ~ ${endStr}`)
+  console.log(`🍯 전반꿀 데이터 수집: ${year}년 ${month}월`)
   console.log('='.repeat(60) + '\n')
 
   // 1. Fetch videos
   console.log('📥 영상 수집 중...')
-  const videos = await fetchVideosInRange(start, end)
+  const videos = await fetchVideosForMonth(year, month)
   console.log(`   ${videos.length}개 영상 수집 완료\n`)
+
+  // Save videos
+  const dataDir = `./data/${year}/${monthStr}`
+  await fs.mkdir(dataDir, { recursive: true })
+  await fs.writeFile(`${dataDir}/videos.json`, JSON.stringify(videos, null, 2))
 
   // 2. Analyze and create predictions
   const predictions: Prediction[] = []
@@ -325,16 +419,14 @@ async function main() {
     const publishTime = new Date(pred.publishedAt).getTime()
     const after24h = publishTime + 24 * 60 * 60 * 1000
 
-    if (after24h > now) {
-      continue
-    }
+    if (after24h > now) continue
 
     const result = getStockPrice(pred.symbol, publishTime, 24)
     
     if (result) {
       pred.priceAtPublish = result.priceAt
       pred.priceAfter24h = result.priceAfter
-      pred.priceChange = result.change
+      pred.priceChange = Math.round(result.change * 100) / 100
       pred.actualDirection = result.direction
       pred.isHoney = (
         (pred.predictedDirection === 'bullish' && pred.actualDirection === 'down') ||
@@ -348,26 +440,50 @@ async function main() {
   // 4. Calculate stats
   const withData = predictions.filter(p => p.isHoney !== undefined)
   const honeyCount = withData.filter(p => p.isHoney).length
-  const honeyIndex = withData.length > 0 ? (honeyCount / withData.length) * 100 : 0
+  const honeyIndex = withData.length > 0 ? Math.round((honeyCount / withData.length) * 1000) / 10 : 0
 
   const assetStats: Record<string, { total: number, honey: number }> = {}
   for (const pred of withData) {
-    if (!assetStats[pred.asset]) {
-      assetStats[pred.asset] = { total: 0, honey: 0 }
-    }
+    if (!assetStats[pred.asset]) assetStats[pred.asset] = { total: 0, honey: 0 }
     assetStats[pred.asset].total++
     if (pred.isHoney) assetStats[pred.asset].honey++
   }
 
-  // 5. Output
+  // 5. Save predictions
+  const stats = {
+    totalVideos: videos.length,
+    validPredictions: withData.length,
+    honeyCount,
+    honeyIndex,
+    assetStats: Object.entries(assetStats).map(([asset, s]) => ({
+      asset,
+      total: s.total,
+      honey: s.honey,
+      honeyIndex: s.total > 0 ? Math.round((s.honey / s.total) * 1000) / 10 : 0
+    })),
+  }
+
+  await fs.writeFile(`${dataDir}/predictions.json`, JSON.stringify({
+    period: { year, month },
+    stats,
+    predictions: withData,
+  }, null, 2))
+
+  // 6. Update overall stats
+  await fs.mkdir('./data/stats', { recursive: true })
+  await updateOverallStats(year, month, stats, withData)
+
+  // 7. Output
   console.log('='.repeat(60))
-  console.log(`🍯 전반꿀 지수: ${honeyIndex.toFixed(1)}% (${honeyCount}/${withData.length})`)
+  console.log(`🍯 전반꿀 지수: ${honeyIndex}% (${honeyCount}/${withData.length})`)
   console.log('='.repeat(60))
   
-  console.log('\n📈 종목별:')
-  for (const [asset, stats] of Object.entries(assetStats)) {
-    const pct = stats.total > 0 ? (stats.honey / stats.total) * 100 : 0
-    console.log(`   ${asset}: ${pct.toFixed(1)}% (${stats.honey}/${stats.total})`)
+  if (Object.keys(assetStats).length > 0) {
+    console.log('\n📈 종목별:')
+    for (const [asset, s] of Object.entries(assetStats)) {
+      const pct = s.total > 0 ? Math.round((s.honey / s.total) * 1000) / 10 : 0
+      console.log(`   ${asset}: ${pct}% (${s.honey}/${s.total})`)
+    }
   }
 
   console.log('\n📋 상세:')
@@ -375,55 +491,14 @@ async function main() {
     const date = new Date(pred.publishedAt).toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' })
     const emoji = pred.isHoney ? '🍯' : '❌'
     const negMark = pred.hasNegation ? ' [반전]' : ''
-    const changeStr = `${pred.priceChange! >= 0 ? '+' : ''}${pred.priceChange!.toFixed(2)}%`
+    const changeStr = `${pred.priceChange! >= 0 ? '+' : ''}${pred.priceChange}%`
     
     console.log(`${emoji} [${date}] ${pred.asset}: ${pred.predictedDirection}${negMark} → ${pred.actualDirection} (${changeStr})`)
   }
 
-  // 6. Save
-  const output = {
-    collectedAt: new Date().toISOString(),
-    period: { start: startStr, end: endStr },
-    methodology: {
-      assets: Object.keys(TARGET_ASSETS),
-      timeframe: '24시간',
-      source: '전인구경제연구소 유튜브',
-      definition: '전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%',
-    },
-    stats: {
-      totalVideos: videos.length,
-      validPredictions: predictions.length,
-      predictionsWithData: withData.length,
-      honeyCount,
-      honeyIndex: Math.round(honeyIndex * 10) / 10,
-    },
-    assetStats: Object.entries(assetStats).map(([asset, s]) => ({
-      asset,
-      honeyIndex: Math.round((s.total > 0 ? (s.honey / s.total) * 100 : 0) * 10) / 10,
-      total: s.total,
-      honey: s.honey,
-    })),
-    predictions: withData.map(p => ({
-      videoId: p.videoId,
-      videoUrl: p.videoUrl,
-      title: p.title,
-      thumbnail: p.thumbnail,
-      publishedAt: p.publishedAt,
-      asset: p.asset,
-      predictedDirection: p.predictedDirection,
-      hasNegation: p.hasNegation,
-      priceAtPublish: p.priceAtPublish,
-      priceAfter24h: p.priceAfter24h,
-      priceChange: Math.round((p.priceChange || 0) * 100) / 100,
-      actualDirection: p.actualDirection,
-      isHoney: p.isHoney,
-    })),
-  }
-
-  await fs.mkdir('./data', { recursive: true })
-  const filename = `./data/honey-index-${startStr}-to-${endStr}.json`
-  await fs.writeFile(filename, JSON.stringify(output, null, 2))
-  console.log(`\n💾 저장: ${filename}`)
+  console.log(`\n💾 저장: ${dataDir}/`)
+  console.log('   ├── videos.json')
+  console.log('   └── predictions.json')
 }
 
 main().catch(console.error)

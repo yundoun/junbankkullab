@@ -15,37 +15,42 @@ description: 전반꿀 연구소 데이터 수집. 전인구경제연구소 유�
 
 ## 사용법
 
-사용자가 기간을 제시하면:
-
 ```bash
 cd ~/.openclaw/workspace/projects/junbankkullab
-npx tsx ~/.openclaw/workspace/skills/jbk-collect/scripts/collect.ts --start YYYY-MM-DD --end YYYY-MM-DD
+
+# 연도/월 지정
+npx tsx skills/jbk-collect/scripts/collect.ts --year 2025 --month 12
+
+# 또는 시작일 지정 (해당 월 전체 수집)
+npx tsx skills/jbk-collect/scripts/collect.ts --start 2025-12-01
 ```
 
-### 예시
+## 출력 구조
 
-```bash
-# 2025년 12월 데이터 수집
-npx tsx ~/.openclaw/workspace/skills/jbk-collect/scripts/collect.ts --start 2025-12-01 --end 2025-12-31
-
-# 2026년 1월 데이터 수집  
-npx tsx ~/.openclaw/workspace/skills/jbk-collect/scripts/collect.ts --start 2026-01-01 --end 2026-01-31
+```
+data/
+├── {year}/
+│   └── {month}/
+│       ├── videos.json       # 원본 영상 목록
+│       └── predictions.json  # 분석된 예측
+├── stats/
+│   └── overall.json          # 전체 통계
+└── api/
+    └── latest.json           # 웹 API용
 ```
 
-## 출력
-
-`data/honey-index-{start}-{end}.json` 형식으로 저장:
+### predictions.json 형식
 
 ```json
 {
-  "period": { "start": "2025-12-01", "end": "2025-12-31" },
+  "period": { "year": 2025, "month": 12 },
   "stats": {
     "totalVideos": 45,
     "validPredictions": 12,
     "honeyCount": 5,
-    "honeyIndex": 41.7
+    "honeyIndex": 41.7,
+    "assetStats": [...]
   },
-  "assetStats": [...],
   "predictions": [...]
 }
 ```

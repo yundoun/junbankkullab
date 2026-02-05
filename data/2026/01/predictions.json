@@ -1,0 +1,178 @@
+{
+  "period": {
+    "year": 2026,
+    "month": 1
+  },
+  "stats": {
+    "totalVideos": 40,
+    "validPredictions": 10,
+    "honeyCount": 2,
+    "honeyIndex": 20,
+    "assetStats": {
+      "KOSPI": {
+        "total": 4,
+        "honey": 0
+      },
+      "Samsung": {
+        "total": 3,
+        "honey": 1
+      },
+      "SKHynix": {
+        "total": 3,
+        "honey": 1
+      }
+    }
+  },
+  "predictions": [
+    {
+      "videoId": "baYPQxrnYi4",
+      "videoUrl": "https://youtube.com/watch?v=baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "asset": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 5228.79,
+      "priceAfter24h": 5264.1602,
+      "priceChange": 0.68,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "baYPQxrnYi4",
+      "videoUrl": "https://youtube.com/watch?v=baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "asset": "Samsung",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 161650,
+      "priceAfter24h": 163100,
+      "priceChange": 0.9,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "baYPQxrnYi4",
+      "videoUrl": "https://youtube.com/watch?v=baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "thumbnail": "https://i.ytimg.com/vi/baYPQxrnYi4/hqdefault.jpg",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "asset": "SKHynix",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 901000,
+      "priceAfter24h": 914000,
+      "priceChange": 1.44,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "cvMngriiriA",
+      "videoUrl": "https://youtube.com/watch?v=cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "thumbnail": "https://i.ytimg.com/vi/cvMngriiriA/hqdefault.jpg",
+      "publishedAt": "2026-01-29T00:24:47Z",
+      "asset": "Samsung",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 161900,
+      "priceAfter24h": 163500,
+      "priceChange": 0.99,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "cvMngriiriA",
+      "videoUrl": "https://youtube.com/watch?v=cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "thumbnail": "https://i.ytimg.com/vi/cvMngriiriA/hqdefault.jpg",
+      "publishedAt": "2026-01-29T00:24:47Z",
+      "asset": "SKHynix",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 855000,
+      "priceAfter24h": 917000,
+      "priceChange": 7.25,
+      "actualDirection": "up",
+      "isHoney": true
+    },
+    {
+      "videoId": "4ut8089Ra7k",
+      "videoUrl": "https://youtube.com/watch?v=4ut8089Ra7k",
+      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
+      "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
+      "publishedAt": "2026-01-26T00:14:16Z",
+      "asset": "Samsung",
+      "predictedDirection": "bullish",
+      "hasNegation": true,
+      "priceAtPublish": 152900,
+      "priceAfter24h": 154800,
+      "priceChange": 1.24,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "4ut8089Ra7k",
+      "videoUrl": "https://youtube.com/watch?v=4ut8089Ra7k",
+      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
+      "thumbnail": "https://i.ytimg.com/vi/4ut8089Ra7k/hqdefault.jpg",
+      "publishedAt": "2026-01-26T00:14:16Z",
+      "asset": "SKHynix",
+      "predictedDirection": "bullish",
+      "hasNegation": true,
+      "priceAtPublish": 747000,
+      "priceAfter24h": 770000,
+      "priceChange": 3.08,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "_FmmRrEwwG8",
+      "videoUrl": "https://youtube.com/watch?v=_FmmRrEwwG8",
+      "title": "(속보) 코스피 5000 성공, 예상 이유와 이제 조심해야 할 것",
+      "thumbnail": "https://i.ytimg.com/vi/_FmmRrEwwG8/hqdefault.jpg",
+      "publishedAt": "2026-01-22T00:48:10Z",
+      "asset": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 4998.8501,
+      "priceAfter24h": 4964.8999,
+      "priceChange": -0.68,
+      "actualDirection": "down",
+      "isHoney": false
+    },
+    {
+      "videoId": "vBuUo34mdSY",
+      "videoUrl": "https://youtube.com/watch?v=vBuUo34mdSY",
+      "title": "코스피 아직도 쌉니다 올해 더 오르는 이유(ft. 박세익 대표 1부)",
+      "thumbnail": "https://i.ytimg.com/vi/vBuUo34mdSY/hqdefault.jpg",
+      "publishedAt": "2026-01-19T23:33:57Z",
+      "asset": "KOSPI",
+      "predictedDirection": "bullish",
+      "hasNegation": false,
+      "priceAtPublish": 4852.3501,
+      "priceAfter24h": 4865.6299,
+      "priceChange": 0.27,
+      "actualDirection": "up",
+      "isHoney": false
+    },
+    {
+      "videoId": "OK7RMCqPD10",
+      "videoUrl": "https://youtube.com/watch?v=OK7RMCqPD10",
+      "title": "코스피 이제 팔자/ 환율조림 이야기 / 비트코인과 해외거래소 차단 / 미국 은행주 폭락",
+      "thumbnail": "https://i.ytimg.com/vi/OK7RMCqPD10/hqdefault_live.jpg",
+      "publishedAt": "2026-01-15T11:07:48Z",
+      "asset": "KOSPI",
+      "predictedDirection": "bearish",
+      "hasNegation": false,
+      "priceAtPublish": 4833.9199,
+      "priceAfter24h": 4825.5498,
+      "priceChange": -0.17,
+      "actualDirection": "down",
+      "isHoney": false
+    }
+  ]
+}
