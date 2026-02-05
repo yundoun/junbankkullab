@@ -71,6 +71,7 @@ const ASSET_PATTERNS: Record<string, RegExp[]> = {
   Google: [/구글/i, /google/i, /googl/i, /알파벳/i],
   Tesla: [/테슬라/i, /tesla/i],
   Bitcoin: [/비트코인/i, /bitcoin/i, /btc/i, /코인/i],
+  Shipbuilding: [/조선주/i, /조선업/i, /조선.*주/i, /한국조선/i],
 }
 
 // === 톤 분석 키워드 ===
