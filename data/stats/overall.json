@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T04:19:26.323Z",
+  "updatedAt": "2026-02-05T06:05:14.375Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -7,78 +7,81 @@
       "NASDAQ",
       "Samsung",
       "SKHynix",
-      "Nvidia"
+      "Nvidia",
+      "Google",
+      "Tesla",
+      "Bitcoin"
     ],
-    "timeframe": "24시간",
+    "timeframe": "미국 장 종가 기준",
     "source": "전인구경제연구소 유튜브",
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 42,
-    "honeyCount": 15,
-    "honeyIndex": 35.7
+    "totalPredictions": 47,
+    "honeyCount": 19,
+    "honeyIndex": 40.4
   },
   "assetStats": [
     {
-      "asset": "Nvidia",
-      "total": 2,
+      "asset": "Tesla",
+      "total": 1,
       "honey": 1,
-      "honeyIndex": 50
+      "honeyIndex": 100
     },
     {
-      "asset": "KOSPI",
-      "total": 22,
-      "honey": 9,
-      "honeyIndex": 40.9
+      "asset": "Bitcoin",
+      "total": 8,
+      "honey": 5,
+      "honeyIndex": 62.5
     },
     {
       "asset": "NASDAQ",
-      "total": 2,
-      "honey": 1,
+      "total": 8,
+      "honey": 4,
       "honeyIndex": 50
     },
     {
       "asset": "Samsung",
-      "total": 7,
+      "total": 6,
       "honey": 2,
-      "honeyIndex": 28.6
+      "honeyIndex": 33.3
     },
     {
-      "asset": "Tesla",
-      "total": 2,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "Bitcoin",
-      "total": 4,
-      "honey": 1,
-      "honeyIndex": 25
-    },
-    {
-      "asset": "SKHynix",
+      "asset": "Nvidia",
       "total": 3,
       "honey": 1,
       "honeyIndex": 33.3
+    },
+    {
+      "asset": "KOSPI",
+      "total": 19,
+      "honey": 6,
+      "honeyIndex": 31.6
+    },
+    {
+      "asset": "SKHynix",
+      "total": 2,
+      "honey": 0,
+      "honeyIndex": 0
     }
   ],
   "periods": [
     {
       "year": 2025,
       "month": 1,
+      "predictions": 4,
+      "honeyIndex": 50
+    },
+    {
+      "year": 2025,
+      "month": 2,
       "predictions": 1,
       "honeyIndex": 100
     },
     {
       "year": 2025,
-      "month": 2,
-      "predictions": 0,
-      "honeyIndex": 0
-    },
-    {
-      "year": 2025,
       "month": 3,
-      "predictions": 4,
+      "predictions": 8,
       "honeyIndex": 75
     },
     {
@@ -96,56 +99,56 @@
     {
       "year": 2025,
       "month": 6,
-      "predictions": 2,
-      "honeyIndex": 50
+      "predictions": 4,
+      "honeyIndex": 25
     },
     {
       "year": 2025,
       "month": 7,
-      "predictions": 4,
+      "predictions": 2,
       "honeyIndex": 0
     },
     {
       "year": 2025,
       "month": 8,
-      "predictions": 2,
-      "honeyIndex": 0
+      "predictions": 3,
+      "honeyIndex": 33.3
     },
     {
       "year": 2025,
       "month": 9,
-      "predictions": 3,
+      "predictions": 2,
       "honeyIndex": 0
     },
     {
       "year": 2025,
       "month": 10,
       "predictions": 2,
-      "honeyIndex": 50
+      "honeyIndex": 0
     },
     {
       "year": 2025,
       "month": 11,
       "predictions": 4,
-      "honeyIndex": 25
+      "honeyIndex": 75
     },
     {
       "year": 2025,
       "month": 12,
-      "predictions": 4,
-      "honeyIndex": 50
+      "predictions": 3,
+      "honeyIndex": 33.3
     },
     {
       "year": 2026,
       "month": 1,
-      "predictions": 11,
-      "honeyIndex": 18.2
+      "predictions": 10,
+      "honeyIndex": 40
     },
     {
       "year": 2026,
       "month": 2,
-      "predictions": 4,
-      "honeyIndex": 100
+      "predictions": 3,
+      "honeyIndex": 0
     }
   ]
 }

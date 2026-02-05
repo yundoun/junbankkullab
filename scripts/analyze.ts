@@ -356,7 +356,7 @@ function processAsset(
   
   // 톤 분석
   const { tone: autoTone, positiveScore, negativeScore } = analyzeTone(video.title);
-  const tone = manualLabel || autoTone;
+  const tone: 'positive' | 'negative' | 'neutral' = (manualLabel === 'positive' || manualLabel === 'negative') ? manualLabel : autoTone;
   
   // 톤 판단 불가 (neutral) → unanalyzed
   if (tone === 'neutral') {
