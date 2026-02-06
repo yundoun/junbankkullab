@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-06T05:58:46.846Z",
+  "updatedAt": "2026-02-06T06:46:57.857Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -17,148 +17,16 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 238,
-    "honeyCount": 82,
-    "honeyIndex": 34.5
+    "totalPredictions": 1,
+    "honeyCount": 1,
+    "honeyIndex": 100
   },
   "assetStats": [
     {
-      "asset": "Chemical",
-      "total": 1,
-      "honey": 1,
-      "honeyIndex": 100
-    },
-    {
-      "asset": "Auto",
-      "total": 1,
-      "honey": 1,
-      "honeyIndex": 100
-    },
-    {
-      "asset": "Steel",
-      "total": 1,
-      "honey": 1,
-      "honeyIndex": 100
-    },
-    {
-      "asset": "Bank",
-      "total": 3,
-      "honey": 2,
-      "honeyIndex": 66.7
-    },
-    {
-      "asset": "Energy",
-      "total": 3,
-      "honey": 2,
-      "honeyIndex": 66.7
-    },
-    {
-      "asset": "Tesla",
-      "total": 7,
-      "honey": 4,
-      "honeyIndex": 57.1
-    },
-    {
-      "asset": "Semiconductor",
-      "total": 6,
-      "honey": 3,
-      "honeyIndex": 50
-    },
-    {
-      "asset": "Defense",
-      "total": 2,
-      "honey": 1,
-      "honeyIndex": 50
-    },
-    {
-      "asset": "Celltrion",
-      "total": 2,
-      "honey": 1,
-      "honeyIndex": 50
-    },
-    {
-      "asset": "Bitcoin",
-      "total": 29,
-      "honey": 14,
-      "honeyIndex": 48.3
-    },
-    {
-      "asset": "Shipbuilding",
-      "total": 13,
-      "honey": 6,
-      "honeyIndex": 46.2
-    },
-    {
-      "asset": "Samsung",
-      "total": 22,
-      "honey": 10,
-      "honeyIndex": 45.5
-    },
-    {
-      "asset": "Nvidia",
-      "total": 20,
-      "honey": 6,
-      "honeyIndex": 30
-    },
-    {
-      "asset": "Nuclear",
-      "total": 10,
-      "honey": 3,
-      "honeyIndex": 30
-    },
-    {
       "asset": "KOSPI",
-      "total": 78,
-      "honey": 23,
-      "honeyIndex": 29.5
-    },
-    {
-      "asset": "Bio",
-      "total": 5,
+      "total": 1,
       "honey": 1,
-      "honeyIndex": 20
-    },
-    {
-      "asset": "NASDAQ",
-      "total": 17,
-      "honey": 3,
-      "honeyIndex": 17.6
-    },
-    {
-      "asset": "Google",
-      "total": 4,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "SKHynix",
-      "total": 7,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "SP500",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "Battery",
-      "total": 4,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "Retail",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
-    },
-    {
-      "asset": "Internet",
-      "total": 1,
-      "honey": 0,
-      "honeyIndex": 0
+      "honeyIndex": 100
     }
   ],
   "periods": [
@@ -243,8 +111,8 @@
     {
       "year": 2026,
       "month": 2,
-      "predictions": 17,
-      "honeyIndex": 23.5
+      "predictions": 1,
+      "honeyIndex": 100
     }
   ]
 }

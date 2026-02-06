@@ -1,92 +1,417 @@
 [
   {
-    "videoId": "P0dwt0kOlds",
-    "title": "코스피가 이것 때문에 못 오르고 있습니다!(ft.비즈넵)",
-    "publishedAt": "2025-03-31T22:30:07Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "0JJuBnq9ImE",
+    "title": "골드바 가장 싸게 사는 법 남보다 10% 싸게 살수 있어요(ft.조규원 대표 2부)",
+    "publishedAt": "2025-03-28T10:28:32Z",
+    "reason": "unknown_asset: Gold",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:29:19.712Z",
+      "detectedAssets": [
+        {
+          "asset": "Gold",
+          "ticker": "UNKNOWN",
+          "matchedText": "골드바",
+          "confidence": 0.95,
+          "reasoning": "골드바는 금을 의미하며, 금 관련 투자 자산으로 분류됩니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "싸게",
+          "10% 싸게"
+        ],
+        "reasoning": "제목에서 '가장 싸게'와 '10% 싸게'라는 긍정적인 표현이 사용되어 긍정적인 전망을 나타냅니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Gold\",\n      \"matchedText\": \"골드바\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"골드바는 금을 의미하며, 금 관련 투자 자산으로 분류됩니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"싸게\", \"10% 싸게\"],\n    \"reasoning\": \"제목에서 '가장 싸게'와 '10% 싸게'라는 긍정적인 표현이 사용되어 긍정적인 전망을 나타냅니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "AD0I1IIL4ww",
-    "title": "비트코인 기축통화됩니다 마지막 기회입니다(ft.오태민 교수 풀버전)",
-    "publishedAt": "2025-03-30T00:12:23Z",
-    "asset": "Bitcoin",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "6Phoahg71DY",
+    "title": "금 앞으로 7배 더 오를 겁니다 지금 금 사세요(ft.조규원 대표 1부)",
+    "publishedAt": "2025-03-27T11:22:32Z",
+    "reason": "unknown_asset: Gold",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:29:25.532Z",
+      "detectedAssets": [
+        {
+          "asset": "Gold",
+          "ticker": "UNKNOWN",
+          "matchedText": "금",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '금'이 언급되어 있어 금에 대한 투자 언급으로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "오를",
+          "사세요"
+        ],
+        "reasoning": "제목에서 '7배 더 오를 겁니다'와 '지금 금 사세요'라는 긍정적인 표현이 있어 상승 전망으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Gold\",\n      \"matchedText\": \"금\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '금'이 언급되어 있어 금에 대한 투자 언급으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"오를\", \"사세요\"],\n    \"reasoning\": \"제목에서 '7배 더 오를 겁니다'와 '지금 금 사세요'라는 긍정적인 표현이 있어 상승 전망으로 판단됨.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "WN49PAzCyH4",
-    "title": "비트코인 이제 꽉 잡아야 합니다. 마지막 기회인 이유(ft.오태민 작가 1부)",
-    "publishedAt": "2025-03-22T05:39:23Z",
-    "asset": "Bitcoin",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "ETWrtfAgH3E",
+    "title": "AI 코인으로 인한 바뀌는 판도",
+    "publishedAt": "2025-03-26T07:14:13Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:29:31.738Z",
+      "detectedAssets": [
+        {
+          "asset": "Ethereum",
+          "ticker": "ETH-USD",
+          "matchedText": "AI 코인",
+          "confidence": 0.85,
+          "reasoning": "AI 코인은 일반적으로 암호화폐 시장에서 인공지능 관련 프로젝트를 지칭하며, 이와 관련된 암호화폐로 Ethereum이 자주 언급됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "AI",
+          "코인",
+          "판도"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 부족하여 중립적으로 판단함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"AI 코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"AI 코인은 일반적으로 암호화폐 시장에서 인공지능 관련 프로젝트를 지칭하며, 이와 관련된 암호화폐로 Ethereum이 자주 언급됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"AI\", \"코인\", \"판도\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 부족하여 중립적으로 판단함.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "7Om5WXQZ800",
+    "title": "트럼프의 진짜 의도는 스테이블코인입니다(ft. 오태민 작가 2부)",
+    "publishedAt": "2025-03-23T10:02:20Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:29:48.082Z",
+      "detectedAssets": [
+        {
+          "asset": "Cryptocurrency",
+          "ticker": "UNKNOWN",
+          "matchedText": "스테이블코인",
+          "confidence": 0.9,
+          "reasoning": "스테이블코인은 암호화폐의 한 종류로, 가격이 안정적이도록 설계된 디지털 자산입니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "의도",
+          "스테이블코인"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Cryptocurrency\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"스테이블코인은 암호화폐의 한 종류로, 가격이 안정적이도록 설계된 디지털 자산입니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"의도\", \"스테이블코인\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "bZriQHctRc0",
+    "title": "삼성 2조, 한화 3.6조 유상증자, 그 다음은 어디?",
+    "publishedAt": "2025-03-20T22:00:23Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:30:02.394Z",
+      "detectedAssets": [
+        {
+          "asset": "Samsung",
+          "ticker": "005930.KS",
+          "matchedText": "삼성",
+          "confidence": 0.95,
+          "reasoning": "제목에 '삼성'이 언급되어 있어 삼성전자를 지칭하는 것으로 판단됨."
+        },
+        {
+          "asset": "Hanwha",
+          "ticker": "UNKNOWN",
+          "matchedText": "한화",
+          "confidence": 0.95,
+          "reasoning": "제목에 '한화'가 언급되어 있어 한화그룹을 지칭하는 것으로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "유상증자",
+          "그 다음은 어디"
+        ],
+        "reasoning": "유상증자에 대한 언급이 있으나, 긍정적 또는 부정적 전망이 명확하지 않아 중립적 판단을 내림."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Samsung\",\n      \"matchedText\": \"삼성\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '삼성'이 언급되어 있어 삼성전자를 지칭하는 것으로 판단됨.\"\n    },\n    {\n      \"asset\": \"Hanwha\",\n      \"matchedText\": \"한화\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '한화'가 언급되어 있어 한화그룹을 지칭하는 것으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"유상증자\", \"그 다음은 어디\"],\n    \"reasoning\": \"유상증자에 대한 언급이 있으나, 긍정적 또는 부정적 전망이 명확하지 않아 중립적 판단을 내림.\"\n  }\n}"
+    }
   },
   {
     "videoId": "QJ8gr3wXSFo",
     "title": "코스피 7분간 거래정지, 의심가는 동양철관 주포",
     "publishedAt": "2025-03-18T05:38:50Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:30:17.310Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '코스피'라는 지수가 명시되어 있어 추출하였습니다."
+        },
+        {
+          "asset": "Steel",
+          "ticker": "005490.KS",
+          "matchedText": "동양철관",
+          "confidence": 0.85,
+          "reasoning": "'동양철관'은 철강 관련 기업으로, 'Steel' 섹터로 분류할 수 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "거래정지",
+          "의심가는"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적으로 판단하였습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 지수가 명시되어 있어 추출하였습니다.\"\n    },\n    {\n      \"asset\": \"Steel\",\n      \"matchedText\": \"동양철관\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"'동양철관'은 철강 관련 기업으로, 'Steel' 섹터로 분류할 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"거래정지\", \"의심가는\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적으로 판단하였습니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "Orv9LKMpAWs",
-    "title": "코스피 상장 4개월만에 무너진 백종원 신화",
-    "publishedAt": "2025-03-17T08:07:58Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "Fug5E5eScoE",
+    "title": "삼성SDI가 기습 2조 유상증자를 한 이유(ft.상법개정)",
+    "publishedAt": "2025-03-16T00:00:17Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:30:33.769Z",
+      "detectedAssets": [
+        {
+          "asset": "Samsung",
+          "ticker": "005930.KS",
+          "matchedText": "삼성SDI",
+          "confidence": 0.95,
+          "reasoning": "삼성SDI는 삼성의 자회사로, 전기차 배터리와 관련된 사업을 하고 있어 삼성으로 분류됨."
+        },
+        {
+          "asset": "Battery",
+          "ticker": "373220.KS",
+          "matchedText": "유상증자",
+          "confidence": 0.85,
+          "reasoning": "유상증자는 기업의 자본 조달 방법으로, 배터리 관련 기업의 자본 구조와 관련이 있음."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "기습",
+          "유상증자",
+          "이유"
+        ],
+        "reasoning": "기습 유상증자라는 표현은 부정적인 뉘앙스를 가질 수 있지만, 이유에 대한 설명이 없으므로 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Samsung\",\n      \"matchedText\": \"삼성SDI\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"삼성SDI는 삼성의 자회사로, 전기차 배터리와 관련된 사업을 하고 있어 삼성으로 분류됨.\"\n    },\n    {\n      \"asset\": \"Battery\",\n      \"matchedText\": \"유상증자\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"유상증자는 기업의 자본 조달 방법으로, 배터리 관련 기업의 자본 구조와 관련이 있음.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"기습\", \"유상증자\", \"이유\"],\n    \"reasoning\": \"기습 유상증자라는 표현은 부정적인 뉘앙스를 가질 수 있지만, 이유에 대한 설명이 없으므로 판단이 불가함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "gOC9xNnFUR4",
-    "title": "코스피상장 4개월만에 무너진 백종원 신화, 우연일까?",
-    "publishedAt": "2025-03-16T11:09:42Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "gbycj-ewPV8",
+    "title": "이번에는 이중과세? 무너지는 미국 배당주 투자",
+    "publishedAt": "2025-03-11T22:30:06Z",
+    "reason": "unknown_asset: Dividend",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:30:48.165Z",
+      "detectedAssets": [
+        {
+          "asset": "Dividend",
+          "ticker": "UNKNOWN",
+          "matchedText": "배당주",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '배당주'라는 표현이 있어 미국 배당주를 언급하고 있다고 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "keywords": [
+          "무너지는"
+        ],
+        "reasoning": "제목에서 '무너지는'이라는 부정적인 표현이 사용되어 부정적 전망으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Dividend\",\n      \"matchedText\": \"배당주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '배당주'라는 표현이 있어 미국 배당주를 언급하고 있다고 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"negative\",\n    \"keywords\": [\"무너지는\"],\n    \"reasoning\": \"제목에서 '무너지는'이라는 부정적인 표현이 사용되어 부정적 전망으로 판단됨.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "6WaEufvRXig",
-    "title": "블랙먼데이 충격, 미국 증시가 무너지고 있습니다",
-    "publishedAt": "2025-03-11T02:52:47Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 2
+    "videoId": "rXocWF_ExVI",
+    "title": "금과 배당투자를 한 번에! 월배당 주는 금이 왔다.(ft.SOL골드커버드콜액티브)",
+    "publishedAt": "2025-03-07T09:01:07Z",
+    "reason": "unknown_asset: Gold",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:31:11.466Z",
+      "detectedAssets": [
+        {
+          "asset": "Gold",
+          "ticker": "UNKNOWN",
+          "matchedText": "금",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '금'이라는 단어가 명시적으로 언급되어 있어 금 자산으로 식별됨."
+        },
+        {
+          "asset": "Dividend",
+          "ticker": "UNKNOWN",
+          "matchedText": "배당투자",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '배당투자'라는 단어가 명시적으로 언급되어 있어 배당 관련 투자로 식별됨."
+        },
+        {
+          "asset": "SOL",
+          "ticker": "UNKNOWN",
+          "matchedText": "SOL골드커버드콜액티브",
+          "confidence": 0.95,
+          "reasoning": "제목에서 'SOL골드커버드콜액티브'라는 특정 상품이 언급되어 있어 SOL로 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "금",
+          "배당투자",
+          "월배당"
+        ],
+        "reasoning": "제목에서 '한 번에', '월배당'과 같은 긍정적인 단어들이 사용되어 긍정적인 전망을 나타냄."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Gold\",\n      \"matchedText\": \"금\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '금'이라는 단어가 명시적으로 언급되어 있어 금 자산으로 식별됨.\"\n    },\n    {\n      \"asset\": \"Dividend\",\n      \"matchedText\": \"배당투자\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '배당투자'라는 단어가 명시적으로 언급되어 있어 배당 관련 투자로 식별됨.\"\n    },\n    {\n      \"asset\": \"SOL\",\n      \"matchedText\": \"SOL골드커버드콜액티브\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 'SOL골드커버드콜액티브'라는 특정 상품이 언급되어 있어 SOL로 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"금\", \"배당투자\", \"월배당\"],\n    \"reasoning\": \"제목에서 '한 번에', '월배당'과 같은 긍정적인 단어들이 사용되어 긍정적인 전망을 나타냄.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "ex1vcnEQ2ZA",
-    "title": "미국증시 더 오르는 이유, 이 주식 사세요(ft.박상현 전문위원 2부)",
-    "publishedAt": "2025-03-07T04:38:02Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "rXocWF_ExVI",
+    "title": "금과 배당투자를 한 번에! 월배당 주는 금이 왔다.(ft.SOL골드커버드콜액티브)",
+    "publishedAt": "2025-03-07T09:01:07Z",
+    "reason": "unknown_asset: Dividend",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:31:11.466Z",
+      "detectedAssets": [
+        {
+          "asset": "Gold",
+          "ticker": "UNKNOWN",
+          "matchedText": "금",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '금'이라는 단어가 명시적으로 언급되어 있어 금 자산으로 식별됨."
+        },
+        {
+          "asset": "Dividend",
+          "ticker": "UNKNOWN",
+          "matchedText": "배당투자",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '배당투자'라는 단어가 명시적으로 언급되어 있어 배당 관련 투자로 식별됨."
+        },
+        {
+          "asset": "SOL",
+          "ticker": "UNKNOWN",
+          "matchedText": "SOL골드커버드콜액티브",
+          "confidence": 0.95,
+          "reasoning": "제목에서 'SOL골드커버드콜액티브'라는 특정 상품이 언급되어 있어 SOL로 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "금",
+          "배당투자",
+          "월배당"
+        ],
+        "reasoning": "제목에서 '한 번에', '월배당'과 같은 긍정적인 단어들이 사용되어 긍정적인 전망을 나타냄."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Gold\",\n      \"matchedText\": \"금\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '금'이라는 단어가 명시적으로 언급되어 있어 금 자산으로 식별됨.\"\n    },\n    {\n      \"asset\": \"Dividend\",\n      \"matchedText\": \"배당투자\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '배당투자'라는 단어가 명시적으로 언급되어 있어 배당 관련 투자로 식별됨.\"\n    },\n    {\n      \"asset\": \"SOL\",\n      \"matchedText\": \"SOL골드커버드콜액티브\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 'SOL골드커버드콜액티브'라는 특정 상품이 언급되어 있어 SOL로 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"금\", \"배당투자\", \"월배당\"],\n    \"reasoning\": \"제목에서 '한 번에', '월배당'과 같은 긍정적인 단어들이 사용되어 긍정적인 전망을 나타냄.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "Q_VvvbJkWkI",
-    "title": "나스닥 폭락이유, 엔캐리 청산 3가지 요건이 완성됐습니다",
-    "publishedAt": "2025-03-06T23:37:56Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "rXocWF_ExVI",
+    "title": "금과 배당투자를 한 번에! 월배당 주는 금이 왔다.(ft.SOL골드커버드콜액티브)",
+    "publishedAt": "2025-03-07T09:01:07Z",
+    "reason": "unknown_asset: SOL",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:31:11.466Z",
+      "detectedAssets": [
+        {
+          "asset": "Gold",
+          "ticker": "UNKNOWN",
+          "matchedText": "금",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '금'이라는 단어가 명시적으로 언급되어 있어 금 자산으로 식별됨."
+        },
+        {
+          "asset": "Dividend",
+          "ticker": "UNKNOWN",
+          "matchedText": "배당투자",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '배당투자'라는 단어가 명시적으로 언급되어 있어 배당 관련 투자로 식별됨."
+        },
+        {
+          "asset": "SOL",
+          "ticker": "UNKNOWN",
+          "matchedText": "SOL골드커버드콜액티브",
+          "confidence": 0.95,
+          "reasoning": "제목에서 'SOL골드커버드콜액티브'라는 특정 상품이 언급되어 있어 SOL로 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "금",
+          "배당투자",
+          "월배당"
+        ],
+        "reasoning": "제목에서 '한 번에', '월배당'과 같은 긍정적인 단어들이 사용되어 긍정적인 전망을 나타냄."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Gold\",\n      \"matchedText\": \"금\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '금'이라는 단어가 명시적으로 언급되어 있어 금 자산으로 식별됨.\"\n    },\n    {\n      \"asset\": \"Dividend\",\n      \"matchedText\": \"배당투자\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '배당투자'라는 단어가 명시적으로 언급되어 있어 배당 관련 투자로 식별됨.\"\n    },\n    {\n      \"asset\": \"SOL\",\n      \"matchedText\": \"SOL골드커버드콜액티브\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 'SOL골드커버드콜액티브'라는 특정 상품이 언급되어 있어 SOL로 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"금\", \"배당투자\", \"월배당\"],\n    \"reasoning\": \"제목에서 '한 번에', '월배당'과 같은 긍정적인 단어들이 사용되어 긍정적인 전망을 나타냄.\"\n  }\n}"
+    }
   },
   {
     "videoId": "t5vJCBcrKho",
     "title": "아무도 모르는 나스닥 급등 이유(ft.젤렌스키, 트럼프)",
     "publishedAt": "2025-03-01T09:20:51Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:31:33.845Z",
+      "detectedAssets": [
+        {
+          "asset": "NASDAQ",
+          "ticker": "^IXIC",
+          "matchedText": "나스닥",
+          "confidence": 0.95,
+          "reasoning": "제목에 '나스닥'이라는 지수가 명시되어 있어 직접적으로 추출됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "급등",
+          "이유"
+        ],
+        "reasoning": "급등이라는 표현은 긍정적이지만, '아무도 모르는'이라는 문구가 불확실성을 나타내어 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"NASDAQ\",\n      \"matchedText\": \"나스닥\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '나스닥'이라는 지수가 명시되어 있어 직접적으로 추출됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"급등\", \"이유\"],\n    \"reasoning\": \"급등이라는 표현은 긍정적이지만, '아무도 모르는'이라는 문구가 불확실성을 나타내어 판단이 불가함.\"\n  }\n}"
+    }
   }
 ]

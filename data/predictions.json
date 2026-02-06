@@ -1,21 +1,21 @@
 {
-  "collectedAt": "2026-02-05T06:52:10.253Z",
+  "collectedAt": "2026-02-06T06:46:18.509Z",
   "stats": {
-    "totalVideos": 48,
-    "totalPredictions": 8,
-    "completePredictions": 8,
-    "honeyIndex": 37.5,
-    "honeyCount": 3,
+    "totalVideos": 47,
+    "totalPredictions": 6,
+    "completePredictions": 6,
+    "honeyIndex": 16.666666666666664,
+    "honeyCount": 1,
     "assetStats": [
       {
         "asset": "KOSPI",
-        "honeyIndex": 25,
-        "predictions": 4
+        "honeyIndex": 0,
+        "predictions": 3
       },
       {
         "asset": "Samsung",
-        "honeyIndex": 66.66666666666666,
-        "predictions": 3
+        "honeyIndex": 50,
+        "predictions": 2
       },
       {
         "asset": "Bitcoin",
@@ -25,44 +25,6 @@
     ]
   },
   "predictions": [
-    {
-      "id": "IztMJoUZB5s",
-      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
-      "thumbnail": "https://i.ytimg.com/vi/IztMJoUZB5s/hqdefault.jpg",
-      "publishedAt": "2026-02-03T11:09:42Z",
-      "assets": [
-        "KOSPI",
-        "Samsung"
-      ],
-      "sentiment": "bullish",
-      "bullishScore": 1,
-      "bearishScore": 0,
-      "asset": "KOSPI",
-      "priceAtPublish": 5277.0498,
-      "priceAfter24h": 5256.6499,
-      "priceChange": -0.3866,
-      "actualDirection": "down",
-      "isHoney": true
-    },
-    {
-      "id": "IztMJoUZB5s",
-      "title": "삼성전자 10% 상승, 코스피 사상 최고치, AMD 실적 예상",
-      "thumbnail": "https://i.ytimg.com/vi/IztMJoUZB5s/hqdefault.jpg",
-      "publishedAt": "2026-02-03T11:09:42Z",
-      "assets": [
-        "KOSPI",
-        "Samsung"
-      ],
-      "sentiment": "bullish",
-      "bullishScore": 1,
-      "bearishScore": 0,
-      "asset": "Samsung",
-      "priceAtPublish": 163500,
-      "priceAfter24h": 162700,
-      "priceChange": -0.4893,
-      "actualDirection": "down",
-      "isHoney": true
-    },
     {
       "id": "baYPQxrnYi4",
       "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",

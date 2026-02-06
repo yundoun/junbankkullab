@@ -1,38 +1,371 @@
 [
   {
+    "videoId": "RI2dlVa3OxI",
+    "title": "사람들이 잘 모르는 팔란티어의 진짜 가치",
+    "publishedAt": "2025-04-29T07:00:34Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:31:44.946Z",
+      "detectedAssets": [
+        {
+          "asset": "Palantir",
+          "ticker": "UNKNOWN",
+          "matchedText": "팔란티어",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '팔란티어'라는 주식이 언급됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없음"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Palantir\",\n      \"matchedText\": \"팔란티어\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '팔란티어'라는 주식이 언급됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없음\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "McWPjMB_nfk",
+    "title": "SKT 유심교체 말고 번호이동 위약금 폐지가 필요한 이유",
+    "publishedAt": "2025-04-29T04:00:09Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:31:48.079Z",
+      "detectedAssets": [
+        {
+          "asset": "Telecom",
+          "ticker": "017670.KS",
+          "matchedText": "SKT",
+          "confidence": 0.95,
+          "reasoning": "SKT는 통신사로서 Telecom 섹터에 속합니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "위약금",
+          "필요"
+        ],
+        "reasoning": "영상 제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없어 중립으로 판단했습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Telecom\",\n      \"matchedText\": \"SKT\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"SKT는 통신사로서 Telecom 섹터에 속합니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"위약금\", \"필요\"],\n    \"reasoning\": \"영상 제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없어 중립으로 판단했습니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "_cflPgmDHPg",
+    "title": "퇴직연금에서 100% 투자 가능! 월 배당! 팔란티어 ETF가 나왔습니다(ft.SOL팔란티어커버드콜OTM채권 혼합)",
+    "publishedAt": "2025-04-21T09:01:01Z",
+    "reason": "unknown_asset: ETF",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:32:22.277Z",
+      "detectedAssets": [
+        {
+          "asset": "ETF",
+          "ticker": "UNKNOWN",
+          "matchedText": "팔란티어 ETF",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '팔란티어 ETF'가 언급되어 있어 ETF로 분류됨."
+        },
+        {
+          "asset": "Palantir",
+          "ticker": "UNKNOWN",
+          "matchedText": "팔란티어",
+          "confidence": 0.95,
+          "reasoning": "'팔란티어'는 특정 기업의 이름으로, Palantir로 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "100% 투자 가능",
+          "월 배당"
+        ],
+        "reasoning": "제목에서 '100% 투자 가능'과 '월 배당'이라는 긍정적인 표현이 사용되어 긍정적인 전망으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"팔란티어 ETF\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '팔란티어 ETF'가 언급되어 있어 ETF로 분류됨.\"\n    },\n    {\n      \"asset\": \"Palantir\",\n      \"matchedText\": \"팔란티어\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"'팔란티어'는 특정 기업의 이름으로, Palantir로 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"100% 투자 가능\", \"월 배당\"],\n    \"reasoning\": \"제목에서 '100% 투자 가능'과 '월 배당'이라는 긍정적인 표현이 사용되어 긍정적인 전망으로 판단됨.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "_cflPgmDHPg",
+    "title": "퇴직연금에서 100% 투자 가능! 월 배당! 팔란티어 ETF가 나왔습니다(ft.SOL팔란티어커버드콜OTM채권 혼합)",
+    "publishedAt": "2025-04-21T09:01:01Z",
+    "reason": "unknown_asset: Palantir",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:32:22.277Z",
+      "detectedAssets": [
+        {
+          "asset": "ETF",
+          "ticker": "UNKNOWN",
+          "matchedText": "팔란티어 ETF",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '팔란티어 ETF'가 언급되어 있어 ETF로 분류됨."
+        },
+        {
+          "asset": "Palantir",
+          "ticker": "UNKNOWN",
+          "matchedText": "팔란티어",
+          "confidence": 0.95,
+          "reasoning": "'팔란티어'는 특정 기업의 이름으로, Palantir로 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "100% 투자 가능",
+          "월 배당"
+        ],
+        "reasoning": "제목에서 '100% 투자 가능'과 '월 배당'이라는 긍정적인 표현이 사용되어 긍정적인 전망으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"팔란티어 ETF\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '팔란티어 ETF'가 언급되어 있어 ETF로 분류됨.\"\n    },\n    {\n      \"asset\": \"Palantir\",\n      \"matchedText\": \"팔란티어\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"'팔란티어'는 특정 기업의 이름으로, Palantir로 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"100% 투자 가능\", \"월 배당\"],\n    \"reasoning\": \"제목에서 '100% 투자 가능'과 '월 배당'이라는 긍정적인 표현이 사용되어 긍정적인 전망으로 판단됨.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "Wso65sKswxE",
+    "title": "네이버, 쿠팡보다 여기",
+    "publishedAt": "2025-04-18T01:35:50Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:32:37.954Z",
+      "detectedAssets": [
+        {
+          "asset": "Internet",
+          "ticker": "035720.KS",
+          "matchedText": "네이버",
+          "confidence": 0.95,
+          "reasoning": "네이버는 인터넷 서비스 기업으로, 해당 섹터에 속합니다."
+        },
+        {
+          "asset": "Internet",
+          "ticker": "035720.KS",
+          "matchedText": "쿠팡",
+          "confidence": 0.95,
+          "reasoning": "쿠팡은 전자상거래 플랫폼으로, 인터넷 섹터에 포함됩니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없기 때문에 중립적입니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Internet\",\n      \"matchedText\": \"네이버\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"네이버는 인터넷 서비스 기업으로, 해당 섹터에 속합니다.\"\n    },\n    {\n      \"asset\": \"Internet\",\n      \"matchedText\": \"쿠팡\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"쿠팡은 전자상거래 플랫폼으로, 인터넷 섹터에 포함됩니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없기 때문에 중립적입니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "hgI2khNeX30",
+    "title": "로봇 선두 기업은?",
+    "publishedAt": "2025-04-17T07:43:10Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:32:48.478Z",
+      "detectedAssets": [
+        {
+          "asset": "Internet",
+          "ticker": "035720.KS",
+          "matchedText": "로봇",
+          "confidence": 0.85,
+          "reasoning": "로봇 산업은 인터넷 및 기술 관련 섹터에 포함될 수 있으며, 로봇 선두 기업을 언급함으로써 기술 혁신과 관련된 내용을 암시하고 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "로봇",
+          "선두 기업"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망이 명확하지 않으며, 단순히 질문 형태로 정보 탐색을 나타내고 있습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Internet\",\n      \"matchedText\": \"로봇\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"로봇 산업은 인터넷 및 기술 관련 섹터에 포함될 수 있으며, 로봇 선두 기업을 언급함으로써 기술 혁신과 관련된 내용을 암시하고 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"로봇\", \"선두 기업\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망이 명확하지 않으며, 단순히 질문 형태로 정보 탐색을 나타내고 있습니다.\"\n  }\n}"
+    }
+  },
+  {
     "videoId": "Mxl7f9KbsK8",
     "title": "미중 감정싸움 시작과 엔비디아 피해액 계산",
     "publishedAt": "2025-04-16T11:23:47Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:33:00.893Z",
+      "detectedAssets": [
+        {
+          "asset": "Nvidia",
+          "ticker": "NVDA",
+          "matchedText": "엔비디아",
+          "confidence": 0.95,
+          "reasoning": "제목에 '엔비디아'라는 특정 종목이 언급되어 있어 이를 기반으로 추출하였습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "감정싸움",
+          "피해액"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없으며, 상황 설명에 중점을 두고 있어 중립적인 톤으로 판단하였습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔비디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '엔비디아'라는 특정 종목이 언급되어 있어 이를 기반으로 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"감정싸움\", \"피해액\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없으며, 상황 설명에 중점을 두고 있어 중립적인 톤으로 판단하였습니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "qQ3nRdIkuug",
-    "title": "이번 증시하락에 반등이 없는 이유(ft.나스닥, 엔비디아, 은행주)",
-    "publishedAt": "2025-04-04T03:56:32Z",
-    "asset": "NASDAQ",
-    "reason": "no_tone",
-    "positiveScore": 1,
-    "negativeScore": 1
+    "videoId": "ZrkkXyL9aNs",
+    "title": "한달 뒤 반도체 관세 시작, 국가안보관세 발언(ft.치킨게임의 시작)",
+    "publishedAt": "2025-04-13T15:31:54Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:33:31.898Z",
+      "detectedAssets": [
+        {
+          "asset": "Semiconductor",
+          "ticker": "005930.KS",
+          "matchedText": "반도체",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '반도체'라는 단어가 명확하게 언급되어 있어 해당 섹터로 분류됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "판단에 사용된",
+          "관세",
+          "국가안보"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으며, 관세와 관련된 언급이 있어 중립적인 톤으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"반도체\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '반도체'라는 단어가 명확하게 언급되어 있어 해당 섹터로 분류됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"판단에 사용된\", \"관세\", \"국가안보\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으며, 관세와 관련된 언급이 있어 중립적인 톤으로 판단됨.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "qQ3nRdIkuug",
-    "title": "이번 증시하락에 반등이 없는 이유(ft.나스닥, 엔비디아, 은행주)",
-    "publishedAt": "2025-04-04T03:56:32Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 1,
-    "negativeScore": 1
+    "videoId": "oQzxuet_M50",
+    "title": "반도체 상호관세 제외, 호재? 악재? 제 생각은 다릅니다",
+    "publishedAt": "2025-04-13T03:17:20Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:33:38.369Z",
+      "detectedAssets": [
+        {
+          "asset": "Semiconductor",
+          "ticker": "005930.KS",
+          "matchedText": "반도체",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '반도체'라는 단어가 명확하게 언급되어 있어 해당 섹터로 추출하였습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "호재",
+          "악재",
+          "생각"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망이 명확하지 않고, 개인의 생각을 언급하고 있어 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"반도체\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '반도체'라는 단어가 명확하게 언급되어 있어 해당 섹터로 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"호재\", \"악재\", \"생각\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망이 명확하지 않고, 개인의 생각을 언급하고 있어 판단이 불가합니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "SfcntEFAGj0",
-    "title": "중국이 엔비디아 필요없다고 한 이유(ft.오광진 편집장1부)",
-    "publishedAt": "2025-04-02T04:52:30Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "4DthbXf2hvY",
+    "title": "빅테크가 휴머노이드 로봇에 집중하는 이유(ft.양승윤 애널리스트 1부)",
+    "publishedAt": "2025-04-10T03:06:36Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:33:56.397Z",
+      "detectedAssets": [
+        {
+          "asset": "Internet",
+          "ticker": "035720.KS",
+          "matchedText": "빅테크",
+          "confidence": 0.9,
+          "reasoning": "빅테크는 일반적으로 인터넷 및 기술 관련 기업들을 지칭하는 용어로, 이와 관련된 섹터로 분류할 수 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Internet\",\n      \"matchedText\": \"빅테크\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"빅테크는 일반적으로 인터넷 및 기술 관련 기업들을 지칭하는 용어로, 이와 관련된 섹터로 분류할 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "mGYa_ck0bYw",
+    "title": "트럼프 관세 GG친 이유는?(ft.90일유예, 중국125%관세)",
+    "publishedAt": "2025-04-09T23:34:17Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:33:59.144Z",
+      "detectedAssets": [
+        {
+          "asset": "Tariff",
+          "ticker": "UNKNOWN",
+          "matchedText": "관세",
+          "confidence": 0.9,
+          "reasoning": "관세는 무역 관련 주제로, 트럼프와 관련된 정책을 나타냄"
+        },
+        {
+          "asset": "China",
+          "ticker": "UNKNOWN",
+          "matchedText": "중국",
+          "confidence": 0.85,
+          "reasoning": "중국은 특정 국가를 지칭하며, 관세와 관련된 맥락에서 언급됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "관세",
+          "유예",
+          "중국"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 감정을 유발하는 요소가 명확하지 않음"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Tariff\",\n      \"matchedText\": \"관세\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"관세는 무역 관련 주제로, 트럼프와 관련된 정책을 나타냄\"\n    },\n    {\n      \"asset\": \"China\",\n      \"matchedText\": \"중국\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"중국은 특정 국가를 지칭하며, 관세와 관련된 맥락에서 언급됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"관세\", \"유예\", \"중국\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 감정을 유발하는 요소가 명확하지 않음\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "IPmyMOgyWL4",
+    "title": "군사 전문가가 생각하는 한화 유상증자 사태(ft.최기일 교수)",
+    "publishedAt": "2025-04-08T09:49:40Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:34:06.205Z",
+      "detectedAssets": [
+        {
+          "asset": "Defense",
+          "ticker": "012450.KS",
+          "matchedText": "한화",
+          "confidence": 0.9,
+          "reasoning": "한화는 방산 관련 기업으로, 군사 전문가와 관련된 내용이므로 방산주로 분류됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "사태"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 정보가 부족함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Defense\",\n      \"matchedText\": \"한화\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"한화는 방산 관련 기업으로, 군사 전문가와 관련된 내용이므로 방산주로 분류됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"사태\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 정보가 부족함.\"\n  }\n}"
+    }
   }
 ]

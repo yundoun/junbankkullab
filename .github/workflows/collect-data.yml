@@ -50,10 +50,10 @@ jobs:
         run: |
           npx tsx skills/jbk-collect/scripts/collect.ts --year ${{ steps.date.outputs.year }} --month ${{ steps.date.outputs.month }}
 
-      # Step 2: LLM 기반 톤 분석 + 시장 데이터 조회 (v3)
+      # Step 2: LLM 기반 톤 분석 + 시장 데이터 조회 (v3) - 현재 월만
       - name: Analyze data (LLM)
         run: |
-          npx tsx scripts/analyze-v3.ts
+          npx tsx scripts/analyze-v3.ts --year ${{ steps.date.outputs.year }} --month ${{ steps.date.outputs.month }}
 
       # Step 3: 통계 생성
       - name: Generate stats

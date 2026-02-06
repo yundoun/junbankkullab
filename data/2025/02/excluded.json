@@ -1,18 +1,9 @@
 [
   {
-    "videoId": "XEzSoZ9caZo",
-    "title": "알트코인 장기투자해도 될까?",
-    "publishedAt": "2025-02-19T03:30:23Z",
-    "asset": "Altcoin",
-    "reason": "altcoin",
-    "matchedPattern": "알트코인"
-  },
-  {
     "videoId": "jWeJvHNHkqE",
     "title": "알트코인 이것만 사면 됩니다(ft.박종한 작가 2부)",
     "publishedAt": "2025-02-15T03:22:49Z",
-    "asset": "Altcoin",
-    "reason": "altcoin",
-    "matchedPattern": "알트코인"
+    "asset": "Ethereum",
+    "reason": "altcoin"
   }
 ]

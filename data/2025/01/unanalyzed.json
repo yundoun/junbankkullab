@@ -1,83 +1,323 @@
 [
   {
-    "videoId": "7e2rPWrCxQQ",
-    "title": "엔비디아, 딥시크 해결 못 하면 위험합니다!",
-    "publishedAt": "2025-01-31T07:15:48Z",
-    "asset": "Nvidia",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "u7_bAiAo_AM",
+    "title": "중국 딥시크! 미국 빅테크 넘어서나?",
+    "publishedAt": "2025-01-31T04:52:46Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:22:34.325Z",
+      "detectedAssets": [
+        {
+          "asset": "Internet",
+          "ticker": "035720.KS",
+          "matchedText": "빅테크",
+          "confidence": 0.9,
+          "reasoning": "빅테크는 일반적으로 인터넷 관련 대기업을 지칭하며, 중국의 딥시크가 미국의 빅테크를 넘어서려는 맥락에서 인터넷 섹터와 관련이 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "딥시크",
+          "빅테크"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망이 명확하지 않으며, 단순히 비교하는 내용이므로 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Internet\",\n      \"matchedText\": \"빅테크\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"빅테크는 일반적으로 인터넷 관련 대기업을 지칭하며, 중국의 딥시크가 미국의 빅테크를 넘어서려는 맥락에서 인터넷 섹터와 관련이 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"딥시크\", \"빅테크\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망이 명확하지 않으며, 단순히 비교하는 내용이므로 판단이 불가합니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "ptsS1t1agA8",
-    "title": "새해소망은 코스피 5000입니다(인구게이트 프로젝트)",
-    "publishedAt": "2025-01-28T01:01:44Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "Qy_yawsW-e0",
+    "title": "스페이스X에 투자해야 하는 이유(ft.이재훈 작가 1부)",
+    "publishedAt": "2025-01-29T08:08:36Z",
+    "reason": "unknown_asset: SpaceX",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:23:05.054Z",
+      "detectedAssets": [
+        {
+          "asset": "SpaceX",
+          "ticker": "UNKNOWN",
+          "matchedText": "스페이스X",
+          "confidence": 0.95,
+          "reasoning": "스페이스X는 투자 대상이 되는 기업으로 언급됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "투자해야 하는 이유"
+        ],
+        "reasoning": "투자에 대한 긍정적인 전망을 나타내는 제목"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"SpaceX\",\n      \"matchedText\": \"스페이스X\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"스페이스X는 투자 대상이 되는 기업으로 언급됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"투자해야 하는 이유\"],\n    \"reasoning\": \"투자에 대한 긍정적인 전망을 나타내는 제목\"\n  }\n}"
+    }
   },
   {
-    "videoId": "W4_xxhw_8Bk",
-    "title": "중국산AI에 무너지는 미국증시(ft.엔비디아, 딥시크)",
-    "publishedAt": "2025-01-27T09:58:46Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "V3JaZx1gtBM",
+    "title": "젠승황은 두산만 보고 있습니다",
+    "publishedAt": "2025-01-23T08:23:04Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:23:47.373Z",
+      "detectedAssets": [
+        {
+          "asset": "Korean Stock",
+          "ticker": "UNKNOWN",
+          "matchedText": "두산",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '두산'이라는 주식이 언급되었습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없기 때문에 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Korean Stock\",\n      \"matchedText\": \"두산\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '두산'이라는 주식이 언급되었습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없기 때문에 판단이 불가합니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "W4_xxhw_8Bk",
-    "title": "중국산AI에 무너지는 미국증시(ft.엔비디아, 딥시크)",
-    "publishedAt": "2025-01-27T09:58:46Z",
-    "asset": "Nvidia",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "ZL32YFQbDVk",
+    "title": "미국시장에서 주목받는 K-화장품 ETF가 나왔습니다!(ft.SOL 화장품TOP3플러스)",
+    "publishedAt": "2025-01-21T09:00:38Z",
+    "reason": "unknown_asset: ETF",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:24:00.677Z",
+      "detectedAssets": [
+        {
+          "asset": "ETF",
+          "ticker": "UNKNOWN",
+          "matchedText": "K-화장품 ETF",
+          "confidence": 0.9,
+          "reasoning": "K-화장품 ETF는 특정 섹터에 속하는 상장지수펀드로, 화장품 관련 주식들을 포함하고 있을 것으로 추정됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "주목받는",
+          "나왔습니다"
+        ],
+        "reasoning": "주목받는다는 표현은 긍정적인 전망을 나타내며, 새로운 ETF의 출시에 대한 기대감을 반영하고 있음."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"K-화장품 ETF\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"K-화장품 ETF는 특정 섹터에 속하는 상장지수펀드로, 화장품 관련 주식들을 포함하고 있을 것으로 추정됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"주목받는\", \"나왔습니다\"],\n    \"reasoning\": \"주목받는다는 표현은 긍정적인 전망을 나타내며, 새로운 ETF의 출시에 대한 기대감을 반영하고 있음.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "fTwMeZPypDU",
-    "title": "미국이 주목하고 있는 한국 원전은 이 주식입니다",
-    "publishedAt": "2025-01-23T09:30:29Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "bre5Had-vqg",
-    "title": "한국 주식으로도 저처럼 부자 될 수 있습니다 포기하지 마세요(ft.박두환 투자자 3부)",
-    "publishedAt": "2025-01-20T02:09:23Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "GbZCE0X2Ft4",
+    "title": "한국원전을 괴롭힌 미국 웨스팅하우스의 진짜 의도(ft.원자력)",
+    "publishedAt": "2025-01-17T08:30:07Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:24:13.278Z",
+      "detectedAssets": [
+        {
+          "asset": "Nuclear",
+          "ticker": "034020.KS",
+          "matchedText": "원전",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '원전'이라는 단어가 언급되어 있어 원자력 섹터와 관련이 있음을 나타냅니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "판단에 사용된",
+          "의도"
+        ],
+        "reasoning": "제목에서 특정한 긍정적 또는 부정적 전망을 나타내는 키워드가 없으며, '진짜 의도'라는 표현이 중립적인 뉘앙스를 가지고 있습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"원전\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '원전'이라는 단어가 언급되어 있어 원자력 섹터와 관련이 있음을 나타냅니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"판단에 사용된\", \"의도\"],\n    \"reasoning\": \"제목에서 특정한 긍정적 또는 부정적 전망을 나타내는 키워드가 없으며, '진짜 의도'라는 표현이 중립적인 뉘앙스를 가지고 있습니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "gz_hiHUECFs",
     "title": "테슬라에 올인하면 벌어지는 일(ft.테미녀)",
     "publishedAt": "2025-01-16T03:15:12Z",
-    "asset": "Tesla",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:24:24.647Z",
+      "detectedAssets": [
+        {
+          "asset": "Tesla",
+          "ticker": "TSLA",
+          "matchedText": "테슬라",
+          "confidence": 0.95,
+          "reasoning": "영상 제목에 '테슬라'라는 단어가 명확하게 언급되어 있어 해당 종목으로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Tesla\",\n      \"matchedText\": \"테슬라\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"영상 제목에 '테슬라'라는 단어가 명확하게 언급되어 있어 해당 종목으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "QI2yciNk6CM",
-    "title": "비트코인 5억 갑니다 빨리 사세요(ft.강환국 작가 1부)",
-    "publishedAt": "2025-01-09T02:36:10Z",
-    "asset": "Bitcoin",
-    "reason": "no_market_data",
-    "positiveScore": 3,
-    "negativeScore": 0
+    "videoId": "OZzfdpYgQp8",
+    "title": "알트코인 이렇게 사면 부자됩니다(ft.강환국 작가 2부)",
+    "publishedAt": "2025-01-10T02:18:31Z",
+    "reason": "unknown_asset: Cryptocurrency",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:24:33.795Z",
+      "detectedAssets": [
+        {
+          "asset": "Cryptocurrency",
+          "ticker": "UNKNOWN",
+          "matchedText": "알트코인",
+          "confidence": 0.95,
+          "reasoning": "알트코인은 비트코인 외의 다양한 암호화폐를 포함하는 용어로, 암호화폐 시장에서 일반적으로 사용됩니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "부자됩니다"
+        ],
+        "reasoning": "부자된다는 표현은 긍정적인 전망을 나타내며, 투자에 대한 희망적인 메시지를 전달합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Cryptocurrency\",\n      \"matchedText\": \"알트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"알트코인은 비트코인 외의 다양한 암호화폐를 포함하는 용어로, 암호화폐 시장에서 일반적으로 사용됩니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"부자됩니다\"],\n    \"reasoning\": \"부자된다는 표현은 긍정적인 전망을 나타내며, 투자에 대한 희망적인 메시지를 전달합니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "kveoLcRmtIo",
+    "title": "미군함을 한국이 건조가능하다고 말한 트럼프의 숨겨진 계산",
+    "publishedAt": "2025-01-07T22:00:25Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:24:50.519Z",
+      "detectedAssets": [
+        {
+          "asset": "Shipbuilding",
+          "ticker": "009540.KS",
+          "matchedText": "미군함을 한국이 건조가능하다고",
+          "confidence": 0.9,
+          "reasoning": "미군함 건조와 관련하여 조선주 섹터를 연상시킴"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없음"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Shipbuilding\",\n      \"matchedText\": \"미군함을 한국이 건조가능하다고\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"미군함 건조와 관련하여 조선주 섹터를 연상시킴\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 명확한 키워드가 없음\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "StR5pRuH7c8",
+    "title": "여의도 라스트 가치 투자자의 조언 올해는 가치주 사야 합니다(ft.김기백 펀드매니저 1부)",
+    "publishedAt": "2025-01-06T04:57:01Z",
+    "reason": "unknown_asset: Value",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:25:00.938Z",
+      "detectedAssets": [
+        {
+          "asset": "Value",
+          "ticker": "UNKNOWN",
+          "matchedText": "가치주",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '가치주'라는 단어가 명시되어 있어 가치주 섹터로 분류됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "가치주",
+          "사야"
+        ],
+        "reasoning": "제목에서 '사야 합니다'라는 표현이 긍정적인 투자 권유를 나타내어 긍정적인 톤으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Value\",\n      \"matchedText\": \"가치주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '가치주'라는 단어가 명시되어 있어 가치주 섹터로 분류됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"가치주\", \"사야\"],\n    \"reasoning\": \"제목에서 '사야 합니다'라는 표현이 긍정적인 투자 권유를 나타내어 긍정적인 톤으로 판단됨.\"\n  }\n}"
+    }
   },
   {
     "videoId": "ex0aLkpGu5c",
     "title": "테슬라는 절대 배터리 포기 안 합니다(ft.이진복 작가 1부)",
     "publishedAt": "2025-01-05T10:14:46Z",
-    "asset": "Tesla",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:25:06.444Z",
+      "detectedAssets": [
+        {
+          "asset": "Tesla",
+          "ticker": "TSLA",
+          "matchedText": "테슬라",
+          "confidence": 0.95,
+          "reasoning": "영상 제목에 '테슬라'라는 명확한 종목명이 언급되어 있습니다."
+        },
+        {
+          "asset": "Battery",
+          "ticker": "373220.KS",
+          "matchedText": "배터리",
+          "confidence": 0.85,
+          "reasoning": "'배터리'는 테슬라와 관련된 섹터로 해석될 수 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "절대",
+          "포기"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적으로 판단했습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Tesla\",\n      \"matchedText\": \"테슬라\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"영상 제목에 '테슬라'라는 명확한 종목명이 언급되어 있습니다.\"\n    },\n    {\n      \"asset\": \"Battery\",\n      \"matchedText\": \"배터리\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"'배터리'는 테슬라와 관련된 섹터로 해석될 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"절대\", \"포기\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적으로 판단했습니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "sgx2MZm0V3c",
+    "title": "철강업계가 망해가고 있는 이유(ft.US스틸)",
+    "publishedAt": "2025-01-04T11:26:04Z",
+    "reason": "unknown_asset: USSteel",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:25:13.999Z",
+      "detectedAssets": [
+        {
+          "asset": "Steel",
+          "ticker": "005490.KS",
+          "matchedText": "철강업계",
+          "confidence": 0.95,
+          "reasoning": "철강업계는 Steel 섹터에 해당합니다."
+        },
+        {
+          "asset": "USSteel",
+          "ticker": "UNKNOWN",
+          "matchedText": "US스틸",
+          "confidence": 0.95,
+          "reasoning": "US스틸은 미국의 철강 회사로, USSteel로 식별됩니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "keywords": [
+          "망해가고 있는"
+        ],
+        "reasoning": "철강업계가 망해가고 있다는 표현은 부정적인 전망을 나타냅니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Steel\",\n      \"matchedText\": \"철강업계\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"철강업계는 Steel 섹터에 해당합니다.\"\n    },\n    {\n      \"asset\": \"USSteel\",\n      \"matchedText\": \"US스틸\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"US스틸은 미국의 철강 회사로, USSteel로 식별됩니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"negative\",\n    \"keywords\": [\"망해가고 있는\"],\n    \"reasoning\": \"철강업계가 망해가고 있다는 표현은 부정적인 전망을 나타냅니다.\"\n  }\n}"
+    }
   }
 ]

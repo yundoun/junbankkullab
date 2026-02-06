@@ -28,8 +28,8 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 54552.5,
-      "previousClose": 54454.0273,
+      "closePrice": 54552.4961,
+      "previousClose": 54454.0312,
       "priceChange": 0.18,
       "direction": "up",
       "tradingDate": "2025-04-21"
@@ -71,7 +71,7 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 55340.2617,
+      "closePrice": 55340.2578,
       "previousClose": 54355.5586,
       "priceChange": 1.81,
       "direction": "up",
@@ -285,7 +285,7 @@
       "asset": "Bank",
       "ticker": "105560.KS",
       "closePrice": 75807.5,
-      "previousClose": 75222.1094,
+      "previousClose": 75222.1172,
       "priceChange": 0.78,
       "direction": "up",
       "tradingDate": "2025-04-04"
@@ -338,150 +338,6 @@
       "actualDirection": "bullish",
       "isHoney": true,
       "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
-    }
-  },
-  {
-    "videoId": "Mxl7f9KbsK8",
-    "title": "미중 감정싸움 시작과 엔비디아 피해액 계산",
-    "publishedAt": "2025-04-16T11:23:47Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:54:48.493Z",
-      "detectedAssets": [
-        {
-          "asset": "Nvidia",
-          "ticker": "NVDA"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "제목에서 '미중 감정싸움 시작'과 '엔비디아 피해액 계산'이라는 표현이 사용되었습니다. 이는 미중 간의 갈등이 시작되었고, 이로 인해 엔비디아가 피해를 입을 수 있다는 부정적인 전망을 암시합니다. '피해액 계산'이라는 부분은 손실이나 부정적인 영향을 강조하는 표현으로 해석될 수 있습니다.",
-        "confidence": 0.85
-      }
-    },
-    "marketData": {
-      "asset": "Nvidia",
-      "ticker": "NVDA",
-      "closePrice": 104.471,
-      "previousClose": 112.1796,
-      "priceChange": -6.87,
-      "direction": "down",
-      "tradingDate": "2025-04-16"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정 전망 → 실제 하락 → 예측대로"
-    }
-  },
-  {
-    "videoId": "qQ3nRdIkuug",
-    "title": "이번 증시하락에 반등이 없는 이유(ft.나스닥, 엔비디아, 은행주)",
-    "publishedAt": "2025-04-04T03:56:32Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:54:50.258Z",
-      "detectedAssets": [
-        {
-          "asset": "NASDAQ",
-          "ticker": "^IXIC"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "제목에서 '증시하락에 반등이 없는 이유'라는 표현은 시장이 하락세에 있으며, 반등의 가능성이 낮다는 부정적인 전망을 나타냅니다. 특히 '반등이 없는 이유'라는 부분은 현재 상황이 개선되지 않을 것이라는 뉘앙스를 주고 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "NASDAQ",
-      "ticker": "^IXIC",
-      "closePrice": 15587.79,
-      "previousClose": 16550.6094,
-      "priceChange": -5.82,
-      "direction": "down",
-      "tradingDate": "2025-04-04"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정 전망 → 실제 하락 → 예측대로"
-    }
-  },
-  {
-    "videoId": "qQ3nRdIkuug",
-    "title": "이번 증시하락에 반등이 없는 이유(ft.나스닥, 엔비디아, 은행주)",
-    "publishedAt": "2025-04-04T03:56:32Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:54:51.449Z",
-      "detectedAssets": [
-        {
-          "asset": "Nvidia",
-          "ticker": "NVDA"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "제목에서 '증시하락에 반등이 없는 이유'라는 표현은 시장이 하락세에 있으며, 반등의 가능성이 낮다는 부정적인 전망을 나타냅니다. 특히 '반등이 없는 이유'라는 부분은 현재 상황이 개선되지 않을 것이라는 뉘앙스를 주고 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "Nvidia",
-      "ticker": "NVDA",
-      "closePrice": 94.2929,
-      "previousClose": 101.7815,
-      "priceChange": -7.36,
-      "direction": "down",
-      "tradingDate": "2025-04-04"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정 전망 → 실제 하락 → 예측대로"
-    }
-  },
-  {
-    "videoId": "SfcntEFAGj0",
-    "title": "중국이 엔비디아 필요없다고 한 이유(ft.오광진 편집장1부)",
-    "publishedAt": "2025-04-02T04:52:30Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:54:52.833Z",
-      "detectedAssets": [
-        {
-          "asset": "Nvidia",
-          "ticker": "NVDA"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "제목에서 '중국이 엔비디아 필요없다고 한 이유'라는 표현은 엔비디아에 대한 부정적인 뉘앙스를 내포하고 있습니다. 이는 중국이 엔비디아의 기술이나 제품을 더 이상 필요로 하지 않는다는 의미로 해석될 수 있으며, 이는 엔비디아의 시장 전망에 부정적인 영향을 미칠 수 있습니다.",
-        "confidence": 0.8
-      }
-    },
-    "marketData": {
-      "asset": "Nvidia",
-      "ticker": "NVDA",
-      "closePrice": 110.4,
-      "previousClose": 110.13,
-      "priceChange": 0.25,
-      "direction": "up",
-      "tradingDate": "2025-04-02"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정 전망 → 실제 상승 → 역지표 적중!"
     }
   }
 ]

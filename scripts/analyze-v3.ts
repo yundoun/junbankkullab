@@ -286,7 +286,25 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
 // ============================================================
 
 async function main() {
-  console.log('🔍 전반꿀 연구소 분석 v3 (LLM 기반) 시작...\n');
+  // 커맨드라인 인자 파싱: --year YYYY --month M
+  const args = process.argv.slice(2);
+  let targetYear: number | null = null;
+  let targetMonth: number | null = null;
+  
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--year' && args[i + 1]) {
+      targetYear = parseInt(args[i + 1]);
+    }
+    if (args[i] === '--month' && args[i + 1]) {
+      targetMonth = parseInt(args[i + 1]);
+    }
+  }
+  
+  if (targetYear && targetMonth) {
+    console.log(`🔍 전반꿀 연구소 분석 v3: ${targetYear}년 ${targetMonth}월만 처리\n`);
+  } else {
+    console.log('🔍 전반꿀 연구소 분석 v3 (LLM 기반) 시작...\n');
+  }
   
   // 통계
   const stats = {
@@ -297,42 +315,53 @@ async function main() {
     honeyCount: 0,
   };
   
-  // 모든 월별 디렉토리 탐색
-  const years = fs.readdirSync(DATA_DIR).filter(d => /^\d{4}$/.test(d)).sort();
+  // 연/월 목록 결정
+  let yearMonths: Array<{year: string; month: string}> = [];
   
-  for (const year of years) {
-    const yearPath = path.join(DATA_DIR, year);
-    const months = fs.readdirSync(yearPath).filter(d => /^\d{2}$/.test(d)).sort();
-    
-    for (const month of months) {
-      console.log(`📅 ${year}/${month} 처리 중...`);
-      
-      const result = await processMonth(parseInt(year), parseInt(month));
-      
-      // 저장
-      const monthDir = path.join(DATA_DIR, year, month);
-      
-      fs.writeFileSync(
-        path.join(monthDir, 'analyzed.json'),
-        JSON.stringify(result.analyzed, null, 2)
-      );
-      fs.writeFileSync(
-        path.join(monthDir, 'unanalyzed.json'),
-        JSON.stringify(result.unanalyzed, null, 2)
-      );
-      fs.writeFileSync(
-        path.join(monthDir, 'excluded.json'),
-        JSON.stringify(result.excluded, null, 2)
-      );
-      
-      // 통계 업데이트
-      stats.analyzed += result.analyzed.length;
-      stats.unanalyzed += result.unanalyzed.length;
-      stats.excluded += result.excluded.length;
-      stats.honeyCount += result.analyzed.filter(a => a.judgment.isHoney).length;
-      
-      console.log(`   분석: ${result.analyzed.length}, 미분석: ${result.unanalyzed.length}, 제외: ${result.excluded.length}`);
+  if (targetYear && targetMonth) {
+    // 특정 월만 처리
+    const monthStr = String(targetMonth).padStart(2, '0');
+    yearMonths = [{ year: String(targetYear), month: monthStr }];
+  } else {
+    // 모든 월별 디렉토리 탐색
+    const years = fs.readdirSync(DATA_DIR).filter(d => /^\d{4}$/.test(d)).sort();
+    for (const year of years) {
+      const yearPath = path.join(DATA_DIR, year);
+      const months = fs.readdirSync(yearPath).filter(d => /^\d{2}$/.test(d)).sort();
+      for (const month of months) {
+        yearMonths.push({ year, month });
+      }
     }
+  }
+  
+  for (const { year, month } of yearMonths) {
+    console.log(`📅 ${year}/${month} 처리 중...`);
+    
+    const result = await processMonth(parseInt(year), parseInt(month));
+    
+    // 저장
+    const monthDir = path.join(DATA_DIR, year, month);
+    
+    fs.writeFileSync(
+      path.join(monthDir, 'analyzed.json'),
+      JSON.stringify(result.analyzed, null, 2)
+    );
+    fs.writeFileSync(
+      path.join(monthDir, 'unanalyzed.json'),
+      JSON.stringify(result.unanalyzed, null, 2)
+    );
+    fs.writeFileSync(
+      path.join(monthDir, 'excluded.json'),
+      JSON.stringify(result.excluded, null, 2)
+    );
+    
+    // 통계 업데이트
+    stats.analyzed += result.analyzed.length;
+    stats.unanalyzed += result.unanalyzed.length;
+    stats.excluded += result.excluded.length;
+    stats.honeyCount += result.analyzed.filter(a => a.judgment.isHoney).length;
+    
+    console.log(`   분석: ${result.analyzed.length}, 미분석: ${result.unanalyzed.length}, 제외: ${result.excluded.length}`);
   }
   
   // 최종 결과

@@ -1,47 +1,278 @@
 [
   {
-    "videoId": "0zlxKqXWi4A",
-    "title": "미국증시는 왜 떨어지는 걸까?(ft.제번스의 역설)",
-    "publishedAt": "2025-02-27T23:36:50Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "bwtl_4LT1fA",
+    "title": "미국 부자가 알려주는 미국주식 투자법(ft.부의 공식)",
+    "publishedAt": "2025-02-25T22:30:09Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:25:52.514Z",
+      "detectedAssets": [
+        {
+          "asset": "US Stock",
+          "ticker": "UNKNOWN",
+          "matchedText": "미국주식",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '미국주식'이라는 표현이 명확하게 언급되어 있어 미국 주식 시장을 지칭하는 것으로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 구체적인 키워드가 없으므로 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"US Stock\",\n      \"matchedText\": \"미국주식\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '미국주식'이라는 표현이 명확하게 언급되어 있어 미국 주식 시장을 지칭하는 것으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 구체적인 키워드가 없으므로 판단이 불가함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "5mz4eFVf7TI",
-    "title": "한국증시가 오른 이유",
-    "publishedAt": "2025-02-19T11:07:58Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "sTXpUjq7Cfk",
+    "title": "미국이 과연 국방비 예산을 매년 8%씩 감축할수 있을까?",
+    "publishedAt": "2025-02-20T03:47:55Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:03.009Z",
+      "detectedAssets": [
+        {
+          "asset": "Defense",
+          "ticker": "012450.KS",
+          "matchedText": "국방비",
+          "confidence": 0.95,
+          "reasoning": "국방비는 방산주와 관련된 섹터로 판단됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "국방비",
+          "감축"
+        ],
+        "reasoning": "국방비 감축에 대한 질문이므로 긍정적 또는 부정적 전망으로 판단하기 어려움"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Defense\",\n      \"matchedText\": \"국방비\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"국방비는 방산주와 관련된 섹터로 판단됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"국방비\", \"감축\"],\n    \"reasoning\": \"국방비 감축에 대한 질문이므로 긍정적 또는 부정적 전망으로 판단하기 어려움\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "Ld0VuKPtGBY",
+    "title": "팔란티어가 계속 오를 수밖에 없는 이유(ft. 이재훈 작가 1부)",
+    "publishedAt": "2025-02-19T03:50:05Z",
+    "reason": "unknown_asset: Palantir",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:11.883Z",
+      "detectedAssets": [
+        {
+          "asset": "Palantir",
+          "ticker": "UNKNOWN",
+          "matchedText": "팔란티어",
+          "confidence": 0.95,
+          "reasoning": "영상 제목에 '팔란티어'라는 주식명이 명시되어 있어 해당 종목으로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "오를",
+          "이유"
+        ],
+        "reasoning": "제목에서 '계속 오를 수밖에 없는 이유'라는 표현이 긍정적인 전망을 나타내고 있어 긍정적인 톤으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Palantir\",\n      \"matchedText\": \"팔란티어\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"영상 제목에 '팔란티어'라는 주식명이 명시되어 있어 해당 종목으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"오를\", \"이유\"],\n    \"reasoning\": \"제목에서 '계속 오를 수밖에 없는 이유'라는 표현이 긍정적인 전망을 나타내고 있어 긍정적인 톤으로 판단됨.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "XEzSoZ9caZo",
+    "title": "알트코인 장기투자해도 될까?",
+    "publishedAt": "2025-02-19T03:30:23Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:15.467Z",
+      "detectedAssets": [
+        {
+          "asset": "Ethereum",
+          "ticker": "ETH-USD",
+          "matchedText": "알트코인",
+          "confidence": 0.85,
+          "reasoning": "알트코인은 비트코인 외의 다양한 암호화폐를 포함하는 용어로, 일반적으로 이더리움과 같은 주요 암호화폐를 포함합니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "장기투자",
+          "될까"
+        ],
+        "reasoning": "장기투자에 대한 질문이므로 긍정적 또는 부정적 전망을 명확히 판단하기 어렵습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"알트코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"알트코인은 비트코인 외의 다양한 암호화폐를 포함하는 용어로, 일반적으로 이더리움과 같은 주요 암호화폐를 포함합니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"장기투자\", \"될까\"],\n    \"reasoning\": \"장기투자에 대한 질문이므로 긍정적 또는 부정적 전망을 명확히 판단하기 어렵습니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "PJ9mvmN4kFc",
+    "title": "밈코인 투자해도 될까?",
+    "publishedAt": "2025-02-18T03:00:28Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:24.181Z",
+      "detectedAssets": [
+        {
+          "asset": "Cryptocurrency",
+          "ticker": "UNKNOWN",
+          "matchedText": "밈코인",
+          "confidence": 0.9,
+          "reasoning": "밈코인은 암호화폐의 일종으로, 특정 커뮤니티나 문화에서 유행하는 코인을 의미합니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "투자",
+          "될까"
+        ],
+        "reasoning": "투자에 대한 질문 형태로, 긍정적 또는 부정적 전망이 명확하지 않음."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Cryptocurrency\",\n      \"matchedText\": \"밈코인\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"밈코인은 암호화폐의 일종으로, 특정 커뮤니티나 문화에서 유행하는 코인을 의미합니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"투자\", \"될까\"],\n    \"reasoning\": \"투자에 대한 질문 형태로, 긍정적 또는 부정적 전망이 명확하지 않음.\"\n  }\n}"
+    }
   },
   {
     "videoId": "pvpJWJ0Y1Ic",
     "title": "관세 전쟁에서 비트코인",
     "publishedAt": "2025-02-15T09:00:58Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:31.039Z",
+      "detectedAssets": [
+        {
+          "asset": "Bitcoin",
+          "ticker": "BTC-USD",
+          "matchedText": "비트코인",
+          "confidence": 0.95,
+          "reasoning": "제목에 '비트코인'이 명시되어 있어 암호화폐로 확실하게 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "관세 전쟁"
+        ],
+        "reasoning": "관세 전쟁이라는 표현은 긍정적이거나 부정적인 전망을 나타내지 않으며, 중립적인 상황을 설명하고 있음."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"비트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '비트코인'이 명시되어 있어 암호화폐로 확실하게 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"관세 전쟁\"],\n    \"reasoning\": \"관세 전쟁이라는 표현은 긍정적이거나 부정적인 전망을 나타내지 않으며, 중립적인 상황을 설명하고 있음.\"\n  }\n}"
+    }
   },
   {
     "videoId": "dSiCgz6K_fA",
     "title": "트럼프가 비트코인에 진심인 이유",
     "publishedAt": "2025-02-14T07:40:04Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:36.422Z",
+      "detectedAssets": [
+        {
+          "asset": "Bitcoin",
+          "ticker": "BTC-USD",
+          "matchedText": "비트코인",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '비트코인'이라는 단어가 명확하게 언급되어 있어 추출하였습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"비트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '비트코인'이라는 단어가 명확하게 언급되어 있어 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "XO7MTfGFL4E",
-    "title": "비트코인, 50만달러까지 가는 이유(박종한 작가 1부)",
-    "publishedAt": "2025-02-14T06:38:47Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "DqVMCv4_nNg",
+    "title": "한화만 주가가 오르는 이유",
+    "publishedAt": "2025-02-13T11:48:19Z",
+    "reason": "unknown_asset: Korean Stock",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:44.269Z",
+      "detectedAssets": [
+        {
+          "asset": "Korean Stock",
+          "ticker": "UNKNOWN",
+          "matchedText": "한화",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '한화'라는 주식이 언급되어 있어 해당 종목으로 추출하였습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "오르는"
+        ],
+        "reasoning": "주가가 오르는 이유라는 표현에서 긍정적인 전망을 나타내고 있습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Korean Stock\",\n      \"matchedText\": \"한화\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '한화'라는 주식이 언급되어 있어 해당 종목으로 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"오르는\"],\n    \"reasoning\": \"주가가 오르는 이유라는 표현에서 긍정적인 전망을 나타내고 있습니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "UZKiJRZNi_c",
+    "title": "철강관세 25%면 한국에 벌어질 일",
+    "publishedAt": "2025-02-10T12:00:32Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:26:46.793Z",
+      "detectedAssets": [
+        {
+          "asset": "Steel",
+          "ticker": "005490.KS",
+          "matchedText": "철강",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '철강'이라는 단어가 언급되어 있어 철강 섹터와 관련이 있다고 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Steel\",\n      \"matchedText\": \"철강\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '철강'이라는 단어가 언급되어 있어 철강 섹터와 관련이 있다고 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가함.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "MODZiEcxDg8",
+    "title": "정부효율부 최고 수혜자가 일론 머스크인 이유(ft.이재훈 작가 2부)",
+    "publishedAt": "2025-02-04T09:28:43Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T07:27:05.042Z",
+      "detectedAssets": [
+        {
+          "asset": "Tesla",
+          "ticker": "TSLA",
+          "matchedText": "일론 머스크",
+          "confidence": 0.9,
+          "reasoning": "일론 머스크는 테슬라의 CEO로 알려져 있으며, 그의 이름이 언급됨으로써 테슬라와 관련된 내용으로 추정됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Tesla\",\n      \"matchedText\": \"일론 머스크\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"일론 머스크는 테슬라의 CEO로 알려져 있으며, 그의 이름이 언급됨으로써 테슬라와 관련된 내용으로 추정됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가함.\"\n  }\n}"
+    }
   }
 ]
