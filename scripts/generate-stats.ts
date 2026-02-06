@@ -43,6 +43,8 @@ interface AnalyzedItemV3 {
     asset: string;
     ticker: string;
     closePrice: number;
+    previousClose?: number;
+    priceChange?: number;
     direction: 'up' | 'down' | 'flat';
     tradingDate: string;
   };
@@ -279,6 +281,8 @@ function main() {
         tone: getTone(a) === 'positive' ? 'positive' : 'negative',
         actualDirection: getActualDirection(a) || 'flat',
         isHoney: getIsHoney(a),
+        // v3 포맷에서 가격 변동률 추출
+        priceChange: isV3Format(a) ? (a.marketData?.priceChange ?? null) : null,
       })),
   };
   

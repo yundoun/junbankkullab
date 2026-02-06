@@ -30,6 +30,7 @@ interface Mention {
   tone: 'positive' | 'negative' | 'neutral'
   actualDirection?: 'up' | 'down' | 'flat' | 'no_data'
   isHoney?: boolean
+  priceChange?: number | null
 }
 
 interface HybridAnalysis {
@@ -268,6 +269,7 @@ export async function GET() {
       status: m.isHoney !== undefined 
         ? (m.isHoney ? 'correct' : 'incorrect')
         : 'pending',
+      priceChange: m.priceChange ?? undefined,
     })
 
     // 정렬 (최신순)

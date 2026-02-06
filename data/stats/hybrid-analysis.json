@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-05T23:57:28.588Z",
+  "updatedAt": "2026-02-06T00:58:07.511Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
@@ -167,7 +167,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -3.65
     },
     {
       "videoId": "XAJqKI8IIpI",
@@ -176,7 +177,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -3.65
     },
     {
       "videoId": "y4jt9hrpql8",
@@ -185,7 +187,8 @@
       "asset": "Google",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.54
     },
     {
       "videoId": "cy_U5v4o-c8",
@@ -194,7 +197,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": null
     },
     {
       "videoId": "cy_U5v4o-c8",
@@ -203,7 +207,8 @@
       "asset": "Samsung",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": null
     },
     {
       "videoId": "cy_U5v4o-c8",
@@ -212,7 +217,8 @@
       "asset": "Google",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": null
     },
     {
       "videoId": "IztMJoUZB5s",
@@ -221,7 +227,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 11.37
     },
     {
       "videoId": "IztMJoUZB5s",
@@ -230,7 +237,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.84
     },
     {
       "videoId": "IztMJoUZB5s",
@@ -239,7 +247,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.84
     },
     {
       "videoId": "IztMJoUZB5s",
@@ -248,7 +257,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 11.37
     },
     {
       "videoId": "BTWAngrmGfc",
@@ -257,7 +267,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.84
     },
     {
       "videoId": "BTWAngrmGfc",
@@ -266,7 +277,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": null
     },
     {
       "videoId": "_U0euAqzloU",
@@ -275,7 +287,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": null
     },
     {
       "videoId": "1aOwkzHvqsQ",
@@ -284,7 +297,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -5.26
     },
     {
       "videoId": "1aOwkzHvqsQ",
@@ -293,7 +307,8 @@
       "asset": "Semiconductor",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -6.29
     },
     {
       "videoId": "1aOwkzHvqsQ",
@@ -302,7 +317,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": null
     },
     {
       "videoId": "_QjymTGZsHY",
@@ -311,7 +327,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.09
     },
     {
       "videoId": "baYPQxrnYi4",
@@ -320,7 +337,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.06
     },
     {
       "videoId": "baYPQxrnYi4",
@@ -329,7 +347,8 @@
       "asset": "SKHynix",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 5.57
     },
     {
       "videoId": "baYPQxrnYi4",
@@ -338,7 +357,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.12
     },
     {
       "videoId": "baYPQxrnYi4",
@@ -347,7 +367,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.06
     },
     {
       "videoId": "baYPQxrnYi4",
@@ -356,7 +377,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.12
     },
     {
       "videoId": "baYPQxrnYi4",
@@ -365,7 +387,8 @@
       "asset": "SKHynix",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 5.57
     },
     {
       "videoId": "cvMngriiriA",
@@ -374,25 +397,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
-    },
-    {
-      "videoId": "cvMngriiriA",
-      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-      "publishedAt": "2026-01-29T00:24:47Z",
-      "asset": "SKHynix",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false
-    },
-    {
-      "videoId": "cvMngriiriA",
-      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-      "publishedAt": "2026-01-29T00:24:47Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.05
     },
     {
       "videoId": "cvMngriiriA",
@@ -401,7 +407,28 @@
       "asset": "SKHynix",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.38
+    },
+    {
+      "videoId": "cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "publishedAt": "2026-01-29T00:24:47Z",
+      "asset": "Samsung",
+      "tone": "positive",
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": null
+    },
+    {
+      "videoId": "cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "publishedAt": "2026-01-29T00:24:47Z",
+      "asset": "SKHynix",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": null
     },
     {
       "videoId": "4ut8089Ra7k",
@@ -410,7 +437,8 @@
       "asset": "Samsung",
       "tone": "negative",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0
     },
     {
       "videoId": "4ut8089Ra7k",
@@ -419,7 +447,8 @@
       "asset": "SKHynix",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -4.04
     },
     {
       "videoId": "4ut8089Ra7k",
@@ -428,7 +457,8 @@
       "asset": "Samsung",
       "tone": "negative",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0
     },
     {
       "videoId": "4ut8089Ra7k",
@@ -437,7 +467,8 @@
       "asset": "SKHynix",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -4.04
     },
     {
       "videoId": "gYagj7cq6hw",
@@ -446,7 +477,8 @@
       "asset": "SP500",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.5
     },
     {
       "videoId": "je8E7jQSzMA",
@@ -455,7 +487,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.05
     },
     {
       "videoId": "_FmmRrEwwG8",
@@ -464,7 +497,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.87
     },
     {
       "videoId": "vBuUo34mdSY",
@@ -473,7 +507,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.32
     },
     {
       "videoId": "vBuUo34mdSY",
@@ -482,7 +517,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": null
     },
     {
       "videoId": "oOgX8LuqYys",
@@ -491,7 +527,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -4.38
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -500,7 +537,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.58
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -509,7 +547,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -1.42
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -518,7 +557,8 @@
       "asset": "Bank",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.93
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -527,7 +567,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.58
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -536,7 +577,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -1.42
     },
     {
       "videoId": "9ggky-EC7HI",
@@ -545,7 +587,8 @@
       "asset": "Bio",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.64
     },
     {
       "videoId": "15s6zD-xgws",
@@ -554,7 +597,8 @@
       "asset": "Bio",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.01
     },
     {
       "videoId": "2wvb6s7qwIc",
@@ -563,7 +607,8 @@
       "asset": "Defense",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.16
     },
     {
       "videoId": "mCKbg-iZwx0",
@@ -572,7 +617,8 @@
       "asset": "Bio",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.68
     },
     {
       "videoId": "lVG2hRYbRZ4",
@@ -581,7 +627,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.51
     },
     {
       "videoId": "lVG2hRYbRZ4",
@@ -590,7 +637,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.51
     },
     {
       "videoId": "oRPza9FG97E",
@@ -599,7 +647,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.27
     },
     {
       "videoId": "oRPza9FG97E",
@@ -608,7 +657,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.27
     },
     {
       "videoId": "aLY3A8D1EcQ",
@@ -617,7 +667,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 2.2
     },
     {
       "videoId": "Q58k3PYpqEE",
@@ -626,7 +677,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.21
     },
     {
       "videoId": "Q58k3PYpqEE",
@@ -635,7 +687,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.22
     },
     {
       "videoId": "Q58k3PYpqEE",
@@ -644,7 +697,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.21
     },
     {
       "videoId": "fIyQXZ4W4o8",
@@ -653,7 +707,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.12
     },
     {
       "videoId": "fIyQXZ4W4o8",
@@ -662,7 +717,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.12
     },
     {
       "videoId": "OXiGTd9Y5r0",
@@ -671,7 +727,8 @@
       "asset": "Defense",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.23
     },
     {
       "videoId": "L-SzNCM-Ej4",
@@ -680,7 +737,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.65
     },
     {
       "videoId": "L-SzNCM-Ej4",
@@ -689,7 +747,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.65
     },
     {
       "videoId": "j4kFk-0kKyw",
@@ -698,7 +757,8 @@
       "asset": "Tesla",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -4.62
     },
     {
       "videoId": "j4kFk-0kKyw",
@@ -707,7 +767,8 @@
       "asset": "Tesla",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -4.62
     },
     {
       "videoId": "qyXMu0tBmwM",
@@ -716,7 +777,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.24
     },
     {
       "videoId": "qyXMu0tBmwM",
@@ -725,7 +787,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.24
     },
     {
       "videoId": "Vl8waa0vqb8",
@@ -734,7 +797,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.23
     },
     {
       "videoId": "8r-ZRAeeQTk",
@@ -743,7 +807,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.34
     },
     {
       "videoId": "0RW2asxJrkM",
@@ -752,7 +817,8 @@
       "asset": "Semiconductor",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.01
     },
     {
       "videoId": "s_fzguS0IFQ",
@@ -761,7 +827,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.04
     },
     {
       "videoId": "s_fzguS0IFQ",
@@ -770,7 +837,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.04
     },
     {
       "videoId": "YHfHWwKRlHQ",
@@ -779,7 +847,8 @@
       "asset": "Battery",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.23
     },
     {
       "videoId": "A4JnjgDgwR0",
@@ -788,7 +857,8 @@
       "asset": "Battery",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.57
     },
     {
       "videoId": "Wz4_OoDYpYk",
@@ -797,7 +867,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 3.71
     },
     {
       "videoId": "Wz4_OoDYpYk",
@@ -806,7 +877,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 3.71
     },
     {
       "videoId": "f1M9yCPrko0",
@@ -815,7 +887,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 2.85
     },
     {
       "videoId": "GDJ7NF42RF8",
@@ -824,7 +897,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.88
     },
     {
       "videoId": "GDJ7NF42RF8",
@@ -833,7 +907,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.88
     },
     {
       "videoId": "bU6hmVesgdY",
@@ -842,7 +917,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.93
     },
     {
       "videoId": "bU6hmVesgdY",
@@ -851,7 +927,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -1.21
     },
     {
       "videoId": "bU6hmVesgdY",
@@ -860,7 +937,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.93
     },
     {
       "videoId": "ed-E5XuoGjU",
@@ -869,7 +947,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -1.44
     },
     {
       "videoId": "ed-E5XuoGjU",
@@ -878,7 +957,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.44
     },
     {
       "videoId": "PwdTH55izu8",
@@ -887,7 +967,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.94
     },
     {
       "videoId": "hjeAGLrELh4",
@@ -896,7 +977,8 @@
       "asset": "Google",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 3.11
     },
     {
       "videoId": "hjeAGLrELh4",
@@ -905,7 +987,8 @@
       "asset": "Google",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 3.11
     },
     {
       "videoId": "ww1cO9JGJhw",
@@ -914,7 +997,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.81
     },
     {
       "videoId": "ww1cO9JGJhw",
@@ -923,7 +1007,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.81
     },
     {
       "videoId": "jP6slxFl_JY",
@@ -932,7 +1017,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.49
     },
     {
       "videoId": "qVUI8eku3uc",
@@ -941,7 +1027,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.29
     },
     {
       "videoId": "qVUI8eku3uc",
@@ -950,7 +1037,8 @@
       "asset": "Celltrion",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.67
     },
     {
       "videoId": "qVUI8eku3uc",
@@ -959,7 +1047,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.29
     },
     {
       "videoId": "hjVImc62hcw",
@@ -968,7 +1057,8 @@
       "asset": "Celltrion",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.46
     },
     {
       "videoId": "86M35UU6MLs",
@@ -977,7 +1067,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 3.02
     },
     {
       "videoId": "86M35UU6MLs",
@@ -986,7 +1077,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 3.02
     },
     {
       "videoId": "O2gq3fEBjUs",
@@ -995,7 +1087,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.46
     },
     {
       "videoId": "8Y8siBdBL_c",
@@ -1004,7 +1097,8 @@
       "asset": "Bio",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0
     },
     {
       "videoId": "MA2pCxgR3nM",
@@ -1013,7 +1107,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.8
     },
     {
       "videoId": "MA2pCxgR3nM",
@@ -1022,7 +1117,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.8
     },
     {
       "videoId": "tUo1dWHURsU",
@@ -1031,7 +1127,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.8
     },
     {
       "videoId": "tUo1dWHURsU",
@@ -1040,7 +1137,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.8
     },
     {
       "videoId": "MOhdXWO5xzY",
@@ -1049,7 +1147,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.57
     },
     {
       "videoId": "MOhdXWO5xzY",
@@ -1058,7 +1157,8 @@
       "asset": "Bio",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.55
     },
     {
       "videoId": "MOhdXWO5xzY",
@@ -1067,7 +1167,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.57
     },
     {
       "videoId": "vPGIDKmB548",
@@ -1076,7 +1177,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.5
     },
     {
       "videoId": "vPGIDKmB548",
@@ -1085,7 +1187,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.5
     },
     {
       "videoId": "o5Qq3Yzasrw",
@@ -1094,7 +1197,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.56
     },
     {
       "videoId": "qDxns-qy57I",
@@ -1103,7 +1207,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0
     },
     {
       "videoId": "qDxns-qy57I",
@@ -1112,7 +1217,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0
     },
     {
       "videoId": "kdjkRJmk2H4",
@@ -1121,7 +1227,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0
     },
     {
       "videoId": "DQbFaiZKeGk",
@@ -1130,7 +1237,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0
     },
     {
       "videoId": "qDmJOObsGkQ",
@@ -1139,7 +1247,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 4.36
     },
     {
       "videoId": "B9SmCbml0cI",
@@ -1148,7 +1257,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.7
     },
     {
       "videoId": "L4Gi8B5CM3k",
@@ -1157,7 +1267,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.3
     },
     {
       "videoId": "L4Gi8B5CM3k",
@@ -1166,7 +1277,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.3
     },
     {
       "videoId": "xomi7IKmE28",
@@ -1175,7 +1287,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.36
     },
     {
       "videoId": "xomi7IKmE28",
@@ -1184,7 +1297,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.36
     },
     {
       "videoId": "c168cbbRa8E",
@@ -1193,7 +1307,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.45
     },
     {
       "videoId": "c168cbbRa8E",
@@ -1202,7 +1317,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.45
     },
     {
       "videoId": "yt6JeYqGC7A",
@@ -1211,7 +1327,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.17
     },
     {
       "videoId": "v_a3jwSMOiw",
@@ -1220,7 +1337,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 3.49
     },
     {
       "videoId": "MRnZ74Fe_Ao",
@@ -1229,7 +1347,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.35
     },
     {
       "videoId": "IJ1KD9svbVU",
@@ -1238,7 +1357,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 10.55
     },
     {
       "videoId": "IJ1KD9svbVU",
@@ -1247,7 +1367,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 10.55
     },
     {
       "videoId": "zfoKREVGfbQ",
@@ -1256,7 +1377,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.09
     },
     {
       "videoId": "zfoKREVGfbQ",
@@ -1265,7 +1387,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.09
     },
     {
       "videoId": "7vGui1PwAkU",
@@ -1274,7 +1397,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.09
     },
     {
       "videoId": "R2Dfo23mjT4",
@@ -1283,7 +1407,8 @@
       "asset": "Bank",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -1.19
     },
     {
       "videoId": "212PJI3G-Uk",
@@ -1292,7 +1417,8 @@
       "asset": "Semiconductor",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.14
     },
     {
       "videoId": "IbePY33AgO0",
@@ -1301,7 +1427,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.46
     },
     {
       "videoId": "PKfuLdeaipw",
@@ -1310,7 +1437,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.5
     },
     {
       "videoId": "PKfuLdeaipw",
@@ -1319,7 +1447,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.5
     },
     {
       "videoId": "ASD5H9ygi44",
@@ -1328,7 +1457,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.61
     },
     {
       "videoId": "5eaJpMOxZpU",
@@ -1337,7 +1467,8 @@
       "asset": "Chemical",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.36
     },
     {
       "videoId": "79JWcW2k_uo",
@@ -1346,7 +1477,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.16
     },
     {
       "videoId": "79JWcW2k_uo",
@@ -1355,7 +1487,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.16
     },
     {
       "videoId": "5f97Ap2_108",
@@ -1364,7 +1497,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.15
     },
     {
       "videoId": "5f97Ap2_108",
@@ -1373,7 +1507,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.15
     },
     {
       "videoId": "4oKCRnyFmms",
@@ -1382,7 +1517,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.16
     },
     {
       "videoId": "4oKCRnyFmms",
@@ -1391,7 +1527,8 @@
       "asset": "Energy",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.37
     },
     {
       "videoId": "OK9b1Y-rDkk",
@@ -1400,7 +1537,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.95
     },
     {
       "videoId": "QiJ5IX_D-0Y",
@@ -1409,7 +1547,8 @@
       "asset": "Shipbuilding",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -4.46
     },
     {
       "videoId": "oiwcJmhJrVY",
@@ -1418,7 +1557,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.88
     },
     {
       "videoId": "oiwcJmhJrVY",
@@ -1427,7 +1567,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.88
     },
     {
       "videoId": "t5uDhh9EEwQ",
@@ -1436,7 +1577,8 @@
       "asset": "SKHynix",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.38
     },
     {
       "videoId": "z1BJXG91YQE",
@@ -1445,7 +1587,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.74
     },
     {
       "videoId": "vQF3_EEDxbA",
@@ -1454,7 +1597,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.66
     },
     {
       "videoId": "vQF3_EEDxbA",
@@ -1463,7 +1607,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.66
     },
     {
       "videoId": "VwDR-WB3fqY",
@@ -1472,7 +1617,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.83
     },
     {
       "videoId": "VwDR-WB3fqY",
@@ -1481,7 +1627,8 @@
       "asset": "Tesla",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 3.02
     },
     {
       "videoId": "-882R6nmTe8",
@@ -1490,7 +1637,8 @@
       "asset": "Auto",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 7.51
     },
     {
       "videoId": "irJLVlYp9kA",
@@ -1499,7 +1647,8 @@
       "asset": "Energy",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.87
     },
     {
       "videoId": "lLIRyxdZdaY",
@@ -1508,7 +1657,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.71
     },
     {
       "videoId": "lLIRyxdZdaY",
@@ -1517,7 +1667,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.38
     },
     {
       "videoId": "kjApYvMBpUY",
@@ -1526,7 +1677,8 @@
       "asset": "Battery",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.64
     },
     {
       "videoId": "y6p6a6EaJ8k",
@@ -1535,7 +1687,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.05
     },
     {
       "videoId": "JcbsEP_6z6s",
@@ -1544,7 +1697,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.19
     },
     {
       "videoId": "JcbsEP_6z6s",
@@ -1553,7 +1707,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.19
     },
     {
       "videoId": "LHrgrf4zSgk",
@@ -1562,7 +1717,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.25
     },
     {
       "videoId": "L8SM0ieN8X0",
@@ -1571,7 +1727,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -1.99
     },
     {
       "videoId": "mkwaOPtteMI",
@@ -1580,7 +1737,8 @@
       "asset": "Semiconductor",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1
     },
     {
       "videoId": "YvDAoZ8tlzo",
@@ -1589,7 +1747,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.8
     },
     {
       "videoId": "YvDAoZ8tlzo",
@@ -1598,7 +1757,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.8
     },
     {
       "videoId": "dqYbZvp-0Lw",
@@ -1607,7 +1767,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.85
     },
     {
       "videoId": "dqYbZvp-0Lw",
@@ -1616,7 +1777,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.85
     },
     {
       "videoId": "UFEczU1Mpqg",
@@ -1625,7 +1787,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.55
     },
     {
       "videoId": "UFEczU1Mpqg",
@@ -1634,7 +1797,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.31
     },
     {
       "videoId": "UFEczU1Mpqg",
@@ -1643,7 +1807,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.55
     },
     {
       "videoId": "2l1WZv4oN1A",
@@ -1652,7 +1817,8 @@
       "asset": "Tesla",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 3.67
     },
     {
       "videoId": "2l1WZv4oN1A",
@@ -1661,7 +1827,8 @@
       "asset": "Tesla",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 3.67
     },
     {
       "videoId": "2VFSyDzNbXs",
@@ -1670,7 +1837,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.66
     },
     {
       "videoId": "2VFSyDzNbXs",
@@ -1679,7 +1847,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 2.66
     },
     {
       "videoId": "pRhPswdBbzk",
@@ -1688,7 +1857,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.67
     },
     {
       "videoId": "qWLfz45ELYM",
@@ -1697,7 +1867,8 @@
       "asset": "Shipbuilding",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.93
     },
     {
       "videoId": "p-gK1F46H0E",
@@ -1706,7 +1877,8 @@
       "asset": "Nuclear",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.72
     },
     {
       "videoId": "6Tuv-dNpM7c",
@@ -1715,7 +1887,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 6.67
     },
     {
       "videoId": "gKtY9L5egcs",
@@ -1724,7 +1897,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.12
     },
     {
       "videoId": "xODs5-OCHPQ",
@@ -1733,7 +1907,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.87
     },
     {
       "videoId": "xODs5-OCHPQ",
@@ -1742,7 +1917,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.87
     },
     {
       "videoId": "6IEp9lWuJj8",
@@ -1751,7 +1927,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.42
     },
     {
       "videoId": "6IEp9lWuJj8",
@@ -1760,7 +1937,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.42
     },
     {
       "videoId": "ZeQ6eeLWhZs",
@@ -1769,7 +1947,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.38
     },
     {
       "videoId": "CqtsheWiKbc",
@@ -1778,7 +1957,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 5.11
     },
     {
       "videoId": "CqtsheWiKbc",
@@ -1787,7 +1967,8 @@
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 5.11
     },
     {
       "videoId": "A55xC1O0FF4",
@@ -1796,7 +1977,8 @@
       "asset": "Semiconductor",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.18
     },
     {
       "videoId": "Mxl7f9KbsK8",
@@ -1805,7 +1987,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -6.87
     },
     {
       "videoId": "k-WS_aMSRk8",
@@ -1814,7 +1997,8 @@
       "asset": "Semiconductor",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.81
     },
     {
       "videoId": "ggQZp-xQni0",
@@ -1823,7 +2007,8 @@
       "asset": "Battery",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 11.31
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1832,7 +2017,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -5.82
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1841,7 +2027,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -7.36
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1850,7 +2037,8 @@
       "asset": "Bank",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.78
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1859,7 +2047,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -5.82
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1868,7 +2057,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -7.36
     },
     {
       "videoId": "SfcntEFAGj0",
@@ -1877,7 +2067,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.25
     },
     {
       "videoId": "SfcntEFAGj0",
@@ -1886,7 +2077,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.25
     },
     {
       "videoId": "P0dwt0kOlds",
@@ -1895,7 +2087,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3
     },
     {
       "videoId": "P0dwt0kOlds",
@@ -1904,7 +2097,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3
     },
     {
       "videoId": "AD0I1IIL4ww",
@@ -1913,7 +2107,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.32
     },
     {
       "videoId": "AD0I1IIL4ww",
@@ -1922,7 +2117,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.32
     },
     {
       "videoId": "WN49PAzCyH4",
@@ -1931,7 +2127,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.25
     },
     {
       "videoId": "WN49PAzCyH4",
@@ -1940,7 +2137,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.25
     },
     {
       "videoId": "QJ8gr3wXSFo",
@@ -1949,7 +2147,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.06
     },
     {
       "videoId": "Orv9LKMpAWs",
@@ -1958,7 +2157,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.73
     },
     {
       "videoId": "Orv9LKMpAWs",
@@ -1967,7 +2167,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.73
     },
     {
       "videoId": "gOC9xNnFUR4",
@@ -1976,7 +2177,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.73
     },
     {
       "videoId": "gOC9xNnFUR4",
@@ -1985,7 +2187,8 @@
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.73
     },
     {
       "videoId": "6WaEufvRXig",
@@ -1994,7 +2197,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.18
     },
     {
       "videoId": "ecAKNmnvDRY",
@@ -2003,7 +2207,8 @@
       "asset": "Retail",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.19
     },
     {
       "videoId": "ex1vcnEQ2ZA",
@@ -2012,7 +2217,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.7
     },
     {
       "videoId": "ex1vcnEQ2ZA",
@@ -2021,7 +2227,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.7
     },
     {
       "videoId": "Q_VvvbJkWkI",
@@ -2030,7 +2237,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.61
     },
     {
       "videoId": "Q_VvvbJkWkI",
@@ -2039,7 +2247,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.61
     },
     {
       "videoId": "t5vJCBcrKho",
@@ -2048,7 +2257,8 @@
       "asset": "NASDAQ",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -2.64
     },
     {
       "videoId": "0zlxKqXWi4A",
@@ -2057,7 +2267,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -2.78
     },
     {
       "videoId": "-OPKjwutiy4",
@@ -2066,7 +2277,8 @@
       "asset": "Internet",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 5.91
     },
     {
       "videoId": "K7PXGo7dX0Q",
@@ -2075,7 +2287,8 @@
       "asset": "Bitcoin",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.31
     },
     {
       "videoId": "5mz4eFVf7TI",
@@ -2084,7 +2297,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.7
     },
     {
       "videoId": "5mz4eFVf7TI",
@@ -2093,7 +2307,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 1.7
     },
     {
       "videoId": "pvpJWJ0Y1Ic",
@@ -2102,7 +2317,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "flat",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 0.07
     },
     {
       "videoId": "dSiCgz6K_fA",
@@ -2111,7 +2327,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.92
     },
     {
       "videoId": "XO7MTfGFL4E",
@@ -2120,7 +2337,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.92
     },
     {
       "videoId": "XO7MTfGFL4E",
@@ -2129,7 +2347,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.92
     },
     {
       "videoId": "7e2rPWrCxQQ",
@@ -2138,7 +2357,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.67
     },
     {
       "videoId": "7e2rPWrCxQQ",
@@ -2147,7 +2367,8 @@
       "asset": "Nvidia",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -3.67
     },
     {
       "videoId": "ptsS1t1agA8",
@@ -2156,7 +2377,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.77
     },
     {
       "videoId": "ptsS1t1agA8",
@@ -2165,7 +2387,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.77
     },
     {
       "videoId": "W4_xxhw_8Bk",
@@ -2174,7 +2397,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.07
     },
     {
       "videoId": "W4_xxhw_8Bk",
@@ -2183,7 +2407,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -16.97
     },
     {
       "videoId": "W4_xxhw_8Bk",
@@ -2192,7 +2417,8 @@
       "asset": "NASDAQ",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.07
     },
     {
       "videoId": "W4_xxhw_8Bk",
@@ -2201,7 +2427,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -16.97
     },
     {
       "videoId": "fTwMeZPypDU",
@@ -2210,7 +2437,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.42
     },
     {
       "videoId": "fTwMeZPypDU",
@@ -2219,7 +2447,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -1.24
     },
     {
       "videoId": "bre5Had-vqg",
@@ -2228,7 +2457,8 @@
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.14
     },
     {
       "videoId": "YMyPfSol694",
@@ -2237,7 +2467,8 @@
       "asset": "Nuclear",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 4.57
     },
     {
       "videoId": "gz_hiHUECFs",
@@ -2246,7 +2477,8 @@
       "asset": "Tesla",
       "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -3.36
     },
     {
       "videoId": "QI2yciNk6CM",
@@ -2255,7 +2487,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -2.69
     },
     {
       "videoId": "QI2yciNk6CM",
@@ -2264,7 +2497,8 @@
       "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -2.69
     },
     {
       "videoId": "6K5SQbXRrNQ",
@@ -2273,7 +2507,8 @@
       "asset": "Nvidia",
       "tone": "negative",
       "actualDirection": "flat",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": -0.02
     },
     {
       "videoId": "ex0aLkpGu5c",
@@ -2282,7 +2517,8 @@
       "asset": "Tesla",
       "tone": "positive",
       "actualDirection": "up",
-      "isHoney": false
+      "isHoney": false,
+      "priceChange": 0.15
     },
     {
       "videoId": "sgx2MZm0V3c",
@@ -2291,7 +2527,8 @@
       "asset": "Steel",
       "tone": "negative",
       "actualDirection": "up",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": 1.16
     },
     {
       "videoId": "or2PCM-qxkc",
@@ -2300,7 +2537,8 @@
       "asset": "Energy",
       "tone": "positive",
       "actualDirection": "down",
-      "isHoney": true
+      "isHoney": true,
+      "priceChange": -0.89
     }
   ]
 }

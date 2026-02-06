@@ -148,78 +148,82 @@ export function PredictionCard({
               </h4>
             </a>
             <div className="flex items-center gap-2 mt-1.5 text-xs text-muted-foreground">
-              {asset && (
-                <>
-                  <span className="font-semibold text-foreground bg-secondary/50 px-2 py-0.5 rounded-md">
-                    {asset}
-                  </span>
-                  <span>•</span>
-                </>
-              )}
               <span>{new Date(publishedAt).toLocaleDateString('ko-KR', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric'
               })}</span>
+              {asset && (
+                <>
+                  <span>•</span>
+                  <span className="font-medium text-foreground">
+                    {asset}
+                  </span>
+                </>
+              )}
             </div>
           </div>
           
-          {/* Status badge */}
-          <Badge 
-            variant={config.variant} 
-            className={cn(
-              "flex-shrink-0 gap-1 transition-all duration-300",
-              "group-hover:scale-105"
-            )}
-          >
-            <StatusIcon className="w-3 h-3" />
-            {config.label}
-          </Badge>
+          {/* 꿀 뱃지 (역지표 적중 시에만) */}
+          {status === 'correct' && (
+            <span className="flex-shrink-0 text-2xl animate-bounce-subtle">
+              🍯
+            </span>
+          )}
         </div>
         
-        {/* Bottom row */}
+        {/* Bottom row - Prediction Flow */}
         <div className="flex items-center justify-between mt-3">
-          {/* Prediction */}
-          <div className="flex items-center gap-3 text-sm">
-            <span className="text-muted-foreground">예측:</span>
+          {/* Prediction → Result 흐름 */}
+          <div className="flex items-center gap-2 text-sm flex-wrap">
+            {/* 예측 */}
             <span className={cn(
-              "flex items-center gap-1 font-semibold transition-all duration-300",
-              directionConfig[predictedDirection].color
+              "inline-flex items-center gap-1 px-2 py-1 rounded-md font-medium",
+              "bg-muted/50"
             )}>
-              {PredictionIcon && (
-                <PredictionIcon className="w-4 h-4 group-hover:animate-bounce-subtle" />
-              )}
-              {directionConfig[predictedDirection].label}
+              <span className="text-muted-foreground text-xs">🔮</span>
+              <span className={directionConfig[predictedDirection].color}>
+                {directionConfig[predictedDirection].label}
+              </span>
             </span>
             
-            {/* Actual result */}
-            {actualDirection && status !== "pending" && (
+            {/* 화살표 + 결과 */}
+            {status !== "pending" && (
               <>
                 <span className="text-muted-foreground">→</span>
+                
+                {/* 결과 + 가격변동률 통합 */}
                 <span className={cn(
-                  "flex items-center gap-1 font-semibold",
-                  directionConfig[actualDirection].color
+                  "inline-flex items-center gap-1.5 px-2 py-1 rounded-md font-semibold",
+                  status === 'correct' 
+                    ? "bg-bullish/10 text-bullish" 
+                    : "bg-bearish/10 text-bearish"
                 )}>
-                  {directionConfig[actualDirection].icon && 
-                    React.createElement(directionConfig[actualDirection].icon, { className: "w-4 h-4" })
-                  }
-                  {directionConfig[actualDirection].label}
+                  {status === 'correct' ? '✅' : '❌'}
+                  {actualDirection && (
+                    <span className="flex items-center gap-0.5">
+                      {directionConfig[actualDirection].icon && 
+                        React.createElement(directionConfig[actualDirection].icon, { className: "w-3.5 h-3.5" })
+                      }
+                    </span>
+                  )}
+                  {/* 가격 변동률 - 핵심! */}
+                  {priceChange !== undefined && (
+                    <span className="tabular-nums font-bold">
+                      {priceChange >= 0 ? "+" : ""}{priceChange.toFixed(1)}%
+                    </span>
+                  )}
                 </span>
               </>
             )}
+            
+            {status === "pending" && (
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-pending/10 text-pending font-medium">
+                <Clock className="w-3.5 h-3.5" />
+                <span>대기중</span>
+              </span>
+            )}
           </div>
-          
-          {/* Price change */}
-          {priceChange !== undefined && status !== "pending" && (
-            <span className={cn(
-              "text-sm font-bold tabular-nums px-2 py-0.5 rounded-md",
-              priceChange >= 0 
-                ? "text-bullish bg-bullish/10" 
-                : "text-bearish bg-bearish/10"
-            )}>
-              {priceChange >= 0 ? "+" : ""}{priceChange.toFixed(2)}%
-            </span>
-          )}
           
           {/* External link for mobile */}
           {youtubeUrl && (

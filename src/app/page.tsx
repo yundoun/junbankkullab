@@ -31,6 +31,7 @@ interface Prediction {
   actualDirection?: 'bullish' | 'bearish'
   isHoney?: boolean
   status: 'correct' | 'incorrect' | 'pending'
+  priceChange?: number
 }
 
 interface TimelineData {
@@ -152,6 +153,7 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
                     predictedDirection={prediction.predictedDirection}
                     status={prediction.status}
                     actualDirection={prediction.actualDirection}
+                    priceChange={prediction.priceChange}
                     index={idx}
                   />
                 ))}
@@ -185,6 +187,7 @@ function PredictionTabs({ stats }: { stats: Stats | null }) {
                     predictedDirection={prediction.predictedDirection}
                     status={prediction.status}
                     actualDirection={prediction.actualDirection}
+                    priceChange={prediction.priceChange}
                     index={idx}
                   />
                 ))}
