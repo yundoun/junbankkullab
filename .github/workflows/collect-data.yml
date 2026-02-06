@@ -62,12 +62,7 @@ jobs:
         run: |
           npx tsx scripts/generate-stats.ts
 
-      # Step 4: 검토 대기 항목 추출
-      - name: Extract neutral mentions
-        run: |
-          npx tsx scripts/extract-neutral.ts || true
-
-      # Step 5: Supabase 동기화
+      # Step 4: Supabase 동기화
       - name: Sync to Supabase
         run: |
           npx tsx scripts/sync-to-supabase.ts
