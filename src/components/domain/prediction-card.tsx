@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from "react"
+import Link from "next/link"
 import { TrendingUp, TrendingDown, Clock, CheckCircle, XCircle, ExternalLink, Play } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
@@ -90,8 +91,12 @@ export function PredictionCard({
   // Stagger delay calculation (max 800ms)
   const staggerDelay = Math.min(index * 50, 800)
   
+  // 상세 페이지 URL
+  const detailUrl = videoId ? `/video/${videoId}` : undefined
+
   return (
-    <div
+    <Link
+      href={detailUrl || '#'}
       className={cn(
         "group relative flex gap-4 rounded-xl border p-4",
         "bg-card/50 backdrop-blur-sm",
@@ -100,36 +105,31 @@ export function PredictionCard({
         "hover:shadow-lg hover:shadow-primary/5",
         "hover:-translate-y-1",
         "animate-fade-up fill-backwards",
+        "cursor-pointer",
         config.bgClass,
         config.borderClass,
         className
       )}
       style={{ animationDelay: `${staggerDelay}ms` }}
-      {...props}
     >
       {/* Thumbnail */}
       {thumbnailUrl && (
-        <a
-          href={youtubeUrl || '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="thumbnail-container relative w-32 sm:w-40 h-20 sm:h-24 flex-shrink-0 rounded-lg overflow-hidden bg-muted group/thumb"
-        >
+        <div className="thumbnail-container relative w-32 sm:w-40 h-20 sm:h-24 flex-shrink-0 rounded-lg overflow-hidden bg-muted">
           <img
             src={thumbnailUrl}
             alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover/thumb:scale-110"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"
           />
           {/* Play button overlay */}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300">
-            <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center transform scale-75 group-hover/thumb:scale-100 transition-transform duration-300">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
               <Play className="w-5 h-5 text-black ml-0.5" fill="currentColor" />
             </div>
           </div>
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300" />
-        </a>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
       )}
       
       {/* Content */}
@@ -137,16 +137,9 @@ export function PredictionCard({
         {/* Top row */}
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
-            <a
-              href={youtubeUrl || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <h4 className="font-medium text-foreground line-clamp-2 group-hover:text-primary transition-colors duration-300">
-                {title}
-              </h4>
-            </a>
+            <h4 className="font-medium text-foreground line-clamp-2 group-hover:text-primary transition-colors duration-300">
+              {title}
+            </h4>
             <div className="flex items-center gap-2 mt-1.5 text-xs text-muted-foreground">
               <span>{new Date(publishedAt).toLocaleDateString('ko-KR', {
                 year: 'numeric',
@@ -224,18 +217,6 @@ export function PredictionCard({
               </span>
             )}
           </div>
-          
-          {/* External link for mobile */}
-          {youtubeUrl && (
-            <a
-              href={youtubeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sm:hidden text-muted-foreground hover:text-primary transition-colors"
-            >
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          )}
         </div>
       </div>
       
@@ -248,6 +229,6 @@ export function PredictionCard({
           status === 'pending' && "shadow-[inset_0_0_20px_rgba(252,213,53,0.1)]"
         )} />
       </div>
-    </div>
+    </Link>
   )
 }
