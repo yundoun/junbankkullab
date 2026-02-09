@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-09T00:09:41.978Z",
+  "updatedAt": "2026-02-09T02:47:04.405Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -17,9 +17,9 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 180,
+    "totalPredictions": 181,
     "honeyCount": 66,
-    "honeyIndex": 36.7
+    "honeyIndex": 36.5
   },
   "assetStats": [
     {
@@ -101,16 +101,16 @@
       "honeyIndex": 33.3
     },
     {
-      "asset": "KOSPI",
-      "total": 56,
-      "honey": 17,
-      "honeyIndex": 30.4
-    },
-    {
       "asset": "Nuclear",
       "total": 10,
       "honey": 3,
       "honeyIndex": 30
+    },
+    {
+      "asset": "KOSPI",
+      "total": 57,
+      "honey": 17,
+      "honeyIndex": 29.8
     },
     {
       "asset": "NASDAQ",
@@ -243,8 +243,8 @@
     {
       "year": 2026,
       "month": 2,
-      "predictions": 4,
-      "honeyIndex": 25
+      "predictions": 5,
+      "honeyIndex": 20
     }
   ]
 }

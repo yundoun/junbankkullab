@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-02-09T00:09:41.976Z",
+  "updatedAt": "2026-02-09T02:47:04.403Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
     "totalVideos": 594,
     "totalMentions": 199,
     "analyzableMentions": 314,
-    "validMentions": 180,
+    "validMentions": 181,
     "honeyCount": 66,
-    "honeyIndex": 36.7
+    "honeyIndex": 36.5
   },
   "funnel": {
     "totalVideos": 594,
     "withMentions": 199,
-    "withTone": 180,
-    "withMarketData": 180,
+    "withTone": 181,
+    "withMarketData": 181,
     "honeyHits": 66
   },
-  "unanalyzedCount": 134,
+  "unanalyzedCount": 133,
   "excludedCount": 6,
   "assetStats": [
     {
@@ -99,16 +99,16 @@
       "honeyIndex": 33.3
     },
     {
-      "asset": "KOSPI",
-      "total": 56,
-      "honey": 17,
-      "honeyIndex": 30.4
-    },
-    {
       "asset": "Nuclear",
       "total": 10,
       "honey": 3,
       "honeyIndex": 30
+    },
+    {
+      "asset": "KOSPI",
+      "total": 57,
+      "honey": 17,
+      "honeyIndex": 29.8
     },
     {
       "asset": "NASDAQ",
@@ -160,6 +160,16 @@
     }
   ],
   "mentions": [
+    {
+      "videoId": "mtMvcCZTqxY",
+      "title": "할 수 있다! 코스피 1만 (ft. 강환국 작가)",
+      "publishedAt": "2026-02-08T10:43:34Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 4.34
+    },
     {
       "videoId": "XAJqKI8IIpI",
       "title": "앞으로 조선주가 더 상승할 수 있는 이유(ft.엄경아 연구원)",

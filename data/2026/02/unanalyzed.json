@@ -30,34 +30,6 @@
     }
   },
   {
-    "videoId": "mtMvcCZTqxY",
-    "title": "할 수 있다! 코스피 1만 (ft. 강환국 작가)",
-    "publishedAt": "2026-02-08T10:43:34Z",
-    "reason": "no_market_data",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-09T00:09:11.843Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11",
-          "matchedText": "코스피",
-          "confidence": 0.95,
-          "reasoning": "제목에 '코스피'라는 지수가 명시되어 있어 이를 추출하였습니다."
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "할 수 있다"
-        ],
-        "reasoning": "제목에서 긍정적인 표현인 '할 수 있다'가 사용되어 긍정적인 전망으로 판단하였습니다."
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '코스피'라는 지수가 명시되어 있어 이를 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"할 수 있다\"],\n    \"reasoning\": \"제목에서 긍정적인 표현인 '할 수 있다'가 사용되어 긍정적인 전망으로 판단하였습니다.\"\n  }\n}"
-    }
-  },
-  {
     "videoId": "ZYgsSjpDquE",
     "title": "빗썸은 어떻게 보유량보다 더 많은 비트코인을 나눠준걸까?",
     "publishedAt": "2026-02-07T07:01:22Z",
