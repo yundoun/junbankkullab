@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-02-09T11:54:54.102Z",
+  "updatedAt": "2026-02-09T13:24:08.555Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
-    "totalVideos": 595,
+    "totalVideos": 596,
     "totalMentions": 200,
     "analyzableMentions": 316,
     "validMentions": 184,
@@ -11,7 +11,7 @@
     "honeyIndex": 35.9
   },
   "funnel": {
-    "totalVideos": 595,
+    "totalVideos": 596,
     "withMentions": 200,
     "withTone": 184,
     "withMarketData": 184,
