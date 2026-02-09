@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-02-09T07:14:21.202Z",
+  "updatedAt": "2026-02-09T09:02:19.407Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
-    "totalVideos": 594,
-    "totalMentions": 199,
-    "analyzableMentions": 314,
-    "validMentions": 182,
+    "totalVideos": 595,
+    "totalMentions": 200,
+    "analyzableMentions": 316,
+    "validMentions": 183,
     "honeyCount": 66,
-    "honeyIndex": 36.3
+    "honeyIndex": 36.1
   },
   "funnel": {
-    "totalVideos": 594,
-    "withMentions": 199,
-    "withTone": 182,
-    "withMarketData": 182,
+    "totalVideos": 595,
+    "withMentions": 200,
+    "withTone": 183,
+    "withMarketData": 183,
     "honeyHits": 66
   },
-  "unanalyzedCount": 132,
+  "unanalyzedCount": 133,
   "excludedCount": 6,
   "assetStats": [
     {
@@ -106,9 +106,9 @@
     },
     {
       "asset": "KOSPI",
-      "total": 57,
+      "total": 58,
       "honey": 17,
-      "honeyIndex": 29.8
+      "honeyIndex": 29.3
     },
     {
       "asset": "NASDAQ",
@@ -160,6 +160,16 @@
     }
   ],
   "mentions": [
+    {
+      "videoId": "RYbgAVbDIqg",
+      "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠승황 인터뷰",
+      "publishedAt": "2026-02-09T08:46:52Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 4.1
+    },
     {
       "videoId": "cXYDceBYfUA",
       "title": "다카이치 도박 성공, 자민당 압승과 비트코인이 급등한 이유",
