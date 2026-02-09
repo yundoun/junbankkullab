@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-09T09:02:19.408Z",
+  "updatedAt": "2026-02-09T11:00:58.277Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -17,9 +17,9 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 183,
+    "totalPredictions": 184,
     "honeyCount": 66,
-    "honeyIndex": 36.1
+    "honeyIndex": 35.9
   },
   "assetStats": [
     {
@@ -65,12 +65,6 @@
       "honeyIndex": 52.9
     },
     {
-      "asset": "Semiconductor",
-      "total": 6,
-      "honey": 3,
-      "honeyIndex": 50
-    },
-    {
       "asset": "Defense",
       "total": 2,
       "honey": 1,
@@ -93,6 +87,12 @@
       "total": 23,
       "honey": 10,
       "honeyIndex": 43.5
+    },
+    {
+      "asset": "Semiconductor",
+      "total": 7,
+      "honey": 3,
+      "honeyIndex": 42.9
     },
     {
       "asset": "Nvidia",
@@ -243,8 +243,8 @@
     {
       "year": 2026,
       "month": 2,
-      "predictions": 7,
-      "honeyIndex": 14.3
+      "predictions": 8,
+      "honeyIndex": 12.5
     }
   ]
 }

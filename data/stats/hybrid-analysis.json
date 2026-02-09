@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-02-09T09:02:19.407Z",
+  "updatedAt": "2026-02-09T11:00:58.275Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
     "totalVideos": 595,
     "totalMentions": 200,
     "analyzableMentions": 316,
-    "validMentions": 183,
+    "validMentions": 184,
     "honeyCount": 66,
-    "honeyIndex": 36.1
+    "honeyIndex": 35.9
   },
   "funnel": {
     "totalVideos": 595,
     "withMentions": 200,
-    "withTone": 183,
-    "withMarketData": 183,
+    "withTone": 184,
+    "withMarketData": 184,
     "honeyHits": 66
   },
-  "unanalyzedCount": 133,
+  "unanalyzedCount": 132,
   "excludedCount": 6,
   "assetStats": [
     {
@@ -63,12 +63,6 @@
       "honeyIndex": 52.9
     },
     {
-      "asset": "Semiconductor",
-      "total": 6,
-      "honey": 3,
-      "honeyIndex": 50
-    },
-    {
       "asset": "Celltrion",
       "total": 2,
       "honey": 1,
@@ -91,6 +85,12 @@
       "total": 23,
       "honey": 10,
       "honeyIndex": 43.5
+    },
+    {
+      "asset": "Semiconductor",
+      "total": 7,
+      "honey": 3,
+      "honeyIndex": 42.9
     },
     {
       "asset": "Nvidia",
@@ -162,13 +162,23 @@
   "mentions": [
     {
       "videoId": "RYbgAVbDIqg",
-      "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠승황 인터뷰",
-      "publishedAt": "2026-02-09T08:46:52Z",
+      "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠슨황 인터뷰",
+      "publishedAt": "2026-02-09T09:01:51Z",
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
       "priceChange": 4.1
+    },
+    {
+      "videoId": "RYbgAVbDIqg",
+      "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠슨황 인터뷰",
+      "publishedAt": "2026-02-09T09:01:51Z",
+      "asset": "Semiconductor",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 4.92
     },
     {
       "videoId": "cXYDceBYfUA",

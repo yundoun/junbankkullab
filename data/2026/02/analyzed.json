@@ -1,37 +1,37 @@
 [
   {
     "videoId": "RYbgAVbDIqg",
-    "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠승황 인터뷰",
-    "publishedAt": "2026-02-09T08:46:52Z",
+    "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠슨황 인터뷰",
+    "publishedAt": "2026-02-09T09:01:51Z",
     "analysis": {
       "method": "llm",
       "model": "gpt-4o-mini",
-      "timestamp": "2026-02-09T09:01:50.469Z",
+      "timestamp": "2026-02-09T11:00:25.361Z",
       "detectedAssets": [
         {
           "asset": "KOSPI",
           "ticker": "^KS11",
           "matchedText": "코스피",
           "confidence": 0.95,
-          "reasoning": "제목에서 '코스피'라는 지수가 명시되어 있어 확실하게 식별됨."
+          "reasoning": "제목에 '코스피'라는 지수가 명시되어 있어 확실하게 추출됨."
         },
         {
-          "asset": "Technology",
-          "ticker": "UNKNOWN",
+          "asset": "Semiconductor",
+          "ticker": "005930.KS",
           "matchedText": "기술주",
-          "confidence": 0.95,
-          "reasoning": "'기술주'라는 표현이 사용되어 기술 섹터를 나타내고 있음."
+          "confidence": 0.85,
+          "reasoning": "'기술주'라는 표현이 기술 관련 주식들을 의미하며, 반도체 섹터와 관련이 깊음."
         }
       ],
       "toneAnalysis": {
         "tone": "positive",
         "keywords": [
-          "오를까",
-          "5300시대"
+          "5300시대",
+          "오를까"
         ],
-        "reasoning": "제목에서 '5300시대'와 '다음은 뭐가 오를까?'라는 표현이 긍정적인 전망을 암시하고 있음."
+        "reasoning": "코스피가 5300에 도달할 것이라는 긍정적인 전망과 '오를까'라는 질문이 긍정적인 기대감을 나타냄."
       },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 지수가 명시되어 있어 확실하게 식별됨.\"\n    },\n    {\n      \"asset\": \"Technology\",\n      \"matchedText\": \"기술주\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"'기술주'라는 표현이 사용되어 기술 섹터를 나타내고 있음.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"오를까\", \"5300시대\"],\n    \"reasoning\": \"제목에서 '5300시대'와 '다음은 뭐가 오를까?'라는 표현이 긍정적인 전망을 암시하고 있음.\"\n  }\n}"
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '코스피'라는 지수가 명시되어 있어 확실하게 추출됨.\"\n    },\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"기술주\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"'기술주'라는 표현이 기술 관련 주식들을 의미하며, 반도체 섹터와 관련이 깊음.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"5300시대\", \"오를까\"],\n    \"reasoning\": \"코스피가 5300에 도달할 것이라는 긍정적인 전망과 '오를까'라는 질문이 긍정적인 기대감을 나타냄.\"\n  }\n}"
     },
     "marketData": {
       "asset": "KOSPI",
@@ -39,6 +39,56 @@
       "closePrice": 5298.04,
       "previousClose": 5089.1401,
       "priceChange": 4.1,
+      "direction": "up",
+      "tradingDate": "2026-02-09"
+    },
+    "judgment": {
+      "predictedDirection": "bullish",
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+    }
+  },
+  {
+    "videoId": "RYbgAVbDIqg",
+    "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠슨황 인터뷰",
+    "publishedAt": "2026-02-09T09:01:51Z",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-09T11:00:25.361Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에 '코스피'라는 지수가 명시되어 있어 확실하게 추출됨."
+        },
+        {
+          "asset": "Semiconductor",
+          "ticker": "005930.KS",
+          "matchedText": "기술주",
+          "confidence": 0.85,
+          "reasoning": "'기술주'라는 표현이 기술 관련 주식들을 의미하며, 반도체 섹터와 관련이 깊음."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "5300시대",
+          "오를까"
+        ],
+        "reasoning": "코스피가 5300에 도달할 것이라는 긍정적인 전망과 '오를까'라는 질문이 긍정적인 기대감을 나타냄."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '코스피'라는 지수가 명시되어 있어 확실하게 추출됨.\"\n    },\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"기술주\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"'기술주'라는 표현이 기술 관련 주식들을 의미하며, 반도체 섹터와 관련이 깊음.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"5300시대\", \"오를까\"],\n    \"reasoning\": \"코스피가 5300에 도달할 것이라는 긍정적인 전망과 '오를까'라는 질문이 긍정적인 기대감을 나타냄.\"\n  }\n}"
+    },
+    "marketData": {
+      "asset": "Semiconductor",
+      "ticker": "005930.KS",
+      "closePrice": 166400,
+      "previousClose": 158600,
+      "priceChange": 4.92,
       "direction": "up",
       "tradingDate": "2026-02-09"
     },
