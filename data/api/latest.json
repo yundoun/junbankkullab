@@ -1,31 +1,7 @@
 {
-  "generatedAt": "2026-02-06T06:46:57.857Z",
-  "honeyIndex": 100,
-  "totalPredictions": 1,
-  "assetStats": [
-    {
-      "asset": "KOSPI",
-      "total": 1,
-      "honey": 1,
-      "honeyIndex": 100
-    }
-  ],
-  "recentPredictions": [
-    {
-      "videoId": "1aOwkzHvqsQ",
-      "videoUrl": "https://youtube.com/watch?v=1aOwkzHvqsQ",
-      "title": "코스피 5000 붕괴, 반등하려면 이 방법밖에 없습니다.",
-      "thumbnail": "https://i.ytimg.com/vi/1aOwkzHvqsQ/hqdefault.jpg",
-      "publishedAt": "2026-02-02T06:11:41Z",
-      "asset": "KOSPI",
-      "symbol": "KOSPI",
-      "predictedDirection": "bearish",
-      "hasNegation": false,
-      "priceAtPublish": 5158.6201,
-      "priceAfter24h": 5277.0498,
-      "priceChange": 2.3,
-      "actualDirection": "up",
-      "isHoney": true
-    }
-  ]
+  "generatedAt": "2026-02-09T00:09:07.322Z",
+  "honeyIndex": 0,
+  "totalPredictions": 0,
+  "assetStats": [],
+  "recentPredictions": []
 }
