@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-09T02:47:04.403Z",
+  "updatedAt": "2026-02-09T05:07:17.714Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
@@ -168,7 +168,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 4.34
+      "priceChange": 3.67
     },
     {
       "videoId": "XAJqKI8IIpI",

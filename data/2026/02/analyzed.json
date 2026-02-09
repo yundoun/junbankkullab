@@ -28,9 +28,9 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 5310.1201,
+      "closePrice": 5275.6699,
       "previousClose": 5089.1401,
-      "priceChange": 4.34,
+      "priceChange": 3.67,
       "direction": "up",
       "tradingDate": "2026-02-09"
     },
