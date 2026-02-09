@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-09T05:07:17.715Z",
+  "updatedAt": "2026-02-09T07:14:21.203Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -17,9 +17,9 @@
     "definition": "전반꿀 지수 = (역방향 적중 수 / 전체 예측 수) × 100%"
   },
   "stats": {
-    "totalPredictions": 181,
+    "totalPredictions": 182,
     "honeyCount": 66,
-    "honeyIndex": 36.5
+    "honeyIndex": 36.3
   },
   "assetStats": [
     {
@@ -90,9 +90,9 @@
     },
     {
       "asset": "Bitcoin",
-      "total": 22,
+      "total": 23,
       "honey": 10,
-      "honeyIndex": 45.5
+      "honeyIndex": 43.5
     },
     {
       "asset": "Nvidia",
@@ -243,8 +243,8 @@
     {
       "year": 2026,
       "month": 2,
-      "predictions": 5,
-      "honeyIndex": 20
+      "predictions": 6,
+      "honeyIndex": 16.7
     }
   ]
 }

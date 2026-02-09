@@ -1,35 +1,5 @@
 [
   {
-    "videoId": "cXYDceBYfUA",
-    "title": "다카이치 도박 성공, 자민당 압승과 비트코인이 급등한 이유",
-    "publishedAt": "2026-02-08T15:19:44Z",
-    "reason": "no_market_data",
-    "analysis": {
-      "method": "llm",
-      "model": "gpt-4o-mini",
-      "timestamp": "2026-02-09T00:09:08.093Z",
-      "detectedAssets": [
-        {
-          "asset": "Bitcoin",
-          "ticker": "BTC-USD",
-          "matchedText": "비트코인",
-          "confidence": 0.95,
-          "reasoning": "제목에서 비트코인이라는 암호화폐가 언급됨"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "keywords": [
-          "성공",
-          "압승",
-          "급등"
-        ],
-        "reasoning": "제목에서 긍정적인 단어들이 사용되어 상승세를 암시함"
-      },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"비트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 비트코인이라는 암호화폐가 언급됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"성공\", \"압승\", \"급등\"],\n    \"reasoning\": \"제목에서 긍정적인 단어들이 사용되어 상승세를 암시함\"\n  }\n}"
-    }
-  },
-  {
     "videoId": "ZYgsSjpDquE",
     "title": "빗썸은 어떻게 보유량보다 더 많은 비트코인을 나눠준걸까?",
     "publishedAt": "2026-02-07T07:01:22Z",

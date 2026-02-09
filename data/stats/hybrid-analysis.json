@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-02-09T05:07:17.714Z",
+  "updatedAt": "2026-02-09T07:14:21.202Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
     "totalVideos": 594,
     "totalMentions": 199,
     "analyzableMentions": 314,
-    "validMentions": 181,
+    "validMentions": 182,
     "honeyCount": 66,
-    "honeyIndex": 36.5
+    "honeyIndex": 36.3
   },
   "funnel": {
     "totalVideos": 594,
     "withMentions": 199,
-    "withTone": 181,
-    "withMarketData": 181,
+    "withTone": 182,
+    "withMarketData": 182,
     "honeyHits": 66
   },
-  "unanalyzedCount": 133,
+  "unanalyzedCount": 132,
   "excludedCount": 6,
   "assetStats": [
     {
@@ -81,16 +81,16 @@
       "honeyIndex": 50
     },
     {
-      "asset": "Bitcoin",
-      "total": 22,
-      "honey": 10,
-      "honeyIndex": 45.5
-    },
-    {
       "asset": "Shipbuilding",
       "total": 11,
       "honey": 5,
       "honeyIndex": 45.5
+    },
+    {
+      "asset": "Bitcoin",
+      "total": 23,
+      "honey": 10,
+      "honeyIndex": 43.5
     },
     {
       "asset": "Nvidia",
@@ -161,6 +161,16 @@
   ],
   "mentions": [
     {
+      "videoId": "cXYDceBYfUA",
+      "title": "다카이치 도박 성공, 자민당 압승과 비트코인이 급등한 이유",
+      "publishedAt": "2026-02-08T15:19:44Z",
+      "asset": "Bitcoin",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 1.42
+    },
+    {
       "videoId": "mtMvcCZTqxY",
       "title": "할 수 있다! 코스피 1만 (ft. 강환국 작가)",
       "publishedAt": "2026-02-08T10:43:34Z",
@@ -168,7 +178,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 3.67
+      "priceChange": 4.1
     },
     {
       "videoId": "XAJqKI8IIpI",

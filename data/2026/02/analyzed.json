@@ -1,5 +1,49 @@
 [
   {
+    "videoId": "cXYDceBYfUA",
+    "title": "다카이치 도박 성공, 자민당 압승과 비트코인이 급등한 이유",
+    "publishedAt": "2026-02-08T15:19:44Z",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-09T00:09:08.093Z",
+      "detectedAssets": [
+        {
+          "asset": "Bitcoin",
+          "ticker": "BTC-USD",
+          "matchedText": "비트코인",
+          "confidence": 0.95,
+          "reasoning": "제목에서 비트코인이라는 암호화폐가 언급됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "성공",
+          "압승",
+          "급등"
+        ],
+        "reasoning": "제목에서 긍정적인 단어들이 사용되어 상승세를 암시함"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"비트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 비트코인이라는 암호화폐가 언급됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"성공\", \"압승\", \"급등\"],\n    \"reasoning\": \"제목에서 긍정적인 단어들이 사용되어 상승세를 암시함\"\n  }\n}"
+    },
+    "marketData": {
+      "asset": "Bitcoin",
+      "ticker": "BTC-USD",
+      "closePrice": 70264.7266,
+      "previousClose": 69281.9688,
+      "priceChange": 1.42,
+      "direction": "up",
+      "tradingDate": "2026-02-08"
+    },
+    "judgment": {
+      "predictedDirection": "bullish",
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+    }
+  },
+  {
     "videoId": "mtMvcCZTqxY",
     "title": "할 수 있다! 코스피 1만 (ft. 강환국 작가)",
     "publishedAt": "2026-02-08T10:43:34Z",
@@ -28,9 +72,9 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 5275.6699,
+      "closePrice": 5298.04,
       "previousClose": 5089.1401,
-      "priceChange": 3.67,
+      "priceChange": 4.1,
       "direction": "up",
       "tradingDate": "2026-02-09"
     },
