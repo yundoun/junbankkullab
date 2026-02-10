@@ -1,505 +1,235 @@
 import { NextResponse } from 'next/server'
-import { promises as fs } from 'fs'
-import path from 'path'
+import { createClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic'
 
-// === 타입 정의 ===
-interface Period {
-  year: number
-  month: number
-  predictions: number
-  honeyIndex: number
-}
-
-interface OverallStats {
-  updatedAt: string
-  stats: {
-    totalPredictions: number
-    honeyCount: number
-    honeyIndex: number
-  }
-  periods: Period[]
-}
-
-interface Mention {
-  videoId: string
-  title: string
-  publishedAt: string
-  asset: string
-  tone: 'positive' | 'negative' | 'neutral'
-  actualDirection?: 'up' | 'down' | 'flat' | 'no_data'
-  isHoney?: boolean
-  priceChange?: number | null
-  tradingDate?: string
-}
-
-interface HybridAnalysis {
-  updatedAt: string
-  methodology: string
-  description: string
-  stats: {
-    totalVideos: number
-    totalMentions: number
-    analyzableMentions: number
-    validMentions: number
-    honeyCount: number
-    honeyIndex: number
-  }
-  assetStats: {
-    asset: string
-    total: number
-    honey: number
-    honeyIndex: number
-  }[]
-  mentions: Mention[]
-}
-
-interface Video {
-  id: string
-  title: string
-  thumbnail?: string
-  publishedAt: string
-}
-
-// === 종목 패턴 ===
-const ASSET_PATTERNS: Record<string, RegExp[]> = {
-  KOSPI: [/코스피/i, /kospi/i, /국장/i],
-  SP500: [/S&?P\s*500/i, /에스앤피/i],
-  NASDAQ: [/나스닥/i, /nasdaq/i, /미장/i],
-  Samsung: [/삼성전자/i, /삼전/i],
-  SKHynix: [/하이닉스/i, /sk하이닉스/i],
-  Nvidia: [/엔비디아/i, /nvidia/i],
-  Google: [/구글/i, /google/i, /googl/i, /알파벳/i],
-  Tesla: [/테슬라/i, /tesla/i],
-  Bitcoin: [/비트코인/i, /bitcoin/i, /btc/i, /코인/i],
-  Shipbuilding: [/조선주/i, /조선업/i, /조선.*주/i, /한국조선/i],
-}
-
-// === 톤 분석 키워드 ===
-const POSITIVE_KEYWORDS = [
-  '상승', '급등', '폭등', '오른다', '올라', '반등', '회복', '호재',
-  '매수', '사야', '담아', '저점', '기회', '대박', '신고가', '돌파',
-  '불장', '상승장', '강세', '최고', '간다', '오를',
-]
-
-const NEGATIVE_KEYWORDS = [
-  '하락', '급락', '폭락', '떨어', '내린다', '내려', '붕괴', '위기', '악재',
-  '매도', '팔아', '빠져', '고점', '위험', '경고', '신저가', '무너',
-  '하락장', '약세', '최악', '충격', '끝났다', '망한다',
-]
-
-// 질문형 패턴 (불확실 = bearish로 처리)
-const QUESTION_PATTERNS = [
-  /괜찮을까/,
-  /가능할까/,
-  /될까/,
-  /할까\?/,
-  /일까\?/,
-  /인가\?/,
-  /어떨까/,
-  /버틸까/,
-  /어디까지/,
-]
-
-const NEGATION_WORDS = ['아니', '없', '안 ', '못 ', '말라', '마라', '마세요']
-
-// === 유틸 함수 ===
-function detectAssets(title: string): string[] {
-  const assets: string[] = []
-  for (const [asset, patterns] of Object.entries(ASSET_PATTERNS)) {
-    if (patterns.some(p => p.test(title))) {
-      assets.push(asset)
-    }
-  }
-  return assets
-}
-
-function analyzeTone(title: string): 'positive' | 'negative' | 'neutral' {
-  let positiveScore = 0
-  let negativeScore = 0
-  
-  const hasNegation = NEGATION_WORDS.some(w => title.includes(w))
-  
-  for (const keyword of POSITIVE_KEYWORDS) {
-    if (title.includes(keyword)) positiveScore++
-  }
-  
-  for (const keyword of NEGATIVE_KEYWORDS) {
-    if (title.includes(keyword)) negativeScore++
-  }
-  
-  // 질문형 패턴 체크 (불확실 = bearish)
-  const isQuestion = QUESTION_PATTERNS.some(p => p.test(title))
-  if (isQuestion) negativeScore++
-  
-  if (hasNegation) {
-    [positiveScore, negativeScore] = [negativeScore, positiveScore]
-  }
-  
-  if (positiveScore > negativeScore) return 'positive'
-  if (negativeScore > positiveScore) return 'negative'
-  return 'neutral'
-}
-
-async function getLatestVideos(): Promise<Video[]> {
-  const now = new Date()
-  const year = now.getFullYear()
-  const month = now.getMonth() + 1
-  
-  const videos: Video[] = []
-  
-  // 현재 월과 이전 월 데이터 로드
-  for (const m of [month, month - 1]) {
-    const y = m <= 0 ? year - 1 : year
-    const mm = m <= 0 ? 12 : m
-    const videosPath = path.join(process.cwd(), 'data', String(y), String(mm).padStart(2, '0'), 'videos.json')
-    
-    try {
-      const data = await fs.readFile(videosPath, 'utf-8')
-      videos.push(...JSON.parse(data))
-    } catch {
-      // 파일 없으면 무시
-    }
-  }
-  
-  return videos.sort((a, b) => 
-    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  )
-}
-
-async function getManualLabels(): Promise<Record<string, 'positive' | 'negative' | 'skip'>> {
-  try {
-    const labelsPath = path.join(process.cwd(), 'data', 'review', 'manual-labels.json')
-    const data = await fs.readFile(labelsPath, 'utf-8')
-    const raw = JSON.parse(data)
-    
-    const labels: Record<string, 'positive' | 'negative' | 'skip'> = {}
-    for (const [key, value] of Object.entries(raw)) {
-      if (value === 'P' || value === 'positive') labels[key] = 'positive'
-      else if (value === 'N' || value === 'negative') labels[key] = 'negative'
-      else if (value === 'S' || value === 'skip') labels[key] = 'skip'
-    }
-    return labels
-  } catch {
-    return {}
-  }
-}
-
-interface VotableItem {
-  videoId: string
-  title: string
-  thumbnail: string
-  publishedAt: string
-  asset: string
-  predictedDirection: 'bullish' | 'bearish'
-  expiresAt: string // 투표 마감 시간 (24시간 후)
-}
-
-// analyzed.json에서 tradingDate 매핑 로드
-async function getTradingDates(): Promise<Record<string, string>> {
-  const result: Record<string, string> = {}
-  const dataDir = path.join(process.cwd(), 'data')
-  
-  try {
-    const years = (await fs.readdir(dataDir)).filter(d => /^\d{4}$/.test(d))
-    
-    for (const year of years) {
-      const yearPath = path.join(dataDir, year)
-      const months = (await fs.readdir(yearPath)).filter(d => /^\d{2}$/.test(d))
-      
-      for (const month of months) {
-        const analyzedPath = path.join(yearPath, month, 'analyzed.json')
-        try {
-          const data = await fs.readFile(analyzedPath, 'utf-8')
-          const items = JSON.parse(data)
-          for (const item of items) {
-            if (item.marketData?.tradingDate) {
-              const key = `${item.videoId}_${item.marketData.asset}`
-              result[key] = item.marketData.tradingDate
-            }
-          }
-        } catch {
-          // 파일 없으면 스킵
-        }
-      }
-    }
-  } catch {
-    // 에러 무시
-  }
-  
-  return result
-}
-
-// LLM 캐시 로드 (v3 분석 결과)
-async function getLLMCache(): Promise<Record<string, { tone: string; assets: string[] }>> {
-  try {
-    const cachePath = path.join(process.cwd(), 'data', 'cache', 'llm-analysis-cache.json')
-    const data = await fs.readFile(cachePath, 'utf-8')
-    const cache = JSON.parse(data)
-    
-    // videoId -> { tone, assets } 매핑
-    const result: Record<string, { tone: string; assets: string[] }> = {}
-    for (const [videoId, entry] of Object.entries(cache)) {
-      const e = entry as any
-      if (e.toneAnalysis?.tone) {
-        result[videoId] = {
-          tone: e.toneAnalysis.tone,
-          assets: (e.detectedAssets || []).map((a: any) => a.asset),
-        }
-      }
-    }
-    return result
-  } catch {
-    return {}
-  }
-}
-
-async function getVotableItems(): Promise<VotableItem[]> {
-  const now = Date.now()
-  const VOTE_WINDOW_MS = 24 * 60 * 60 * 1000 // 24시간
-  
-  const videos = await getLatestVideos()
-  const manualLabels = await getManualLabels()
-  const llmCache = await getLLMCache() // LLM 분석 결과 로드
-  
-  const votableItems: VotableItem[] = []
-  
-  for (const video of videos) {
-    const publishedTime = new Date(video.publishedAt).getTime()
-    const expiresAt = publishedTime + VOTE_WINDOW_MS
-    
-    // 24시간 지났으면 스킵
-    if (now > expiresAt) continue
-    
-    // 라이브 영상 제외
-    if (/라이브|LIVE|생방송|실시간/i.test(video.title)) continue
-    
-    // LLM 캐시에서 분석 결과 확인
-    const llmResult = llmCache[video.id]
-    
-    // 종목: LLM 결과 우선, 없으면 regex
-    const assets = llmResult?.assets?.length 
-      ? llmResult.assets 
-      : detectAssets(video.title)
-    
-    if (assets.length === 0) continue
-    
-    for (const asset of assets) {
-      const labelKey = `${video.id}_${asset}`
-      const manualLabel = manualLabels[labelKey]
-      
-      // 스킵으로 레이블된 것 제외
-      if (manualLabel === 'skip') continue
-      
-      // 톤 결정: 수동 레이블 > LLM 분석 > regex 분석
-      let tone: 'positive' | 'negative' | 'neutral'
-      if (manualLabel === 'positive' || manualLabel === 'negative') {
-        tone = manualLabel
-      } else if (llmResult?.tone && llmResult.tone !== 'neutral') {
-        tone = llmResult.tone as 'positive' | 'negative'
-      } else {
-        tone = analyzeTone(video.title)
-      }
-      
-      // 톤이 명확해야 투표 가능
-      if (tone === 'neutral') continue
-      
-      votableItems.push({
-        videoId: video.id,
-        title: video.title,
-        thumbnail: video.thumbnail || `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
-        publishedAt: video.publishedAt,
-        asset,
-        predictedDirection: tone === 'positive' ? 'bullish' : 'bearish',
-        expiresAt: new Date(expiresAt).toISOString(),
-      })
-    }
-  }
-  
-  return votableItems
-}
+// Supabase 클라이언트 (읽기 전용)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export async function GET() {
   try {
-    // 하이브리드 분석 데이터
-    const hybridPath = path.join(process.cwd(), 'data', 'stats', 'hybrid-analysis.json')
-    const hybridData = await fs.readFile(hybridPath, 'utf-8')
-    const parsed: HybridAnalysis = JSON.parse(hybridData)
-    
-    // 전체 통계 (월별 타임라인 포함)
-    const overallPath = path.join(process.cwd(), 'data', 'stats', 'overall.json')
-    let periods: Period[] = []
-    try {
-      const overallData = await fs.readFile(overallPath, 'utf-8')
-      const overall: OverallStats = JSON.parse(overallData)
-      periods = overall.periods || []
-    } catch {
-      // overall.json 없으면 무시
+    // 1. 전체 통계 조회
+    const { data: allAnalyses, error: analysesError } = await supabase
+      .from('analyses')
+      .select(`
+        id,
+        video_id,
+        asset,
+        ticker,
+        tone,
+        tone_reasoning,
+        analyzed_at,
+        videos!inner (
+          id,
+          title,
+          thumbnail_url,
+          published_at,
+          status
+        ),
+        market_data (
+          trading_date,
+          previous_close,
+          close_price,
+          price_change,
+          direction,
+          predicted_direction,
+          is_honey,
+          judgment_reasoning
+        )
+      `)
+      .order('analyzed_at', { ascending: false })
+
+    if (analysesError) {
+      console.error('Supabase error:', analysesError)
+      throw analysesError
     }
 
-    // tradingDate 매핑 로드
-    const tradingDates = await getTradingDates()
+    // 2. 통계 계산
+    const analyses = allAnalyses || []
+    const withMarketData = analyses.filter(a => a.market_data && a.market_data.length > 0)
+    const validAnalyses = withMarketData.filter(a => a.market_data[0]?.is_honey !== null)
+    const honeyHits = validAnalyses.filter(a => a.market_data[0]?.is_honey === true)
+    const jigHits = validAnalyses.filter(a => a.market_data[0]?.is_honey === false)
 
-    // 실제 방향을 PredictionDirection으로 변환
-    const mapDirection = (dir?: 'up' | 'down' | 'flat' | 'no_data'): 'bullish' | 'bearish' | undefined => {
-      if (dir === 'up') return 'bullish'
-      if (dir === 'down') return 'bearish'
-      return undefined
+    const honeyIndex = validAnalyses.length > 0
+      ? Math.round((honeyHits.length / validAnalyses.length) * 1000) / 10
+      : 0
+
+    // 3. 종목별 통계
+    const assetMap = new Map<string, { total: number; honey: number }>()
+    for (const a of validAnalyses) {
+      const stats = assetMap.get(a.asset) || { total: 0, honey: 0 }
+      stats.total++
+      if (a.market_data[0]?.is_honey) stats.honey++
+      assetMap.set(a.asset, stats)
     }
 
-    // 멘션을 카드 형태로 변환
-    const mapMention = (m: Mention) => {
-      const tradingDateKey = `${m.videoId}_${m.asset}`
-      return {
-        videoId: m.videoId,
-        title: m.title,
-        thumbnail: `https://i.ytimg.com/vi/${m.videoId}/hqdefault.jpg`,
-        publishedAt: m.publishedAt,
-        asset: m.asset,
-        predictedDirection: m.tone === 'positive' ? 'bullish' : 'bearish',
-        actualDirection: mapDirection(m.actualDirection),
-        isHoney: m.isHoney,
-        status: m.isHoney !== undefined 
-          ? (m.isHoney ? 'correct' : 'incorrect')
-          : 'pending',
-        priceChange: m.priceChange ?? undefined,
-        tradingDate: tradingDates[tradingDateKey] || undefined,
-      }
+    const assetStats = Array.from(assetMap.entries())
+      .map(([asset, stats]) => ({
+        asset,
+        total: stats.total,
+        honey: stats.honey,
+        honeyIndex: Math.round((stats.honey / stats.total) * 1000) / 10,
+      }))
+      .sort((a, b) => b.total - a.total)
+
+    // 4. 월별 타임라인
+    const monthlyMap = new Map<string, { predictions: number; honey: number }>()
+    for (const a of validAnalyses) {
+      const video = a.videos as any
+      const date = new Date(video.published_at)
+      const key = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}`
+      const stats = monthlyMap.get(key) || { predictions: 0, honey: 0 }
+      stats.predictions++
+      if (a.market_data[0]?.is_honey) stats.honey++
+      monthlyMap.set(key, stats)
     }
 
-    // 정렬 (최신순)
-    const sortedMentions = [...parsed.mentions]
-      .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-
-    // 🍯 전반꿀 적중 (역지표 성공)
-    const honeyHits = sortedMentions
-      .filter(m => m.isHoney === true)
-      .map(mapMention)
-
-    // 📈 전인구 적중 (예측대로 감)
-    const jigHits = sortedMentions
-      .filter(m => m.isHoney === false)
-      .map(mapMention)
-
-    // 검토 대기 목록 로드
-    // v3 unanalyzed.json에서 검토 대기 항목 수집
-    let pendingReviews: any[] = []
-    try {
-      const dataDir = path.join(process.cwd(), 'data')
-      const years = (await fs.readdir(dataDir)).filter(d => /^\d{4}$/.test(d))
-      
-      for (const year of years) {
-        const yearPath = path.join(dataDir, year)
-        const months = (await fs.readdir(yearPath)).filter(d => /^\d{2}$/.test(d))
-        
-        for (const month of months) {
-          const unanalyzedPath = path.join(yearPath, month, 'unanalyzed.json')
-          try {
-            const data = await fs.readFile(unanalyzedPath, 'utf-8')
-            const items = JSON.parse(data)
-            // v3 포맷을 pendingReviews 포맷으로 변환
-            for (const item of items) {
-              if (item.analysis?.detectedAssets) {
-                for (const asset of item.analysis.detectedAssets) {
-                  pendingReviews.push({
-                    videoId: item.videoId,
-                    title: item.title,
-                    publishedAt: item.publishedAt,
-                    asset: asset.asset,
-                    url: `https://youtube.com/watch?v=${item.videoId}`,
-                    reason: item.reason,
-                    llmReasoning: item.analysis.toneAnalysis?.reasoning,
-                  })
-                }
-              }
-            }
-          } catch {
-            // 파일 없으면 스킵
-          }
+    const timeline = Array.from(monthlyMap.entries())
+      .map(([label, stats]) => {
+        const [year, month] = label.split('.').map(Number)
+        return {
+          label,
+          year,
+          month,
+          predictions: stats.predictions,
+          honeyIndex: Math.round((stats.honey / stats.predictions) * 1000) / 10,
         }
+      })
+      .sort((a, b) => a.label.localeCompare(b.label))
+
+    // 5. 전체 비디오 수 조회
+    const { count: totalVideos } = await supabase
+      .from('videos')
+      .select('*', { count: 'exact', head: true })
+
+    // 6. 멘션 변환 함수
+    const mapMention = (a: any) => {
+      const video = a.videos as any
+      const md = a.market_data?.[0]
+      return {
+        videoId: video.id,
+        title: video.title,
+        thumbnail: video.thumbnail_url || `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+        publishedAt: video.published_at,
+        asset: a.asset,
+        predictedDirection: md?.predicted_direction || (a.tone === 'positive' ? 'bullish' : 'bearish'),
+        actualDirection: md?.direction === 'up' ? 'bullish' : md?.direction === 'down' ? 'bearish' : undefined,
+        isHoney: md?.is_honey,
+        status: md?.is_honey !== undefined
+          ? (md.is_honey ? 'correct' : 'incorrect')
+          : 'pending',
+        priceChange: md?.price_change ?? undefined,
+        tradingDate: md?.trading_date || undefined,
       }
-      pendingReviews = pendingReviews
-        .sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-        .map((m: any) => ({
-          videoId: m.videoId,
-          title: m.title,
-          thumbnail: `https://i.ytimg.com/vi/${m.videoId}/hqdefault.jpg`,
-          publishedAt: m.publishedAt,
-          asset: m.asset,
-          predictedDirection: 'neutral',
-          status: 'pending',
-        }))
-    } catch {
-      // 검토 파일 없으면 무시
     }
 
-    // 🗳️ 투표 가능 항목 (24시간 이내 + 톤 명확)
-    const votableItems = await getVotableItems()
+    // 7. 검토 대기 (unanalyzed 또는 market_data 없음)
+    const { data: pendingVideos } = await supabase
+      .from('videos')
+      .select('*')
+      .eq('status', 'unanalyzed')
+      .order('published_at', { ascending: false })
+      .limit(50)
 
-    // 하위 호환성을 위한 recentPredictions
-    const recentPredictions = sortedMentions.slice(0, 20).map(mapMention)
+    const pendingReviews = (pendingVideos || []).map(v => ({
+      videoId: v.id,
+      title: v.title,
+      thumbnail: v.thumbnail_url || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+      publishedAt: v.published_at,
+      asset: 'Unknown',
+      predictedDirection: 'neutral',
+      status: 'pending',
+    }))
 
-    // 수동 레이블에서 skip 개수 계산 (제외 항목)
-    const manualLabels = await getManualLabels()
-    const excludedCount = Object.values(manualLabels).filter(v => v === 'skip').length
+    // 8. 투표 가능 항목 (24시간 이내)
+    const now = new Date()
+    const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000)
 
-    // 톤 미확정 수 = 전체 멘션 - 분석 가능 멘션
-    const unanalyzedCount = parsed.stats.totalMentions - parsed.stats.analyzableMentions
+    const { data: recentVideos } = await supabase
+      .from('videos')
+      .select(`
+        *,
+        analyses (
+          asset,
+          tone
+        )
+      `)
+      .gte('published_at', yesterday.toISOString())
+      .eq('status', 'analyzed')
+      .order('published_at', { ascending: false })
+
+    const votableItems = (recentVideos || [])
+      .flatMap(v => {
+        const analyses = v.analyses || []
+        return analyses
+          .filter((a: any) => a.tone && a.tone !== 'neutral')
+          .map((a: any) => ({
+            videoId: v.id,
+            title: v.title,
+            thumbnail: v.thumbnail_url || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+            publishedAt: v.published_at,
+            asset: a.asset,
+            predictedDirection: a.tone === 'positive' ? 'bullish' : 'bearish',
+            expiresAt: new Date(new Date(v.published_at).getTime() + 24 * 60 * 60 * 1000).toISOString(),
+          }))
+      })
+
+    // 9. 제외 항목 수
+    const { count: excludedCount } = await supabase
+      .from('videos')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'excluded')
 
     return NextResponse.json({
       // 핵심 지표
-      overallHoneyIndex: parsed.stats.honeyIndex,
-      totalPredictions: parsed.stats.validMentions,
-      honeyCount: parsed.stats.honeyCount,
-      
+      overallHoneyIndex: honeyIndex,
+      totalPredictions: validAnalyses.length,
+      honeyCount: honeyHits.length,
+
       // 메타 정보
-      totalVideos: parsed.stats.totalVideos,
-      totalMentions: parsed.stats.totalMentions,
+      totalVideos: totalVideos || 0,
+      totalMentions: analyses.length,
       pendingReviewCount: pendingReviews.length,
 
-      // 🆕 분석 퍼널
+      // 분석 퍼널
       funnel: {
-        totalVideos: parsed.stats.totalVideos,           // 전체 영상 수
-        withMentions: parsed.stats.totalMentions,        // 종목 언급 수
-        withTone: parsed.stats.analyzableMentions,       // 톤 분석 완료 수
-        withMarketData: parsed.stats.validMentions,      // 시장 데이터 확인 수
-        honeyHits: parsed.stats.honeyCount,              // 역지표 적중 수
+        totalVideos: totalVideos || 0,
+        withMentions: analyses.length,
+        withTone: analyses.filter(a => a.tone !== 'neutral').length,
+        withMarketData: withMarketData.length,
+        honeyHits: honeyHits.length,
       },
 
-      // 🆕 제외/미분석
-      unanalyzedCount,    // 톤 미확정 수
-      excludedCount,      // 제외 항목 수 (알트코인 등)
-      
+      // 제외/미분석
+      unanalyzedCount: pendingReviews.length,
+      excludedCount: excludedCount || 0,
+
       // 종목별 통계
-      assetStats: parsed.assetStats,
-      
+      assetStats,
+
       // 월별 타임라인
-      timeline: periods.map(p => ({
-        label: `${p.year}.${String(p.month).padStart(2, '0')}`,
-        year: p.year,
-        month: p.month,
-        predictions: p.predictions,
-        honeyIndex: p.honeyIndex,
-      })),
-      
-      // 🗳️ 투표 가능 항목
+      timeline,
+
+      // 투표 가능 항목
       votableItems,
-      
+
       // 탭별 예측 목록
-      honeyHits,      // 🍯 전반꿀 적중
-      jigHits,        // 📈 전인구 적중
-      pendingReviews, // 🔍 검토 대기
-      
+      honeyHits: honeyHits.map(mapMention),
+      jigHits: jigHits.map(mapMention),
+      pendingReviews,
+
       // 하위 호환
-      recentPredictions,
-      
+      recentPredictions: validAnalyses.slice(0, 20).map(mapMention),
+
       // 업데이트 시간
-      updatedAt: parsed.updatedAt,
+      updatedAt: new Date().toISOString(),
     })
   } catch (error) {
-    console.error('Error reading hybrid analysis:', error)
-    
+    console.error('Error fetching stats from Supabase:', error)
+
     return NextResponse.json({
       overallHoneyIndex: 0,
       totalPredictions: 0,
@@ -514,6 +244,7 @@ export async function GET() {
       pendingReviews: [],
       recentPredictions: [],
       updatedAt: null,
+      error: 'Failed to fetch from Supabase',
     })
   }
 }

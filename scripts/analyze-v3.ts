@@ -1,12 +1,13 @@
 #!/usr/bin/env npx tsx
 /**
- * 전반꿀 연구소 분석 스크립트 v3 (LLM 기반)
+ * 전반꿀 연구소 분석 스크립트 v3 (LLM 기반 + Supabase 저장)
  * 
  * 개선사항 (v2 → v3):
  * - LLM 기반 종목/섹터 추출 (GPT-4o-mini)
  * - LLM 기반 톤 분석
  * - 상세 분석 근거 저장 (detail 페이지용)
  * - 캐싱으로 중복 API 호출 방지
+ * - Supabase에 직접 저장
  * 
  * 사용처:
  * - GitHub Actions 자동 수집
@@ -16,14 +17,35 @@
  * - data/{YYYY}/{MM}/analyzed.json: 분석 완료 (상세 정보 포함)
  * - data/{YYYY}/{MM}/unanalyzed.json: LLM도 판단 불가
  * - data/{YYYY}/{MM}/excluded.json: 제외 항목 (알트코인 등)
+ * - Supabase videos, analyses, market_data 테이블
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
 import { execSync } from 'child_process';
+import { createClient } from '@supabase/supabase-js';
 import { analyzeWithCache, LLMAnalysisResult, SECTOR_TICKER_MAP } from './llm-classifier';
 
 const DATA_DIR = path.join(__dirname, '../data');
+
+// .env.local 로드
+const envPath = path.join(__dirname, '../.env.local');
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf-8');
+  for (const line of envContent.split('\n')) {
+    const match = line.match(/^([^=]+)=(.*)$/);
+    if (match) {
+      process.env[match[1].trim()] = match[2].trim();
+    }
+  }
+}
+
+// Supabase 클라이언트 (서버용)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY;
+const supabase = supabaseUrl && supabaseServiceKey 
+  ? createClient(supabaseUrl, supabaseServiceKey)
+  : null;
 
 // ============================================================
 // 타입 정의
@@ -98,6 +120,95 @@ const ALTCOIN_ASSETS = ['Ethereum']; // Bitcoin은 분석 대상
 
 function isAltcoin(asset: string): boolean {
   return ALTCOIN_ASSETS.includes(asset);
+}
+
+// ============================================================
+// Supabase 저장 함수
+// ============================================================
+
+async function saveToSupabase(
+  video: Video,
+  analysis: LLMAnalysisResult,
+  marketData: AnalyzedItem['marketData'] | null,
+  judgment: AnalyzedItem['judgment'] | null,
+  status: 'analyzed' | 'unanalyzed' | 'excluded',
+  excludeReason?: string
+) {
+  if (!supabase) {
+    console.log('  ⚠️ Supabase 미설정, 로컬 저장만 수행');
+    return;
+  }
+
+  try {
+    // 1. videos 테이블 upsert
+    const { error: videoError } = await supabase
+      .from('videos')
+      .upsert({
+        id: video.id,
+        title: video.title,
+        thumbnail_url: video.thumbnail || `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`,
+        published_at: video.publishedAt,
+        status,
+        exclude_reason: excludeReason || null,
+      }, { onConflict: 'id' });
+
+    if (videoError) {
+      console.error(`  ❌ Supabase video error: ${videoError.message}`);
+      return;
+    }
+
+    // 분석 완료된 경우만 analyses, market_data 저장
+    if (status === 'analyzed' && marketData && judgment) {
+      const detectedAsset = analysis.detectedAssets.find(
+        a => a.asset === marketData.asset
+      );
+
+      // 2. analyses 테이블
+      const { data: analysisData, error: analysisError } = await supabase
+        .from('analyses')
+        .upsert({
+          video_id: video.id,
+          asset: marketData.asset,
+          ticker: marketData.ticker,
+          matched_text: detectedAsset?.matchedText || null,
+          confidence: detectedAsset?.confidence || null,
+          asset_reasoning: detectedAsset?.reasoning || null,
+          tone: analysis.toneAnalysis.tone,
+          tone_keywords: analysis.toneAnalysis.keywords || [],
+          tone_reasoning: analysis.toneAnalysis.reasoning || null,
+          llm_model: analysis.model,
+          analyzed_at: analysis.timestamp || new Date().toISOString(),
+        }, { onConflict: 'video_id,asset' })
+        .select('id')
+        .single();
+
+      if (analysisError) {
+        console.error(`  ❌ Supabase analysis error: ${analysisError.message}`);
+        return;
+      }
+
+      // 3. market_data 테이블
+      const { error: marketError } = await supabase
+        .from('market_data')
+        .upsert({
+          analysis_id: analysisData.id,
+          trading_date: marketData.tradingDate,
+          previous_close: marketData.previousClose,
+          close_price: marketData.closePrice,
+          price_change: marketData.priceChange,
+          direction: marketData.direction,
+          predicted_direction: judgment.predictedDirection,
+          is_honey: judgment.isHoney,
+          judgment_reasoning: judgment.reasoning,
+        }, { onConflict: 'analysis_id' });
+
+      if (marketError) {
+        console.error(`  ❌ Supabase market_data error: ${marketError.message}`);
+      }
+    }
+  } catch (e) {
+    console.error('  ❌ Supabase 저장 실패:', e);
+  }
 }
 
 // ============================================================
@@ -194,6 +305,9 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
         reason: 'neutral_tone',
         analysis,
       });
+      
+      // Supabase에도 저장 (status: unanalyzed)
+      await saveToSupabase(video, analysis, null, null, 'unanalyzed', 'neutral_tone');
       continue;
     }
     
@@ -210,6 +324,8 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
           asset,
           reason: 'altcoin',
         });
+        
+        await saveToSupabase(video, analysis, null, null, 'excluded', `altcoin: ${asset}`);
         continue;
       }
       
@@ -223,6 +339,8 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
           reason: `unknown_asset: ${asset}`,
           analysis,
         });
+        
+        await saveToSupabase(video, analysis, null, null, 'unanalyzed', `unknown_asset: ${asset}`);
         continue;
       }
       
@@ -237,6 +355,8 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
           reason: 'no_market_data',
           analysis,
         });
+        
+        await saveToSupabase(video, analysis, null, null, 'unanalyzed', 'no_market_data');
         continue;
       }
       
@@ -254,7 +374,7 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
         ? `${analysis.toneAnalysis.tone === 'positive' ? '긍정적' : '부정적'} 전망(${predictedDirection}) 했으나 실제 ${actualDirection === 'bullish' ? '상승' : '하락'} → 역지표 적중`
         : `${analysis.toneAnalysis.tone === 'positive' ? '긍정적' : '부정적'} 전망(${predictedDirection}) 했고 실제 ${actualDirection === 'bullish' ? '상승' : actualDirection === 'bearish' ? '하락' : '보합'} → 예측대로`;
       
-      result.analyzed.push({
+      const analyzedItem: AnalyzedItem = {
         videoId: video.id,
         title: video.title,
         publishedAt: video.publishedAt,
@@ -274,7 +394,18 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
           isHoney,
           reasoning,
         },
-      });
+      };
+      
+      result.analyzed.push(analyzedItem);
+      
+      // Supabase에 저장
+      await saveToSupabase(
+        video,
+        analysis,
+        analyzedItem.marketData,
+        analyzedItem.judgment,
+        'analyzed'
+      );
     }
   }
   
@@ -303,7 +434,13 @@ async function main() {
   if (targetYear && targetMonth) {
     console.log(`🔍 전반꿀 연구소 분석 v3: ${targetYear}년 ${targetMonth}월만 처리\n`);
   } else {
-    console.log('🔍 전반꿀 연구소 분석 v3 (LLM 기반) 시작...\n');
+    console.log('🔍 전반꿀 연구소 분석 v3 (LLM 기반 + Supabase) 시작...\n');
+  }
+  
+  if (supabase) {
+    console.log(`📦 Supabase 연결: ${supabaseUrl}\n`);
+  } else {
+    console.log('⚠️ Supabase 미설정, 로컬 파일만 저장\n');
   }
   
   // 통계
@@ -339,7 +476,7 @@ async function main() {
     
     const result = await processMonth(parseInt(year), parseInt(month));
     
-    // 저장
+    // 로컬 파일 저장
     const monthDir = path.join(DATA_DIR, year, month);
     
     fs.writeFileSync(
@@ -370,7 +507,7 @@ async function main() {
     : 0;
   
   console.log('\n==================================================');
-  console.log('📊 전체 분석 결과 (LLM 기반)');
+  console.log('📊 전체 분석 결과 (LLM 기반 + Supabase)');
   console.log('==================================================');
   console.log(`분석 완료: ${stats.analyzed}개`);
   console.log(`미분석: ${stats.unanalyzed}개`);
@@ -379,7 +516,7 @@ async function main() {
   console.log(`\n🍯 전반꿀 지수: ${honeyIndex}%`);
   console.log('==================================================\n');
   
-  console.log('💾 결과 저장 완료');
+  console.log('💾 결과 저장 완료 (로컬 + Supabase)');
 }
 
 main().catch(console.error);

@@ -38,6 +38,7 @@ jobs:
           echo "YOUTUBE_API_KEY=${{ secrets.YOUTUBE_API_KEY }}" > .env.local
           echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env.local
           echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env.local
+          echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}" >> .env.local
           echo "SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }}" >> .env.local
 
       - name: Get current month (KST)
@@ -52,20 +53,15 @@ jobs:
         run: |
           npx tsx skills/jbk-collect/scripts/collect.ts --year ${{ steps.date.outputs.year }} --month ${{ steps.date.outputs.month }}
 
-      # Step 2: LLM 기반 톤 분석 + 시장 데이터 조회 (v3) - 현재 월만
-      - name: Analyze data (LLM)
+      # Step 2: LLM 기반 톤 분석 + 시장 데이터 조회 + Supabase 저장 (v3)
+      - name: Analyze data (LLM) and save to Supabase
         run: |
           npx tsx scripts/analyze-v3.ts --year ${{ steps.date.outputs.year }} --month ${{ steps.date.outputs.month }}
 
-      # Step 3: 통계 생성
+      # Step 3: 통계 생성 (로컬 파일용, 백업)
       - name: Generate stats
         run: |
           npx tsx scripts/generate-stats.ts
-
-      # Step 4: Supabase 동기화
-      - name: Sync to Supabase
-        run: |
-          npx tsx scripts/sync-to-supabase.ts
 
       - name: Check for changes
         id: changes

@@ -1,159 +1,78 @@
-/**
- * Supabase 클라이언트 설정
- * 
- * 사용처:
- * - 투표 기능 (votes 테이블)
- * - 예측 데이터 조회 (predictions 테이블)
- */
-
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_KEY
 
+// 클라이언트용 (읽기 전용)
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-// ============================================================
-// 타입 정의
-// ============================================================
-
-export interface Prediction {
-  id: string
-  video_id: string
-  title: string
-  published_at: string
-  thumbnail_url: string | null
-  predicted_tone: 'positive' | 'negative' | 'neutral' | null
-  detected_assets: Array<{
-    asset: string
-    ticker: string
-    confidence: number
-  }>
-  analysis_reasoning: string | null
-  status: 'pending' | 'resolved'
-  voting_deadline: string | null
-  actual_direction: 'up' | 'down' | 'flat' | null
-  price_change: number | null
-  is_honey: boolean | null
-  resolved_at: string | null
-  created_at: string
-}
-
-export interface Vote {
-  id: string
-  prediction_id: string
-  session_id: string
-  vote: 'bullish' | 'bearish'
-  created_at: string
-}
-
-export interface VoteStats {
-  bullish: number
-  bearish: number
-  total: number
-}
-
-// ============================================================
-// 세션 관리 (익명 투표용)
-// ============================================================
-
-const SESSION_KEY = 'jbk_session_id'
-
+// 익명 세션 ID 생성 (투표용)
 export function getSessionId(): string {
-  if (typeof window === 'undefined') return ''
+  if (typeof window === 'undefined') return 'server'
   
-  let sessionId = localStorage.getItem(SESSION_KEY)
+  const storageKey = 'jbk_session_id'
+  let sessionId = localStorage.getItem(storageKey)
+  
   if (!sessionId) {
     sessionId = crypto.randomUUID()
-    localStorage.setItem(SESSION_KEY, sessionId)
+    localStorage.setItem(storageKey, sessionId)
   }
+  
   return sessionId
 }
 
-// ============================================================
-// API 함수
-// ============================================================
-
-/**
- * 투표하기
- */
-export async function castVote(
-  predictionId: string, 
-  vote: 'bullish' | 'bearish'
-): Promise<{ success: boolean; error?: string }> {
-  const sessionId = getSessionId()
-  
-  const { error } = await supabase
-    .from('votes')
-    .upsert({
-      prediction_id: predictionId,
-      session_id: sessionId,
-      vote,
-    }, {
-      onConflict: 'prediction_id,session_id'
-    })
-  
-  if (error) {
-    return { success: false, error: error.message }
+// 서버용 (쓰기 가능) - Service Role Key 필요
+export function getSupabaseAdmin() {
+  if (!supabaseServiceKey) {
+    throw new Error('SUPABASE_SERVICE_KEY is not set')
   }
-  return { success: true }
+  return createClient(supabaseUrl, supabaseServiceKey)
 }
 
-/**
- * 내 투표 조회
- */
-export async function getMyVote(predictionId: string): Promise<'bullish' | 'bearish' | null> {
-  const sessionId = getSessionId()
-  
-  const { data } = await supabase
-    .from('votes')
-    .select('vote')
-    .eq('prediction_id', predictionId)
-    .eq('session_id', sessionId)
-    .single()
-  
-  return data?.vote ?? null
+// 타입 정의
+export interface VideoRow {
+  id: string
+  title: string
+  thumbnail_url: string | null
+  published_at: string
+  status: 'analyzed' | 'unanalyzed' | 'excluded'
+  exclude_reason: string | null
+  created_at: string
+  updated_at: string
 }
 
-/**
- * 투표 통계 조회
- */
-export async function getVoteStats(predictionId: string): Promise<VoteStats> {
-  const { data } = await supabase
-    .from('votes')
-    .select('vote')
-    .eq('prediction_id', predictionId)
-  
-  const votes = data ?? []
-  const bullish = votes.filter(v => v.vote === 'bullish').length
-  const bearish = votes.filter(v => v.vote === 'bearish').length
-  
-  return { bullish, bearish, total: bullish + bearish }
+export interface AnalysisRow {
+  id: string
+  video_id: string
+  asset: string
+  ticker: string | null
+  matched_text: string | null
+  confidence: number | null
+  asset_reasoning: string | null
+  tone: 'positive' | 'negative' | 'neutral'
+  tone_keywords: string[] | null
+  tone_reasoning: string | null
+  llm_model: string | null
+  analyzed_at: string
 }
 
-/**
- * 진행 중인 예측 목록
- */
-export async function getPendingPredictions(): Promise<Prediction[]> {
-  const { data } = await supabase
-    .from('predictions')
-    .select('*')
-    .eq('status', 'pending')
-    .order('published_at', { ascending: false })
-  
-  return data ?? []
+export interface MarketDataRow {
+  id: string
+  analysis_id: string
+  trading_date: string
+  previous_close: number | null
+  close_price: number | null
+  price_change: number | null
+  direction: 'up' | 'down' | null
+  predicted_direction: 'bullish' | 'bearish' | null
+  is_honey: boolean | null
+  judgment_reasoning: string | null
+  fetched_at: string
 }
 
-/**
- * 완료된 예측 목록
- */
-export async function getResolvedPredictions(limit = 20): Promise<Prediction[]> {
-  const { data } = await supabase
-    .from('predictions')
-    .select('*')
-    .eq('status', 'resolved')
-    .order('resolved_at', { ascending: false })
-    .limit(limit)
-  
-  return data ?? []
+// 조인된 분석 결과 타입
+export interface AnalysisWithMarketData extends AnalysisRow {
+  videos: VideoRow
+  market_data: MarketDataRow[]
 }

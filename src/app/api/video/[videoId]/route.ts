@@ -2,54 +2,15 @@
  * 개별 영상 상세 정보 API
  * GET /api/video/[videoId]
  * 
- * 특정 videoId에 대한 모든 분석 데이터 반환
+ * Supabase에서 특정 videoId에 대한 모든 분석 데이터 반환
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { promises as fs } from 'fs'
-import path from 'path'
+import { createClient } from '@supabase/supabase-js'
 
-interface AnalyzedItem {
-  videoId: string
-  title: string
-  publishedAt: string
-  analysis?: {
-    method: string
-    model: string
-    detectedAssets: Array<{
-      asset: string
-      ticker: string
-      matchedText?: string
-      confidence?: number
-      reasoning?: string
-    }>
-    toneAnalysis: {
-      tone: 'positive' | 'negative' | 'neutral'
-      keywords?: string[]
-      reasoning?: string
-    }
-  }
-  marketData?: {
-    asset: string
-    ticker: string
-    closePrice: number
-    previousClose?: number
-    priceChange?: number
-    direction: 'up' | 'down' | 'flat'
-    tradingDate: string
-  }
-  judgment?: {
-    predictedDirection: string
-    actualDirection: string
-    isHoney: boolean
-    reasoning: string
-  }
-  // v2 format fields
-  asset?: string
-  tone?: 'positive' | 'negative'
-  actualDirection?: 'up' | 'down' | 'flat'
-  isHoney?: boolean
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export async function GET(
   request: NextRequest,
@@ -62,107 +23,110 @@ export async function GET(
   }
 
   try {
-    const dataDir = path.join(process.cwd(), 'data')
-    const results: AnalyzedItem[] = []
+    // 1. 비디오 기본 정보 조회
+    const { data: video, error: videoError } = await supabase
+      .from('videos')
+      .select('*')
+      .eq('id', videoId)
+      .single()
 
-    // 모든 월별 폴더 검색
-    const years = await fs.readdir(dataDir)
-    
-    for (const year of years) {
-      if (!/^\d{4}$/.test(year)) continue
-      
-      const yearPath = path.join(dataDir, year)
-      const months = await fs.readdir(yearPath)
-      
-      for (const month of months) {
-        const monthPath = path.join(yearPath, month)
-        const analyzedPath = path.join(monthPath, 'analyzed.json')
-        
-        try {
-          const data = await fs.readFile(analyzedPath, 'utf-8')
-          const items: AnalyzedItem[] = JSON.parse(data)
-          
-          // 해당 videoId의 모든 분석 결과 수집
-          const matches = items.filter(item => item.videoId === videoId)
-          results.push(...matches)
-        } catch {
-          // 파일 없으면 무시
-        }
-      }
-    }
-
-    if (results.length === 0) {
+    if (videoError || !video) {
       return NextResponse.json({ error: 'Video not found' }, { status: 404 })
     }
 
-    // 첫 번째 결과에서 기본 정보 추출
-    const first = results[0]
-    
-    // 모든 분석된 종목 수집 (중복 제거)
-    const assetResults = results.map(r => {
-      const isV3 = 'analysis' in r && 'judgment' in r
-      
-      if (isV3) {
-        return {
-          asset: r.marketData?.asset || r.analysis?.detectedAssets?.[0]?.asset || 'Unknown',
-          ticker: r.marketData?.ticker || '',
-          predictedDirection: r.judgment?.predictedDirection || '',
-          actualDirection: r.judgment?.actualDirection || '',
-          isHoney: r.judgment?.isHoney || false,
-          priceChange: r.marketData?.priceChange,
-          closePrice: r.marketData?.closePrice,
-          previousClose: r.marketData?.previousClose,
-          tradingDate: r.marketData?.tradingDate,
-        }
-      } else {
-        return {
-          asset: r.asset || 'Unknown',
-          ticker: '',
-          predictedDirection: r.tone === 'positive' ? 'bullish' : 'bearish',
-          actualDirection: r.actualDirection === 'up' ? 'bullish' : 'bearish',
-          isHoney: r.isHoney || false,
-          priceChange: undefined,
-          closePrice: undefined,
-          previousClose: undefined,
-          tradingDate: undefined,
-        }
+    // 2. 분석 결과 + 시장 데이터 조회
+    const { data: analyses, error: analysesError } = await supabase
+      .from('analyses')
+      .select(`
+        id,
+        asset,
+        ticker,
+        matched_text,
+        confidence,
+        asset_reasoning,
+        tone,
+        tone_keywords,
+        tone_reasoning,
+        llm_model,
+        analyzed_at,
+        market_data (
+          trading_date,
+          previous_close,
+          close_price,
+          price_change,
+          direction,
+          predicted_direction,
+          is_honey,
+          judgment_reasoning
+        )
+      `)
+      .eq('video_id', videoId)
+
+    if (analysesError) {
+      console.error('Analyses fetch error:', analysesError)
+    }
+
+    const analysisResults = analyses || []
+
+    // 3. 종목별 결과 변환
+    const assetResults = analysisResults.map(a => {
+      const md = a.market_data?.[0]
+      return {
+        asset: a.asset,
+        ticker: a.ticker || '',
+        predictedDirection: md?.predicted_direction || (a.tone === 'positive' ? 'bullish' : 'bearish'),
+        actualDirection: md?.direction === 'up' ? 'bullish' : md?.direction === 'down' ? 'bearish' : undefined,
+        isHoney: md?.is_honey || false,
+        priceChange: md?.price_change ?? undefined,
+        closePrice: md?.close_price ?? undefined,
+        previousClose: md?.previous_close ?? undefined,
+        tradingDate: md?.trading_date ?? undefined,
+        reasoning: md?.judgment_reasoning ?? undefined,
       }
     })
 
-    // v3 형식인지 확인
-    const isV3 = 'analysis' in first && 'judgment' in first
+    // 4. 첫 번째 분석 결과에서 톤 정보 추출
+    const firstAnalysis = analysisResults[0]
+    const hasAnalysis = analysisResults.length > 0 && firstAnalysis?.tone
 
     const response = {
       videoId,
-      title: first.title,
-      publishedAt: first.publishedAt,
-      thumbnail: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+      title: video.title,
+      publishedAt: video.published_at,
+      thumbnail: video.thumbnail_url || `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
       youtubeUrl: `https://www.youtube.com/watch?v=${videoId}`,
-      
+      status: video.status,
+
       // 분석 정보
-      analysis: isV3 ? {
-        method: first.analysis?.method,
-        model: first.analysis?.model,
-        toneAnalysis: first.analysis?.toneAnalysis,
-        detectedAssets: first.analysis?.detectedAssets,
+      analysis: hasAnalysis ? {
+        method: 'llm',
+        model: firstAnalysis.llm_model,
+        toneAnalysis: {
+          tone: firstAnalysis.tone,
+          keywords: firstAnalysis.tone_keywords,
+          reasoning: firstAnalysis.tone_reasoning,
+        },
+        detectedAssets: analysisResults.map(a => ({
+          asset: a.asset,
+          ticker: a.ticker,
+          matchedText: a.matched_text,
+          confidence: a.confidence,
+          reasoning: a.asset_reasoning,
+        })),
       } : null,
-      
+
       // 전체 판정 (첫 번째 기준)
-      overallJudgment: isV3 ? {
-        predictedDirection: first.judgment?.predictedDirection,
-        actualDirection: first.judgment?.actualDirection,
-        isHoney: first.judgment?.isHoney,
-        reasoning: first.judgment?.reasoning,
-      } : {
-        predictedDirection: first.tone === 'positive' ? 'bullish' : 'bearish',
-        actualDirection: first.actualDirection === 'up' ? 'bullish' : 'bearish',
-        isHoney: first.isHoney,
-        reasoning: null,
-      },
-      
+      overallJudgment: hasAnalysis && firstAnalysis.market_data?.[0] ? {
+        predictedDirection: firstAnalysis.market_data[0].predicted_direction,
+        actualDirection: firstAnalysis.market_data[0].direction === 'up' ? 'bullish' 
+          : firstAnalysis.market_data[0].direction === 'down' ? 'bearish' : undefined,
+        isHoney: firstAnalysis.market_data[0].is_honey,
+        reasoning: firstAnalysis.market_data[0].judgment_reasoning,
+      } : null,
+
       // 종목별 결과
       assetResults,
-      
+
       // 꿀 적중 여부 요약
       summary: {
         totalAssets: assetResults.length,
