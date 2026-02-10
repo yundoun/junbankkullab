@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-10T05:44:25.130Z",
+  "updatedAt": "2026-02-10T07:15:44.243Z",
   "methodology": {
     "assets": [
       "KOSPI",
@@ -18,8 +18,8 @@
   },
   "stats": {
     "totalPredictions": 129,
-    "honeyCount": 54,
-    "honeyIndex": 41.9
+    "honeyCount": 55,
+    "honeyIndex": 42.6
   },
   "assetStats": [
     {
@@ -53,6 +53,12 @@
       "honeyIndex": 62.5
     },
     {
+      "asset": "Semiconductor",
+      "total": 7,
+      "honey": 4,
+      "honeyIndex": 57.1
+    },
+    {
       "asset": "KOSPI",
       "total": 33,
       "honey": 18,
@@ -75,12 +81,6 @@
       "total": 4,
       "honey": 2,
       "honeyIndex": 50
-    },
-    {
-      "asset": "Semiconductor",
-      "total": 7,
-      "honey": 3,
-      "honeyIndex": 42.9
     },
     {
       "asset": "Shipbuilding",
@@ -244,7 +244,7 @@
       "year": 2026,
       "month": 2,
       "predictions": 8,
-      "honeyIndex": 50
+      "honeyIndex": 62.5
     }
   ]
 }

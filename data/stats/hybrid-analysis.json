@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-10T05:44:25.129Z",
+  "updatedAt": "2026-02-10T07:15:44.242Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
@@ -7,15 +7,15 @@
     "totalMentions": 224,
     "analyzableMentions": 250,
     "validMentions": 129,
-    "honeyCount": 54,
-    "honeyIndex": 41.9
+    "honeyCount": 55,
+    "honeyIndex": 42.6
   },
   "funnel": {
     "totalVideos": 596,
     "withMentions": 224,
     "withTone": 129,
     "withMarketData": 129,
-    "honeyHits": 54
+    "honeyHits": 55
   },
   "unanalyzedCount": 121,
   "excludedCount": 5,
@@ -51,6 +51,12 @@
       "honeyIndex": 62.5
     },
     {
+      "asset": "Semiconductor",
+      "total": 7,
+      "honey": 4,
+      "honeyIndex": 57.1
+    },
+    {
       "asset": "KOSPI",
       "total": 33,
       "honey": 18,
@@ -73,12 +79,6 @@
       "total": 4,
       "honey": 2,
       "honeyIndex": 50
-    },
-    {
-      "asset": "Semiconductor",
-      "total": 7,
-      "honey": 3,
-      "honeyIndex": 42.9
     },
     {
       "asset": "Shipbuilding",
@@ -166,9 +166,9 @@
       "publishedAt": "2026-02-09T11:09:03Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "up",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": 0.46
+      "priceChange": 0.07
     },
     {
       "videoId": "RYbgAVbDIqg",
@@ -176,9 +176,9 @@
       "publishedAt": "2026-02-09T11:09:03Z",
       "asset": "Semiconductor",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 0.24
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.36
     },
     {
       "videoId": "cXYDceBYfUA",
@@ -188,7 +188,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -0.82
+      "priceChange": -0.2
     },
     {
       "videoId": "mtMvcCZTqxY",
@@ -196,9 +196,9 @@
       "publishedAt": "2026-02-08T10:43:34Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "up",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": 0.46
+      "priceChange": 0.07
     },
     {
       "videoId": "XAJqKI8IIpI",
