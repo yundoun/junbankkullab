@@ -202,7 +202,8 @@ export async function GET() {
             title: v.title,
             thumbnail: v.thumbnail_url || `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
             publishedAt: v.published_at,
-            asset: a.asset,
+            asset: toKorean(a.asset),
+            assetKey: a.asset,
             predictedDirection: a.tone === 'positive' ? 'bullish' : 'bearish',
             expiresAt: new Date(new Date(v.published_at).getTime() + 24 * 60 * 60 * 1000).toISOString(),
           }))
