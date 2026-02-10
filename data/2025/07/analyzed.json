@@ -28,11 +28,11 @@
     "marketData": {
       "asset": "SKHynix",
       "ticker": "000660.KS",
-      "closePrice": 262931.625,
-      "previousClose": 261933.7812,
-      "priceChange": 0.38,
+      "closePrice": 272910.0625,
+      "previousClose": 262931.625,
+      "priceChange": 3.8,
       "direction": "up",
-      "tradingDate": "2025-07-30"
+      "tradingDate": "2025-07-31"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -70,11 +70,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 3230.5701,
-      "previousClose": 3209.52,
-      "priceChange": 0.66,
+      "closePrice": 3254.47,
+      "previousClose": 3230.5701,
+      "priceChange": 0.74,
       "direction": "up",
-      "tradingDate": "2025-07-29"
+      "tradingDate": "2025-07-30"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -112,17 +112,17 @@
     "marketData": {
       "asset": "Auto",
       "ticker": "005380.KS",
-      "closePrice": 217379.0312,
-      "previousClose": 202201.6562,
-      "priceChange": 7.51,
-      "direction": "up",
-      "tradingDate": "2025-07-23"
+      "closePrice": 212972.6875,
+      "previousClose": 217379.0312,
+      "priceChange": -2.03,
+      "direction": "down",
+      "tradingDate": "2025-07-24"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
   },
   {
@@ -154,17 +154,17 @@
     "marketData": {
       "asset": "Energy",
       "ticker": "096770.KS",
-      "closePrice": 113900,
-      "previousClose": 114900,
-      "priceChange": -0.87,
-      "direction": "down",
-      "tradingDate": "2025-07-22"
+      "closePrice": 116300,
+      "previousClose": 113900,
+      "priceChange": 2.11,
+      "direction": "up",
+      "tradingDate": "2025-07-23"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -204,11 +204,11 @@
     "marketData": {
       "asset": "Battery",
       "ticker": "373220.KS",
-      "closePrice": 331000,
-      "previousClose": 322500,
-      "priceChange": 2.64,
+      "closePrice": 333500,
+      "previousClose": 331000,
+      "priceChange": 0.76,
       "direction": "up",
-      "tradingDate": "2025-07-21"
+      "tradingDate": "2025-07-22"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -253,17 +253,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 117939.9766,
-      "previousClose": 118003.2266,
-      "priceChange": -0.05,
-      "direction": "flat",
-      "tradingDate": "2025-07-19"
+      "closePrice": 117300.7891,
+      "previousClose": 117939.9766,
+      "priceChange": -0.54,
+      "direction": "down",
+      "tradingDate": "2025-07-20"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "flat",
+      "actualDirection": "bearish",
       "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 보합 → 예측대로"
+      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
   },
   {
@@ -295,17 +295,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 3192.29,
-      "previousClose": 3186.3799,
-      "priceChange": 0.19,
-      "direction": "up",
-      "tradingDate": "2025-07-17"
+      "closePrice": 3188.0701,
+      "previousClose": 3192.29,
+      "priceChange": -0.13,
+      "direction": "down",
+      "tradingDate": "2025-07-18"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -339,11 +339,11 @@
     "marketData": {
       "asset": "Shipbuilding",
       "ticker": "009540.KS",
-      "closePrice": 325000,
-      "previousClose": 321000,
-      "priceChange": 1.25,
+      "closePrice": 328000,
+      "previousClose": 325000,
+      "priceChange": 0.92,
       "direction": "up",
-      "tradingDate": "2025-07-14"
+      "tradingDate": "2025-07-15"
     },
     "judgment": {
       "predictedDirection": "bullish",

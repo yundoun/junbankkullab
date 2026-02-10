@@ -130,25 +130,38 @@ MARKET_CALENDAR = {
 }
 
 
-def get_trading_day(asset: str, date_str: str) -> str:
+def get_trading_day(asset: str, date_str: str, next_day: bool = False) -> str:
     """
     Get the trading day for a given asset and date.
     If the date is a weekend or holiday, returns the next trading day.
     For Bitcoin, returns the same date (24/7 trading).
+    
+    Args:
+        asset: Asset name
+        date_str: Date string in YYYY-MM-DD format
+        next_day: If True, returns the NEXT trading day after the given date
     """
     calendar_name = MARKET_CALENDAR.get(asset)
     target_date = datetime.strptime(date_str, '%Y-%m-%d')
     
     if calendar_name is None:
         # Bitcoin trades 24/7
+        if next_day:
+            return (target_date + timedelta(days=1)).strftime('%Y-%m-%d')
         return date_str
     
     try:
         calendar = mcal.get_calendar(calendar_name)
         
         # Search up to 10 days ahead for next trading day
-        end_date = target_date + timedelta(days=10)
-        schedule = calendar.schedule(start_date=target_date, end_date=end_date)
+        if next_day:
+            # Start from the day AFTER target_date
+            start_date = target_date + timedelta(days=1)
+        else:
+            start_date = target_date
+            
+        end_date = start_date + timedelta(days=10)
+        schedule = calendar.schedule(start_date=start_date, end_date=end_date)
         
         if len(schedule) > 0:
             trading_day = schedule.index[0].strftime('%Y-%m-%d')
@@ -162,11 +175,11 @@ def get_trading_day(asset: str, date_str: str) -> str:
 
 def get_close_price(symbol: str, date_str: str):
     """
-    Get the close price for a specific trading date.
+    Get the close price comparing the NEXT trading day vs the publish day.
     
-    For US markets: Returns the close price of that trading day
-    For KR markets: Returns the close price of that trading day
-    For Bitcoin: Returns the close price at ~midnight UTC
+    This measures market reaction AFTER the video was published:
+    - Video published Monday → Compare Tuesday close vs Monday close
+    - This captures how the market moved after seeing the prediction
     
     Args:
         symbol: Asset name (e.g., 'Nvidia', 'KOSPI')
@@ -177,13 +190,18 @@ def get_close_price(symbol: str, date_str: str):
     """
     resolved_symbol = SYMBOL_MAP.get(symbol, symbol)
     
-    # Get the actual trading day
-    trading_day = get_trading_day(symbol, date_str)
-    trading_date = datetime.strptime(trading_day, '%Y-%m-%d')
+    # Get the publish day's trading day (baseline)
+    baseline_day = get_trading_day(symbol, date_str, next_day=False)
+    baseline_date = datetime.strptime(baseline_day, '%Y-%m-%d')
     
-    # Fetch data for a range (trading day and previous day for comparison)
-    fetch_start = trading_date - timedelta(days=7)  # Go back to ensure we get previous trading day
-    fetch_end = trading_date + timedelta(days=1)
+    # Get the NEXT trading day AFTER the baseline (for measuring reaction)
+    # This ensures we measure the reaction day, not the same day
+    reaction_day = get_trading_day(symbol, baseline_day, next_day=True)
+    reaction_date = datetime.strptime(reaction_day, '%Y-%m-%d')
+    
+    # Fetch data for a range covering both days
+    fetch_start = baseline_date - timedelta(days=3)
+    fetch_end = reaction_date + timedelta(days=3)
     
     try:
         ticker = yf.Ticker(resolved_symbol)
@@ -195,29 +213,33 @@ def get_close_price(symbol: str, date_str: str):
         # Normalize timezone
         hist.index = hist.index.tz_localize(None) if hist.index.tz else hist.index
         
-        # Find the close price for the trading day
-        trading_date_normalized = trading_date.replace(hour=0, minute=0, second=0, microsecond=0)
+        # Find close prices for baseline and reaction days
+        baseline_normalized = baseline_date.replace(hour=0, minute=0, second=0, microsecond=0)
+        reaction_normalized = reaction_date.replace(hour=0, minute=0, second=0, microsecond=0)
         
-        close_price = None
-        previous_close = None
-        actual_date = None
+        baseline_close = None
+        reaction_close = None
+        reaction_actual_date = None
         
         for i, idx in enumerate(hist.index):
             idx_date = idx.replace(hour=0, minute=0, second=0, microsecond=0)
-            if idx_date >= trading_date_normalized:
-                close_price = float(hist.iloc[i]['Close'])
-                actual_date = idx_date.strftime('%Y-%m-%d')
-                if i > 0:
-                    previous_close = float(hist.iloc[i-1]['Close'])
-                break
+            
+            # Find baseline close (publish day)
+            if baseline_close is None and idx_date >= baseline_normalized:
+                baseline_close = float(hist.iloc[i]['Close'])
+            
+            # Find reaction close (next trading day)
+            if reaction_close is None and idx_date >= reaction_normalized:
+                reaction_close = float(hist.iloc[i]['Close'])
+                reaction_actual_date = idx_date.strftime('%Y-%m-%d')
         
-        if close_price is None:
-            return {'error': 'Could not find close price for date'}
+        if reaction_close is None:
+            return {'error': 'Could not find close price for reaction date'}
         
-        # Calculate direction
+        # Calculate direction: compare reaction day vs baseline day
         direction = 'flat'
-        if previous_close is not None:
-            change_pct = ((close_price - previous_close) / previous_close) * 100
+        if baseline_close is not None and baseline_close != 0:
+            change_pct = ((reaction_close - baseline_close) / baseline_close) * 100
             if change_pct > 0.1:
                 direction = 'up'
             elif change_pct < -0.1:
@@ -225,11 +247,12 @@ def get_close_price(symbol: str, date_str: str):
         
         return {
             'symbol': resolved_symbol,
-            'closePrice': round(close_price, 4),
-            'previousClose': round(previous_close, 4) if previous_close else None,
-            'date': actual_date,
+            'closePrice': round(reaction_close, 4),
+            'previousClose': round(baseline_close, 4) if baseline_close else None,
+            'date': reaction_actual_date,
             'requestedDate': date_str,
-            'tradingDay': trading_day,
+            'baselineDay': baseline_day,
+            'reactionDay': reaction_day,
             'direction': direction,
         }
         

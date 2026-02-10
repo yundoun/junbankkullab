@@ -29,17 +29,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2481.1201,
-      "previousClose": 2557.98,
-      "priceChange": -3,
-      "direction": "down",
-      "tradingDate": "2025-03-31"
+      "closePrice": 2521.3899,
+      "previousClose": 2481.1201,
+      "priceChange": 1.62,
+      "direction": "up",
+      "tradingDate": "2025-04-01"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -72,17 +72,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 82334.5234,
-      "previousClose": 82597.5859,
-      "priceChange": -0.32,
-      "direction": "down",
-      "tradingDate": "2025-03-30"
+      "closePrice": 82548.9141,
+      "previousClose": 82334.5234,
+      "priceChange": 0.26,
+      "direction": "up",
+      "tradingDate": "2025-03-31"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -115,17 +115,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 83832.4844,
-      "previousClose": 84043.2422,
-      "priceChange": -0.25,
-      "direction": "down",
-      "tradingDate": "2025-03-22"
+      "closePrice": 86054.375,
+      "previousClose": 83832.4844,
+      "priceChange": 2.65,
+      "direction": "up",
+      "tradingDate": "2025-03-23"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -157,17 +157,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2610.6899,
-      "previousClose": 2566.3601,
-      "priceChange": 1.73,
-      "direction": "up",
-      "tradingDate": "2025-03-17"
+      "closePrice": 2612.3401,
+      "previousClose": 2610.6899,
+      "priceChange": 0.06,
+      "direction": "flat",
+      "tradingDate": "2025-03-18"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
+      "actualDirection": "flat",
+      "isHoney": false,
+      "reasoning": "부정적 전망(bearish) 했고 실제 보합 → 예측대로"
     }
   },
   {
@@ -199,17 +199,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2610.6899,
-      "previousClose": 2566.3601,
-      "priceChange": 1.73,
-      "direction": "up",
-      "tradingDate": "2025-03-17"
+      "closePrice": 2612.3401,
+      "previousClose": 2610.6899,
+      "priceChange": 0.06,
+      "direction": "flat",
+      "tradingDate": "2025-03-18"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
+      "actualDirection": "flat",
+      "isHoney": false,
+      "reasoning": "부정적 전망(bearish) 했고 실제 보합 → 예측대로"
     }
   },
   {
@@ -241,11 +241,11 @@
     "marketData": {
       "asset": "Retail",
       "ticker": "004170.KS",
-      "closePrice": 155289.2344,
-      "previousClose": 155580.0469,
-      "priceChange": -0.19,
+      "closePrice": 153350.5469,
+      "previousClose": 155289.2344,
+      "priceChange": -1.25,
       "direction": "down",
-      "tradingDate": "2025-03-10"
+      "tradingDate": "2025-03-11"
     },
     "judgment": {
       "predictedDirection": "bearish",
@@ -284,17 +284,17 @@
     "marketData": {
       "asset": "NASDAQ",
       "ticker": "^IXIC",
-      "closePrice": 18196.2207,
-      "previousClose": 18069.2598,
-      "priceChange": 0.7,
-      "direction": "up",
-      "tradingDate": "2025-03-07"
+      "closePrice": 17468.3203,
+      "previousClose": 18196.2207,
+      "priceChange": -4,
+      "direction": "down",
+      "tradingDate": "2025-03-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -328,17 +328,17 @@
     "marketData": {
       "asset": "NASDAQ",
       "ticker": "^IXIC",
-      "closePrice": 18069.2598,
-      "previousClose": 18552.7305,
-      "priceChange": -2.61,
-      "direction": "down",
-      "tradingDate": "2025-03-06"
+      "closePrice": 18196.2207,
+      "previousClose": 18069.2598,
+      "priceChange": 0.7,
+      "direction": "up",
+      "tradingDate": "2025-03-07"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   }
 ]

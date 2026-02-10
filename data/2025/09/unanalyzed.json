@@ -1,56 +1,321 @@
 [
   {
-    "videoId": "L4Gi8B5CM3k",
-    "title": "절대 해킹될 수 없는 비트코인 지갑입니다(ft.Jonathan Pollack of BLOCK Product for Bitkey)",
-    "publishedAt": "2025-09-30T10:40:29Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "xomi7IKmE28",
-    "title": "삼성전자 그래도 오릅니다(ft.차영주 소장 1부)",
-    "publishedAt": "2025-09-30T01:45:39Z",
-    "asset": "Samsung",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "c168cbbRa8E",
-    "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
-    "publishedAt": "2025-09-26T05:21:13Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "ctVxCQnkhcM",
+    "title": "네이버 업비트 합병설, 둘이 합쳐야만 하는 이유",
+    "publishedAt": "2025-09-29T08:31:41Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:04:23.946Z",
+      "detectedAssets": [
+        {
+          "asset": "Internet",
+          "ticker": "035720.KS",
+          "matchedText": "네이버",
+          "confidence": 0.95,
+          "reasoning": "네이버는 인터넷 서비스 기업으로, 관련 섹터인 Internet에 포함됩니다."
+        },
+        {
+          "asset": "Bitcoin",
+          "ticker": "BTC-USD",
+          "matchedText": "업비트",
+          "confidence": 0.85,
+          "reasoning": "업비트는 암호화폐 거래소로, 비트코인과 관련이 깊습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "합병설",
+          "이유"
+        ],
+        "reasoning": "합병설이라는 표현은 긍정적 또는 부정적 전망을 나타내지 않으며, 중립적인 정보로 판단됩니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Internet\",\n      \"matchedText\": \"네이버\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"네이버는 인터넷 서비스 기업으로, 관련 섹터인 Internet에 포함됩니다.\"\n    },\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"업비트\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"업비트는 암호화폐 거래소로, 비트코인과 관련이 깊습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"합병설\", \"이유\"],\n    \"reasoning\": \"합병설이라는 표현은 긍정적 또는 부정적 전망을 나타내지 않으며, 중립적인 정보로 판단됩니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "yt6JeYqGC7A",
     "title": "해킹당한 비트코인도 찾아주는 Inca Digital",
     "publishedAt": "2025-09-24T10:07:13Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:04:39.787Z",
+      "detectedAssets": [
+        {
+          "asset": "Bitcoin",
+          "ticker": "BTC-USD",
+          "matchedText": "비트코인",
+          "confidence": 0.95,
+          "reasoning": "제목에 '비트코인'이 명시되어 있어 암호화폐로 확인됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "해킹당한",
+          "찾아주는"
+        ],
+        "reasoning": "해킹과 관련된 내용이 포함되어 있어 긍정적 또는 부정적 판단이 어렵고 중립적임."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"비트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '비트코인'이 명시되어 있어 암호화폐로 확인됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"해킹당한\", \"찾아주는\"],\n    \"reasoning\": \"해킹과 관련된 내용이 포함되어 있어 긍정적 또는 부정적 판단이 어렵고 중립적임.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "fW9U19M3T1U",
+    "title": "중국의 원자력 기술, 상상을 초월합니다(ft.이철 작가 2부)",
+    "publishedAt": "2025-09-23T04:51:35Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:04:44.044Z",
+      "detectedAssets": [
+        {
+          "asset": "Nuclear",
+          "ticker": "034020.KS",
+          "matchedText": "원자력",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '원자력 기술'이라는 표현이 명확하게 언급되어 있어 원자력 섹터로 분류할 수 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "상상을 초월합니다"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으며, '상상을 초월합니다'라는 표현은 중립적인 의미로 해석될 수 있습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"원자력\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '원자력 기술'이라는 표현이 명확하게 언급되어 있어 원자력 섹터로 분류할 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"상상을 초월합니다\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으며, '상상을 초월합니다'라는 표현은 중립적인 의미로 해석될 수 있습니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "yg3fJghOUM8",
+    "title": "엔바디아 다음은? AI 섹터 기업",
+    "publishedAt": "2025-09-23T00:15:36Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:04:47.982Z",
+      "detectedAssets": [
+        {
+          "asset": "Nvidia",
+          "ticker": "NVDA",
+          "matchedText": "엔바디아",
+          "confidence": 0.95,
+          "reasoning": "엔바디아는 Nvidia의 한국어 발음으로, 동일한 기업을 지칭합니다."
+        },
+        {
+          "asset": "AI",
+          "ticker": "UNKNOWN",
+          "matchedText": "AI 섹터",
+          "confidence": 0.9,
+          "reasoning": "AI 섹터는 인공지능 관련 기업들을 포함하는 넓은 범위의 섹터를 나타냅니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없어 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔바디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"엔바디아는 Nvidia의 한국어 발음으로, 동일한 기업을 지칭합니다.\"\n    },\n    {\n      \"asset\": \"AI\",\n      \"matchedText\": \"AI 섹터\",\n      \"confidence\": 0.90,\n      \"reasoning\": \"AI 섹터는 인공지능 관련 기업들을 포함하는 넓은 범위의 섹터를 나타냅니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없어 판단이 불가합니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "6GamB_gR1NQ",
+    "title": "찐 K-고배당 ETF가 나왔다! 월배당 주는 SOL코리아 고배당 ETF(ft.SOL코리아 고배당 ETF)",
+    "publishedAt": "2025-09-18T09:00:22Z",
+    "reason": "unknown_asset: ETF",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:04:59.656Z",
+      "detectedAssets": [
+        {
+          "asset": "ETF",
+          "ticker": "UNKNOWN",
+          "matchedText": "SOL코리아 고배당 ETF",
+          "confidence": 0.95,
+          "reasoning": "제목에서 'SOL코리아 고배당 ETF'가 명시되어 있어 고배당 ETF로 분류됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "찐",
+          "고배당",
+          "월배당"
+        ],
+        "reasoning": "제목에서 '찐', '고배당', '월배당' 등의 긍정적인 단어가 사용되어 긍정적인 전망을 나타냄"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"SOL코리아 고배당 ETF\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 'SOL코리아 고배당 ETF'가 명시되어 있어 고배당 ETF로 분류됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"찐\", \"고배당\", \"월배당\"],\n    \"reasoning\": \"제목에서 '찐', '고배당', '월배당' 등의 긍정적인 단어가 사용되어 긍정적인 전망을 나타냄\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "v_a3jwSMOiw",
+    "title": "1년간 3배 오른 AI칩 회사 한국은 모르더라고요(ft.아스트라랩스)",
+    "publishedAt": "2025-09-18T04:37:43Z",
+    "reason": "unknown_asset: AI",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:05:02.195Z",
+      "detectedAssets": [
+        {
+          "asset": "AI",
+          "ticker": "UNKNOWN",
+          "matchedText": "AI칩",
+          "confidence": 0.9,
+          "reasoning": "AI칩은 인공지능 관련 반도체를 의미하며, AI라는 섹터로 분류할 수 있습니다."
+        },
+        {
+          "asset": "Nvidia",
+          "ticker": "NVDA",
+          "matchedText": "아스트라랩스",
+          "confidence": 0.8,
+          "reasoning": "아스트라랩스는 AI칩을 제조하는 회사로, Nvidia와 유사한 분야에 속할 것으로 추정됩니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "3배 오른"
+        ],
+        "reasoning": "1년간 3배 오른이라는 표현은 긍정적인 성과를 나타내며, 상승세를 강조하고 있습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"AI\",\n      \"matchedText\": \"AI칩\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"AI칩은 인공지능 관련 반도체를 의미하며, AI라는 섹터로 분류할 수 있습니다.\"\n    },\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"아스트라랩스\",\n      \"confidence\": 0.8,\n      \"reasoning\": \"아스트라랩스는 AI칩을 제조하는 회사로, Nvidia와 유사한 분야에 속할 것으로 추정됩니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"3배 오른\"],\n    \"reasoning\": \"1년간 3배 오른이라는 표현은 긍정적인 성과를 나타내며, 상승세를 강조하고 있습니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "MRnZ74Fe_Ao",
     "title": "코스피는 사상최고치인데 환율은 불안한 이유",
     "publishedAt": "2025-09-13T13:34:47Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:05:10.148Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '코스피'라는 단어가 명시되어 있어 지수로 확인됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "사상최고치",
+          "불안한"
+        ],
+        "reasoning": "코스피가 사상최고치라는 긍정적인 요소와 환율이 불안하다는 부정적인 요소가 함께 언급되어 있어 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 단어가 명시되어 있어 지수로 확인됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"사상최고치\", \"불안한\"],\n    \"reasoning\": \"코스피가 사상최고치라는 긍정적인 요소와 환율이 불안하다는 부정적인 요소가 함께 언급되어 있어 판단이 불가함.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "js1KrXPMjuQ",
+    "title": "뉴욕증권거래소 들어갑니다(ft.아이온큐)",
+    "publishedAt": "2025-09-12T13:24:38Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:05:14.080Z",
+      "detectedAssets": [
+        {
+          "asset": "NASDAQ",
+          "ticker": "^IXIC",
+          "matchedText": "뉴욕증권거래소",
+          "confidence": 0.9,
+          "reasoning": "뉴욕증권거래소는 NASDAQ과 관련이 깊은 지수로 판단됨"
+        },
+        {
+          "asset": "QuantumComputing",
+          "ticker": "UNKNOWN",
+          "matchedText": "아이온큐",
+          "confidence": 0.85,
+          "reasoning": "아이온큐는 양자 컴퓨팅 관련 기업으로, 새로운 섹터로 분류 가능"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "들어갑니다"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 정보가 부족함"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"NASDAQ\",\n      \"matchedText\": \"뉴욕증권거래소\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"뉴욕증권거래소는 NASDAQ과 관련이 깊은 지수로 판단됨\"\n    },\n    {\n      \"asset\": \"QuantumComputing\",\n      \"matchedText\": \"아이온큐\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"아이온큐는 양자 컴퓨팅 관련 기업으로, 새로운 섹터로 분류 가능\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"들어갑니다\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 판단할 수 있는 정보가 부족함\"\n  }\n}"
+    }
   },
   {
     "videoId": "5n82kbE9U8E",
     "title": "브로드컴 주가가 급등하고 엔비디아는 하락한 이유",
     "publishedAt": "2025-09-08T10:00:08Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 1,
-    "negativeScore": 1
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:05:20.667Z",
+      "detectedAssets": [
+        {
+          "asset": "Nvidia",
+          "ticker": "NVDA",
+          "matchedText": "엔비디아",
+          "confidence": 0.95,
+          "reasoning": "제목에서 엔비디아라는 주식이 언급되어 하락한 이유에 대해 설명하고 있습니다."
+        },
+        {
+          "asset": "Broadcom",
+          "ticker": "UNKNOWN",
+          "matchedText": "브로드컴",
+          "confidence": 0.95,
+          "reasoning": "브로드컴 주가가 급등했다고 언급되어 있어 해당 종목을 추출했습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "급등",
+          "하락"
+        ],
+        "reasoning": "주가의 상승과 하락이 언급되었지만, 전체적인 전망에 대한 긍정적 또는 부정적 판단이 명확하지 않기 때문에 중립으로 판단했습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔비디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 엔비디아라는 주식이 언급되어 하락한 이유에 대해 설명하고 있습니다.\"\n    },\n    {\n      \"asset\": \"Broadcom\",\n      \"matchedText\": \"브로드컴\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"브로드컴 주가가 급등했다고 언급되어 있어 해당 종목을 추출했습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"급등\", \"하락\"],\n    \"reasoning\": \"주가의 상승과 하락이 언급되었지만, 전체적인 전망에 대한 긍정적 또는 부정적 판단이 명확하지 않기 때문에 중립으로 판단했습니다.\"\n  }\n}"
+    }
+  },
+  {
+    "videoId": "FgD0hLlN_mo",
+    "title": "한국인은 모르는 1년 만에 60% 오른 AI 회사(ft.Spenser Skates Amplitude CEO)",
+    "publishedAt": "2025-09-08T02:29:12Z",
+    "reason": "unknown_asset: AI",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:05:24.851Z",
+      "detectedAssets": [
+        {
+          "asset": "AI",
+          "ticker": "UNKNOWN",
+          "matchedText": "AI 회사",
+          "confidence": 0.9,
+          "reasoning": "제목에서 AI 회사가 언급되어 있어 AI 섹터로 분류됨"
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "60% 오른"
+        ],
+        "reasoning": "1년 만에 60% 오른이라는 표현은 긍정적인 상승세를 나타냄"
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"AI\",\n      \"matchedText\": \"AI 회사\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"제목에서 AI 회사가 언급되어 있어 AI 섹터로 분류됨\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"60% 오른\"],\n    \"reasoning\": \"1년 만에 60% 오른이라는 표현은 긍정적인 상승세를 나타냄\"\n  }\n}"
+    }
   }
 ]

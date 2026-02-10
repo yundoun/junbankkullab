@@ -28,11 +28,11 @@
     "marketData": {
       "asset": "Internet",
       "ticker": "035720.KS",
-      "closePrice": 42036.5234,
-      "previousClose": 39690.0664,
-      "priceChange": 5.91,
+      "closePrice": 44382.9805,
+      "previousClose": 42036.5234,
+      "priceChange": 5.58,
       "direction": "up",
-      "tradingDate": "2025-02-26"
+      "tradingDate": "2025-02-27"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -71,11 +71,11 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 96273.9219,
-      "previousClose": 96577.7578,
-      "priceChange": -0.31,
+      "closePrice": 91418.1719,
+      "previousClose": 96273.9219,
+      "priceChange": -5.04,
       "direction": "down",
-      "tradingDate": "2025-02-23"
+      "tradingDate": "2025-02-24"
     },
     "judgment": {
       "predictedDirection": "bearish",
@@ -113,17 +113,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2671.52,
-      "previousClose": 2626.8101,
-      "priceChange": 1.7,
-      "direction": "up",
-      "tradingDate": "2025-02-19"
+      "closePrice": 2654.0601,
+      "previousClose": 2671.52,
+      "priceChange": -0.65,
+      "direction": "down",
+      "tradingDate": "2025-02-20"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -156,17 +156,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 97508.9688,
-      "previousClose": 96623.8672,
-      "priceChange": 0.92,
-      "direction": "up",
-      "tradingDate": "2025-02-14"
+      "closePrice": 97580.3516,
+      "previousClose": 97508.9688,
+      "priceChange": 0.07,
+      "direction": "flat",
+      "tradingDate": "2025-02-15"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
+      "actualDirection": "flat",
       "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "reasoning": "긍정적 전망(bullish) 했고 실제 보합 → 예측대로"
     }
   }
 ]

@@ -29,11 +29,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4309.6299,
-      "previousClose": 4214.1699,
-      "priceChange": 2.27,
+      "closePrice": 4457.52,
+      "previousClose": 4309.6299,
+      "priceChange": 3.43,
       "direction": "up",
-      "tradingDate": "2026-01-02"
+      "tradingDate": "2026-01-05"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -78,17 +78,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4108.6201,
-      "previousClose": 4117.3198,
-      "priceChange": -0.21,
-      "direction": "down",
-      "tradingDate": "2025-12-24"
+      "closePrice": 4129.6802,
+      "previousClose": 4108.6201,
+      "priceChange": 0.51,
+      "direction": "up",
+      "tradingDate": "2025-12-26"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -127,17 +127,17 @@
     "marketData": {
       "asset": "NASDAQ",
       "ticker": "^IXIC",
-      "closePrice": 23613.3105,
-      "previousClose": 23561.8398,
-      "priceChange": 0.22,
-      "direction": "up",
-      "tradingDate": "2025-12-24"
+      "closePrice": 23593.0996,
+      "previousClose": 23613.3105,
+      "priceChange": -0.09,
+      "direction": "flat",
+      "tradingDate": "2025-12-26"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
+      "actualDirection": "flat",
       "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "reasoning": "긍정적 전망(bullish) 했고 실제 보합 → 예측대로"
     }
   },
   {
@@ -169,11 +169,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4105.9302,
-      "previousClose": 4020.55,
-      "priceChange": 2.12,
+      "closePrice": 4117.3198,
+      "previousClose": 4105.9302,
+      "priceChange": 0.28,
       "direction": "up",
-      "tradingDate": "2025-12-22"
+      "tradingDate": "2025-12-23"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -211,11 +211,11 @@
     "marketData": {
       "asset": "Defense",
       "ticker": "012450.KS",
-      "closePrice": 886000,
-      "previousClose": 884000,
-      "priceChange": 0.23,
+      "closePrice": 900000,
+      "previousClose": 886000,
+      "priceChange": 1.58,
       "direction": "up",
-      "tradingDate": "2025-12-22"
+      "tradingDate": "2025-12-23"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -255,11 +255,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4020.55,
-      "previousClose": 3994.51,
-      "priceChange": 0.65,
+      "closePrice": 4105.9302,
+      "previousClose": 4020.55,
+      "priceChange": 2.12,
       "direction": "up",
-      "tradingDate": "2025-12-19"
+      "tradingDate": "2025-12-22"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -298,17 +298,17 @@
     "marketData": {
       "asset": "Tesla",
       "ticker": "TSLA",
-      "closePrice": 467.26,
-      "previousClose": 489.88,
-      "priceChange": -4.62,
-      "direction": "down",
-      "tradingDate": "2025-12-17"
+      "closePrice": 483.37,
+      "previousClose": 467.26,
+      "priceChange": 3.45,
+      "direction": "up",
+      "tradingDate": "2025-12-18"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -341,17 +341,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 3999.1299,
-      "previousClose": 4090.5901,
-      "priceChange": -2.24,
-      "direction": "down",
-      "tradingDate": "2025-12-16"
+      "closePrice": 4056.4099,
+      "previousClose": 3999.1299,
+      "priceChange": 1.43,
+      "direction": "up",
+      "tradingDate": "2025-12-17"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -391,17 +391,17 @@
     "marketData": {
       "asset": "Shipbuilding",
       "ticker": "009540.KS",
-      "closePrice": 442000,
-      "previousClose": 447500,
-      "priceChange": -1.23,
-      "direction": "down",
-      "tradingDate": "2025-12-10"
+      "closePrice": 445500,
+      "previousClose": 442000,
+      "priceChange": 0.79,
+      "direction": "up",
+      "tradingDate": "2025-12-11"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -435,17 +435,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4154.8501,
-      "previousClose": 4100.0498,
-      "priceChange": 1.34,
-      "direction": "up",
-      "tradingDate": "2025-12-08"
+      "closePrice": 4143.5498,
+      "previousClose": 4154.8501,
+      "priceChange": -0.27,
+      "direction": "down",
+      "tradingDate": "2025-12-09"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -477,17 +477,17 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 108970.2812,
-      "previousClose": 107875.6016,
-      "priceChange": 1.01,
-      "direction": "up",
-      "tradingDate": "2025-12-08"
+      "closePrice": 107875.6016,
+      "previousClose": 108970.2812,
+      "priceChange": -1,
+      "direction": "down",
+      "tradingDate": "2025-12-09"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
   },
   {
@@ -520,17 +520,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4036.3,
-      "previousClose": 3994.9299,
-      "priceChange": 1.04,
-      "direction": "up",
-      "tradingDate": "2025-12-03"
+      "closePrice": 4028.51,
+      "previousClose": 4036.3,
+      "priceChange": -0.19,
+      "direction": "down",
+      "tradingDate": "2025-12-04"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -563,305 +563,17 @@
     "marketData": {
       "asset": "Battery",
       "ticker": "373220.KS",
-      "closePrice": 413000,
-      "previousClose": 408000,
-      "priceChange": 1.23,
+      "closePrice": 415000,
+      "previousClose": 413000,
+      "priceChange": 0.48,
       "direction": "up",
-      "tradingDate": "2025-12-01"
+      "tradingDate": "2025-12-02"
     },
     "judgment": {
       "predictedDirection": "bullish",
       "actualDirection": "bullish",
       "isHoney": false,
       "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
-    }
-  },
-  {
-    "videoId": "aLY3A8D1EcQ",
-    "title": "은과 환율이 급락하고, 코스피만 오르는 이유",
-    "publishedAt": "2025-12-29T10:13:47Z",
-    "analysis": {
-      "method": "v2-score-recovered",
-      "model": "v2-regex",
-      "timestamp": "2026-02-05T23:56:33.383Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "v2 점수: 부정 1 > 긍정 0",
-        "confidence": 0.5
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 4220.5601,
-      "previousClose": 4129.6802,
-      "priceChange": 2.2,
-      "direction": "up",
-      "tradingDate": "2025-12-29"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정 전망 → 실제 상승 → 역지표 적중!"
-    }
-  },
-  {
-    "videoId": "Q58k3PYpqEE",
-    "title": "미국주식 팔고 한국주식 사면 100% 양도세 감면(ft.환율급락)",
-    "publishedAt": "2025-12-24T06:00:05Z",
-    "analysis": {
-      "method": "v2-score-recovered",
-      "model": "v2-regex",
-      "timestamp": "2026-02-05T23:56:35.807Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "v2 점수: 부정 1 > 긍정 0",
-        "confidence": 0.5
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 4108.6201,
-      "previousClose": 4117.3198,
-      "priceChange": -0.21,
-      "direction": "down",
-      "tradingDate": "2025-12-24"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정 전망 → 실제 하락 → 예측대로"
-    }
-  },
-  {
-    "videoId": "qyXMu0tBmwM",
-    "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
-    "publishedAt": "2025-12-16T10:12:58Z",
-    "analysis": {
-      "method": "v2-score-recovered",
-      "model": "v2-regex",
-      "timestamp": "2026-02-05T23:56:38.069Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "v2 점수: 부정 1 > 긍정 0",
-        "confidence": 0.5
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 3999.1299,
-      "previousClose": 4090.5901,
-      "priceChange": -2.24,
-      "direction": "down",
-      "tradingDate": "2025-12-16"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정 전망 → 실제 하락 → 예측대로"
-    }
-  },
-  {
-    "videoId": "oRPza9FG97E",
-    "title": "2026년 코스피 5000만들겠습니다. (ft.이소영 의원 풀버전)",
-    "publishedAt": "2025-12-31T23:51:38Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:56:40.281Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '2026년 코스피 5000만들겠습니다'라는 표현은 코스피 지수가 상승할 것이라는 긍정적인 전망을 나타냅니다. 특히 '만들겠습니다'라는 의지적인 표현은 목표를 달성하겠다는 낙관적인 뉘앙스를 주고 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 4309.6299,
-      "previousClose": 4214.1699,
-      "priceChange": 2.27,
-      "direction": "up",
-      "tradingDate": "2026-01-02"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정 전망 → 실제 상승 → 예측대로"
-    }
-  },
-  {
-    "videoId": "fIyQXZ4W4o8",
-    "title": "코스피 1만까지 오를 수 있습니다(ft.소현철 교수 1부)",
-    "publishedAt": "2025-12-21T00:38:52Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:56:42.577Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '코스피 1만까지 오를 수 있습니다'라는 표현은 코스피 지수가 크게 상승할 가능성을 언급하고 있으며, 이는 긍정적인 전망을 나타냅니다. 특히 '오를 수 있습니다'라는 부분은 낙관적인 뉘앙스를 가지고 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 4105.9302,
-      "previousClose": 4020.55,
-      "priceChange": 2.12,
-      "direction": "up",
-      "tradingDate": "2025-12-22"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정 전망 → 실제 상승 → 예측대로"
-    }
-  },
-  {
-    "videoId": "L-SzNCM-Ej4",
-    "title": "배당소득 분리과세로 코스피 5000 만들겠습니다. (ft.이소영 의원 1부)",
-    "publishedAt": "2025-12-19T04:27:51Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:56:45.059Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '코스피 5000 만들겠습니다'라는 표현은 코스피 지수가 상승할 것이라는 낙관적인 전망을 나타내고 있습니다. '배당소득 분리과세'라는 정책이 긍정적인 영향을 미칠 것이라는 기대감을 드러내고 있으며, 이는 호재로 해석될 수 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 4020.55,
-      "previousClose": 3994.51,
-      "priceChange": 0.65,
-      "direction": "up",
-      "tradingDate": "2025-12-19"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정 전망 → 실제 상승 → 예측대로"
-    }
-  },
-  {
-    "videoId": "j4kFk-0kKyw",
-    "title": "테슬라 500달러 갔다, 적정주가 1000달러인 이유",
-    "publishedAt": "2025-12-17T09:43:46Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:56:46.256Z",
-      "detectedAssets": [
-        {
-          "asset": "Tesla",
-          "ticker": "TSLA"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '테슬라 500달러 갔다, 적정주가 1000달러인 이유'라는 표현은 현재 주가가 500달러인데, 적정 주가가 1000달러라고 언급하며 상승 여력이 있다는 긍정적인 전망을 제시하고 있습니다. '적정주가 1000달러인 이유'라는 부분은 테슬라 주가가 더 오를 가능성이 있다는 낙관적인 뉘앙스를 담고 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "Tesla",
-      "ticker": "TSLA",
-      "closePrice": 467.26,
-      "previousClose": 489.88,
-      "priceChange": -4.62,
-      "direction": "down",
-      "tradingDate": "2025-12-17"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정 전망 → 실제 하락 → 역지표 적중!"
-    }
-  },
-  {
-    "videoId": "s_fzguS0IFQ",
-    "title": "코스피 더 오를 겁니다. 이 기업이 제일 기대됩니다.(ft. 염승환 이사 1부)",
-    "publishedAt": "2025-12-03T10:01:37Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:56:48.394Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '코스피 더 오를 겁니다'라는 표현은 코스피 지수에 대한 긍정적인 전망을 나타내고 있으며, '이 기업이 제일 기대됩니다'라는 부분은 특정 기업에 대한 긍정적인 기대감을 드러내고 있습니다. 따라서 전반적으로 낙관적인 전망을 제시하고 있다고 판단할 수 있습니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 4036.3,
-      "previousClose": 3994.9299,
-      "priceChange": 1.04,
-      "direction": "up",
-      "tradingDate": "2025-12-03"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정 전망 → 실제 상승 → 예측대로"
     }
   }
 ]

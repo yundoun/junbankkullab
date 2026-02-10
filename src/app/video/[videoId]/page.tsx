@@ -15,6 +15,7 @@ interface AssetResult {
   isHoney: boolean
   priceChange?: number
   closePrice?: number
+  previousClose?: number
   tradingDate?: string
 }
 
@@ -253,40 +254,87 @@ export default function VideoDetailPage() {
             <span>📈</span> 종목별 결과
           </h3>
           
-          <div className="space-y-3">
+          <div className="space-y-4">
             {data.assetResults.map((result, idx) => (
               <div 
                 key={idx}
                 className={cn(
-                  "flex items-center justify-between p-3 rounded-lg",
-                  result.isHoney ? "bg-amber-500/10" : "bg-muted/50"
+                  "rounded-xl border",
+                  result.isHoney ? "bg-amber-500/10 border-amber-500/20" : "bg-muted/30 border-border"
                 )}
               >
-                <div className="flex items-center gap-3">
-                  <span className="text-lg">{result.isHoney ? '🍯' : '📊'}</span>
-                  <div>
-                    <p className="font-medium">
-                      {ASSET_NAMES[result.asset] || result.asset}
+                {/* 종목 헤더 */}
+                <div className="flex items-center justify-between p-4 border-b border-border/50">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">{result.isHoney ? '🍯' : '📊'}</span>
+                    <div>
+                      <p className="font-semibold">
+                        {ASSET_NAMES[result.asset] || result.asset}
+                      </p>
+                      {result.ticker && (
+                        <p className="text-xs text-muted-foreground">{result.ticker}</p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="text-right">
+                    <p className={cn(
+                      "text-xl font-bold tabular-nums",
+                      result.priceChange !== undefined && result.priceChange >= 0 
+                        ? "text-bullish" 
+                        : "text-bearish"
+                    )}>
+                      {result.priceChange !== undefined 
+                        ? `${result.priceChange >= 0 ? '+' : ''}${result.priceChange.toFixed(2)}%`
+                        : '-'}
                     </p>
-                    {result.ticker && (
-                      <p className="text-xs text-muted-foreground">{result.ticker}</p>
-                    )}
+                    <p className={cn(
+                      "text-xs font-medium",
+                      result.isHoney ? "text-amber-600 dark:text-amber-400" : "text-muted-foreground"
+                    )}>
+                      {result.isHoney ? '역지표 적중!' : '예측대로'}
+                    </p>
                   </div>
                 </div>
                 
-                <div className="text-right">
-                  <p className={cn(
-                    "font-bold tabular-nums",
-                    result.priceChange !== undefined && result.priceChange >= 0 
-                      ? "text-bullish" 
-                      : "text-bearish"
-                  )}>
-                    {result.priceChange !== undefined 
-                      ? `${result.priceChange >= 0 ? '+' : ''}${result.priceChange.toFixed(2)}%`
-                      : '-'}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {result.isHoney ? '역지표 적중' : '예측대로'}
+                {/* 시장 데이터 상세 */}
+                <div className="p-4 grid grid-cols-2 gap-3 text-sm">
+                  {result.tradingDate && (
+                    <div className="col-span-2 sm:col-span-1">
+                      <p className="text-xs text-muted-foreground mb-0.5">분석 기준일</p>
+                      <p className="font-medium">
+                        {new Date(result.tradingDate).toLocaleDateString('ko-KR', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {result.previousClose !== undefined && (
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-0.5">전일 종가</p>
+                      <p className="font-medium tabular-nums">
+                        {result.previousClose.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {result.closePrice !== undefined && (
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-0.5">당일 종가</p>
+                      <p className="font-medium tabular-nums">
+                        {result.closePrice.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}
+                      </p>
+                    </div>
+                  )}
+                </div>
+                
+                {/* 데이터 출처 */}
+                <div className="px-4 pb-3">
+                  <p className="text-[10px] text-muted-foreground/70">
+                    📊 데이터 출처: Yahoo Finance (yfinance)
                   </p>
                 </div>
               </div>

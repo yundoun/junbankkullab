@@ -1,83 +1,219 @@
 [
   {
-    "videoId": "MA2pCxgR3nM",
-    "title": "코스피4000 장중붕괴 된 이유(ft.조정? 악재?)",
-    "publishedAt": "2025-10-28T07:54:31Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 2
+    "videoId": "p3DMobBEzxI",
+    "title": "트럼프가 내년에 스테이블코인을 무기로 쓸 겁니다(ft.김광석 실장 2부)",
+    "publishedAt": "2025-10-27T09:21:54Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:05:58.048Z",
+      "detectedAssets": [
+        {
+          "asset": "Cryptocurrency",
+          "ticker": "UNKNOWN",
+          "matchedText": "스테이블코인",
+          "confidence": 0.9,
+          "reasoning": "스테이블코인은 암호화폐의 일종으로, 가격이 안정적인 특성을 가지고 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "무기로 쓸",
+          "트럼프",
+          "스테이블코인"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 없어 중립적이라고 판단했습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Cryptocurrency\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"스테이블코인은 암호화폐의 일종으로, 가격이 안정적인 특성을 가지고 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"무기로 쓸\", \"트럼프\", \"스테이블코인\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 없어 중립적이라고 판단했습니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "tUo1dWHURsU",
-    "title": "코스피 4000 넘었습니다 이제 이 주식이 오릅니다(ft. 차영주 소장 1부)",
-    "publishedAt": "2025-10-28T03:05:41Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "3Aqrf8TadoI",
+    "title": "G2 패권 전쟁 시대의 미국 주식 투자, 미국넥스트테크TOP10 ETF가 나왔습니다(ft.SOL미국넥스트테크TOP10 ETF)",
+    "publishedAt": "2025-10-23T09:00:05Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:06:23.382Z",
+      "detectedAssets": [
+        {
+          "asset": "ETF",
+          "ticker": "UNKNOWN",
+          "matchedText": "미국넥스트테크TOP10 ETF",
+          "confidence": 0.9,
+          "reasoning": "제목에서 '미국넥스트테크TOP10 ETF'가 언급되어 있어 ETF로 분류됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없어서 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"미국넥스트테크TOP10 ETF\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"제목에서 '미국넥스트테크TOP10 ETF'가 언급되어 있어 ETF로 분류됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없어서 판단이 불가함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "MOhdXWO5xzY",
-    "title": "코스피4000 다음은 바이오 대세장인 이유(ft.강하나 1부)",
-    "publishedAt": "2025-10-27T03:39:02Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "vPGIDKmB548",
-    "title": "코스피 4000 미리 축하드립니다, 내년 주도주 예상",
-    "publishedAt": "2025-10-24T06:16:26Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "prZeyU3_uZo",
+    "title": "나스닥 상장사가 솔라나만 사서 모으는 이유(ft.DFDV Parker White)",
+    "publishedAt": "2025-10-23T04:10:01Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:06:26.078Z",
+      "detectedAssets": [
+        {
+          "asset": "NASDAQ",
+          "ticker": "^IXIC",
+          "matchedText": "나스닥",
+          "confidence": 0.95,
+          "reasoning": "제목에 '나스닥'이 언급되어 있어 지수로 추출함."
+        },
+        {
+          "asset": "Ethereum",
+          "ticker": "ETH-USD",
+          "matchedText": "솔라나",
+          "confidence": 0.85,
+          "reasoning": "솔라나는 암호화폐로, Ethereum과 유사한 맥락에서 언급될 수 있음."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "사서 모으는 이유"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 정보가 부족함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"NASDAQ\",\n      \"matchedText\": \"나스닥\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '나스닥'이 언급되어 있어 지수로 추출함.\"\n    },\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"솔라나\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"솔라나는 암호화폐로, Ethereum과 유사한 맥락에서 언급될 수 있음.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"사서 모으는 이유\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 정보가 부족함.\"\n  }\n}"
+    }
   },
   {
     "videoId": "o5Qq3Yzasrw",
     "title": "금, 코인, 환율 무시하고 코스피만 오르는 이유",
     "publishedAt": "2025-10-22T10:33:02Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:06:29.865Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '코스피'라는 지수가 언급되어 있어 이를 KOSPI로 식별함."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "무시하고",
+          "오르는 이유"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 나타내지 않고, 코스피의 상승 이유를 언급하고 있어 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 지수가 언급되어 있어 이를 KOSPI로 식별함.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"무시하고\", \"오르는 이유\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 나타내지 않고, 코스피의 상승 이유를 언급하고 있어 판단이 불가함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "qDxns-qy57I",
-    "title": "삼성전자 호재, 외국인들은 연휴전에 미리 알았다",
-    "publishedAt": "2025-10-10T06:58:55Z",
-    "asset": "Samsung",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "BiMu6dhZ4HM",
+    "title": "스테이블코인 실제로 여기서 씁니다 모두가 잘못 알고 있어요(ft.이지민 대표 2부)",
+    "publishedAt": "2025-10-16T06:35:36Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:06:36.937Z",
+      "detectedAssets": [
+        {
+          "asset": "Ethereum",
+          "ticker": "ETH-USD",
+          "matchedText": "스테이블코인",
+          "confidence": 0.85,
+          "reasoning": "스테이블코인은 일반적으로 암호화폐의 한 종류로, 이와 관련된 내용으로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "잘못 알고 있어요"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 알 수 없으므로 중립으로 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"스테이블코인은 일반적으로 암호화폐의 한 종류로, 이와 관련된 내용으로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"잘못 알고 있어요\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 알 수 없으므로 중립으로 판단됨.\"\n  }\n}"
+    }
   },
   {
     "videoId": "DQbFaiZKeGk",
     "title": "조선, 방산 이 기업만 한 게 없습니다(ft. 차영주 소장 2부)",
     "publishedAt": "2025-10-03T04:57:58Z",
-    "asset": "Shipbuilding",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:07:19.641Z",
+      "detectedAssets": [
+        {
+          "asset": "Shipbuilding",
+          "ticker": "009540.KS",
+          "matchedText": "조선",
+          "confidence": 0.95,
+          "reasoning": "조선은 조선주를 의미하며, 해당 섹터를 명확히 나타냅니다."
+        },
+        {
+          "asset": "Defense",
+          "ticker": "012450.KS",
+          "matchedText": "방산",
+          "confidence": 0.95,
+          "reasoning": "방산은 방산주를 의미하며, 해당 섹터를 명확히 나타냅니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Shipbuilding\",\n      \"matchedText\": \"조선\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"조선은 조선주를 의미하며, 해당 섹터를 명확히 나타냅니다.\"\n    },\n    {\n      \"asset\": \"Defense\",\n      \"matchedText\": \"방산\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"방산은 방산주를 의미하며, 해당 섹터를 명확히 나타냅니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "qDmJOObsGkQ",
     "title": "삼성전자 9만원 터치, 샘알트만이 한국에 온 이유(ft.HBM전쟁)",
     "publishedAt": "2025-10-02T09:18:44Z",
-    "asset": "Samsung",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "B9SmCbml0cI",
-    "title": "국장에 투자하세요 저 슈퍼개미 되었습니다(ft.박두환 대표 1부)",
-    "publishedAt": "2025-10-02T02:42:21Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:07:23.240Z",
+      "detectedAssets": [
+        {
+          "asset": "Samsung",
+          "ticker": "005930.KS",
+          "matchedText": "삼성전자",
+          "confidence": 0.95,
+          "reasoning": "삼성전자는 한국의 대표적인 기술 기업으로, 제목에서 직접 언급됨."
+        },
+        {
+          "asset": "Semiconductor",
+          "ticker": "005930.KS",
+          "matchedText": "HBM전쟁",
+          "confidence": 0.85,
+          "reasoning": "HBM(High Bandwidth Memory)은 반도체 기술의 일종으로, 관련된 섹터로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "9만원 터치",
+          "이유"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 나타내지 않음."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Samsung\",\n      \"matchedText\": \"삼성전자\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"삼성전자는 한국의 대표적인 기술 기업으로, 제목에서 직접 언급됨.\"\n    },\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"HBM전쟁\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"HBM(High Bandwidth Memory)은 반도체 기술의 일종으로, 관련된 섹터로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"9만원 터치\", \"이유\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 나타내지 않음.\"\n  }\n}"
+    }
   }
 ]

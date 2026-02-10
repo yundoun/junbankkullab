@@ -111,6 +111,7 @@ export async function GET(
           isHoney: r.judgment?.isHoney || false,
           priceChange: r.marketData?.priceChange,
           closePrice: r.marketData?.closePrice,
+          previousClose: r.marketData?.previousClose,
           tradingDate: r.marketData?.tradingDate,
         }
       } else {
@@ -122,6 +123,7 @@ export async function GET(
           isHoney: r.isHoney || false,
           priceChange: undefined,
           closePrice: undefined,
+          previousClose: undefined,
           tradingDate: undefined,
         }
       }

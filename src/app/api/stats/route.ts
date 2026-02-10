@@ -31,6 +31,7 @@ interface Mention {
   actualDirection?: 'up' | 'down' | 'flat' | 'no_data'
   isHoney?: boolean
   priceChange?: number | null
+  tradingDate?: string
 }
 
 interface HybridAnalysis {
@@ -195,6 +196,41 @@ interface VotableItem {
   expiresAt: string // 투표 마감 시간 (24시간 후)
 }
 
+// analyzed.json에서 tradingDate 매핑 로드
+async function getTradingDates(): Promise<Record<string, string>> {
+  const result: Record<string, string> = {}
+  const dataDir = path.join(process.cwd(), 'data')
+  
+  try {
+    const years = (await fs.readdir(dataDir)).filter(d => /^\d{4}$/.test(d))
+    
+    for (const year of years) {
+      const yearPath = path.join(dataDir, year)
+      const months = (await fs.readdir(yearPath)).filter(d => /^\d{2}$/.test(d))
+      
+      for (const month of months) {
+        const analyzedPath = path.join(yearPath, month, 'analyzed.json')
+        try {
+          const data = await fs.readFile(analyzedPath, 'utf-8')
+          const items = JSON.parse(data)
+          for (const item of items) {
+            if (item.marketData?.tradingDate) {
+              const key = `${item.videoId}_${item.marketData.asset}`
+              result[key] = item.marketData.tradingDate
+            }
+          }
+        } catch {
+          // 파일 없으면 스킵
+        }
+      }
+    }
+  } catch {
+    // 에러 무시
+  }
+  
+  return result
+}
+
 // LLM 캐시 로드 (v3 분석 결과)
 async function getLLMCache(): Promise<Record<string, { tone: string; assets: string[] }>> {
   try {
@@ -302,6 +338,9 @@ export async function GET() {
       // overall.json 없으면 무시
     }
 
+    // tradingDate 매핑 로드
+    const tradingDates = await getTradingDates()
+
     // 실제 방향을 PredictionDirection으로 변환
     const mapDirection = (dir?: 'up' | 'down' | 'flat' | 'no_data'): 'bullish' | 'bearish' | undefined => {
       if (dir === 'up') return 'bullish'
@@ -310,20 +349,24 @@ export async function GET() {
     }
 
     // 멘션을 카드 형태로 변환
-    const mapMention = (m: Mention) => ({
-      videoId: m.videoId,
-      title: m.title,
-      thumbnail: `https://i.ytimg.com/vi/${m.videoId}/hqdefault.jpg`,
-      publishedAt: m.publishedAt,
-      asset: m.asset,
-      predictedDirection: m.tone === 'positive' ? 'bullish' : 'bearish',
-      actualDirection: mapDirection(m.actualDirection),
-      isHoney: m.isHoney,
-      status: m.isHoney !== undefined 
-        ? (m.isHoney ? 'correct' : 'incorrect')
-        : 'pending',
-      priceChange: m.priceChange ?? undefined,
-    })
+    const mapMention = (m: Mention) => {
+      const tradingDateKey = `${m.videoId}_${m.asset}`
+      return {
+        videoId: m.videoId,
+        title: m.title,
+        thumbnail: `https://i.ytimg.com/vi/${m.videoId}/hqdefault.jpg`,
+        publishedAt: m.publishedAt,
+        asset: m.asset,
+        predictedDirection: m.tone === 'positive' ? 'bullish' : 'bearish',
+        actualDirection: mapDirection(m.actualDirection),
+        isHoney: m.isHoney,
+        status: m.isHoney !== undefined 
+          ? (m.isHoney ? 'correct' : 'incorrect')
+          : 'pending',
+        priceChange: m.priceChange ?? undefined,
+        tradingDate: tradingDates[tradingDateKey] || undefined,
+      }
+    }
 
     // 정렬 (최신순)
     const sortedMentions = [...parsed.mentions]

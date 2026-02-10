@@ -21,6 +21,8 @@ interface PredictionCardProps extends React.HTMLAttributes<HTMLDivElement> {
   priceChange?: number // percentage
   videoUrl?: string
   index?: number // for stagger animation
+  tradingDate?: string // e.g. "2026-02-10"
+  dataSource?: string // default: "Yahoo Finance"
 }
 
 export function PredictionCard({
@@ -35,6 +37,8 @@ export function PredictionCard({
   priceChange,
   videoUrl,
   index = 0,
+  tradingDate,
+  dataSource = "Yahoo Finance",
   className,
   ...props
 }: PredictionCardProps) {
@@ -217,6 +221,13 @@ export function PredictionCard({
               </span>
             )}
           </div>
+          
+          {/* 출처 정보 - 결과가 있을 때만 표시 */}
+          {status !== "pending" && tradingDate && (
+            <span className="text-xs text-muted-foreground/70 whitespace-nowrap">
+              {new Date(tradingDate).toLocaleDateString('ko-KR', { month: 'numeric', day: 'numeric' })} 종가 · {dataSource}
+            </span>
+          )}
         </div>
       </div>
       

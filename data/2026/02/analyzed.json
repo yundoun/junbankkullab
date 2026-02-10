@@ -36,11 +36,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 5298.04,
-      "previousClose": 5089.1401,
-      "priceChange": 4.1,
+      "closePrice": 5322.2798,
+      "previousClose": 5298.04,
+      "priceChange": 0.46,
       "direction": "up",
-      "tradingDate": "2026-02-09"
+      "tradingDate": "2026-02-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -86,11 +86,11 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 166400,
-      "previousClose": 158600,
-      "priceChange": 4.92,
+      "closePrice": 166800,
+      "previousClose": 166400,
+      "priceChange": 0.24,
       "direction": "up",
-      "tradingDate": "2026-02-09"
+      "tradingDate": "2026-02-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -130,17 +130,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 70264.7266,
-      "previousClose": 69281.9688,
-      "priceChange": 1.42,
-      "direction": "up",
-      "tradingDate": "2026-02-08"
+      "closePrice": 69690.7656,
+      "previousClose": 70264.7266,
+      "priceChange": -0.82,
+      "direction": "down",
+      "tradingDate": "2026-02-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -172,11 +172,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 5298.04,
-      "previousClose": 5089.1401,
-      "priceChange": 4.1,
+      "closePrice": 5322.2798,
+      "previousClose": 5298.04,
+      "priceChange": 0.46,
       "direction": "up",
-      "tradingDate": "2026-02-09"
+      "tradingDate": "2026-02-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -214,11 +214,11 @@
     "marketData": {
       "asset": "Shipbuilding",
       "ticker": "009540.KS",
-      "closePrice": 409000,
-      "previousClose": 424500,
-      "priceChange": -3.65,
+      "closePrice": 395500,
+      "previousClose": 409000,
+      "priceChange": -3.3,
       "direction": "down",
-      "tradingDate": "2026-02-05"
+      "tradingDate": "2026-02-06"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -257,11 +257,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 5288.0801,
-      "previousClose": 4949.6699,
-      "priceChange": 6.84,
+      "closePrice": 5371.1001,
+      "previousClose": 5288.0801,
+      "priceChange": 1.57,
       "direction": "up",
-      "tradingDate": "2026-02-03"
+      "tradingDate": "2026-02-04"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -306,17 +306,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 4949.6699,
-      "previousClose": 5224.3599,
-      "priceChange": -5.26,
-      "direction": "down",
-      "tradingDate": "2026-02-02"
+      "closePrice": 5288.0801,
+      "previousClose": 4949.6699,
+      "priceChange": 6.84,
+      "direction": "up",
+      "tradingDate": "2026-02-03"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -355,17 +355,17 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 150400,
-      "previousClose": 160500,
-      "priceChange": -6.29,
-      "direction": "down",
-      "tradingDate": "2026-02-02"
+      "closePrice": 167500,
+      "previousClose": 150400,
+      "priceChange": 11.37,
+      "direction": "up",
+      "tradingDate": "2026-02-03"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   }
 ]

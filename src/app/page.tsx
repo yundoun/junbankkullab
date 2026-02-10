@@ -32,6 +32,7 @@ interface Prediction {
   isHoney?: boolean
   status: 'correct' | 'incorrect' | 'pending'
   priceChange?: number
+  tradingDate?: string
 }
 
 interface TimelineData {
@@ -179,6 +180,7 @@ function PredictionList({ stats }: { stats: Stats | null }) {
                 status={prediction.status}
                 actualDirection={prediction.actualDirection}
                 priceChange={prediction.priceChange}
+                tradingDate={prediction.tradingDate}
                 index={idx}
               />
             ))}

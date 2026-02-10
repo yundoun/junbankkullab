@@ -1,74 +1,151 @@
 [
   {
-    "videoId": "IJ1KD9svbVU",
-    "title": "조선주를 사야하는 이유(ft.박민수 작가 3부)",
-    "publishedAt": "2025-08-28T05:59:34Z",
-    "asset": "Shipbuilding",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "zfoKREVGfbQ",
-    "title": "두근두근 엔비디아 실적예상",
-    "publishedAt": "2025-08-27T10:03:15Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
     "videoId": "7vGui1PwAkU",
     "title": "3조달러가 된 엔비디아 첫 사무실에 그분이?",
     "publishedAt": "2025-08-27T07:32:13Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:02:09.110Z",
+      "detectedAssets": [
+        {
+          "asset": "Nvidia",
+          "ticker": "NVDA",
+          "matchedText": "엔비디아",
+          "confidence": 0.95,
+          "reasoning": "제목에 '엔비디아'라는 명확한 종목명이 언급되어 있어 추출하였습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔비디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '엔비디아'라는 명확한 종목명이 언급되어 있어 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없으므로 판단이 불가합니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "PKfuLdeaipw",
-    "title": "코스피 3500은 쉽게 갈 겁니다(ft. 차영주 소장 1부)",
-    "publishedAt": "2025-08-16T04:53:40Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "0yc52GqMh2M",
+    "title": "스테이블코인 수혜주는 여기입니다(ft. 정구태 최고책임자 2부)",
+    "publishedAt": "2025-08-24T06:07:00Z",
+    "reason": "unknown_asset: Crypto",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:02:35.811Z",
+      "detectedAssets": [
+        {
+          "asset": "Crypto",
+          "ticker": "UNKNOWN",
+          "matchedText": "스테이블코인",
+          "confidence": 0.9,
+          "reasoning": "스테이블코인은 암호화폐의 한 종류로, 가격이 안정적인 특성을 가지고 있어 수혜주와 관련이 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "수혜주"
+        ],
+        "reasoning": "스테이블코인과 관련된 주식이 긍정적인 영향을 받을 것이라는 암시가 있어 긍정적인 전망으로 판단했습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Crypto\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"스테이블코인은 암호화폐의 한 종류로, 가격이 안정적인 특성을 가지고 있어 수혜주와 관련이 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"수혜주\"],\n    \"reasoning\": \"스테이블코인과 관련된 주식이 긍정적인 영향을 받을 것이라는 암시가 있어 긍정적인 전망으로 판단했습니다.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "79JWcW2k_uo",
-    "title": "한국이 비트코인 강국이 되려면(ft.강승구 부대표 2부)",
-    "publishedAt": "2025-08-09T06:37:28Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "videoId": "WO4Loooq4wk",
+    "title": "원자력 쇼크, 웨스팅하우스는 왜 그러는걸까?",
+    "publishedAt": "2025-08-19T11:17:08Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:02:59.201Z",
+      "detectedAssets": [
+        {
+          "asset": "Nuclear",
+          "ticker": "034020.KS",
+          "matchedText": "원자력",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '원자력'이라는 단어가 명시되어 있어 원자력 섹터와 관련이 있다고 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "원자력",
+          "쇼크"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 단어가 없으며, '쇼크'라는 단어는 상황의 심각성을 나타내지만 긍정적이거나 부정적인 판단을 내리기에는 부족함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"원자력\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '원자력'이라는 단어가 명시되어 있어 원자력 섹터와 관련이 있다고 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"원자력\", \"쇼크\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 단어가 없으며, '쇼크'라는 단어는 상황의 심각성을 나타내지만 긍정적이거나 부정적인 판단을 내리기에는 부족함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "5f97Ap2_108",
-    "title": "비트코인 지금이라도 사야합니다(ft.강승구 부대표 1부)",
-    "publishedAt": "2025-08-07T02:58:38Z",
-    "asset": "Bitcoin",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "-DmvxN1EEVI",
+    "title": "관세300%, 지분인수까지 트럼프가 인텔을 살리려는 이유",
+    "publishedAt": "2025-08-18T09:30:00Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:03:06.761Z",
+      "detectedAssets": [
+        {
+          "asset": "Semiconductor",
+          "ticker": "005930.KS",
+          "matchedText": "인텔",
+          "confidence": 0.95,
+          "reasoning": "인텔은 반도체 산업의 주요 기업으로, 제목에서 언급된 '인텔'을 통해 반도체 섹터와 연결됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "관세",
+          "지분인수",
+          "트럼프",
+          "인텔"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 나타내는 키워드가 없으며, 정보 전달의 성격이 강함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Semiconductor\",\n      \"matchedText\": \"인텔\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"인텔은 반도체 산업의 주요 기업으로, 제목에서 언급된 '인텔'을 통해 반도체 섹터와 연결됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"관세\", \"지분인수\", \"트럼프\", \"인텔\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 나타내는 키워드가 없으며, 정보 전달의 성격이 강함.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "OK9b1Y-rDkk",
-    "title": "미국증시마저 하락한 이유(ft.무너지는 일자리)",
-    "publishedAt": "2025-08-02T05:49:26Z",
-    "asset": "NASDAQ",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 2
-  },
-  {
-    "videoId": "oiwcJmhJrVY",
-    "title": "코스피가 3% 넘게 하락한 이유",
-    "publishedAt": "2025-08-01T05:37:58Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "QiJ5IX_D-0Y",
+    "title": "조선과 AI가 만났을 때 벌어질 무서운 일(ft.새로운 질서)",
+    "publishedAt": "2025-08-01T10:00:52Z",
+    "reason": "unknown_asset: AI",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:04:03.717Z",
+      "detectedAssets": [
+        {
+          "asset": "Shipbuilding",
+          "ticker": "009540.KS",
+          "matchedText": "조선",
+          "confidence": 0.95,
+          "reasoning": "조선은 조선주를 의미하며, 해당 섹터를 명확히 나타냅니다."
+        },
+        {
+          "asset": "AI",
+          "ticker": "UNKNOWN",
+          "matchedText": "AI",
+          "confidence": 0.85,
+          "reasoning": "AI는 특정 종목이 아니지만, 인공지능 관련 기술을 나타내는 키워드로 사용되었습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "negative",
+        "keywords": [
+          "무서운 일"
+        ],
+        "reasoning": "무서운 일이라는 표현은 부정적인 전망을 암시합니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Shipbuilding\",\n      \"matchedText\": \"조선\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"조선은 조선주를 의미하며, 해당 섹터를 명확히 나타냅니다.\"\n    },\n    {\n      \"asset\": \"AI\",\n      \"matchedText\": \"AI\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"AI는 특정 종목이 아니지만, 인공지능 관련 기술을 나타내는 키워드로 사용되었습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"negative\",\n    \"keywords\": [\"무서운 일\"],\n    \"reasoning\": \"무서운 일이라는 표현은 부정적인 전망을 암시합니다.\"\n  }\n}"
+    }
   }
 ]

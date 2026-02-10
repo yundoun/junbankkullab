@@ -28,11 +28,11 @@
     "marketData": {
       "asset": "Nvidia",
       "ticker": "NVDA",
-      "closePrice": 120.0372,
-      "previousClose": 124.6159,
-      "priceChange": -3.67,
+      "closePrice": 116.6281,
+      "previousClose": 120.0372,
+      "priceChange": -2.84,
       "direction": "down",
-      "tradingDate": "2025-01-31"
+      "tradingDate": "2025-02-03"
     },
     "judgment": {
       "predictedDirection": "bearish",
@@ -71,11 +71,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2517.3701,
-      "previousClose": 2536.8,
-      "priceChange": -0.77,
+      "closePrice": 2453.95,
+      "previousClose": 2517.3701,
+      "priceChange": -2.52,
       "direction": "down",
-      "tradingDate": "2025-01-31"
+      "tradingDate": "2025-02-03"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -120,17 +120,17 @@
     "marketData": {
       "asset": "NASDAQ",
       "ticker": "^IXIC",
-      "closePrice": 19341.8301,
-      "previousClose": 19954.3008,
-      "priceChange": -3.07,
-      "direction": "down",
-      "tradingDate": "2025-01-27"
+      "closePrice": 19733.5898,
+      "previousClose": 19341.8301,
+      "priceChange": 2.03,
+      "direction": "up",
+      "tradingDate": "2025-01-28"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -169,17 +169,17 @@
     "marketData": {
       "asset": "Nvidia",
       "ticker": "NVDA",
-      "closePrice": 118.3876,
-      "previousClose": 142.581,
-      "priceChange": -16.97,
-      "direction": "down",
-      "tradingDate": "2025-01-27"
+      "closePrice": 128.9547,
+      "previousClose": 118.3876,
+      "priceChange": 8.93,
+      "direction": "up",
+      "tradingDate": "2025-01-28"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -212,17 +212,17 @@
     "marketData": {
       "asset": "Nuclear",
       "ticker": "034020.KS",
-      "closePrice": 23850,
-      "previousClose": 23950,
-      "priceChange": -0.42,
-      "direction": "down",
-      "tradingDate": "2025-01-23"
+      "closePrice": 24700,
+      "previousClose": 23850,
+      "priceChange": 3.56,
+      "direction": "up",
+      "tradingDate": "2025-01-24"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -254,11 +254,11 @@
     "marketData": {
       "asset": "Nuclear",
       "ticker": "034020.KS",
-      "closePrice": 21750,
-      "previousClose": 20800,
-      "priceChange": 4.57,
+      "closePrice": 21900,
+      "previousClose": 21750,
+      "priceChange": 0.69,
       "direction": "up",
-      "tradingDate": "2025-01-17"
+      "tradingDate": "2025-01-20"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -297,17 +297,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 92484.0391,
-      "previousClose": 95043.5234,
-      "priceChange": -2.69,
-      "direction": "down",
-      "tradingDate": "2025-01-09"
+      "closePrice": 94701.4531,
+      "previousClose": 92484.0391,
+      "priceChange": 2.4,
+      "direction": "up",
+      "tradingDate": "2025-01-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -340,17 +340,17 @@
     "marketData": {
       "asset": "Nvidia",
       "ticker": "NVDA",
-      "closePrice": 140.0717,
-      "previousClose": 140.1017,
-      "priceChange": -0.02,
-      "direction": "flat",
-      "tradingDate": "2025-01-08"
+      "closePrice": 135.8728,
+      "previousClose": 140.0717,
+      "priceChange": -3,
+      "direction": "down",
+      "tradingDate": "2025-01-10"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "flat",
+      "actualDirection": "bearish",
       "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 보합 → 예측대로"
+      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
   },
   {
@@ -389,11 +389,11 @@
     "marketData": {
       "asset": "Steel",
       "ticker": "005490.KS",
-      "closePrice": 252783.0156,
-      "previousClose": 249888.5469,
-      "priceChange": 1.16,
+      "closePrice": 253265.4375,
+      "previousClose": 252783.0156,
+      "priceChange": 0.19,
       "direction": "up",
-      "tradingDate": "2025-01-06"
+      "tradingDate": "2025-01-07"
     },
     "judgment": {
       "predictedDirection": "bearish",
@@ -431,17 +431,17 @@
     "marketData": {
       "asset": "Energy",
       "ticker": "096770.KS",
-      "closePrice": 109024.9141,
-      "previousClose": 110007.1172,
-      "priceChange": -0.89,
-      "direction": "down",
-      "tradingDate": "2025-01-02"
+      "closePrice": 116882.5625,
+      "previousClose": 109024.9141,
+      "priceChange": 7.21,
+      "direction": "up",
+      "tradingDate": "2025-01-03"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   }
 ]

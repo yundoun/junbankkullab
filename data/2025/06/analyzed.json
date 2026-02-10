@@ -28,17 +28,17 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 58294.3672,
-      "previousClose": 58885.1875,
-      "priceChange": -1,
-      "direction": "down",
-      "tradingDate": "2025-06-19"
+      "closePrice": 58589.7773,
+      "previousClose": 58294.3672,
+      "priceChange": 0.51,
+      "direction": "up",
+      "tradingDate": "2025-06-20"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -72,11 +72,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2946.6599,
-      "previousClose": 2894.6201,
-      "priceChange": 1.8,
+      "closePrice": 2950.3,
+      "previousClose": 2946.6599,
+      "priceChange": 0.12,
       "direction": "up",
-      "tradingDate": "2025-06-16"
+      "tradingDate": "2025-06-17"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -123,16 +123,16 @@
       "asset": "Nuclear",
       "ticker": "034020.KS",
       "closePrice": 54600,
-      "previousClose": 51100,
-      "priceChange": 6.85,
-      "direction": "up",
-      "tradingDate": "2025-06-12"
+      "previousClose": 54600,
+      "priceChange": 0,
+      "direction": "flat",
+      "tradingDate": "2025-06-13"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
+      "actualDirection": "flat",
       "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "reasoning": "긍정적 전망(bullish) 했고 실제 보합 → 예측대로"
     }
   },
   {
@@ -173,16 +173,16 @@
       "asset": "Nuclear",
       "ticker": "034020.KS",
       "closePrice": 54600,
-      "previousClose": 51100,
-      "priceChange": 6.85,
-      "direction": "up",
-      "tradingDate": "2025-06-12"
+      "previousClose": 54600,
+      "priceChange": 0,
+      "direction": "flat",
+      "tradingDate": "2025-06-13"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
+      "actualDirection": "flat",
       "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "reasoning": "긍정적 전망(bullish) 했고 실제 보합 → 예측대로"
     }
   },
   {
@@ -222,11 +222,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2855.77,
-      "previousClose": 2812.05,
-      "priceChange": 1.55,
+      "closePrice": 2871.8501,
+      "previousClose": 2855.77,
+      "priceChange": 0.56,
       "direction": "up",
-      "tradingDate": "2025-06-09"
+      "tradingDate": "2025-06-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -272,11 +272,11 @@
     "marketData": {
       "asset": "NASDAQ",
       "ticker": "^IXIC",
-      "closePrice": 19591.2402,
-      "previousClose": 19529.9492,
-      "priceChange": 0.31,
+      "closePrice": 19714.9902,
+      "previousClose": 19591.2402,
+      "priceChange": 0.63,
       "direction": "up",
-      "tradingDate": "2025-06-09"
+      "tradingDate": "2025-06-10"
     },
     "judgment": {
       "predictedDirection": "bullish",
@@ -314,11 +314,11 @@
     "marketData": {
       "asset": "Tesla",
       "ticker": "TSLA",
-      "closePrice": 295.14,
-      "previousClose": 284.7,
-      "priceChange": 3.67,
+      "closePrice": 308.58,
+      "previousClose": 295.14,
+      "priceChange": 4.55,
       "direction": "up",
-      "tradingDate": "2025-06-06"
+      "tradingDate": "2025-06-09"
     },
     "judgment": {
       "predictedDirection": "bearish",
@@ -358,11 +358,11 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 2770.8401,
-      "previousClose": 2698.97,
-      "priceChange": 2.66,
+      "closePrice": 2812.05,
+      "previousClose": 2770.8401,
+      "priceChange": 1.49,
       "direction": "up",
-      "tradingDate": "2025-06-04"
+      "tradingDate": "2025-06-05"
     },
     "judgment": {
       "predictedDirection": "bullish",

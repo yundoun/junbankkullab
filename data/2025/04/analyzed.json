@@ -28,17 +28,17 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 54552.4961,
-      "previousClose": 54454.0312,
-      "priceChange": 0.18,
-      "direction": "up",
-      "tradingDate": "2025-04-21"
+      "closePrice": 54158.6172,
+      "previousClose": 54552.4961,
+      "priceChange": -0.72,
+      "direction": "down",
+      "tradingDate": "2025-04-22"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -71,11 +71,11 @@
     "marketData": {
       "asset": "Semiconductor",
       "ticker": "005930.KS",
-      "closePrice": 55340.2578,
-      "previousClose": 54355.5586,
-      "priceChange": 1.81,
+      "closePrice": 55734.1367,
+      "previousClose": 55340.2617,
+      "priceChange": 0.71,
       "direction": "up",
-      "tradingDate": "2025-04-14"
+      "tradingDate": "2025-04-15"
     },
     "judgment": {
       "predictedDirection": "bearish",
@@ -113,17 +113,17 @@
     "marketData": {
       "asset": "Battery",
       "ticker": "373220.KS",
-      "closePrice": 349500,
-      "previousClose": 314000,
-      "priceChange": 11.31,
-      "direction": "up",
-      "tradingDate": "2025-04-10"
+      "closePrice": 335500,
+      "previousClose": 349500,
+      "priceChange": -4.01,
+      "direction": "down",
+      "tradingDate": "2025-04-11"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+      "actualDirection": "bearish",
+      "isHoney": true,
+      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
     }
   },
   {
@@ -170,17 +170,17 @@
     "marketData": {
       "asset": "NASDAQ",
       "ticker": "^IXIC",
-      "closePrice": 15587.79,
-      "previousClose": 16550.6094,
-      "priceChange": -5.82,
-      "direction": "down",
-      "tradingDate": "2025-04-04"
+      "closePrice": 15603.2598,
+      "previousClose": 15587.79,
+      "priceChange": 0.1,
+      "direction": "flat",
+      "tradingDate": "2025-04-07"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
+      "actualDirection": "flat",
       "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "reasoning": "부정적 전망(bearish) 했고 실제 보합 → 예측대로"
     }
   },
   {
@@ -227,17 +227,17 @@
     "marketData": {
       "asset": "Nvidia",
       "ticker": "NVDA",
-      "closePrice": 94.2929,
-      "previousClose": 101.7815,
-      "priceChange": -7.36,
-      "direction": "down",
-      "tradingDate": "2025-04-04"
+      "closePrice": 97.6223,
+      "previousClose": 94.2929,
+      "priceChange": 3.53,
+      "direction": "up",
+      "tradingDate": "2025-04-07"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -284,17 +284,17 @@
     "marketData": {
       "asset": "Bank",
       "ticker": "105560.KS",
-      "closePrice": 75807.5,
-      "previousClose": 75222.1172,
-      "priceChange": 0.78,
-      "direction": "up",
-      "tradingDate": "2025-04-04"
+      "closePrice": 70539.0234,
+      "previousClose": 75807.5,
+      "priceChange": -6.95,
+      "direction": "down",
+      "tradingDate": "2025-04-07"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
   },
   {
@@ -327,17 +327,17 @@
     "marketData": {
       "asset": "Nvidia",
       "ticker": "NVDA",
-      "closePrice": 110.4,
-      "previousClose": 110.13,
-      "priceChange": 0.25,
-      "direction": "up",
-      "tradingDate": "2025-04-02"
+      "closePrice": 101.7815,
+      "previousClose": 110.4,
+      "priceChange": -7.81,
+      "direction": "down",
+      "tradingDate": "2025-04-03"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bullish",
-      "isHoney": true,
-      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
+      "actualDirection": "bearish",
+      "isHoney": false,
+      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
     }
   }
 ]

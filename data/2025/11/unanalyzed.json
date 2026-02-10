@@ -1,119 +1,206 @@
 [
   {
-    "videoId": "Wz4_OoDYpYk",
-    "title": "내년에 사야 하는 조선주 딱 하나 찍어드립니다(ft.한승한 연구원 2부)",
-    "publishedAt": "2025-11-20T03:47:06Z",
-    "asset": "Shipbuilding",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "videoId": "Ixm78BxOn4U",
+    "title": "중국의 고성장 속 투자 기회!  차이나소비트렌드 ETF가 나왔습니다 (ft. SOL 차이나소비트렌드 ETF)",
+    "publishedAt": "2025-11-21T09:00:35Z",
+    "reason": "unknown_asset: ETF",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:07:42.209Z",
+      "detectedAssets": [
+        {
+          "asset": "ETF",
+          "ticker": "UNKNOWN",
+          "matchedText": "차이나소비트렌드 ETF",
+          "confidence": 0.9,
+          "reasoning": "차이나소비트렌드 ETF는 중국의 소비 트렌드에 투자하는 상장지수펀드로, 투자 기회를 나타냅니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "고성장",
+          "투자 기회"
+        ],
+        "reasoning": "제목에서 '고성장'과 '투자 기회'라는 긍정적인 키워드가 사용되어 긍정적인 전망을 나타냅니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"ETF\",\n      \"matchedText\": \"차이나소비트렌드 ETF\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"차이나소비트렌드 ETF는 중국의 소비 트렌드에 투자하는 상장지수펀드로, 투자 기회를 나타냅니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"고성장\", \"투자 기회\"],\n    \"reasoning\": \"제목에서 '고성장'과 '투자 기회'라는 긍정적인 키워드가 사용되어 긍정적인 전망을 나타냅니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "f1M9yCPrko0",
     "title": "엔비디아는 AI버블론을 혼자 막아낼 수 있을까?",
     "publishedAt": "2025-11-19T10:01:13Z",
-    "asset": "Nvidia",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "GDJ7NF42RF8",
-    "title": "조선주 내년이 마지막 매수 기회입니다(ft.한승한 연구원 1부)",
-    "publishedAt": "2025-11-19T04:58:50Z",
-    "asset": "Shipbuilding",
-    "reason": "no_market_data",
-    "positiveScore": 2,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "bU6hmVesgdY",
-    "title": "앱스타인 나비효과로 무너지는 증시, 비트코인(ft.트럼프)",
-    "publishedAt": "2025-11-18T03:21:17Z",
-    "asset": "Bitcoin",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
-  },
-  {
-    "videoId": "ed-E5XuoGjU",
-    "title": "비트코인이 하락하면 안 되는 이유",
-    "publishedAt": "2025-11-16T21:00:42Z",
-    "asset": "Bitcoin",
-    "reason": "no_market_data",
-    "positiveScore": 1,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:07:49.779Z",
+      "detectedAssets": [
+        {
+          "asset": "Nvidia",
+          "ticker": "NVDA",
+          "matchedText": "엔비디아",
+          "confidence": 0.95,
+          "reasoning": "제목에 '엔비디아'라는 특정 종목이 언급되어 있어 이를 기반으로 추출하였습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "AI버블론",
+          "막아낼 수 있을까"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적인 톤으로 판단하였습니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nvidia\",\n      \"matchedText\": \"엔비디아\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '엔비디아'라는 특정 종목이 언급되어 있어 이를 기반으로 추출하였습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"AI버블론\", \"막아낼 수 있을까\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 키워드가 없어 중립적인 톤으로 판단하였습니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "PwdTH55izu8",
     "title": "코스피 버블에 대한 솔직한 생각 (ft.김종봉 작가 1부)",
     "publishedAt": "2025-11-16T10:05:19Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "hjeAGLrELh4",
-    "title": "버핏의 마지막 인생베팅은 구글이었습니다",
-    "publishedAt": "2025-11-15T23:30:15Z",
-    "asset": "Google",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "ww1cO9JGJhw",
-    "title": "도망가는 외국인과 의심스러운 환율(ft.코스피, 선물 동시 매도)",
-    "publishedAt": "2025-11-14T03:35:13Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:08:10.734Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '코스피'라는 지수가 명시되어 있어 이를 지수로 추출함."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "버블",
+          "솔직한 생각"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 나타내지 않고, '솔직한 생각'이라는 표현이 중립적인 톤을 나타냄."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 지수가 명시되어 있어 이를 지수로 추출함.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"버블\", \"솔직한 생각\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 나타내지 않고, '솔직한 생각'이라는 표현이 중립적인 톤을 나타냄.\"\n  }\n}"
+    }
   },
   {
     "videoId": "jP6slxFl_JY",
     "title": "국민연금이 코스피를 더 사지 못하는 이유",
     "publishedAt": "2025-11-13T10:01:19Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:08:25.268Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '코스피'라는 지수가 명시되어 있어 직접적으로 언급됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "사다",
+          "못하는"
+        ],
+        "reasoning": "국민연금이 코스피를 더 사지 못하는 이유에 대한 설명이 필요하며, 긍정적 또는 부정적 전망이 명확하지 않음."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 지수가 명시되어 있어 직접적으로 언급됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"사다\", \"못하는\"],\n    \"reasoning\": \"국민연금이 코스피를 더 사지 못하는 이유에 대한 설명이 필요하며, 긍정적 또는 부정적 전망이 명확하지 않음.\"\n  }\n}"
+    }
   },
   {
-    "videoId": "qVUI8eku3uc",
-    "title": "셀트리온 50억 이후 삼성전자로 30억 벌었습니다(ft.윤버핏 2부)",
-    "publishedAt": "2025-11-13T03:40:42Z",
-    "asset": "Samsung",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
-  },
-  {
-    "videoId": "86M35UU6MLs",
-    "title": "환율 상승을 막으려면 코스피 밖에 없습니다",
-    "publishedAt": "2025-11-09T08:54:28Z",
-    "asset": "KOSPI",
-    "reason": "no_market_data",
-    "positiveScore": 0,
-    "negativeScore": 1
+    "videoId": "ac7yexBZet4",
+    "title": "미국이 스테이블코인으로 세계를 다스릴 겁니다(ft.김광석 실장 3부)",
+    "publishedAt": "2025-11-06T02:14:05Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:08:51.449Z",
+      "detectedAssets": [
+        {
+          "asset": "Cryptocurrency",
+          "ticker": "UNKNOWN",
+          "matchedText": "스테이블코인",
+          "confidence": 0.9,
+          "reasoning": "스테이블코인은 암호화폐의 한 종류로, 가격이 안정적인 특성을 가지고 있습니다."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 없기 때문에 중립적입니다."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Cryptocurrency\",\n      \"matchedText\": \"스테이블코인\",\n      \"confidence\": 0.9,\n      \"reasoning\": \"스테이블코인은 암호화폐의 한 종류로, 가격이 안정적인 특성을 가지고 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 없기 때문에 중립적입니다.\"\n  }\n}"
+    }
   },
   {
     "videoId": "9630fQTsmQQ",
     "title": "코스피 4000 숨고르기와 AI버블 논란",
     "publishedAt": "2025-11-05T00:58:53Z",
-    "asset": "KOSPI",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:08:56.322Z",
+      "detectedAssets": [
+        {
+          "asset": "KOSPI",
+          "ticker": "^KS11",
+          "matchedText": "코스피",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '코스피'라는 지수가 명시되어 있어 확실하게 식별됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "숨고르기",
+          "논란"
+        ],
+        "reasoning": "'숨고르기'와 '논란'이라는 표현이 긍정적이거나 부정적인 전망을 명확히 제시하지 않기 때문에 중립적이라고 판단됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSPI\",\n      \"matchedText\": \"코스피\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스피'라는 지수가 명시되어 있어 확실하게 식별됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"숨고르기\", \"논란\"],\n    \"reasoning\": \"'숨고르기'와 '논란'이라는 표현이 긍정적이거나 부정적인 전망을 명확히 제시하지 않기 때문에 중립적이라고 판단됨.\"\n  }\n}"
+    }
   },
   {
     "videoId": "O2gq3fEBjUs",
     "title": "비트코인처럼 리플 시대가 오는 이유(ft. 문창훈 작가 1부)",
     "publishedAt": "2025-11-01T05:03:39Z",
-    "asset": "Bitcoin",
-    "reason": "no_tone",
-    "positiveScore": 0,
-    "negativeScore": 0
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-05T15:09:06.927Z",
+      "detectedAssets": [
+        {
+          "asset": "Bitcoin",
+          "ticker": "BTC-USD",
+          "matchedText": "비트코인",
+          "confidence": 0.95,
+          "reasoning": "제목에 '비트코인'이 명시되어 있어 암호화폐로 분류됨."
+        },
+        {
+          "asset": "Ethereum",
+          "ticker": "ETH-USD",
+          "matchedText": "리플",
+          "confidence": 0.85,
+          "reasoning": "'리플'은 암호화폐로 분류되며, 비트코인과 함께 언급되어 관련성이 높음."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없어 판단이 불가함."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Bitcoin\",\n      \"matchedText\": \"비트코인\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에 '비트코인'이 명시되어 있어 암호화폐로 분류됨.\"\n    },\n    {\n      \"asset\": \"Ethereum\",\n      \"matchedText\": \"리플\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"'리플'은 암호화폐로 분류되며, 비트코인과 함께 언급되어 관련성이 높음.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 나타내는 명확한 키워드가 없어 판단이 불가함.\"\n  }\n}"
+    }
   }
 ]

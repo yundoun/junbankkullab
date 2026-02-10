@@ -29,17 +29,17 @@
     "marketData": {
       "asset": "Bitcoin",
       "ticker": "BTC-USD",
-      "closePrice": 114056.0859,
-      "previousClose": 114400.3828,
-      "priceChange": -0.3,
-      "direction": "down",
-      "tradingDate": "2025-09-30"
+      "closePrice": 118648.9297,
+      "previousClose": 114056.0859,
+      "priceChange": 4.03,
+      "direction": "up",
+      "tradingDate": "2025-10-01"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -71,17 +71,17 @@
     "marketData": {
       "asset": "Samsung",
       "ticker": "005930.KS",
-      "closePrice": 83494.125,
-      "previousClose": 83792.6719,
-      "priceChange": -0.36,
-      "direction": "down",
-      "tradingDate": "2025-09-30"
+      "closePrice": 85583.9609,
+      "previousClose": 83494.125,
+      "priceChange": 2.5,
+      "direction": "up",
+      "tradingDate": "2025-10-01"
     },
     "judgment": {
       "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정적 전망(bullish) 했으나 실제 하락 → 역지표 적중"
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
     }
   },
   {
@@ -113,17 +113,17 @@
     "marketData": {
       "asset": "KOSPI",
       "ticker": "^KS11",
-      "closePrice": 3386.05,
-      "previousClose": 3471.1101,
-      "priceChange": -2.45,
-      "direction": "down",
-      "tradingDate": "2025-09-26"
+      "closePrice": 3431.21,
+      "previousClose": 3386.05,
+      "priceChange": 1.33,
+      "direction": "up",
+      "tradingDate": "2025-09-29"
     },
     "judgment": {
       "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정적 전망(bearish) 했고 실제 하락 → 예측대로"
+      "actualDirection": "bullish",
+      "isHoney": true,
+      "reasoning": "부정적 전망(bearish) 했으나 실제 상승 → 역지표 적중"
     }
   },
   {
@@ -162,197 +162,17 @@
     "marketData": {
       "asset": "Nvidia",
       "ticker": "NVDA",
-      "closePrice": 176.2302,
-      "previousClose": 170.2805,
-      "priceChange": 3.49,
+      "closePrice": 176.6602,
+      "previousClose": 176.2302,
+      "priceChange": 0.24,
       "direction": "up",
-      "tradingDate": "2025-09-18"
+      "tradingDate": "2025-09-19"
     },
     "judgment": {
       "predictedDirection": "bullish",
       "actualDirection": "bullish",
       "isHoney": false,
       "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
-    }
-  },
-  {
-    "videoId": "c168cbbRa8E",
-    "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
-    "publishedAt": "2025-09-26T05:21:13Z",
-    "analysis": {
-      "method": "v2-score-recovered",
-      "model": "v2-regex",
-      "timestamp": "2026-02-05T23:55:40.268Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "negative",
-        "reasoning": "v2 점수: 부정 1 > 긍정 0",
-        "confidence": 0.5
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 3386.05,
-      "previousClose": 3471.1101,
-      "priceChange": -2.45,
-      "direction": "down",
-      "tradingDate": "2025-09-26"
-    },
-    "judgment": {
-      "predictedDirection": "bearish",
-      "actualDirection": "bearish",
-      "isHoney": false,
-      "reasoning": "부정 전망 → 실제 하락 → 예측대로"
-    }
-  },
-  {
-    "videoId": "MRnZ74Fe_Ao",
-    "title": "코스피는 사상최고치인데 환율은 불안한 이유",
-    "publishedAt": "2025-09-13T13:34:47Z",
-    "analysis": {
-      "method": "v2-score-recovered",
-      "model": "v2-regex",
-      "timestamp": "2026-02-05T23:55:42.508Z",
-      "detectedAssets": [
-        {
-          "asset": "KOSPI",
-          "ticker": "^KS11"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "v2 점수: 긍정 1 > 부정 0",
-        "confidence": 0.5
-      }
-    },
-    "marketData": {
-      "asset": "KOSPI",
-      "ticker": "^KS11",
-      "closePrice": 3407.3101,
-      "previousClose": 3395.54,
-      "priceChange": 0.35,
-      "direction": "up",
-      "tradingDate": "2025-09-15"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정 전망 → 실제 상승 → 예측대로"
-    }
-  },
-  {
-    "videoId": "L4Gi8B5CM3k",
-    "title": "절대 해킹될 수 없는 비트코인 지갑입니다(ft.Jonathan Pollack of BLOCK Product for Bitkey)",
-    "publishedAt": "2025-09-30T10:40:29Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:55:43.570Z",
-      "detectedAssets": [
-        {
-          "asset": "Bitcoin",
-          "ticker": "BTC-USD"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '절대 해킹될 수 없는 비트코인 지갑'이라는 표현은 비트코인 지갑의 보안성을 강조하며 긍정적인 이미지를 전달합니다. 이는 비트코인 사용자의 신뢰를 높이고 비트코인 시장에 긍정적인 영향을 미칠 수 있는 요소로 작용할 수 있습니다.",
-        "confidence": 0.8
-      }
-    },
-    "marketData": {
-      "asset": "Bitcoin",
-      "ticker": "BTC-USD",
-      "closePrice": 114056.0859,
-      "previousClose": 114400.3828,
-      "priceChange": -0.3,
-      "direction": "down",
-      "tradingDate": "2025-09-30"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정 전망 → 실제 하락 → 역지표 적중!"
-    }
-  },
-  {
-    "videoId": "xomi7IKmE28",
-    "title": "삼성전자 그래도 오릅니다(ft.차영주 소장 1부)",
-    "publishedAt": "2025-09-30T01:45:39Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:55:45.730Z",
-      "detectedAssets": [
-        {
-          "asset": "Samsung",
-          "ticker": "005930.KS"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '삼성전자 그래도 오릅니다'라는 표현은 삼성전자의 주가가 상승할 것이라는 긍정적인 전망을 나타내고 있습니다. '오릅니다'라는 단어는 상승을 의미하며, 이는 낙관적인 전망을 암시합니다.",
-        "confidence": 0.9
-      }
-    },
-    "marketData": {
-      "asset": "Samsung",
-      "ticker": "005930.KS",
-      "closePrice": 83494.125,
-      "previousClose": 83792.6719,
-      "priceChange": -0.36,
-      "direction": "down",
-      "tradingDate": "2025-09-30"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bearish",
-      "isHoney": true,
-      "reasoning": "긍정 전망 → 실제 하락 → 역지표 적중!"
-    }
-  },
-  {
-    "videoId": "yt6JeYqGC7A",
-    "title": "해킹당한 비트코인도 찾아주는 Inca Digital",
-    "publishedAt": "2025-09-24T10:07:13Z",
-    "analysis": {
-      "method": "llm-gpt4o-recovered",
-      "model": "gpt-4o",
-      "timestamp": "2026-02-05T23:55:46.786Z",
-      "detectedAssets": [
-        {
-          "asset": "Bitcoin",
-          "ticker": "BTC-USD"
-        }
-      ],
-      "toneAnalysis": {
-        "tone": "positive",
-        "reasoning": "제목에서 '해킹당한 비트코인도 찾아주는'이라는 표현은 비트코인의 보안 문제를 해결할 수 있는 기술적 진전이나 솔루션을 제공하는 긍정적인 측면을 강조하고 있습니다. 이는 비트코인에 대한 신뢰를 높이고 시장에 긍정적인 영향을 미칠 수 있는 요소로 해석될 수 있습니다.",
-        "confidence": 0.8
-      }
-    },
-    "marketData": {
-      "asset": "Bitcoin",
-      "ticker": "BTC-USD",
-      "closePrice": 113328.6328,
-      "previousClose": 112014.5,
-      "priceChange": 1.17,
-      "direction": "up",
-      "tradingDate": "2025-09-24"
-    },
-    "judgment": {
-      "predictedDirection": "bullish",
-      "actualDirection": "bullish",
-      "isHoney": false,
-      "reasoning": "긍정 전망 → 실제 상승 → 예측대로"
     }
   }
 ]
