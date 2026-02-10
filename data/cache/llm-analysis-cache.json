@@ -10321,5 +10321,20 @@
       "reasoning": "제목에서 특정 종목이나 섹터에 대한 언급이 없으며, 경제적 전망이나 투자 관련 내용이 포함되어 있지 않아 판단이 불가함."
     },
     "rawResponse": "{\n  \"assets\": [],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [],\n    \"reasoning\": \"제목에서 특정 종목이나 섹터에 대한 언급이 없으며, 경제적 전망이나 투자 관련 내용이 포함되어 있지 않아 판단이 불가함.\"\n  }\n}"
+  },
+  "3zcIuMaHjqk_퇴직연금 기금화, 득일까 실일까? (ft. 이영주 대표 1부)": {
+    "method": "llm",
+    "model": "gpt-4o-mini",
+    "timestamp": "2026-02-10T02:55:22.752Z",
+    "detectedAssets": [],
+    "toneAnalysis": {
+      "tone": "neutral",
+      "keywords": [
+        "득일까",
+        "실일까"
+      ],
+      "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 없기 때문에 중립적이라고 판단함."
+    },
+    "rawResponse": "{\n  \"assets\": [],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"득일까\", \"실일까\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 있는 요소가 없기 때문에 중립적이라고 판단함.\"\n  }\n}"
   }
 }
