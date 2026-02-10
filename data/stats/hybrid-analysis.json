@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-02-10T05:10:41.379Z",
+  "updatedAt": "2026-02-10T05:44:25.129Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
     "totalVideos": 596,
-    "totalMentions": 200,
-    "analyzableMentions": 316,
-    "validMentions": 184,
-    "honeyCount": 66,
-    "honeyIndex": 35.9
+    "totalMentions": 224,
+    "analyzableMentions": 250,
+    "validMentions": 129,
+    "honeyCount": 54,
+    "honeyIndex": 41.9
   },
   "funnel": {
     "totalVideos": 596,
-    "withMentions": 200,
-    "withTone": 184,
-    "withMarketData": 184,
-    "honeyHits": 66
+    "withMentions": 224,
+    "withTone": 129,
+    "withMarketData": 129,
+    "honeyHits": 54
   },
-  "unanalyzedCount": 132,
-  "excludedCount": 6,
+  "unanalyzedCount": 121,
+  "excludedCount": 5,
   "assetStats": [
     {
       "asset": "Steel",
@@ -27,28 +27,16 @@
       "honeyIndex": 100
     },
     {
-      "asset": "Tesla",
-      "total": 3,
-      "honey": 3,
-      "honeyIndex": 100
-    },
-    {
-      "asset": "Auto",
+      "asset": "Google",
       "total": 1,
       "honey": 1,
       "honeyIndex": 100
     },
     {
-      "asset": "Chemical",
-      "total": 1,
-      "honey": 1,
-      "honeyIndex": 100
-    },
-    {
-      "asset": "Energy",
-      "total": 3,
-      "honey": 2,
-      "honeyIndex": 66.7
+      "asset": "Samsung",
+      "total": 9,
+      "honey": 7,
+      "honeyIndex": 77.8
     },
     {
       "asset": "Bank",
@@ -57,34 +45,34 @@
       "honeyIndex": 66.7
     },
     {
-      "asset": "Samsung",
-      "total": 17,
-      "honey": 9,
-      "honeyIndex": 52.9
-    },
-    {
-      "asset": "Celltrion",
-      "total": 2,
-      "honey": 1,
-      "honeyIndex": 50
-    },
-    {
-      "asset": "Defense",
-      "total": 2,
-      "honey": 1,
-      "honeyIndex": 50
-    },
-    {
-      "asset": "Shipbuilding",
-      "total": 11,
+      "asset": "NASDAQ",
+      "total": 8,
       "honey": 5,
-      "honeyIndex": 45.5
+      "honeyIndex": 62.5
     },
     {
-      "asset": "Bitcoin",
-      "total": 23,
-      "honey": 10,
-      "honeyIndex": 43.5
+      "asset": "KOSPI",
+      "total": 33,
+      "honey": 18,
+      "honeyIndex": 54.5
+    },
+    {
+      "asset": "Battery",
+      "total": 4,
+      "honey": 2,
+      "honeyIndex": 50
+    },
+    {
+      "asset": "Tesla",
+      "total": 2,
+      "honey": 1,
+      "honeyIndex": 50
+    },
+    {
+      "asset": "SKHynix",
+      "total": 4,
+      "honey": 2,
+      "honeyIndex": 50
     },
     {
       "asset": "Semiconductor",
@@ -93,34 +81,40 @@
       "honeyIndex": 42.9
     },
     {
+      "asset": "Shipbuilding",
+      "total": 7,
+      "honey": 3,
+      "honeyIndex": 42.9
+    },
+    {
       "asset": "Nvidia",
-      "total": 12,
-      "honey": 4,
-      "honeyIndex": 33.3
+      "total": 8,
+      "honey": 3,
+      "honeyIndex": 37.5
     },
     {
       "asset": "Nuclear",
       "total": 10,
-      "honey": 3,
-      "honeyIndex": 30
-    },
-    {
-      "asset": "KOSPI",
-      "total": 58,
-      "honey": 17,
-      "honeyIndex": 29.3
-    },
-    {
-      "asset": "NASDAQ",
-      "total": 9,
       "honey": 2,
-      "honeyIndex": 22.2
+      "honeyIndex": 20
+    },
+    {
+      "asset": "Bitcoin",
+      "total": 15,
+      "honey": 3,
+      "honeyIndex": 20
     },
     {
       "asset": "Bio",
       "total": 5,
       "honey": 1,
       "honeyIndex": 20
+    },
+    {
+      "asset": "Energy",
+      "total": 3,
+      "honey": 0,
+      "honeyIndex": 0
     },
     {
       "asset": "Internet",
@@ -135,19 +129,25 @@
       "honeyIndex": 0
     },
     {
-      "asset": "Battery",
-      "total": 4,
+      "asset": "Auto",
+      "total": 1,
       "honey": 0,
       "honeyIndex": 0
     },
     {
-      "asset": "SKHynix",
-      "total": 7,
+      "asset": "Chemical",
+      "total": 1,
       "honey": 0,
       "honeyIndex": 0
     },
     {
-      "asset": "Google",
+      "asset": "Celltrion",
+      "total": 2,
+      "honey": 0,
+      "honeyIndex": 0
+    },
+    {
+      "asset": "Defense",
       "total": 2,
       "honey": 0,
       "honeyIndex": 0
@@ -168,7 +168,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 4.1
+      "priceChange": 0.46
     },
     {
       "videoId": "RYbgAVbDIqg",
@@ -178,7 +178,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 4.92
+      "priceChange": 0.24
     },
     {
       "videoId": "cXYDceBYfUA",
@@ -186,9 +186,9 @@
       "publishedAt": "2026-02-08T15:19:44Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.42
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.82
     },
     {
       "videoId": "mtMvcCZTqxY",
@@ -198,7 +198,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 4.1
+      "priceChange": 0.46
     },
     {
       "videoId": "XAJqKI8IIpI",
@@ -208,7 +208,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -3.65
+      "priceChange": -3.3
     },
     {
       "videoId": "BTWAngrmGfc",
@@ -218,7 +218,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 6.84
+      "priceChange": 1.57
     },
     {
       "videoId": "1aOwkzHvqsQ",
@@ -226,9 +226,9 @@
       "publishedAt": "2026-02-02T06:11:41Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -5.26
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 6.84
     },
     {
       "videoId": "1aOwkzHvqsQ",
@@ -236,34 +236,44 @@
       "publishedAt": "2026-02-02T06:11:41Z",
       "asset": "Semiconductor",
       "tone": "negative",
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 11.37
+    },
+    {
+      "videoId": "baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "asset": "KOSPI",
+      "tone": "positive",
       "actualDirection": "down",
-      "isHoney": false,
+      "isHoney": true,
+      "priceChange": -5.26
+    },
+    {
+      "videoId": "baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "asset": "SKHynix",
+      "tone": "positive",
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -8.69
+    },
+    {
+      "videoId": "baYPQxrnYi4",
+      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
+      "publishedAt": "2026-01-30T02:35:30Z",
+      "asset": "Samsung",
+      "tone": "positive",
+      "actualDirection": "down",
+      "isHoney": true,
       "priceChange": -6.29
     },
     {
-      "videoId": "baYPQxrnYi4",
-      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
-      "publishedAt": "2026-01-30T02:35:30Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": 0.06
-    },
-    {
-      "videoId": "baYPQxrnYi4",
-      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
-      "publishedAt": "2026-01-30T02:35:30Z",
-      "asset": "SKHynix",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 5.57
-    },
-    {
-      "videoId": "baYPQxrnYi4",
-      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
-      "publishedAt": "2026-01-30T02:35:30Z",
+      "videoId": "cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "publishedAt": "2026-01-29T00:24:47Z",
       "asset": "Samsung",
       "tone": "positive",
       "actualDirection": "down",
@@ -271,29 +281,9 @@
       "priceChange": -0.12
     },
     {
-      "videoId": "baYPQxrnYi4",
-      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
-      "publishedAt": "2026-01-30T02:35:30Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": true,
-      "priceChange": 0.06
-    },
-    {
-      "videoId": "baYPQxrnYi4",
-      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
-      "publishedAt": "2026-01-30T02:35:30Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.12
-    },
-    {
-      "videoId": "baYPQxrnYi4",
-      "title": "하락장을 코스피 상승장으로 바꾸는 샌디스크 실적 호재(SK하이닉스, 삼성전자)",
-      "publishedAt": "2026-01-30T02:35:30Z",
+      "videoId": "cvMngriiriA",
+      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
+      "publishedAt": "2026-01-29T00:24:47Z",
       "asset": "SKHynix",
       "tone": "positive",
       "actualDirection": "up",
@@ -301,84 +291,24 @@
       "priceChange": 5.57
     },
     {
-      "videoId": "cvMngriiriA",
-      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-      "publishedAt": "2026-01-29T00:24:47Z",
+      "videoId": "4ut8089Ra7k",
+      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
+      "publishedAt": "2026-01-26T00:14:16Z",
       "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1.05
-    },
-    {
-      "videoId": "cvMngriiriA",
-      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-      "publishedAt": "2026-01-29T00:24:47Z",
-      "asset": "SKHynix",
-      "tone": "positive",
+      "tone": "negative",
       "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.38
-    },
-    {
-      "videoId": "cvMngriiriA",
-      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-      "publishedAt": "2026-01-29T00:24:47Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
       "isHoney": true,
-      "priceChange": null
+      "priceChange": 4.87
     },
     {
-      "videoId": "cvMngriiriA",
-      "title": "실적이 잘나오고 주가가 급락한 MS, 오히려 삼성전자, SK하이닉스에 호재가 될 수도",
-      "publishedAt": "2026-01-29T00:24:47Z",
+      "videoId": "4ut8089Ra7k",
+      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
+      "publishedAt": "2026-01-26T00:14:16Z",
       "asset": "SKHynix",
-      "tone": "positive",
+      "tone": "negative",
       "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": null
-    },
-    {
-      "videoId": "4ut8089Ra7k",
-      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
-      "publishedAt": "2026-01-26T00:14:16Z",
-      "asset": "Samsung",
-      "tone": "negative",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": 0
-    },
-    {
-      "videoId": "4ut8089Ra7k",
-      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
-      "publishedAt": "2026-01-26T00:14:16Z",
-      "asset": "SKHynix",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -4.04
-    },
-    {
-      "videoId": "4ut8089Ra7k",
-      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
-      "publishedAt": "2026-01-26T00:14:16Z",
-      "asset": "Samsung",
-      "tone": "negative",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": 0
-    },
-    {
-      "videoId": "4ut8089Ra7k",
-      "title": "삼성전자, SK하이닉스 지금은 매도할 때가 아닙니다(ft.조윤남 대표 2부)",
-      "publishedAt": "2026-01-26T00:14:16Z",
-      "asset": "SKHynix",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -4.04
+      "isHoney": true,
+      "priceChange": 8.7
     },
     {
       "videoId": "gYagj7cq6hw",
@@ -388,7 +318,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.5
+      "priceChange": 0.41
     },
     {
       "videoId": "je8E7jQSzMA",
@@ -396,49 +326,19 @@
       "publishedAt": "2026-01-23T12:14:22Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": 0.05
-    },
-    {
-      "videoId": "_FmmRrEwwG8",
-      "title": "(속보) 코스피 5000 성공, 예상 이유와 이제 조심해야 할 것",
-      "publishedAt": "2026-01-22T00:48:10Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 0.87
-    },
-    {
-      "videoId": "vBuUo34mdSY",
-      "title": "코스피 아직도 쌉니다 올해 더 오르는 이유(ft. 박세익 대표 1부)",
-      "publishedAt": "2026-01-19T23:33:57Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.32
-    },
-    {
-      "videoId": "vBuUo34mdSY",
-      "title": "코스피 아직도 쌉니다 올해 더 오르는 이유(ft. 박세익 대표 1부)",
-      "publishedAt": "2026-01-19T23:33:57Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": null
-    },
-    {
-      "videoId": "oOgX8LuqYys",
-      "title": "엔비디아 젠슨황이 바이오에 꽂힌 충격 이유",
-      "publishedAt": "2026-01-19T11:44:51Z",
-      "asset": "Nvidia",
-      "tone": "negative",
       "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -4.38
+      "isHoney": true,
+      "priceChange": -0.44
+    },
+    {
+      "videoId": "vBuUo34mdSY",
+      "title": "코스피 아직도 쌉니다 올해 더 오르는 이유(ft. 박세익 대표 1부)",
+      "publishedAt": "2026-01-19T23:33:57Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.39
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -448,7 +348,7 @@
       "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 1.58
+      "priceChange": 0.9
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -456,9 +356,9 @@
       "publishedAt": "2026-01-15T11:07:48Z",
       "asset": "Bitcoin",
       "tone": "negative",
-      "actualDirection": "down",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": -1.42
+      "priceChange": -0.03
     },
     {
       "videoId": "OK7RMCqPD10",
@@ -468,27 +368,7 @@
       "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 0.93
-    },
-    {
-      "videoId": "OK7RMCqPD10",
-      "title": "코스피 이제 팔자/ 환율조림 이야기 / 비트코인과 해외거래소 차단 / 미국 은행주 폭락",
-      "publishedAt": "2026-01-15T11:07:48Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 1.58
-    },
-    {
-      "videoId": "OK7RMCqPD10",
-      "title": "코스피 이제 팔자/ 환율조림 이야기 / 비트코인과 해외거래소 차단 / 미국 은행주 폭락",
-      "publishedAt": "2026-01-15T11:07:48Z",
-      "asset": "Bitcoin",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -1.42
+      "priceChange": 0.61
     },
     {
       "videoId": "9ggky-EC7HI",
@@ -498,7 +378,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 2.64
+      "priceChange": 1
     },
     {
       "videoId": "15s6zD-xgws",
@@ -506,9 +386,9 @@
       "publishedAt": "2026-01-11T04:36:45Z",
       "asset": "Bio",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1.01
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 2.64
     },
     {
       "videoId": "2wvb6s7qwIc",
@@ -516,9 +396,9 @@
       "publishedAt": "2026-01-10T05:39:52Z",
       "asset": "Defense",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.16
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 5.78
     },
     {
       "videoId": "mCKbg-iZwx0",
@@ -526,59 +406,29 @@
       "publishedAt": "2026-01-08T02:26:56Z",
       "asset": "Bio",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 6.68
-    },
-    {
-      "videoId": "lVG2hRYbRZ4",
-      "title": "삼성전자 잠정실적 대박을 예상하는 이유(ft.더 중요한 것)",
-      "publishedAt": "2026-01-07T21:45:03Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.51
-    },
-    {
-      "videoId": "lVG2hRYbRZ4",
-      "title": "삼성전자 잠정실적 대박을 예상하는 이유(ft.더 중요한 것)",
-      "publishedAt": "2026-01-07T21:45:03Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.51
-    },
-    {
-      "videoId": "oRPza9FG97E",
-      "title": "2026년 코스피 5000만들겠습니다. (ft.이소영 의원 풀버전)",
-      "publishedAt": "2025-12-31T23:51:38Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.27
-    },
-    {
-      "videoId": "oRPza9FG97E",
-      "title": "2026년 코스피 5000만들겠습니다. (ft.이소영 의원 풀버전)",
-      "publishedAt": "2025-12-31T23:51:38Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.27
-    },
-    {
-      "videoId": "aLY3A8D1EcQ",
-      "title": "은과 환율이 급락하고, 코스피만 오르는 이유",
-      "publishedAt": "2025-12-29T10:13:47Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "up",
+      "actualDirection": "down",
       "isHoney": true,
-      "priceChange": 2.2
+      "priceChange": -0.37
+    },
+    {
+      "videoId": "lVG2hRYbRZ4",
+      "title": "삼성전자 잠정실적 대박을 예상하는 이유(ft.더 중요한 것)",
+      "publishedAt": "2026-01-07T21:45:03Z",
+      "asset": "Samsung",
+      "tone": "positive",
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -1.56
+    },
+    {
+      "videoId": "oRPza9FG97E",
+      "title": "2026년 코스피 5000만들겠습니다. (ft.이소영 의원 풀버전)",
+      "publishedAt": "2025-12-31T23:51:38Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 3.43
     },
     {
       "videoId": "Q58k3PYpqEE",
@@ -586,9 +436,9 @@
       "publishedAt": "2025-12-24T06:00:05Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.21
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 0.51
     },
     {
       "videoId": "Q58k3PYpqEE",
@@ -596,19 +446,9 @@
       "publishedAt": "2025-12-24T06:00:05Z",
       "asset": "NASDAQ",
       "tone": "positive",
-      "actualDirection": "up",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": 0.22
-    },
-    {
-      "videoId": "Q58k3PYpqEE",
-      "title": "미국주식 팔고 한국주식 사면 100% 양도세 감면(ft.환율급락)",
-      "publishedAt": "2025-12-24T06:00:05Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -0.21
+      "priceChange": -0.09
     },
     {
       "videoId": "fIyQXZ4W4o8",
@@ -618,17 +458,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 2.12
-    },
-    {
-      "videoId": "fIyQXZ4W4o8",
-      "title": "코스피 1만까지 오를 수 있습니다(ft.소현철 교수 1부)",
-      "publishedAt": "2025-12-21T00:38:52Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.12
+      "priceChange": 0.28
     },
     {
       "videoId": "OXiGTd9Y5r0",
@@ -638,7 +468,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.23
+      "priceChange": 1.58
     },
     {
       "videoId": "L-SzNCM-Ej4",
@@ -648,37 +478,17 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.65
+      "priceChange": 2.12
     },
     {
-      "videoId": "L-SzNCM-Ej4",
-      "title": "배당소득 분리과세로 코스피 5000 만들겠습니다. (ft.이소영 의원 1부)",
-      "publishedAt": "2025-12-19T04:27:51Z",
-      "asset": "KOSPI",
+      "videoId": "j4kFk-0kKyw",
+      "title": "테슬라 500달러 갔다, 적정주가 1000달러인 이유",
+      "publishedAt": "2025-12-17T09:43:46Z",
+      "asset": "Tesla",
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.65
-    },
-    {
-      "videoId": "j4kFk-0kKyw",
-      "title": "테슬라 500달러 갔다, 적정주가 1000달러인 이유",
-      "publishedAt": "2025-12-17T09:43:46Z",
-      "asset": "Tesla",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -4.62
-    },
-    {
-      "videoId": "j4kFk-0kKyw",
-      "title": "테슬라 500달러 갔다, 적정주가 1000달러인 이유",
-      "publishedAt": "2025-12-17T09:43:46Z",
-      "asset": "Tesla",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -4.62
+      "priceChange": 3.45
     },
     {
       "videoId": "qyXMu0tBmwM",
@@ -686,19 +496,9 @@
       "publishedAt": "2025-12-16T10:12:58Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -2.24
-    },
-    {
-      "videoId": "qyXMu0tBmwM",
-      "title": "코스피 4000깨짐, 지금 증시가 하락하는 이유",
-      "publishedAt": "2025-12-16T10:12:58Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -2.24
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 1.43
     },
     {
       "videoId": "Vl8waa0vqb8",
@@ -706,9 +506,9 @@
       "publishedAt": "2025-12-10T09:00:57Z",
       "asset": "Shipbuilding",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1.23
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 0.79
     },
     {
       "videoId": "8r-ZRAeeQTk",
@@ -716,9 +516,9 @@
       "publishedAt": "2025-12-08T01:48:01Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.34
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.27
     },
     {
       "videoId": "0RW2asxJrkM",
@@ -726,29 +526,19 @@
       "publishedAt": "2025-12-06T08:29:48Z",
       "asset": "Semiconductor",
       "tone": "negative",
-      "actualDirection": "up",
+      "actualDirection": "down",
+      "isHoney": false,
+      "priceChange": -1
+    },
+    {
+      "videoId": "s_fzguS0IFQ",
+      "title": "코스피 더 오를 겁니다. 이 기업이 제일 기대됩니다.(ft. 염승환 이사 1부)",
+      "publishedAt": "2025-12-03T10:01:37Z",
+      "asset": "KOSPI",
+      "tone": "positive",
+      "actualDirection": "down",
       "isHoney": true,
-      "priceChange": 1.01
-    },
-    {
-      "videoId": "s_fzguS0IFQ",
-      "title": "코스피 더 오를 겁니다. 이 기업이 제일 기대됩니다.(ft. 염승환 이사 1부)",
-      "publishedAt": "2025-12-03T10:01:37Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.04
-    },
-    {
-      "videoId": "s_fzguS0IFQ",
-      "title": "코스피 더 오를 겁니다. 이 기업이 제일 기대됩니다.(ft. 염승환 이사 1부)",
-      "publishedAt": "2025-12-03T10:01:37Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.04
+      "priceChange": -0.19
     },
     {
       "videoId": "YHfHWwKRlHQ",
@@ -758,7 +548,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.23
+      "priceChange": 0.48
     },
     {
       "videoId": "A4JnjgDgwR0",
@@ -766,9 +556,9 @@
       "publishedAt": "2025-11-27T10:03:58Z",
       "asset": "Battery",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 0.57
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -6.85
     },
     {
       "videoId": "Wz4_OoDYpYk",
@@ -776,29 +566,9 @@
       "publishedAt": "2025-11-20T03:47:06Z",
       "asset": "Shipbuilding",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 3.71
-    },
-    {
-      "videoId": "Wz4_OoDYpYk",
-      "title": "내년에 사야 하는 조선주 딱 하나 찍어드립니다(ft.한승한 연구원 2부)",
-      "publishedAt": "2025-11-20T03:47:06Z",
-      "asset": "Shipbuilding",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 3.71
-    },
-    {
-      "videoId": "f1M9yCPrko0",
-      "title": "엔비디아는 AI버블론을 혼자 막아낼 수 있을까?",
-      "publishedAt": "2025-11-19T10:01:13Z",
-      "asset": "Nvidia",
-      "tone": "negative",
-      "actualDirection": "up",
+      "actualDirection": "down",
       "isHoney": true,
-      "priceChange": 2.85
+      "priceChange": -3.11
     },
     {
       "videoId": "GDJ7NF42RF8",
@@ -806,19 +576,9 @@
       "publishedAt": "2025-11-19T04:58:50Z",
       "asset": "Shipbuilding",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1.88
-    },
-    {
-      "videoId": "GDJ7NF42RF8",
-      "title": "조선주 내년이 마지막 매수 기회입니다(ft.한승한 연구원 1부)",
-      "publishedAt": "2025-11-19T04:58:50Z",
-      "asset": "Shipbuilding",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1.88
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 3.71
     },
     {
       "videoId": "bU6hmVesgdY",
@@ -826,9 +586,9 @@
       "publishedAt": "2025-11-18T03:21:17Z",
       "asset": "Bitcoin",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 0.93
+      "actualDirection": "down",
+      "isHoney": false,
+      "priceChange": -1.6
     },
     {
       "videoId": "bU6hmVesgdY",
@@ -836,19 +596,9 @@
       "publishedAt": "2025-11-18T03:21:17Z",
       "asset": "NASDAQ",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -1.21
-    },
-    {
-      "videoId": "bU6hmVesgdY",
-      "title": "앱스타인 나비효과로 무너지는 증시, 비트코인(ft.트럼프)",
-      "publishedAt": "2025-11-18T03:21:17Z",
-      "asset": "Bitcoin",
-      "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 0.93
+      "priceChange": 0.59
     },
     {
       "videoId": "ed-E5XuoGjU",
@@ -858,22 +608,22 @@
       "tone": "negative",
       "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -1.44
+      "priceChange": -2.21
     },
     {
-      "videoId": "ed-E5XuoGjU",
-      "title": "비트코인이 하락하면 안 되는 이유",
-      "publishedAt": "2025-11-16T21:00:42Z",
-      "asset": "Bitcoin",
+      "videoId": "hjeAGLrELh4",
+      "title": "버핏의 마지막 인생베팅은 구글이었습니다",
+      "publishedAt": "2025-11-15T23:30:15Z",
+      "asset": "Google",
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -1.44
+      "priceChange": -0.26
     },
     {
-      "videoId": "PwdTH55izu8",
-      "title": "코스피 버블에 대한 솔직한 생각 (ft.김종봉 작가 1부)",
-      "publishedAt": "2025-11-16T10:05:19Z",
+      "videoId": "ww1cO9JGJhw",
+      "title": "도망가는 외국인과 의심스러운 환율(ft.코스피, 선물 동시 매도)",
+      "publishedAt": "2025-11-14T03:35:13Z",
       "asset": "KOSPI",
       "tone": "negative",
       "actualDirection": "up",
@@ -881,56 +631,6 @@
       "priceChange": 1.94
     },
     {
-      "videoId": "hjeAGLrELh4",
-      "title": "버핏의 마지막 인생베팅은 구글이었습니다",
-      "publishedAt": "2025-11-15T23:30:15Z",
-      "asset": "Google",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 3.11
-    },
-    {
-      "videoId": "hjeAGLrELh4",
-      "title": "버핏의 마지막 인생베팅은 구글이었습니다",
-      "publishedAt": "2025-11-15T23:30:15Z",
-      "asset": "Google",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 3.11
-    },
-    {
-      "videoId": "ww1cO9JGJhw",
-      "title": "도망가는 외국인과 의심스러운 환율(ft.코스피, 선물 동시 매도)",
-      "publishedAt": "2025-11-14T03:35:13Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -3.81
-    },
-    {
-      "videoId": "ww1cO9JGJhw",
-      "title": "도망가는 외국인과 의심스러운 환율(ft.코스피, 선물 동시 매도)",
-      "publishedAt": "2025-11-14T03:35:13Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -3.81
-    },
-    {
-      "videoId": "jP6slxFl_JY",
-      "title": "국민연금이 코스피를 더 사지 못하는 이유",
-      "publishedAt": "2025-11-13T10:01:19Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 0.49
-    },
-    {
       "videoId": "qVUI8eku3uc",
       "title": "셀트리온 50억 이후 삼성전자로 30억 벌었습니다(ft.윤버핏 2부)",
       "publishedAt": "2025-11-13T03:40:42Z",
@@ -938,7 +638,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -0.29
+      "priceChange": -5.45
     },
     {
       "videoId": "qVUI8eku3uc",
@@ -948,17 +648,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 6.67
-    },
-    {
-      "videoId": "qVUI8eku3uc",
-      "title": "셀트리온 50억 이후 삼성전자로 30억 벌었습니다(ft.윤버핏 2부)",
-      "publishedAt": "2025-11-13T03:40:42Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.29
+      "priceChange": 0.51
     },
     {
       "videoId": "hjVImc62hcw",
@@ -966,39 +656,19 @@
       "publishedAt": "2025-11-11T12:20:27Z",
       "asset": "Celltrion",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.46
-    },
-    {
-      "videoId": "86M35UU6MLs",
-      "title": "환율 상승을 막으려면 코스피 밖에 없습니다",
-      "publishedAt": "2025-11-09T08:54:28Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 3.02
-    },
-    {
-      "videoId": "86M35UU6MLs",
-      "title": "환율 상승을 막으려면 코스피 밖에 없습니다",
-      "publishedAt": "2025-11-09T08:54:28Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 3.02
-    },
-    {
-      "videoId": "O2gq3fEBjUs",
-      "title": "비트코인처럼 리플 시대가 오는 이유(ft. 문창훈 작가 1부)",
-      "publishedAt": "2025-11-01T05:03:39Z",
-      "asset": "Bitcoin",
-      "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.46
+      "priceChange": 5.84
+    },
+    {
+      "videoId": "86M35UU6MLs",
+      "title": "환율 상승을 막으려면 코스피 밖에 없습니다",
+      "publishedAt": "2025-11-09T08:54:28Z",
+      "asset": "KOSPI",
+      "tone": "negative",
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 0.81
     },
     {
       "videoId": "8Y8siBdBL_c",
@@ -1016,19 +686,9 @@
       "publishedAt": "2025-10-28T07:54:31Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -0.8
-    },
-    {
-      "videoId": "MA2pCxgR3nM",
-      "title": "코스피4000 장중붕괴 된 이유(ft.조정? 악재?)",
-      "publishedAt": "2025-10-28T07:54:31Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -0.8
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 1.76
     },
     {
       "videoId": "tUo1dWHURsU",
@@ -1036,19 +696,9 @@
       "publishedAt": "2025-10-28T03:05:41Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.8
-    },
-    {
-      "videoId": "tUo1dWHURsU",
-      "title": "코스피 4000 넘었습니다 이제 이 주식이 오릅니다(ft. 차영주 소장 1부)",
-      "publishedAt": "2025-10-28T03:05:41Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.8
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 1.76
     },
     {
       "videoId": "MOhdXWO5xzY",
@@ -1056,9 +706,9 @@
       "publishedAt": "2025-10-27T03:39:02Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.57
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.8
     },
     {
       "videoId": "MOhdXWO5xzY",
@@ -1068,12 +718,12 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 2.55
+      "priceChange": 1.99
     },
     {
-      "videoId": "MOhdXWO5xzY",
-      "title": "코스피4000 다음은 바이오 대세장인 이유(ft.강하나 1부)",
-      "publishedAt": "2025-10-27T03:39:02Z",
+      "videoId": "vPGIDKmB548",
+      "title": "코스피 4000 미리 축하드립니다, 내년 주도주 예상",
+      "publishedAt": "2025-10-24T06:16:26Z",
       "asset": "KOSPI",
       "tone": "positive",
       "actualDirection": "up",
@@ -1081,54 +731,14 @@
       "priceChange": 2.57
     },
     {
-      "videoId": "vPGIDKmB548",
-      "title": "코스피 4000 미리 축하드립니다, 내년 주도주 예상",
-      "publishedAt": "2025-10-24T06:16:26Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.5
-    },
-    {
-      "videoId": "vPGIDKmB548",
-      "title": "코스피 4000 미리 축하드립니다, 내년 주도주 예상",
-      "publishedAt": "2025-10-24T06:16:26Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.5
-    },
-    {
-      "videoId": "o5Qq3Yzasrw",
-      "title": "금, 코인, 환율 무시하고 코스피만 오르는 이유",
-      "publishedAt": "2025-10-22T10:33:02Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.56
-    },
-    {
       "videoId": "qDxns-qy57I",
       "title": "삼성전자 호재, 외국인들은 연휴전에 미리 알았다",
       "publishedAt": "2025-10-10T06:58:55Z",
       "asset": "Samsung",
       "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": 0
-    },
-    {
-      "videoId": "qDxns-qy57I",
-      "title": "삼성전자 호재, 외국인들은 연휴전에 미리 알았다",
-      "publishedAt": "2025-10-10T06:58:55Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "flat",
+      "actualDirection": "down",
       "isHoney": true,
-      "priceChange": 0
+      "priceChange": -1.17
     },
     {
       "videoId": "kdjkRJmk2H4",
@@ -1136,39 +746,9 @@
       "publishedAt": "2025-10-04T02:18:09Z",
       "asset": "Nuclear",
       "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": 0
-    },
-    {
-      "videoId": "DQbFaiZKeGk",
-      "title": "조선, 방산 이 기업만 한 게 없습니다(ft. 차영주 소장 2부)",
-      "publishedAt": "2025-10-03T04:57:58Z",
-      "asset": "Shipbuilding",
-      "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": true,
-      "priceChange": 0
-    },
-    {
-      "videoId": "qDmJOObsGkQ",
-      "title": "삼성전자 9만원 터치, 샘알트만이 한국에 온 이유(ft.HBM전쟁)",
-      "publishedAt": "2025-10-02T09:18:44Z",
-      "asset": "Samsung",
-      "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 4.36
-    },
-    {
-      "videoId": "B9SmCbml0cI",
-      "title": "국장에 투자하세요 저 슈퍼개미 되었습니다(ft.박두환 대표 1부)",
-      "publishedAt": "2025-10-02T02:42:21Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.7
+      "priceChange": 4.16
     },
     {
       "videoId": "L4Gi8B5CM3k",
@@ -1176,69 +756,29 @@
       "publishedAt": "2025-09-30T10:40:29Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.3
-    },
-    {
-      "videoId": "L4Gi8B5CM3k",
-      "title": "절대 해킹될 수 없는 비트코인 지갑입니다(ft.Jonathan Pollack of BLOCK Product for Bitkey)",
-      "publishedAt": "2025-09-30T10:40:29Z",
-      "asset": "Bitcoin",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.3
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 4.03
     },
     {
       "videoId": "xomi7IKmE28",
       "title": "삼성전자 그래도 오릅니다(ft.차영주 소장 1부)",
       "publishedAt": "2025-09-30T01:45:39Z",
       "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.36
-    },
-    {
-      "videoId": "xomi7IKmE28",
-      "title": "삼성전자 그래도 오릅니다(ft.차영주 소장 1부)",
-      "publishedAt": "2025-09-30T01:45:39Z",
-      "asset": "Samsung",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.36
-    },
-    {
-      "videoId": "c168cbbRa8E",
-      "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
-      "publishedAt": "2025-09-26T05:21:13Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -2.45
-    },
-    {
-      "videoId": "c168cbbRa8E",
-      "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
-      "publishedAt": "2025-09-26T05:21:13Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -2.45
-    },
-    {
-      "videoId": "yt6JeYqGC7A",
-      "title": "해킹당한 비트코인도 찾아주는 Inca Digital",
-      "publishedAt": "2025-09-24T10:07:13Z",
-      "asset": "Bitcoin",
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.17
+      "priceChange": 2.5
+    },
+    {
+      "videoId": "c168cbbRa8E",
+      "title": "트럼프의 3500억달러 선불 발언에 무너지는 코스피(ft.환율)",
+      "publishedAt": "2025-09-26T05:21:13Z",
+      "asset": "KOSPI",
+      "tone": "negative",
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 1.33
     },
     {
       "videoId": "v_a3jwSMOiw",
@@ -1248,17 +788,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 3.49
-    },
-    {
-      "videoId": "MRnZ74Fe_Ao",
-      "title": "코스피는 사상최고치인데 환율은 불안한 이유",
-      "publishedAt": "2025-09-13T13:34:47Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 0.35
+      "priceChange": 0.24
     },
     {
       "videoId": "IJ1KD9svbVU",
@@ -1266,19 +796,9 @@
       "publishedAt": "2025-08-28T05:59:34Z",
       "asset": "Shipbuilding",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 10.55
-    },
-    {
-      "videoId": "IJ1KD9svbVU",
-      "title": "조선주를 사야하는 이유(ft.박민수 작가 3부)",
-      "publishedAt": "2025-08-28T05:59:34Z",
-      "asset": "Shipbuilding",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 10.55
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.49
     },
     {
       "videoId": "zfoKREVGfbQ",
@@ -1286,29 +806,9 @@
       "publishedAt": "2025-08-27T10:03:15Z",
       "asset": "Nvidia",
       "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": false,
-      "priceChange": -0.09
-    },
-    {
-      "videoId": "zfoKREVGfbQ",
-      "title": "두근두근 엔비디아 실적예상",
-      "publishedAt": "2025-08-27T10:03:15Z",
-      "asset": "Nvidia",
-      "tone": "positive",
-      "actualDirection": "flat",
+      "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -0.09
-    },
-    {
-      "videoId": "7vGui1PwAkU",
-      "title": "3조달러가 된 엔비디아 첫 사무실에 그분이?",
-      "publishedAt": "2025-08-27T07:32:13Z",
-      "asset": "Nvidia",
-      "tone": "positive",
-      "actualDirection": "flat",
-      "isHoney": true,
-      "priceChange": -0.09
+      "priceChange": -0.79
     },
     {
       "videoId": "R2Dfo23mjT4",
@@ -1316,9 +816,9 @@
       "publishedAt": "2025-08-22T09:25:32Z",
       "asset": "Bank",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -1.19
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 1.75
     },
     {
       "videoId": "212PJI3G-Uk",
@@ -1328,7 +828,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.14
+      "priceChange": 1.13
     },
     {
       "videoId": "IbePY33AgO0",
@@ -1338,7 +838,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -1.46
+      "priceChange": -0.67
     },
     {
       "videoId": "PKfuLdeaipw",
@@ -1348,17 +848,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -1.5
-    },
-    {
-      "videoId": "PKfuLdeaipw",
-      "title": "코스피 3500은 쉽게 갈 겁니다(ft. 차영주 소장 1부)",
-      "publishedAt": "2025-08-16T04:53:40Z",
-      "asset": "KOSPI",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1.5
+      "priceChange": -0.81
     },
     {
       "videoId": "ASD5H9ygi44",
@@ -1368,7 +858,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -0.61
+      "priceChange": -8.6
     },
     {
       "videoId": "5eaJpMOxZpU",
@@ -1376,9 +866,9 @@
       "publishedAt": "2025-08-11T02:04:17Z",
       "asset": "Chemical",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 0.36
+      "actualDirection": "down",
+      "isHoney": false,
+      "priceChange": -0.72
     },
     {
       "videoId": "79JWcW2k_uo",
@@ -1386,19 +876,9 @@
       "publishedAt": "2025-08-09T06:37:28Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.16
-    },
-    {
-      "videoId": "79JWcW2k_uo",
-      "title": "한국이 비트코인 강국이 되려면(ft.강승구 부대표 2부)",
-      "publishedAt": "2025-08-09T06:37:28Z",
-      "asset": "Bitcoin",
-      "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.16
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 2.41
     },
     {
       "videoId": "5f97Ap2_108",
@@ -1406,19 +886,9 @@
       "publishedAt": "2025-08-07T02:58:38Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.15
-    },
-    {
-      "videoId": "5f97Ap2_108",
-      "title": "비트코인 지금이라도 사야합니다(ft.강승구 부대표 1부)",
-      "publishedAt": "2025-08-07T02:58:38Z",
-      "asset": "Bitcoin",
-      "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 2.15
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.69
     },
     {
       "videoId": "4oKCRnyFmms",
@@ -1428,7 +898,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.16
+      "priceChange": 0.29
     },
     {
       "videoId": "4oKCRnyFmms",
@@ -1438,17 +908,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.37
-    },
-    {
-      "videoId": "OK9b1Y-rDkk",
-      "title": "미국증시마저 하락한 이유(ft.무너지는 일자리)",
-      "publishedAt": "2025-08-02T05:49:26Z",
-      "asset": "NASDAQ",
-      "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 1.95
+      "priceChange": 3
     },
     {
       "videoId": "QiJ5IX_D-0Y",
@@ -1458,7 +918,7 @@
       "tone": "negative",
       "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -4.46
+      "priceChange": -1.6
     },
     {
       "videoId": "oiwcJmhJrVY",
@@ -1466,19 +926,9 @@
       "publishedAt": "2025-08-01T05:37:58Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -3.88
-    },
-    {
-      "videoId": "oiwcJmhJrVY",
-      "title": "코스피가 3% 넘게 하락한 이유",
-      "publishedAt": "2025-08-01T05:37:58Z",
-      "asset": "KOSPI",
-      "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -3.88
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 0.91
     },
     {
       "videoId": "t5uDhh9EEwQ",
@@ -1488,7 +938,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.38
+      "priceChange": 3.8
     },
     {
       "videoId": "vQF3_EEDxbA",
@@ -1498,7 +948,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.66
+      "priceChange": 0.74
     },
     {
       "videoId": "-882R6nmTe8",
@@ -1506,9 +956,9 @@
       "publishedAt": "2025-07-23T01:17:48Z",
       "asset": "Auto",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 7.51
+      "actualDirection": "down",
+      "isHoney": false,
+      "priceChange": -2.03
     },
     {
       "videoId": "irJLVlYp9kA",
@@ -1516,9 +966,9 @@
       "publishedAt": "2025-07-22T02:02:24Z",
       "asset": "Energy",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.87
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 2.11
     },
     {
       "videoId": "kjApYvMBpUY",
@@ -1528,7 +978,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 2.64
+      "priceChange": 0.76
     },
     {
       "videoId": "y6p6a6EaJ8k",
@@ -1536,9 +986,9 @@
       "publishedAt": "2025-07-19T10:39:54Z",
       "asset": "Bitcoin",
       "tone": "negative",
-      "actualDirection": "flat",
+      "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -0.05
+      "priceChange": -0.54
     },
     {
       "videoId": "JcbsEP_6z6s",
@@ -1546,9 +996,9 @@
       "publishedAt": "2025-07-17T05:47:37Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 0.19
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.13
     },
     {
       "videoId": "LHrgrf4zSgk",
@@ -1558,7 +1008,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.25
+      "priceChange": 0.92
     },
     {
       "videoId": "mkwaOPtteMI",
@@ -1566,9 +1016,9 @@
       "publishedAt": "2025-06-19T22:06:24Z",
       "asset": "Semiconductor",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -1
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 0.51
     },
     {
       "videoId": "YvDAoZ8tlzo",
@@ -1578,7 +1028,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.8
+      "priceChange": 0.12
     },
     {
       "videoId": "dqYbZvp-0Lw",
@@ -1586,9 +1036,9 @@
       "publishedAt": "2025-06-12T22:00:46Z",
       "asset": "Nuclear",
       "tone": "positive",
-      "actualDirection": "up",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": 6.85
+      "priceChange": 0
     },
     {
       "videoId": "dqYbZvp-0Lw",
@@ -1596,9 +1046,9 @@
       "publishedAt": "2025-06-12T22:00:46Z",
       "asset": "Nuclear",
       "tone": "positive",
-      "actualDirection": "up",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": 6.85
+      "priceChange": 0
     },
     {
       "videoId": "UFEczU1Mpqg",
@@ -1608,7 +1058,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.55
+      "priceChange": 0.56
     },
     {
       "videoId": "UFEczU1Mpqg",
@@ -1618,7 +1068,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.31
+      "priceChange": 0.63
     },
     {
       "videoId": "2l1WZv4oN1A",
@@ -1628,7 +1078,7 @@
       "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 3.67
+      "priceChange": 4.55
     },
     {
       "videoId": "2VFSyDzNbXs",
@@ -1638,7 +1088,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 2.66
+      "priceChange": 1.49
     },
     {
       "videoId": "p-gK1F46H0E",
@@ -1648,7 +1098,7 @@
       "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 1.72
+      "priceChange": 2.05
     },
     {
       "videoId": "6Tuv-dNpM7c",
@@ -1658,7 +1108,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 6.67
+      "priceChange": 1.72
     },
     {
       "videoId": "gKtY9L5egcs",
@@ -1668,7 +1118,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 1.12
+      "priceChange": 2.7
     },
     {
       "videoId": "xODs5-OCHPQ",
@@ -1678,7 +1128,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.87
+      "priceChange": 7.51
     },
     {
       "videoId": "xODs5-OCHPQ",
@@ -1688,7 +1138,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.87
+      "priceChange": 7.51
     },
     {
       "videoId": "6IEp9lWuJj8",
@@ -1698,7 +1148,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 0.42
+      "priceChange": 0.13
     },
     {
       "videoId": "CqtsheWiKbc",
@@ -1706,9 +1156,9 @@
       "publishedAt": "2025-05-12T07:43:59Z",
       "asset": "Samsung",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 5.11
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -1.22
     },
     {
       "videoId": "A55xC1O0FF4",
@@ -1716,9 +1166,9 @@
       "publishedAt": "2025-04-21T04:00:22Z",
       "asset": "Semiconductor",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 0.18
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.72
     },
     {
       "videoId": "k-WS_aMSRk8",
@@ -1728,7 +1178,7 @@
       "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 1.81
+      "priceChange": 0.71
     },
     {
       "videoId": "ggQZp-xQni0",
@@ -1736,9 +1186,9 @@
       "publishedAt": "2025-04-10T05:58:24Z",
       "asset": "Battery",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 11.31
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -4.01
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1746,9 +1196,9 @@
       "publishedAt": "2025-04-04T03:56:32Z",
       "asset": "NASDAQ",
       "tone": "negative",
-      "actualDirection": "down",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": -5.82
+      "priceChange": 0.1
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1756,9 +1206,9 @@
       "publishedAt": "2025-04-04T03:56:32Z",
       "asset": "Nvidia",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -7.36
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 3.53
     },
     {
       "videoId": "qQ3nRdIkuug",
@@ -1766,9 +1216,9 @@
       "publishedAt": "2025-04-04T03:56:32Z",
       "asset": "Bank",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 0.78
+      "actualDirection": "down",
+      "isHoney": false,
+      "priceChange": -6.95
     },
     {
       "videoId": "SfcntEFAGj0",
@@ -1776,9 +1226,9 @@
       "publishedAt": "2025-04-02T04:52:30Z",
       "asset": "Nvidia",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 0.25
+      "actualDirection": "down",
+      "isHoney": false,
+      "priceChange": -7.81
     },
     {
       "videoId": "P0dwt0kOlds",
@@ -1786,9 +1236,9 @@
       "publishedAt": "2025-03-31T22:30:07Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -3
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 1.62
     },
     {
       "videoId": "AD0I1IIL4ww",
@@ -1796,9 +1246,9 @@
       "publishedAt": "2025-03-30T00:12:23Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.32
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 0.26
     },
     {
       "videoId": "WN49PAzCyH4",
@@ -1806,9 +1256,9 @@
       "publishedAt": "2025-03-22T05:39:23Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.25
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 2.65
     },
     {
       "videoId": "Orv9LKMpAWs",
@@ -1816,9 +1266,9 @@
       "publishedAt": "2025-03-17T08:07:58Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 1.73
+      "actualDirection": "flat",
+      "isHoney": false,
+      "priceChange": 0.06
     },
     {
       "videoId": "gOC9xNnFUR4",
@@ -1826,9 +1276,9 @@
       "publishedAt": "2025-03-16T11:09:42Z",
       "asset": "KOSPI",
       "tone": "negative",
-      "actualDirection": "up",
-      "isHoney": true,
-      "priceChange": 1.73
+      "actualDirection": "flat",
+      "isHoney": false,
+      "priceChange": 0.06
     },
     {
       "videoId": "ecAKNmnvDRY",
@@ -1838,7 +1288,7 @@
       "tone": "negative",
       "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -0.19
+      "priceChange": -1.25
     },
     {
       "videoId": "ex1vcnEQ2ZA",
@@ -1846,9 +1296,9 @@
       "publishedAt": "2025-03-07T04:38:02Z",
       "asset": "NASDAQ",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 0.7
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -4
     },
     {
       "videoId": "Q_VvvbJkWkI",
@@ -1856,9 +1306,9 @@
       "publishedAt": "2025-03-06T23:37:56Z",
       "asset": "NASDAQ",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -2.61
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 0.7
     },
     {
       "videoId": "-OPKjwutiy4",
@@ -1868,7 +1318,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 5.91
+      "priceChange": 5.58
     },
     {
       "videoId": "K7PXGo7dX0Q",
@@ -1878,7 +1328,7 @@
       "tone": "negative",
       "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -0.31
+      "priceChange": -5.04
     },
     {
       "videoId": "5mz4eFVf7TI",
@@ -1886,9 +1336,9 @@
       "publishedAt": "2025-02-19T11:07:58Z",
       "asset": "KOSPI",
       "tone": "positive",
-      "actualDirection": "up",
-      "isHoney": false,
-      "priceChange": 1.7
+      "actualDirection": "down",
+      "isHoney": true,
+      "priceChange": -0.65
     },
     {
       "videoId": "XO7MTfGFL4E",
@@ -1896,9 +1346,9 @@
       "publishedAt": "2025-02-14T06:38:47Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "up",
+      "actualDirection": "flat",
       "isHoney": false,
-      "priceChange": 0.92
+      "priceChange": 0.07
     },
     {
       "videoId": "7e2rPWrCxQQ",
@@ -1908,7 +1358,7 @@
       "tone": "negative",
       "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -3.67
+      "priceChange": -2.84
     },
     {
       "videoId": "ptsS1t1agA8",
@@ -1918,7 +1368,7 @@
       "tone": "positive",
       "actualDirection": "down",
       "isHoney": true,
-      "priceChange": -0.77
+      "priceChange": -2.52
     },
     {
       "videoId": "W4_xxhw_8Bk",
@@ -1926,9 +1376,9 @@
       "publishedAt": "2025-01-27T09:58:46Z",
       "asset": "NASDAQ",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -3.07
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 2.03
     },
     {
       "videoId": "W4_xxhw_8Bk",
@@ -1936,9 +1386,9 @@
       "publishedAt": "2025-01-27T09:58:46Z",
       "asset": "Nvidia",
       "tone": "negative",
-      "actualDirection": "down",
-      "isHoney": false,
-      "priceChange": -16.97
+      "actualDirection": "up",
+      "isHoney": true,
+      "priceChange": 8.93
     },
     {
       "videoId": "fTwMeZPypDU",
@@ -1946,9 +1396,9 @@
       "publishedAt": "2025-01-23T09:30:29Z",
       "asset": "Nuclear",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.42
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 3.56
     },
     {
       "videoId": "YMyPfSol694",
@@ -1958,7 +1408,7 @@
       "tone": "positive",
       "actualDirection": "up",
       "isHoney": false,
-      "priceChange": 4.57
+      "priceChange": 0.69
     },
     {
       "videoId": "QI2yciNk6CM",
@@ -1966,9 +1416,9 @@
       "publishedAt": "2025-01-09T02:36:10Z",
       "asset": "Bitcoin",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -2.69
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 2.4
     },
     {
       "videoId": "6K5SQbXRrNQ",
@@ -1976,9 +1426,9 @@
       "publishedAt": "2025-01-08T22:00:03Z",
       "asset": "Nvidia",
       "tone": "negative",
-      "actualDirection": "flat",
+      "actualDirection": "down",
       "isHoney": false,
-      "priceChange": -0.02
+      "priceChange": -3
     },
     {
       "videoId": "sgx2MZm0V3c",
@@ -1988,7 +1438,7 @@
       "tone": "negative",
       "actualDirection": "up",
       "isHoney": true,
-      "priceChange": 1.16
+      "priceChange": 0.19
     },
     {
       "videoId": "or2PCM-qxkc",
@@ -1996,9 +1446,9 @@
       "publishedAt": "2025-01-01T12:28:31Z",
       "asset": "Energy",
       "tone": "positive",
-      "actualDirection": "down",
-      "isHoney": true,
-      "priceChange": -0.89
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 7.21
     }
   ]
 }
