@@ -161,63 +161,77 @@ export default function VideoDetailPage() {
           </p>
         </div>
 
-        {/* 🎯 판정 결과 카드 (히어로) */}
-        <div className={cn(
-          "rounded-2xl border-2 p-6",
-          isHoney 
-            ? "bg-amber-500/10 border-amber-500/30" 
-            : "bg-blue-500/10 border-blue-500/30"
-        )}>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-4xl">{isHoney ? '🍯' : '📈'}</span>
-            <div>
-              <h3 className={cn(
-                "text-2xl font-bold",
-                isHoney ? "text-amber-600 dark:text-amber-400" : "text-blue-600 dark:text-blue-400"
-              )}>
-                {isHoney ? '전반꿀 적중!' : '전인구 적중'}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {isHoney 
-                  ? '전인구 예측의 반대로 움직였습니다' 
-                  : '전인구 예측대로 움직였습니다'}
-              </p>
+        {/* 🎯 판정 결과 카드 (히어로) - overallJudgment가 있을 때만 표시 */}
+        {data.overallJudgment ? (
+          <div className={cn(
+            "rounded-2xl border-2 p-6",
+            isHoney 
+              ? "bg-amber-500/10 border-amber-500/30" 
+              : "bg-blue-500/10 border-blue-500/30"
+          )}>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-4xl">{isHoney ? '🍯' : '📈'}</span>
+              <div>
+                <h3 className={cn(
+                  "text-2xl font-bold",
+                  isHoney ? "text-amber-600 dark:text-amber-400" : "text-blue-600 dark:text-blue-400"
+                )}>
+                  {isHoney ? '전반꿀 적중!' : '전인구 적중'}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {isHoney 
+                    ? '전인구 예측의 반대로 움직였습니다' 
+                    : '전인구 예측대로 움직였습니다'}
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-background/50 rounded-xl p-4">
-              <p className="text-xs text-muted-foreground mb-1">전인구 예측</p>
-              <p className={cn(
-                "text-lg font-bold flex items-center gap-2",
-                data.overallJudgment.predictedDirection === 'bullish' 
-                  ? "text-bullish" 
-                  : "text-bearish"
-              )}>
-                {data.overallJudgment.predictedDirection === 'bullish' ? (
-                  <><TrendingUp className="w-5 h-5" /> 상승</>
-                ) : (
-                  <><TrendingDown className="w-5 h-5" /> 하락</>
-                )}
-              </p>
-            </div>
-            <div className="bg-background/50 rounded-xl p-4">
-              <p className="text-xs text-muted-foreground mb-1">실제 결과</p>
-              <p className={cn(
-                "text-lg font-bold flex items-center gap-2",
-                data.overallJudgment.actualDirection === 'bullish' 
-                  ? "text-bullish" 
-                  : "text-bearish"
-              )}>
-                {data.overallJudgment.actualDirection === 'bullish' ? (
-                  <><TrendingUp className="w-5 h-5" /> 상승</>
-                ) : (
-                  <><TrendingDown className="w-5 h-5" /> 하락</>
-                )}
-              </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-background/50 rounded-xl p-4">
+                <p className="text-xs text-muted-foreground mb-1">전인구 예측</p>
+                <p className={cn(
+                  "text-lg font-bold flex items-center gap-2",
+                  data.overallJudgment.predictedDirection === 'bullish' 
+                    ? "text-bullish" 
+                    : "text-bearish"
+                )}>
+                  {data.overallJudgment.predictedDirection === 'bullish' ? (
+                    <><TrendingUp className="w-5 h-5" /> 상승</>
+                  ) : (
+                    <><TrendingDown className="w-5 h-5" /> 하락</>
+                  )}
+                </p>
+              </div>
+              <div className="bg-background/50 rounded-xl p-4">
+                <p className="text-xs text-muted-foreground mb-1">실제 결과</p>
+                <p className={cn(
+                  "text-lg font-bold flex items-center gap-2",
+                  data.overallJudgment.actualDirection === 'bullish' 
+                    ? "text-bullish" 
+                    : "text-bearish"
+                )}>
+                  {data.overallJudgment.actualDirection === 'bullish' ? (
+                    <><TrendingUp className="w-5 h-5" /> 상승</>
+                  ) : (
+                    <><TrendingDown className="w-5 h-5" /> 하락</>
+                  )}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="rounded-2xl border-2 border-dashed border-muted-foreground/30 p-6">
+            <div className="flex items-center gap-3">
+              <span className="text-4xl">⏳</span>
+              <div>
+                <h3 className="text-xl font-semibold text-muted-foreground">분석 대기 중</h3>
+                <p className="text-sm text-muted-foreground">
+                  시장 데이터 수집 후 판정 결과가 표시됩니다
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* 📊 분석 근거 */}
         {data.analysis && (

@@ -68,9 +68,9 @@ export async function GET(
 
     const analysisResults = analyses || []
 
-    // 3. 종목별 결과 변환
+    // 3. 종목별 결과 변환 (market_data는 1:1 관계라 객체로 반환됨)
     const assetResults = analysisResults.map(a => {
-      const md = a.market_data?.[0]
+      const md = a.market_data as any // 객체로 반환됨
       return {
         asset: a.asset,
         ticker: a.ticker || '',
@@ -115,13 +115,13 @@ export async function GET(
         })),
       } : null,
 
-      // 전체 판정 (첫 번째 기준)
-      overallJudgment: hasAnalysis && firstAnalysis.market_data?.[0] ? {
-        predictedDirection: firstAnalysis.market_data[0].predicted_direction,
-        actualDirection: firstAnalysis.market_data[0].direction === 'up' ? 'bullish' 
-          : firstAnalysis.market_data[0].direction === 'down' ? 'bearish' : undefined,
-        isHoney: firstAnalysis.market_data[0].is_honey,
-        reasoning: firstAnalysis.market_data[0].judgment_reasoning,
+      // 전체 판정 (첫 번째 기준, market_data는 객체)
+      overallJudgment: hasAnalysis && (firstAnalysis.market_data as any) ? {
+        predictedDirection: (firstAnalysis.market_data as any).predicted_direction,
+        actualDirection: (firstAnalysis.market_data as any).direction === 'up' ? 'bullish' 
+          : (firstAnalysis.market_data as any).direction === 'down' ? 'bearish' : undefined,
+        isHoney: (firstAnalysis.market_data as any).is_honey,
+        reasoning: (firstAnalysis.market_data as any).judgment_reasoning,
       } : null,
 
       // 종목별 결과
