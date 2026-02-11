@@ -28,9 +28,9 @@
     "marketData": {
       "asset": "Nuclear",
       "ticker": "034020.KS",
-      "closePrice": 95400,
+      "closePrice": 96100,
       "previousClose": 94100,
-      "priceChange": 1.38,
+      "priceChange": 2.13,
       "direction": "up",
       "tradingDate": "2026-02-11"
     },
