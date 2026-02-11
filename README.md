@@ -4,7 +4,7 @@
 
 전인구경제연구소 유튜브 채널의 시장 예측을 분석하여 **역지표 유효성**을 데이터로 검증하는 웹사이트입니다.
 
-🔗 **Live**: [jbklab.vercel.app/](https:/jbklab.vercel.app)
+🔗 **Live**: https://jbklab.vercel.app/
 
 ---
 
