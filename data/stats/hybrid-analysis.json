@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-02-11T08:59:35.800Z",
+  "updatedAt": "2026-02-11T10:04:50.803Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
-    "totalVideos": 599,
-    "totalMentions": 226,
-    "analyzableMentions": 252,
+    "totalVideos": 600,
+    "totalMentions": 227,
+    "analyzableMentions": 253,
     "validMentions": 130,
     "honeyCount": 55,
     "honeyIndex": 42.3
   },
   "funnel": {
-    "totalVideos": 599,
-    "withMentions": 226,
+    "totalVideos": 600,
+    "withMentions": 227,
     "withTone": 130,
     "withMarketData": 130,
     "honeyHits": 55
   },
-  "unanalyzedCount": 122,
+  "unanalyzedCount": 123,
   "excludedCount": 5,
   "assetStats": [
     {

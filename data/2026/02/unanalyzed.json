@@ -1,5 +1,49 @@
 [
   {
+    "videoId": "2x29amVxTk8",
+    "title": "쉬었음 청년 278만 명 역대 최대 / 현대차, 피지컬 AI 급등 이유 / 급격한 엔화강세 미증시 괜찮을까?",
+    "publishedAt": "2026-02-11T09:03:38Z",
+    "reason": "neutral_tone",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-11T10:03:50.528Z",
+      "detectedAssets": [
+        {
+          "asset": "Auto",
+          "ticker": "005380.KS",
+          "matchedText": "현대차",
+          "confidence": 0.95,
+          "reasoning": "제목에서 현대차가 언급되어 자동차 섹터에 속하는 종목으로 확인됨."
+        },
+        {
+          "asset": "Nuclear",
+          "ticker": "034020.KS",
+          "matchedText": "피지컬 AI",
+          "confidence": 0.85,
+          "reasoning": "피지컬 AI는 특정 섹터에 명확히 속하지 않지만, 기술 발전과 관련된 내용으로 해석될 수 있음."
+        },
+        {
+          "asset": "JPY",
+          "ticker": "UNKNOWN",
+          "matchedText": "엔화강세",
+          "confidence": 0.9,
+          "reasoning": "엔화 강세는 일본 통화에 대한 언급으로, 경제적 영향을 미치는 요소로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "neutral",
+        "keywords": [
+          "역대 최대",
+          "급등",
+          "괜찮을까"
+        ],
+        "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단하기 어려운 중립적인 표현들이 사용됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Auto\",\n      \"matchedText\": \"현대차\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 현대차가 언급되어 자동차 섹터에 속하는 종목으로 확인됨.\"\n    },\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"피지컬 AI\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"피지컬 AI는 특정 섹터에 명확히 속하지 않지만, 기술 발전과 관련된 내용으로 해석될 수 있음.\"\n    },\n    {\n      \"asset\": \"JPY\",\n      \"matchedText\": \"엔화강세\",\n      \"confidence\": 0.90,\n      \"reasoning\": \"엔화 강세는 일본 통화에 대한 언급으로, 경제적 영향을 미치는 요소로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"역대 최대\", \"급등\", \"괜찮을까\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단하기 어려운 중립적인 표현들이 사용됨.\"\n  }\n}"
+    }
+  },
+  {
     "videoId": "Nac85H-l3qc",
     "title": "웬만하면 코스닥 투자하지 마세요(김정철 변호사 2부)",
     "publishedAt": "2026-02-11T00:27:01Z",
