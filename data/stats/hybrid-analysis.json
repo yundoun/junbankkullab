@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-02-10T23:44:52.039Z",
+  "updatedAt": "2026-02-11T02:54:08.381Z",
   "methodology": "hybrid",
   "description": "종목 언급 + 톤(긍정/부정) 기반 역지표 (미국 장 종가 기준)",
   "stats": {
-    "totalVideos": 597,
-    "totalMentions": 225,
-    "analyzableMentions": 251,
-    "validMentions": 129,
+    "totalVideos": 599,
+    "totalMentions": 226,
+    "analyzableMentions": 252,
+    "validMentions": 130,
     "honeyCount": 55,
-    "honeyIndex": 42.6
+    "honeyIndex": 42.3
   },
   "funnel": {
-    "totalVideos": 597,
-    "withMentions": 225,
-    "withTone": 129,
-    "withMarketData": 129,
+    "totalVideos": 599,
+    "withMentions": 226,
+    "withTone": 130,
+    "withMarketData": 130,
     "honeyHits": 55
   },
   "unanalyzedCount": 122,
@@ -93,12 +93,6 @@
       "honeyIndex": 37.5
     },
     {
-      "asset": "Nuclear",
-      "total": 10,
-      "honey": 2,
-      "honeyIndex": 20
-    },
-    {
       "asset": "Bitcoin",
       "total": 15,
       "honey": 3,
@@ -109,6 +103,12 @@
       "total": 5,
       "honey": 1,
       "honeyIndex": 20
+    },
+    {
+      "asset": "Nuclear",
+      "total": 11,
+      "honey": 2,
+      "honeyIndex": 18.2
     },
     {
       "asset": "Energy",
@@ -160,6 +160,16 @@
     }
   ],
   "mentions": [
+    {
+      "videoId": "4q93G5A7dfQ",
+      "title": "원전 기대감 / 지옥에서 돌아온 오라클",
+      "publishedAt": "2026-02-10T11:13:44Z",
+      "asset": "Nuclear",
+      "tone": "positive",
+      "actualDirection": "up",
+      "isHoney": false,
+      "priceChange": 1.38
+    },
     {
       "videoId": "RYbgAVbDIqg",
       "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠슨황 인터뷰",

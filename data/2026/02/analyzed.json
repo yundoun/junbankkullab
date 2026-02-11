@@ -1,5 +1,47 @@
 [
   {
+    "videoId": "4q93G5A7dfQ",
+    "title": "원전 기대감 / 지옥에서 돌아온 오라클",
+    "publishedAt": "2026-02-10T11:13:44Z",
+    "analysis": {
+      "method": "llm",
+      "model": "gpt-4o-mini",
+      "timestamp": "2026-02-10T09:03:38.803Z",
+      "detectedAssets": [
+        {
+          "asset": "Nuclear",
+          "ticker": "034020.KS",
+          "matchedText": "원전",
+          "confidence": 0.95,
+          "reasoning": "제목에서 '원전'이라는 단어가 명확하게 언급되어 있어 원전 섹터로 판단됨."
+        }
+      ],
+      "toneAnalysis": {
+        "tone": "positive",
+        "keywords": [
+          "기대감"
+        ],
+        "reasoning": "'기대감'이라는 긍정적인 단어가 사용되어 긍정적인 전망으로 해석됨."
+      },
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"원전\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '원전'이라는 단어가 명확하게 언급되어 있어 원전 섹터로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"기대감\"],\n    \"reasoning\": \"'기대감'이라는 긍정적인 단어가 사용되어 긍정적인 전망으로 해석됨.\"\n  }\n}"
+    },
+    "marketData": {
+      "asset": "Nuclear",
+      "ticker": "034020.KS",
+      "closePrice": 95400,
+      "previousClose": 94100,
+      "priceChange": 1.38,
+      "direction": "up",
+      "tradingDate": "2026-02-11"
+    },
+    "judgment": {
+      "predictedDirection": "bullish",
+      "actualDirection": "bullish",
+      "isHoney": false,
+      "reasoning": "긍정적 전망(bullish) 했고 실제 상승 → 예측대로"
+    }
+  },
+  {
     "videoId": "RYbgAVbDIqg",
     "title": "코스피 5300시대 / 다음은 뭐가 오를까? / 기술주를 올린 젠슨황 인터뷰",
     "publishedAt": "2026-02-09T11:09:03Z",

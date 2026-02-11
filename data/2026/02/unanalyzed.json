@@ -1,30 +1,31 @@
 [
   {
-    "videoId": "4q93G5A7dfQ",
-    "title": "원전 기대감 / 지옥에서 돌아온 오라클",
-    "publishedAt": "2026-02-10T11:13:44Z",
-    "reason": "no_market_data",
+    "videoId": "Nac85H-l3qc",
+    "title": "웬만하면 코스닥 투자하지 마세요(김정철 변호사 2부)",
+    "publishedAt": "2026-02-11T00:27:01Z",
+    "reason": "unknown_asset: KOSDAQ",
     "analysis": {
       "method": "llm",
       "model": "gpt-4o-mini",
-      "timestamp": "2026-02-10T09:03:38.803Z",
+      "timestamp": "2026-02-11T02:53:06.584Z",
       "detectedAssets": [
         {
-          "asset": "Nuclear",
-          "ticker": "034020.KS",
-          "matchedText": "원전",
+          "asset": "KOSDAQ",
+          "ticker": "UNKNOWN",
+          "matchedText": "코스닥",
           "confidence": 0.95,
-          "reasoning": "제목에서 '원전'이라는 단어가 명확하게 언급되어 있어 원전 섹터로 판단됨."
+          "reasoning": "제목에서 '코스닥'이라는 단어가 명시적으로 언급되어 있어 해당 지수를 식별할 수 있습니다."
         }
       ],
       "toneAnalysis": {
-        "tone": "positive",
+        "tone": "negative",
         "keywords": [
-          "기대감"
+          "웬만하면",
+          "투자하지 마세요"
         ],
-        "reasoning": "'기대감'이라는 긍정적인 단어가 사용되어 긍정적인 전망으로 해석됨."
+        "reasoning": "제목에서 '웬만하면 코스닥 투자하지 마세요'라는 표현은 부정적인 투자 권고를 나타내므로 부정적 톤으로 판단하였습니다."
       },
-      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"원전\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '원전'이라는 단어가 명확하게 언급되어 있어 원전 섹터로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"기대감\"],\n    \"reasoning\": \"'기대감'이라는 긍정적인 단어가 사용되어 긍정적인 전망으로 해석됨.\"\n  }\n}"
+      "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"KOSDAQ\",\n      \"matchedText\": \"코스닥\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 '코스닥'이라는 단어가 명시적으로 언급되어 있어 해당 지수를 식별할 수 있습니다.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"negative\",\n    \"keywords\": [\"웬만하면\", \"투자하지 마세요\"],\n    \"reasoning\": \"제목에서 '웬만하면 코스닥 투자하지 마세요'라는 표현은 부정적인 투자 권고를 나타내므로 부정적 톤으로 판단하였습니다.\"\n  }\n}"
     }
   },
   {
