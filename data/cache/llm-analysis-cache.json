@@ -10431,5 +10431,21 @@
       "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단하기 어려운 중립적인 표현들이 사용됨."
     },
     "rawResponse": "{\n  \"assets\": [\n    {\n      \"asset\": \"Auto\",\n      \"matchedText\": \"현대차\",\n      \"confidence\": 0.95,\n      \"reasoning\": \"제목에서 현대차가 언급되어 자동차 섹터에 속하는 종목으로 확인됨.\"\n    },\n    {\n      \"asset\": \"Nuclear\",\n      \"matchedText\": \"피지컬 AI\",\n      \"confidence\": 0.85,\n      \"reasoning\": \"피지컬 AI는 특정 섹터에 명확히 속하지 않지만, 기술 발전과 관련된 내용으로 해석될 수 있음.\"\n    },\n    {\n      \"asset\": \"JPY\",\n      \"matchedText\": \"엔화강세\",\n      \"confidence\": 0.90,\n      \"reasoning\": \"엔화 강세는 일본 통화에 대한 언급으로, 경제적 영향을 미치는 요소로 판단됨.\"\n    }\n  ],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"역대 최대\", \"급등\", \"괜찮을까\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단하기 어려운 중립적인 표현들이 사용됨.\"\n  }\n}"
+  },
+  "PcnIU_m0wcE_토허제 실거주 잠시 풀리면 강남 집값 잡힐까?(ft.윤지영 중개사)": {
+    "method": "llm",
+    "model": "gpt-4o-mini",
+    "timestamp": "2026-02-11T13:25:19.197Z",
+    "detectedAssets": [],
+    "toneAnalysis": {
+      "tone": "neutral",
+      "keywords": [
+        "강남 집값",
+        "실거주",
+        "토허제"
+      ],
+      "reasoning": "제목에서 특정 종목이나 섹터가 언급되지 않았고, 집값에 대한 전망이 명확하지 않아 판단이 불가함."
+    },
+    "rawResponse": "{\n  \"assets\": [],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"강남 집값\", \"실거주\", \"토허제\"],\n    \"reasoning\": \"제목에서 특정 종목이나 섹터가 언급되지 않았고, 집값에 대한 전망이 명확하지 않아 판단이 불가함.\"\n  }\n}"
   }
 }
