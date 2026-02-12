@@ -14,6 +14,7 @@ import {
   ReferenceLine,
 } from "recharts"
 import { cn } from "@/lib/utils"
+import { HelpModal } from "./help-modal"
 
 interface MonthlyData {
   label: string
@@ -131,6 +132,7 @@ export function HeroChart({
               <span className="text-sm sm:text-base text-muted-foreground font-medium">
                 전반꿀 지수
               </span>
+              <HelpModal />
             </div>
             <div className="flex items-baseline gap-3">
               <span 

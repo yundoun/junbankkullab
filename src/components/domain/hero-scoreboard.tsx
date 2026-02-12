@@ -4,6 +4,7 @@ import * as React from "react"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { TrendingDown, TrendingUp, Zap } from "lucide-react"
+import { HelpModal } from "./help-modal"
 
 // 기간별 데이터 타입
 interface PeriodData {
@@ -149,6 +150,7 @@ export function HeroScoreboard({
             <span className="text-sm font-medium text-muted-foreground tracking-wider uppercase">
               역지표 검증 리포트
             </span>
+            <HelpModal />
             <Zap className="w-5 h-5 text-amber-500" />
           </div>
           <h1 className="text-lg sm:text-xl font-bold text-foreground">
