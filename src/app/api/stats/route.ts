@@ -57,31 +57,7 @@ export async function GET() {
           published_at,
           status
         ),
-        market_data (
-          trading_date,
-          previous_close,
-          close_price,
-          price_change,
-          direction,
-          predicted_direction,
-          is_honey,
-          judgment_reasoning,
-          price_1w,
-          price_change_1w,
-          direction_1w,
-          is_honey_1w,
-          trading_date_1w,
-          price_1m,
-          price_change_1m,
-          direction_1m,
-          is_honey_1m,
-          trading_date_1m,
-          price_3m,
-          price_change_3m,
-          direction_3m,
-          is_honey_3m,
-          trading_date_3m
-        )
+        market_data (*)
       `)
       .order('analyzed_at', { ascending: false })
 
