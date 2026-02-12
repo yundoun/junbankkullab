@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { HelpCircle, TrendingDown, TrendingUp, Sparkles, BarChart2 } from 'lucide-react'
+import { TrendingDown, TrendingUp, Sparkles, BarChart2 } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
@@ -14,23 +14,24 @@ import { cn } from '@/lib/utils'
 
 interface HelpModalProps {
   className?: string
+  /** 버튼 텍스트 (기본: "어떻게 계산되나요?") */
+  label?: string
 }
 
-export function HelpModal({ className }: HelpModalProps) {
+export function HelpModal({ className, label = "어떻게 계산되나요?" }: HelpModalProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button
           className={cn(
-            "inline-flex items-center justify-center w-6 h-6 rounded-full",
-            "bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground",
-            "transition-all duration-200 hover:scale-110",
-            "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+            "text-xs text-muted-foreground hover:text-primary",
+            "underline-offset-2 hover:underline",
+            "transition-colors duration-200",
+            "focus:outline-none focus:text-primary",
             className
           )}
-          aria-label="도움말"
         >
-          <HelpCircle className="w-4 h-4" />
+          {label}
         </button>
       </DialogTrigger>
       <DialogContent className="max-w-md sm:max-w-lg max-h-[85vh] overflow-y-auto">

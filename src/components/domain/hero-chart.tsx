@@ -125,14 +125,16 @@ export function HeroChart({
             "transition-all duration-700 transform",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           )}>
-            <div className="flex items-center gap-2 mb-2">
-              <span className={cn(
-                "text-3xl sm:text-4xl transition-transform duration-500",
-                isVisible && "animate-bounce-subtle"
-              )}>🍯</span>
-              <span className="text-sm sm:text-base text-muted-foreground font-medium">
-                전반꿀 지수
-              </span>
+            <div className="flex flex-col gap-1 mb-2">
+              <div className="flex items-center gap-2">
+                <span className={cn(
+                  "text-3xl sm:text-4xl transition-transform duration-500",
+                  isVisible && "animate-bounce-subtle"
+                )}>🍯</span>
+                <span className="text-sm sm:text-base text-muted-foreground font-medium">
+                  전반꿀 지수
+                </span>
+              </div>
               <HelpModal />
             </div>
             <div className="flex items-baseline gap-3">

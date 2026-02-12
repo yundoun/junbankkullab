@@ -150,12 +150,12 @@ export function HeroScoreboard({
             <span className="text-sm font-medium text-muted-foreground tracking-wider uppercase">
               역지표 검증 리포트
             </span>
-            <HelpModal />
             <Zap className="w-5 h-5 text-amber-500" />
           </div>
           <h1 className="text-lg sm:text-xl font-bold text-foreground">
             전인구경제연구소 vs 실제 시장
           </h1>
+          <HelpModal className="mt-2" />
         </div>
 
         {/* 기간 선택 탭 */}
