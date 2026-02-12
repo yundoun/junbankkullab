@@ -63,6 +63,13 @@ interface FunnelData {
   honeyHits: number
 }
 
+// 기간별 데이터 타입
+interface PeriodData {
+  value: number
+  total: number
+  honey: number
+}
+
 interface Stats {
   overallHoneyIndex: number
   totalPredictions: number
@@ -81,6 +88,14 @@ interface Stats {
   funnel?: FunnelData
   unanalyzedCount?: number
   excludedCount?: number
+  // 기간별 꿀지수 (신규)
+  honeyIndexByPeriod?: {
+    '1d': PeriodData
+    '1w': PeriodData
+    '1m': PeriodData
+    '3m': PeriodData
+  }
+  defaultPeriod?: '1d' | '1w' | '1m' | '3m'
 }
 
 // 종목 이름 매핑
@@ -280,6 +295,8 @@ export default function Home() {
             correctCount={(stats?.totalPredictions ?? 0) - (stats?.honeyCount ?? 0)}
             totalPredictions={stats?.totalPredictions ?? 0}
             honeyIndex={honeyIndex}
+            honeyIndexByPeriod={stats?.honeyIndexByPeriod}
+            defaultPeriod={stats?.defaultPeriod ?? '1m'}
           />
           {/* 공유 버튼 */}
           <div className="flex justify-end mt-3">

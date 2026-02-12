@@ -5,15 +5,41 @@ import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import { TrendingDown, TrendingUp, Zap } from "lucide-react"
 
+// 기간별 데이터 타입
+interface PeriodData {
+  value: number      // 꿀지수 %
+  total: number      // 전체 분석 수
+  honey: number      // 전반꿀 적중 수
+}
+
+type PeriodKey = '1d' | '1w' | '1m' | '3m'
+
 interface HeroScoreboardProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** 전반꿀 적중 수 (전인구가 틀린 횟수) */
+  /** 전반꿀 적중 수 (전인구가 틀린 횟수) - 하위호환 */
   honeyCount: number
-  /** 전인구 적중 수 (전인구가 맞춘 횟수) */
+  /** 전인구 적중 수 (전인구가 맞춘 횟수) - 하위호환 */
   correctCount: number
-  /** 전체 분석 수 */
+  /** 전체 분석 수 - 하위호환 */
   totalPredictions: number
-  /** 꿀지수 (%) */
+  /** 꿀지수 (%) - 하위호환 */
   honeyIndex: number
+  /** 기간별 꿀지수 (신규) */
+  honeyIndexByPeriod?: {
+    '1d': PeriodData
+    '1w': PeriodData
+    '1m': PeriodData
+    '3m': PeriodData
+  }
+  /** 기본 선택 기간 */
+  defaultPeriod?: PeriodKey
+}
+
+// 기간 라벨
+const PERIOD_LABELS: Record<PeriodKey, string> = {
+  '1d': '1일',
+  '1w': '1주',
+  '1m': '1개월',
+  '3m': '3개월',
 }
 
 // 숫자 애니메이션 훅
@@ -45,22 +71,40 @@ export function HeroScoreboard({
   correctCount,
   totalPredictions,
   honeyIndex,
+  honeyIndexByPeriod,
+  defaultPeriod = '1m',
   className,
   ...props
 }: HeroScoreboardProps) {
   const [isVisible, setIsVisible] = useState(false)
+  const [selectedPeriod, setSelectedPeriod] = useState<PeriodKey>(defaultPeriod)
   
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100)
     return () => clearTimeout(timer)
   }, [])
+
+  // 기간별 데이터 가져오기 (없으면 기존 값 사용)
+  const currentData = honeyIndexByPeriod?.[selectedPeriod] ?? {
+    value: honeyIndex,
+    total: totalPredictions,
+    honey: honeyCount,
+  }
+
+  const currentHoneyCount = currentData.honey
+  const currentTotal = currentData.total
+  const currentCorrectCount = currentTotal - currentHoneyCount
+  const currentHoneyIndex = currentData.value
   
-  const animatedHoney = useAnimatedNumber(honeyCount, 1500)
-  const animatedCorrect = useAnimatedNumber(correctCount, 1500)
-  const animatedIndex = useAnimatedNumber(Math.round(honeyIndex * 10), 2000) / 10
+  const animatedHoney = useAnimatedNumber(currentHoneyCount, 1500)
+  const animatedCorrect = useAnimatedNumber(currentCorrectCount, 1500)
+  const animatedIndex = useAnimatedNumber(Math.round(currentHoneyIndex * 10), 2000) / 10
 
   // 전반꿀이 이기고 있는지
-  const honeyWinning = honeyCount > correctCount
+  const honeyWinning = currentHoneyCount > currentCorrectCount
+
+  // 기간 탭 사용 여부
+  const usePeriodTabs = !!honeyIndexByPeriod
 
   return (
     <div 
@@ -111,6 +155,43 @@ export function HeroScoreboard({
             전인구경제연구소 vs 실제 시장
           </h1>
         </div>
+
+        {/* 기간 선택 탭 */}
+        {usePeriodTabs && (
+          <div className={cn(
+            "flex justify-center gap-2 px-6 py-4",
+            "transition-all duration-500 delay-100",
+            isVisible ? "opacity-100" : "opacity-0"
+          )}>
+            {(Object.keys(PERIOD_LABELS) as PeriodKey[]).map((period) => {
+              const periodData = honeyIndexByPeriod[period]
+              const isSelected = selectedPeriod === period
+              const hasData = periodData && periodData.total > 0
+              
+              return (
+                <button
+                  key={period}
+                  onClick={() => hasData && setSelectedPeriod(period)}
+                  disabled={!hasData}
+                  className={cn(
+                    "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                    isSelected
+                      ? "bg-primary/20 text-primary border border-primary/50"
+                      : hasData
+                        ? "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                        : "bg-muted/30 text-muted-foreground/50 cursor-not-allowed",
+                    isSelected && "scale-105"
+                  )}
+                >
+                  {PERIOD_LABELS[period]}
+                  {!hasData && (
+                    <span className="ml-1 text-xs opacity-70">준비중</span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
+        )}
 
         {/* 스코어보드 메인 */}
         <div className="p-6 sm:p-8">
@@ -163,7 +244,7 @@ export function HeroScoreboard({
                     </span>
                   </div>
                   <div className="mt-1 text-xs text-muted-foreground">
-                    전반꿀 지수
+                    전반꿀 지수 {usePeriodTabs && `(${PERIOD_LABELS[selectedPeriod]})`}
                   </div>
                 </div>
               </div>
@@ -202,12 +283,12 @@ export function HeroScoreboard({
               {/* 전반꿀 비율 */}
               <div 
                 className="absolute left-0 top-0 h-full bg-gradient-to-r from-amber-400 to-amber-500 transition-all duration-1000 ease-out"
-                style={{ width: `${isVisible ? honeyIndex : 0}%` }}
+                style={{ width: `${isVisible ? currentHoneyIndex : 0}%` }}
               />
               {/* 전인구 비율 */}
               <div 
                 className="absolute right-0 top-0 h-full bg-gradient-to-l from-blue-400 to-blue-500 transition-all duration-1000 ease-out"
-                style={{ width: `${isVisible ? (100 - honeyIndex) : 0}%` }}
+                style={{ width: `${isVisible ? (100 - currentHoneyIndex) : 0}%` }}
               />
               {/* 50% 마커 */}
               <div className="absolute left-1/2 top-0 w-0.5 h-full bg-background/50 -translate-x-1/2" />
@@ -215,9 +296,9 @@ export function HeroScoreboard({
             
             {/* 레이블 */}
             <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-              <span>🍯 {honeyIndex.toFixed(1)}%</span>
+              <span>🍯 {currentHoneyIndex.toFixed(1)}%</span>
               <span className="text-muted-foreground/50">|</span>
-              <span>📈 {(100 - honeyIndex).toFixed(1)}%</span>
+              <span>📈 {(100 - currentHoneyIndex).toFixed(1)}%</span>
             </div>
           </div>
         </div>
@@ -252,9 +333,9 @@ export function HeroScoreboard({
                   honeyWinning ? "text-amber-600 dark:text-amber-400" : "text-blue-600 dark:text-blue-400"
                 )}>
                   {honeyWinning ? (
-                    <>전인구 소장이 {totalPredictions}번 중 {honeyCount}번 틀렸습니다</>
+                    <>{PERIOD_LABELS[selectedPeriod]} 기준, 전인구 소장이 {currentTotal}번 중 {currentHoneyCount}번 틀렸습니다</>
                   ) : (
-                    <>전인구 소장이 {totalPredictions}번 중 {correctCount}번 맞췄습니다</>
+                    <>{PERIOD_LABELS[selectedPeriod]} 기준, 전인구 소장이 {currentTotal}번 중 {currentCorrectCount}번 맞췄습니다</>
                   )}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -276,7 +357,7 @@ export function HeroScoreboard({
           "transition-all duration-700 delay-600",
           isVisible ? "opacity-100" : "opacity-0"
         )}>
-          <span>📊 분석 대상: {totalPredictions}개 예측</span>
+          <span>📊 분석 대상: {currentTotal}개 예측</span>
           <span>2025.01 ~ 현재</span>
         </div>
       </div>
