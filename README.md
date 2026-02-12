@@ -8,9 +8,9 @@
 
 🔗 **[jbklab.vercel.app](https://jbklab.vercel.app)** — 지금 바로 확인하기
 
-<!-- 스크린샷 추가 예정
 ![전반꿀 스코어보드](./docs/screenshot-hero.png)
--->
+
+![월별 꿀지수 추이](./docs/screenshot-chart.png)
 
 ---
 
