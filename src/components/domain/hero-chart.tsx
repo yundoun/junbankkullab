@@ -21,6 +21,7 @@ interface MonthlyData {
   year: number
   month: number
   predictions: number
+  honey: number
   honeyIndex: number
 }
 
@@ -287,31 +288,64 @@ export function HeroChart({
                   if (active && payload && payload.length) {
                     const data = payload[0].payload as MonthlyData
                     const isAbove = data.honeyIndex >= 50
+                    const honeyCount = data.honey ?? 0
+                    const jigCount = data.predictions - honeyCount
                     return (
-                      <div className="rounded-xl border border-border bg-popover/95 backdrop-blur-sm p-4 shadow-xl animate-scale-in">
-                        <p className="font-semibold text-foreground mb-2">
+                      <div className="rounded-xl border border-border bg-popover/95 backdrop-blur-sm p-4 shadow-xl animate-scale-in min-w-[180px]">
+                        <p className="font-semibold text-foreground mb-3">
                           {data.year}년 {data.month}월
                         </p>
-                        <div className="space-y-1.5">
-                          <div className="flex items-center justify-between gap-4">
-                            <span className="text-muted-foreground text-sm">꿀지수</span>
-                            <span className={cn(
-                              "font-bold text-lg",
-                              isAbove ? "text-bullish" : "text-foreground"
-                            )}>
-                              {data.honeyIndex.toFixed(1)}%
+                        
+                        {/* 꿀지수 */}
+                        <div className="flex items-center justify-between gap-4 mb-3">
+                          <span className="text-muted-foreground text-sm">꿀지수</span>
+                          <span className={cn(
+                            "font-bold text-xl tabular-nums",
+                            isAbove ? "text-bullish" : "text-foreground"
+                          )}>
+                            {data.honeyIndex.toFixed(1)}%
+                          </span>
+                        </div>
+                        
+                        {/* 진행 바 */}
+                        <div className="relative h-2 rounded-full bg-muted overflow-hidden mb-3">
+                          <div 
+                            className="absolute left-0 top-0 h-full bg-amber-500 transition-all duration-300"
+                            style={{ width: `${data.honeyIndex}%` }}
+                          />
+                          <div 
+                            className="absolute right-0 top-0 h-full bg-blue-500 transition-all duration-300"
+                            style={{ width: `${100 - data.honeyIndex}%` }}
+                          />
+                        </div>
+                        
+                        {/* 세부 카운트 */}
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="flex items-center gap-1">
+                            <span>🍯</span>
+                            <span className="text-amber-500 font-medium">{honeyCount}</span>
+                          </span>
+                          <span className="text-muted-foreground">vs</span>
+                          <span className="flex items-center gap-1">
+                            <span className="text-blue-500 font-medium">{jigCount}</span>
+                            <span>📈</span>
+                          </span>
+                        </div>
+                        <p className="text-xs text-muted-foreground text-center">
+                          총 {data.predictions}개 예측
+                        </p>
+                        
+                        {isAbove && (
+                          <div className="pt-2 mt-2 border-t border-border">
+                            <span className="text-xs text-bullish font-medium flex items-center gap-1 justify-center">
+                              <span className="relative flex h-1.5 w-1.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bullish opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-bullish"></span>
+                              </span>
+                              역지표 유효!
                             </span>
                           </div>
-                          <div className="flex items-center justify-between gap-4">
-                            <span className="text-muted-foreground text-sm">예측 수</span>
-                            <span className="text-foreground font-medium">{data.predictions}개</span>
-                          </div>
-                          {isAbove && (
-                            <div className="pt-1 mt-1 border-t border-border">
-                              <span className="text-xs text-bullish font-medium">🍯 역지표 유효!</span>
-                            </div>
-                          )}
-                        </div>
+                        )}
                       </div>
                     )
                   }

@@ -42,6 +42,7 @@ interface TimelineData {
   year: number
   month: number
   predictions: number
+  honey: number
   honeyIndex: number
 }
 

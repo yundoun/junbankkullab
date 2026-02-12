@@ -134,6 +134,7 @@ export async function GET() {
           year,
           month,
           predictions: stats.predictions,
+          honey: stats.honey,
           honeyIndex: Math.round((stats.honey / stats.predictions) * 1000) / 10,
         }
       })
