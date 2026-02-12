@@ -132,7 +132,8 @@ async function saveToSupabase(
   marketData: AnalyzedItem['marketData'] | null,
   judgment: AnalyzedItem['judgment'] | null,
   status: 'analyzed' | 'unanalyzed' | 'excluded',
-  excludeReason?: string
+  excludeReason?: string,
+  multiPeriodData?: MultiPeriodData | null
 ) {
   if (!supabase) {
     console.log('  ⚠️ Supabase 미설정, 로컬 저장만 수행');
@@ -187,20 +188,56 @@ async function saveToSupabase(
         return;
       }
 
-      // 3. market_data 테이블
+      // 3. market_data 테이블 (기존 1d + 멀티 기간)
+      const predictedDir = judgment.predictedDirection;
+      
+      // 멀티 기간 역지표 판정 함수
+      const calcIsHoney = (actualDir: 'up' | 'down' | 'flat') => {
+        const actual = actualDir === 'up' ? 'bullish' : actualDir === 'down' ? 'bearish' : 'flat';
+        return (predictedDir === 'bullish' && actual === 'bearish') ||
+               (predictedDir === 'bearish' && actual === 'bullish');
+      };
+      
+      const marketDataRow: Record<string, unknown> = {
+        analysis_id: analysisData.id,
+        trading_date: marketData.tradingDate,
+        previous_close: marketData.previousClose,
+        close_price: marketData.closePrice,
+        price_change: marketData.priceChange,
+        direction: marketData.direction,
+        predicted_direction: predictedDir,
+        is_honey: judgment.isHoney,
+        judgment_reasoning: judgment.reasoning,
+      };
+      
+      // 멀티 기간 데이터 추가
+      if (multiPeriodData) {
+        if (multiPeriodData['1w']) {
+          marketDataRow.price_1w = multiPeriodData['1w'].close;
+          marketDataRow.price_change_1w = multiPeriodData['1w'].change;
+          marketDataRow.direction_1w = multiPeriodData['1w'].direction;
+          marketDataRow.is_honey_1w = calcIsHoney(multiPeriodData['1w'].direction);
+          marketDataRow.trading_date_1w = multiPeriodData['1w'].date;
+        }
+        if (multiPeriodData['1m']) {
+          marketDataRow.price_1m = multiPeriodData['1m'].close;
+          marketDataRow.price_change_1m = multiPeriodData['1m'].change;
+          marketDataRow.direction_1m = multiPeriodData['1m'].direction;
+          marketDataRow.is_honey_1m = calcIsHoney(multiPeriodData['1m'].direction);
+          marketDataRow.trading_date_1m = multiPeriodData['1m'].date;
+        }
+        if (multiPeriodData['3m']) {
+          marketDataRow.price_3m = multiPeriodData['3m'].close;
+          marketDataRow.price_change_3m = multiPeriodData['3m'].change;
+          marketDataRow.direction_3m = multiPeriodData['3m'].direction;
+          marketDataRow.is_honey_3m = calcIsHoney(multiPeriodData['3m'].direction);
+          marketDataRow.trading_date_3m = multiPeriodData['3m'].date;
+        }
+      }
+      
       const { error: marketError } = await supabase
         .from('market_data')
-        .upsert({
-          analysis_id: analysisData.id,
-          trading_date: marketData.tradingDate,
-          previous_close: marketData.previousClose,
-          close_price: marketData.closePrice,
-          price_change: marketData.priceChange,
-          direction: marketData.direction,
-          predicted_direction: judgment.predictedDirection,
-          is_honey: judgment.isHoney,
-          judgment_reasoning: judgment.reasoning,
-        }, { onConflict: 'analysis_id' });
+        .upsert(marketDataRow, { onConflict: 'analysis_id' });
 
       if (marketError) {
         console.error(`  ❌ Supabase market_data error: ${marketError.message}`);
@@ -257,6 +294,48 @@ function getClosePrice(asset: string, publishedAt: string): {
   } catch (e) {
     console.error(`  시장 데이터 조회 실패: ${asset}`, e);
     return { direction: 'no_data', closePrice: 0, previousClose: null, priceChange: 0, closePriceDate: '' };
+  }
+}
+
+interface MultiPeriodData {
+  '1d': { date: string; close: number; change: number; direction: 'up' | 'down' | 'flat'; available: boolean } | null;
+  '1w': { date: string; close: number; change: number; direction: 'up' | 'down' | 'flat'; available: boolean } | null;
+  '1m': { date: string; close: number; change: number; direction: 'up' | 'down' | 'flat'; available: boolean } | null;
+  '3m': { date: string; close: number; change: number; direction: 'up' | 'down' | 'flat'; available: boolean } | null;
+  baseline: { date: string; close: number };
+}
+
+function getMultiPeriodPrices(asset: string, publishedAt: string): MultiPeriodData | null {
+  try {
+    const date = publishedAt.split('T')[0];
+    
+    const projectDir = path.join(__dirname, '..');
+    const pythonCmd = fs.existsSync(path.join(projectDir, 'venv'))
+      ? `source venv/bin/activate && python3 scripts/market_data.py multi ${asset} ${date}`
+      : `python3 scripts/market_data.py multi ${asset} ${date}`;
+    
+    const result = execSync(
+      `cd "${projectDir}" && ${pythonCmd}`,
+      { encoding: 'utf-8', timeout: 60000, shell: '/bin/bash' }
+    );
+    
+    const data = JSON.parse(result.trim());
+    
+    if (data.error) {
+      console.error(`  멀티 기간 데이터 조회 실패: ${asset} - ${data.error}`);
+      return null;
+    }
+    
+    return {
+      baseline: data.baseline,
+      '1d': data['1d']?.available ? data['1d'] : null,
+      '1w': data['1w']?.available ? data['1w'] : null,
+      '1m': data['1m']?.available ? data['1m'] : null,
+      '3m': data['3m']?.available ? data['3m'] : null,
+    };
+  } catch (e) {
+    console.error(`  멀티 기간 데이터 조회 실패: ${asset}`, e);
+    return null;
   }
 }
 
@@ -344,8 +423,11 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
         continue;
       }
       
-      // 시장 데이터 조회
+      // 시장 데이터 조회 (1일 기준)
       const marketData = getClosePrice(asset, video.publishedAt);
+      
+      // 멀티 기간 데이터 조회 (1w/1m/3m)
+      const multiPeriodData = getMultiPeriodPrices(asset, video.publishedAt);
       
       if (marketData.direction === 'no_data') {
         result.unanalyzed.push({
@@ -398,13 +480,15 @@ async function processMonth(year: number, month: number): Promise<MonthlyResult>
       
       result.analyzed.push(analyzedItem);
       
-      // Supabase에 저장
+      // Supabase에 저장 (멀티 기간 데이터 포함)
       await saveToSupabase(
         video,
         analysis,
         analyzedItem.marketData,
         analyzedItem.judgment,
-        'analyzed'
+        'analyzed',
+        undefined,
+        multiPeriodData
       );
     }
   }

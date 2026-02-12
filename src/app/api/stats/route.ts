@@ -65,7 +65,22 @@ export async function GET() {
           direction,
           predicted_direction,
           is_honey,
-          judgment_reasoning
+          judgment_reasoning,
+          price_1w,
+          price_change_1w,
+          direction_1w,
+          is_honey_1w,
+          trading_date_1w,
+          price_1m,
+          price_change_1m,
+          direction_1m,
+          is_honey_1m,
+          trading_date_1m,
+          price_3m,
+          price_change_3m,
+          direction_3m,
+          is_honey_3m,
+          trading_date_3m
         )
       `)
       .order('analyzed_at', { ascending: false })
@@ -85,6 +100,24 @@ export async function GET() {
     const honeyIndex = validAnalyses.length > 0
       ? Math.round((honeyHits.length / validAnalyses.length) * 1000) / 10
       : 0
+
+    // 2.5 기간별 통계 (1d/1w/1m/3m)
+    const calcPeriodStats = (field: string) => {
+      const valid = withMarketData.filter(a => (a.market_data as any)?.[field] !== null && (a.market_data as any)?.[field] !== undefined)
+      const honey = valid.filter(a => (a.market_data as any)?.[field] === true)
+      return {
+        value: valid.length > 0 ? Math.round((honey.length / valid.length) * 1000) / 10 : 0,
+        total: valid.length,
+        honey: honey.length,
+      }
+    }
+
+    const honeyIndexByPeriod = {
+      '1d': { value: honeyIndex, total: validAnalyses.length, honey: honeyHits.length },
+      '1w': calcPeriodStats('is_honey_1w'),
+      '1m': calcPeriodStats('is_honey_1m'),
+      '3m': calcPeriodStats('is_honey_3m'),
+    }
 
     // 3. 종목별 통계
     const assetMap = new Map<string, { total: number; honey: number }>()
@@ -220,6 +253,10 @@ export async function GET() {
       overallHoneyIndex: honeyIndex,
       totalPredictions: validAnalyses.length,
       honeyCount: honeyHits.length,
+
+      // 기간별 꿀지수 (1d/1w/1m/3m)
+      honeyIndexByPeriod,
+      defaultPeriod: '1m',
 
       // 메타 정보
       totalVideos: totalVideos || 0,
