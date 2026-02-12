@@ -9,6 +9,7 @@ import {
   PredictionCard,
   VoteCard,
   AnalysisFunnel,
+  TodaySignal,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
 import { Pagination } from '@/components/ui/pagination'
@@ -264,6 +265,13 @@ export default function Home() {
       </header>
       
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        {/* 오늘의 시그널 - 최신 예측 기반 액셔너블 인사이트 */}
+        {stats?.recentPredictions && stats.recentPredictions.length > 0 && (
+          <div className="animate-fade-down mb-6 sm:mb-8">
+            <TodaySignal predictions={stats.recentPredictions} />
+          </div>
+        )}
+
         {/* Hero: 스코어보드 (전체 너비) */}
         <div className="animate-scale-in mb-6 sm:mb-8">
           <HeroScoreboard
