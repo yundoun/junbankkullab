@@ -328,12 +328,132 @@ def get_price_at(symbol: str, timestamp_ms: int, hours_after: int = 24):
         return None
 
 
+def get_multi_period_prices(symbol: str, date_str: str):
+    """
+    Get prices for multiple periods: 1d, 1w (5 trading days), 1m (20 trading days), 3m (60 trading days).
+    
+    Args:
+        symbol: Asset name (e.g., 'Nvidia', 'KOSPI')
+        date_str: Date in YYYY-MM-DD format (video publish date)
+    
+    Returns:
+        dict with period data: { '1d': {...}, '1w': {...}, '1m': {...}, '3m': {...} }
+    """
+    resolved_symbol = SYMBOL_MAP.get(symbol, symbol)
+    calendar_name = MARKET_CALENDAR.get(symbol)
+    
+    # Get the publish day's trading day (baseline)
+    baseline_day = get_trading_day(symbol, date_str, next_day=False)
+    baseline_date = datetime.strptime(baseline_day, '%Y-%m-%d')
+    
+    # Fetch ~90 days of data (enough for 60 trading days)
+    fetch_start = baseline_date - timedelta(days=3)
+    fetch_end = baseline_date + timedelta(days=120)
+    
+    try:
+        ticker = yf.Ticker(resolved_symbol)
+        hist = ticker.history(start=fetch_start, end=fetch_end, interval='1d')
+        
+        if hist.empty:
+            return {'error': 'No data available'}
+        
+        # Normalize timezone
+        hist.index = hist.index.tz_localize(None) if hist.index.tz else hist.index
+        
+        # Get trading days after baseline
+        trading_days = []
+        baseline_normalized = baseline_date.replace(hour=0, minute=0, second=0, microsecond=0)
+        
+        for idx in hist.index:
+            idx_date = idx.replace(hour=0, minute=0, second=0, microsecond=0)
+            if idx_date >= baseline_normalized:
+                trading_days.append({
+                    'date': idx_date.strftime('%Y-%m-%d'),
+                    'close': float(hist.loc[idx, 'Close'])
+                })
+        
+        if len(trading_days) < 2:
+            return {'error': 'Not enough trading days'}
+        
+        # Baseline price (publish day or first available)
+        baseline_close = trading_days[0]['close']
+        
+        # Period targets (trading day indices after baseline)
+        # 1d = index 1 (next trading day)
+        # 1w = index 5 (5 trading days)
+        # 1m = index 20 (20 trading days)
+        # 3m = index 60 (60 trading days)
+        period_indices = {
+            '1d': 1,
+            '1w': 5,
+            '1m': 20,
+            '3m': 60
+        }
+        
+        result = {
+            'symbol': resolved_symbol,
+            'baseline': {
+                'date': trading_days[0]['date'],
+                'close': baseline_close
+            }
+        }
+        
+        for period, target_idx in period_indices.items():
+            if target_idx < len(trading_days):
+                period_data = trading_days[target_idx]
+                period_close = period_data['close']
+                
+                change_pct = ((period_close - baseline_close) / baseline_close) * 100 if baseline_close != 0 else 0
+                
+                direction = 'flat'
+                if change_pct > 0.1:
+                    direction = 'up'
+                elif change_pct < -0.1:
+                    direction = 'down'
+                
+                result[period] = {
+                    'date': period_data['date'],
+                    'close': round(period_close, 4),
+                    'change': round(change_pct, 4),
+                    'direction': direction,
+                    'available': True
+                }
+            else:
+                result[period] = {
+                    'available': False,
+                    'reason': f'Only {len(trading_days)} trading days available, need {target_idx + 1}'
+                }
+        
+        return result
+        
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return {'error': str(e)}
+
+
 def main():
     if len(sys.argv) < 3:
         print("Usage:")
         print("  python market_data.py <symbol> <timestamp_ms> [hours_after]")
         print("  python market_data.py close <symbol> <date>")
+        print("  python market_data.py multi <symbol> <date>")
         sys.exit(1)
+    
+    # Check if it's a multi-period request
+    if sys.argv[1] == 'multi':
+        if len(sys.argv) < 4:
+            print("Usage: python market_data.py multi <symbol> <date>")
+            sys.exit(1)
+        
+        symbol = sys.argv[2]
+        date_str = sys.argv[3]
+        
+        result = get_multi_period_prices(symbol, date_str)
+        print(json.dumps(result))
+        
+        if 'error' in result:
+            sys.exit(1)
+        return
     
     # Check if it's a close price request
     if sys.argv[1] == 'close':
