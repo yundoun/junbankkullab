@@ -10,6 +10,7 @@ import {
   VoteCard,
   AnalysisFunnel,
   TodaySignal,
+  ShareButtons,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
 import { Pagination } from '@/components/ui/pagination'
@@ -280,6 +281,10 @@ export default function Home() {
             totalPredictions={stats?.totalPredictions ?? 0}
             honeyIndex={honeyIndex}
           />
+          {/* 공유 버튼 */}
+          <div className="flex justify-end mt-3">
+            <ShareButtons honeyIndex={honeyIndex} />
+          </div>
         </div>
         
         {/* 월별 트렌드 차트 (선택적 표시) */}
