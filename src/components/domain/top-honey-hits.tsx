@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Trophy, TrendingDown, TrendingUp, ExternalLink } from 'lucide-react'
+import { Trophy, TrendingDown, TrendingUp, ExternalLink, Play, Calendar } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface TopHit {
@@ -13,6 +13,11 @@ interface TopHit {
   priceChange: number
   publishedAt: string
   thumbnail: string
+  // 추가 데이터 (API에서 제공 시)
+  startPrice?: number
+  endPrice?: number
+  measurementPeriod?: string  // e.g., "1개월"
+  tradingDate?: string
 }
 
 interface TopHoneyHitsProps {
@@ -49,16 +54,19 @@ export function TopHoneyHits({ hits, className }: TopHoneyHitsProps) {
           const rankStyle = RANK_STYLES[hit.rank] || { emoji: `${hit.rank}`, border: 'border-border', bg: '' }
           const isPredictedUp = hit.predictedDirection === 'bullish'
           const actualDown = hit.priceChange < 0
+          
+          // 측정 기간 계산 (tradingDate가 있으면 사용)
+          const measurementDays = hit.tradingDate 
+            ? Math.ceil((new Date(hit.tradingDate).getTime() - new Date(hit.publishedAt).getTime()) / (1000 * 60 * 60 * 24))
+            : null
+          const periodLabel = hit.measurementPeriod || (measurementDays ? `${measurementDays}일 후` : '익일')
 
           return (
-            <a
+            <div
               key={`${hit.videoId}-${hit.asset}`}
-              href={`https://youtube.com/watch?v=${hit.videoId}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className={cn(
-                'group block rounded-xl border p-4 transition-all duration-200',
-                'hover:shadow-lg hover:scale-[1.01]',
+                'rounded-xl border p-4 transition-all duration-200',
+                'hover:shadow-lg',
                 rankStyle.border,
                 rankStyle.bg,
                 hit.rank === 1 && 'ring-1 ring-amber-500/30'
@@ -73,18 +81,20 @@ export function TopHoneyHits({ hits, className }: TopHoneyHitsProps) {
                 {/* 콘텐츠 */}
                 <div className="flex-1 min-w-0">
                   {/* 종목 + 날짜 */}
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="font-bold text-foreground">{hit.asset}</span>
-                    <span className="text-xs text-muted-foreground">{formatDate(hit.publishedAt)}</span>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="font-bold text-lg text-foreground">{hit.asset}</span>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Calendar className="w-3 h-3" />
+                      {formatDate(hit.publishedAt)}
+                    </div>
                   </div>
 
-                  {/* 예측 vs 실제 */}
-                  <div className="space-y-2">
-                    {/* 예측 */}
+                  {/* 전인구 예측 */}
+                  <div className="mb-3 p-2 rounded-lg bg-muted/50">
                     <div className="flex items-center gap-2 text-sm">
-                      <span className="text-muted-foreground">예측:</span>
+                      <span className="text-muted-foreground">전인구 예측:</span>
                       <span className={cn(
-                        'flex items-center gap-1 font-medium',
+                        'flex items-center gap-1 font-semibold',
                         isPredictedUp ? 'text-bullish' : 'text-bearish'
                       )}>
                         {isPredictedUp ? (
@@ -94,12 +104,41 @@ export function TopHoneyHits({ hits, className }: TopHoneyHitsProps) {
                         )}
                       </span>
                     </div>
+                  </div>
 
-                    {/* 실제 */}
-                    <div className="flex items-center gap-2 text-sm">
-                      <span className="text-muted-foreground">실제:</span>
+                  {/* 실제 결과 박스 */}
+                  <div className="rounded-lg border border-border bg-background/50 p-3 mb-3">
+                    <div className="text-xs text-muted-foreground mb-2 flex items-center gap-1">
+                      📊 {periodLabel} 실제 결과
+                    </div>
+                    
+                    {/* 가격 정보 (있을 경우) */}
+                    {(hit.startPrice || hit.endPrice) && (
+                      <div className="grid grid-cols-2 gap-2 text-sm mb-2">
+                        {hit.startPrice && (
+                          <div>
+                            <span className="text-muted-foreground text-xs">시작가</span>
+                            <div className="font-medium">${hit.startPrice.toLocaleString()}</div>
+                          </div>
+                        )}
+                        {hit.endPrice && (
+                          <div>
+                            <span className="text-muted-foreground text-xs">종가</span>
+                            <div className={cn(
+                              'font-medium',
+                              actualDown ? 'text-bearish' : 'text-bullish'
+                            )}>
+                              ${hit.endPrice.toLocaleString()}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* 변동률 */}
+                    <div className="flex items-center gap-2">
                       <span className={cn(
-                        'flex items-center gap-1 font-bold text-lg',
+                        'flex items-center gap-1 font-bold text-xl',
                         actualDown ? 'text-bearish' : 'text-bullish'
                       )}>
                         {actualDown ? (
@@ -110,36 +149,56 @@ export function TopHoneyHits({ hits, className }: TopHoneyHitsProps) {
                         {hit.priceChange > 0 ? '+' : ''}{hit.priceChange.toFixed(1)}%
                       </span>
                     </div>
-                  </div>
 
-                  {/* 프로그레스 바 */}
-                  <div className="mt-3">
-                    <div className="relative h-2 rounded-full bg-muted overflow-hidden">
-                      <div
-                        className={cn(
-                          'absolute h-full rounded-full transition-all duration-500',
-                          actualDown ? 'bg-bearish left-1/2' : 'bg-bullish right-1/2',
-                          actualDown ? 'origin-left' : 'origin-right'
-                        )}
-                        style={{ 
-                          width: `${Math.min(Math.abs(hit.priceChange) * 2, 50)}%`,
-                          transform: actualDown ? 'translateX(-100%)' : 'translateX(0)'
-                        }}
-                      />
-                      <div className="absolute left-1/2 top-0 w-0.5 h-full bg-border -translate-x-1/2" />
+                    {/* 프로그레스 바 */}
+                    <div className="mt-2">
+                      <div className="relative h-2 rounded-full bg-muted overflow-hidden">
+                        <div
+                          className={cn(
+                            'absolute h-full rounded-full transition-all duration-500',
+                            actualDown ? 'bg-bearish left-1/2' : 'bg-bullish right-1/2',
+                            actualDown ? 'origin-left' : 'origin-right'
+                          )}
+                          style={{ 
+                            width: `${Math.min(Math.abs(hit.priceChange) * 2, 50)}%`,
+                            transform: actualDown ? 'translateX(-100%)' : 'translateX(0)'
+                          }}
+                        />
+                        <div className="absolute left-1/2 top-0 w-0.5 h-full bg-border -translate-x-1/2" />
+                      </div>
                     </div>
+
+                    {/* 측정일 표시 */}
+                    {hit.tradingDate && (
+                      <div className="mt-2 text-xs text-muted-foreground">
+                        측정일: {formatDate(hit.tradingDate)}
+                      </div>
+                    )}
                   </div>
 
-                  {/* 역지표 태그 */}
-                  <div className="mt-2 flex items-center justify-between">
-                    <span className="text-xs text-amber-500 font-medium">
-                      🍯 역지표 대성공
+                  {/* 하단: 역지표 태그 + 영상보기 버튼 */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-amber-500 font-medium">
+                      🍯 역지표 대성공!
                     </span>
-                    <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <a
+                      href={`https://youtube.com/watch?v=${hit.videoId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg',
+                        'bg-red-500/10 hover:bg-red-500/20 text-red-500',
+                        'text-sm font-medium transition-colors'
+                      )}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Play className="w-4 h-4" />
+                      영상보기
+                    </a>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           )
         })}
       </div>

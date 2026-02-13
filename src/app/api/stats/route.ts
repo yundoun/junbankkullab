@@ -279,6 +279,7 @@ export async function GET() {
         priceChange: h.priceChange,
         publishedAt: h.publishedAt,
         thumbnail: h.thumbnail,
+        tradingDate: h.tradingDate,
       }))
 
     // 12. 역지표 상세 통계

@@ -80,6 +80,7 @@ interface TopHit {
   priceChange: number
   publishedAt: string
   thumbnail: string
+  tradingDate?: string
 }
 
 interface LatestItem {
