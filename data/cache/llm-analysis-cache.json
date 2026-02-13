@@ -10462,5 +10462,21 @@
       "reasoning": "투자와 배당이라는 긍정적인 요소가 언급되어 있어 긍정적인 전망으로 판단됨."
     },
     "rawResponse": "{\n  \"assets\": [],\n  \"tone\": {\n    \"tone\": \"positive\",\n    \"keywords\": [\"투자\", \"배당\"],\n    \"reasoning\": \"투자와 배당이라는 긍정적인 요소가 언급되어 있어 긍정적인 전망으로 판단됨.\"\n  }\n}"
+  },
+  "SuNKw9Fkm50_이번에는 채권에서 나온 AI버블 경고 우려, 쉽게 설명해드립니다": {
+    "method": "llm",
+    "model": "gpt-4o-mini",
+    "timestamp": "2026-02-13T02:49:01.499Z",
+    "detectedAssets": [],
+    "toneAnalysis": {
+      "tone": "neutral",
+      "keywords": [
+        "AI버블",
+        "경고",
+        "우려"
+      ],
+      "reasoning": "제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 없는 중립적인 내용이기 때문입니다."
+    },
+    "rawResponse": "{\n  \"assets\": [],\n  \"tone\": {\n    \"tone\": \"neutral\",\n    \"keywords\": [\"AI버블\", \"경고\", \"우려\"],\n    \"reasoning\": \"제목에서 긍정적 또는 부정적 전망을 명확히 판단할 수 없는 중립적인 내용이기 때문입니다.\"\n  }\n}"
   }
 }
