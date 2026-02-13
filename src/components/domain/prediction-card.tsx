@@ -189,12 +189,14 @@ export function PredictionCard({
               <>
                 <span className="text-muted-foreground">→</span>
                 
-                {/* 결과 + 가격변동률 통합 */}
+                {/* 결과 + 가격변동률 통합 - 색상은 실제 시장 방향 기준 */}
                 <span className={cn(
                   "inline-flex items-center gap-1.5 px-2 py-1 rounded-md font-semibold",
-                  status === 'correct' 
-                    ? "bg-bullish/10 text-bullish" 
-                    : "bg-bearish/10 text-bearish"
+                  actualDirection === 'bullish'
+                    ? "bg-bullish/10 text-bullish"
+                    : actualDirection === 'bearish'
+                    ? "bg-bearish/10 text-bearish"
+                    : "bg-muted/10 text-muted-foreground"
                 )}>
                   {status === 'correct' ? '✅' : '❌'}
                   {actualDirection && (
