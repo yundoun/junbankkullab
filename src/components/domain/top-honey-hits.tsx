@@ -135,37 +135,19 @@ export function TopHoneyHits({ hits, className }: TopHoneyHitsProps) {
                       </div>
                     )}
 
-                    {/* 변동률 */}
+                    {/* 변동률 - 크게 강조 */}
                     <div className="flex items-center gap-2">
                       <span className={cn(
-                        'flex items-center gap-1 font-bold text-xl',
+                        'flex items-center gap-1.5 font-black text-2xl',
                         actualDown ? 'text-bearish' : 'text-bullish'
                       )}>
                         {actualDown ? (
-                          <TrendingDown className="w-5 h-5" />
+                          <TrendingDown className="w-6 h-6" />
                         ) : (
-                          <TrendingUp className="w-5 h-5" />
+                          <TrendingUp className="w-6 h-6" />
                         )}
                         {hit.priceChange > 0 ? '+' : ''}{hit.priceChange.toFixed(1)}%
                       </span>
-                    </div>
-
-                    {/* 프로그레스 바 */}
-                    <div className="mt-2">
-                      <div className="relative h-2 rounded-full bg-muted overflow-hidden">
-                        <div
-                          className={cn(
-                            'absolute h-full rounded-full transition-all duration-500',
-                            actualDown ? 'bg-bearish left-1/2' : 'bg-bullish right-1/2',
-                            actualDown ? 'origin-left' : 'origin-right'
-                          )}
-                          style={{ 
-                            width: `${Math.min(Math.abs(hit.priceChange) * 2, 50)}%`,
-                            transform: actualDown ? 'translateX(-100%)' : 'translateX(0)'
-                          }}
-                        />
-                        <div className="absolute left-1/2 top-0 w-0.5 h-full bg-border -translate-x-1/2" />
-                      </div>
                     </div>
 
                     {/* 측정일 표시 */}
