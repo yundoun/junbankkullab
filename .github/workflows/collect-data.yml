@@ -63,16 +63,8 @@ jobs:
         run: |
           npx tsx scripts/generate-stats.ts
 
-      - name: Check for changes
-        id: changes
+      # 파일 커밋 제거 - Supabase가 단일 소스
+      # data/ 폴더는 로컬 캐시/백업용으로만 사용
+      - name: Summary
         run: |
-          git diff --quiet data/ || echo "changed=true" >> $GITHUB_OUTPUT
-
-      - name: Commit and push
-        if: steps.changes.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git commit -m "chore: auto-collect $(TZ='Asia/Seoul' date +'%Y-%m-%d %H:%M KST')"
-          git push
+          echo "✅ 데이터 수집 완료 - Supabase에 저장됨"

@@ -11,8 +11,14 @@ out/
 .env.local
 .env.*.local
 
-# Data (keep predictions.json for now)
-# data/
+# Data - Supabase is the source of truth
+# Keep data/ for local cache/backup, don't commit
+data/2025/
+data/2026/
+data/cache/
+data/stats/
+data/api/
+data/review/
 *.db
 *.sqlite
 
