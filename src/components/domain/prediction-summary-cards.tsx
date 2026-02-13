@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { useState } from 'react'
-import { TrendingDown, TrendingUp, Clock, ChevronRight, Sparkles } from 'lucide-react'
+import { TrendingDown, TrendingUp, Clock, ChevronRight, ChevronLeft, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
   Dialog,
@@ -81,6 +81,91 @@ interface PredictionSummaryCardsProps {
   jigHits: Prediction[]
   pendingReviews: Prediction[]
   className?: string
+}
+
+const ITEMS_PER_PAGE = 10
+
+// 페이지네이션된 예측 리스트
+function PaginatedPredictionList({ items, title, emoji }: { 
+  items: Prediction[]
+  title: string
+  emoji: string
+}) {
+  const [currentPage, setCurrentPage] = useState(1)
+  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE)
+  const startIdx = (currentPage - 1) * ITEMS_PER_PAGE
+  const paginatedItems = items.slice(startIdx, startIdx + ITEMS_PER_PAGE)
+
+  return (
+    <>
+      <DialogHeader>
+        <DialogTitle className="flex items-center gap-2">
+          <span>{emoji}</span> {title}
+          <span className="text-sm font-normal text-muted-foreground">
+            ({items.length}건)
+          </span>
+        </DialogTitle>
+      </DialogHeader>
+      
+      <div className="space-y-3 mt-4">
+        {paginatedItems.map((item, idx) => (
+          <PredictionCard
+            key={`${item.videoId}-${item.asset}-${startIdx + idx}`}
+            {...item}
+            index={idx}
+          />
+        ))}
+      </div>
+
+      {/* 페이지네이션 */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-2 mt-6 pt-4 border-t border-border">
+          <button
+            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className={cn(
+              "p-2 rounded-lg transition-colors",
+              currentPage === 1
+                ? "text-muted-foreground/50 cursor-not-allowed"
+                : "text-foreground hover:bg-muted"
+            )}
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          
+          <div className="flex items-center gap-1">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={cn(
+                  "w-8 h-8 rounded-lg text-sm font-medium transition-colors",
+                  page === currentPage
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+          
+          <button
+            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className={cn(
+              "p-2 rounded-lg transition-colors",
+              currentPage === totalPages
+                ? "text-muted-foreground/50 cursor-not-allowed"
+                : "text-foreground hover:bg-muted"
+            )}
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+    </>
+  )
 }
 
 // 기간별 적중률 컴포넌트
@@ -193,20 +278,11 @@ function HoneyCard({ stats, hits }: { stats: HoneyStats; hits: Prediction[] }) {
       </div>
 
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <span>🍯</span> 역지표 적중 기록
-          </DialogTitle>
-        </DialogHeader>
-        <div className="space-y-3 mt-4">
-          {hits.slice(0, 20).map((hit, idx) => (
-            <PredictionCard
-              key={`${hit.videoId}-${hit.asset}-${idx}`}
-              {...hit}
-              index={idx}
-            />
-          ))}
-        </div>
+        <PaginatedPredictionList 
+          items={hits} 
+          title="역지표 적중 기록" 
+          emoji="🍯" 
+        />
       </DialogContent>
     </Dialog>
   )
@@ -292,20 +368,11 @@ function CorrectCard({ stats, hits }: { stats: CorrectStats; hits: Prediction[] 
       </div>
 
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <span>📈</span> 전인구 적중 기록
-          </DialogTitle>
-        </DialogHeader>
-        <div className="space-y-3 mt-4">
-          {hits.slice(0, 20).map((hit, idx) => (
-            <PredictionCard
-              key={`${hit.videoId}-${hit.asset}-${idx}`}
-              {...hit}
-              index={idx}
-            />
-          ))}
-        </div>
+        <PaginatedPredictionList 
+          items={hits} 
+          title="전인구 적중 기록" 
+          emoji="📈" 
+        />
       </DialogContent>
     </Dialog>
   )
@@ -369,20 +436,11 @@ function PendingCard({ stats, pending }: { stats: PendingStats; pending: Predict
       </div>
 
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <span>⏳</span> 결과 대기 중
-          </DialogTitle>
-        </DialogHeader>
-        <div className="space-y-3 mt-4">
-          {pending.slice(0, 20).map((item, idx) => (
-            <PredictionCard
-              key={`${item.videoId}-${item.asset}-${idx}`}
-              {...item}
-              index={idx}
-            />
-          ))}
-        </div>
+        <PaginatedPredictionList 
+          items={pending} 
+          title="결과 대기 중" 
+          emoji="⏳" 
+        />
       </DialogContent>
     </Dialog>
   )
