@@ -225,6 +225,127 @@ export async function GET() {
       .select('*', { count: 'exact', head: true })
       .eq('status', 'excluded')
 
+    // 10. 상세 통계 계산용 헬퍼
+    const honeyMapped = honeyHits.map(mapMention)
+    const jigMapped = jigHits.map(mapMention)
+
+    // 평균/최대 변동폭 계산
+    const calcPriceStats = (items: any[]) => {
+      const withPrice = items.filter(i => i.priceChange !== undefined && i.priceChange !== null)
+      if (withPrice.length === 0) return { avg: 0, max: 0, maxAsset: null }
+      
+      const sum = withPrice.reduce((acc, i) => acc + Math.abs(i.priceChange), 0)
+      const avg = Math.round((sum / withPrice.length) * 10) / 10
+      
+      const maxItem = withPrice.reduce((max, i) => 
+        Math.abs(i.priceChange) > Math.abs(max.priceChange) ? i : max
+      , withPrice[0])
+      
+      return {
+        avg,
+        max: Math.round(maxItem.priceChange * 10) / 10,
+        maxAsset: maxItem.asset,
+      }
+    }
+
+    // 최근 항목 찾기
+    const findLatest = (items: any[]) => {
+      if (items.length === 0) return null
+      const sorted = [...items].sort((a, b) => 
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      )
+      const latest = sorted[0]
+      const daysAgo = Math.floor(
+        (Date.now() - new Date(latest.publishedAt).getTime()) / (1000 * 60 * 60 * 24)
+      )
+      return {
+        asset: latest.asset,
+        priceChange: latest.priceChange,
+        daysAgo,
+      }
+    }
+
+    // 11. TOP 5 역지표 (변동폭 큰 순)
+    const topHoneyHits = honeyMapped
+      .filter(h => h.priceChange !== undefined && h.priceChange !== null)
+      .sort((a, b) => Math.abs(b.priceChange!) - Math.abs(a.priceChange!))
+      .slice(0, 5)
+      .map((h, idx) => ({
+        rank: idx + 1,
+        videoId: h.videoId,
+        title: h.title,
+        asset: h.asset,
+        predictedDirection: h.predictedDirection,
+        priceChange: h.priceChange,
+        publishedAt: h.publishedAt,
+        thumbnail: h.thumbnail,
+      }))
+
+    // 12. 역지표 상세 통계
+    const honeyPriceStats = calcPriceStats(honeyMapped)
+    const honeyStats = {
+      count: honeyHits.length,
+      total: validAnalyses.length,
+      percentage: honeyIndex,
+      avgPriceChange: honeyPriceStats.avg,
+      maxPriceChange: honeyPriceStats.max,
+      maxPriceAsset: honeyPriceStats.maxAsset,
+      byPeriod: {
+        '1d': honeyIndexByPeriod['1d'].value,
+        '1w': honeyIndexByPeriod['1w'].value,
+        '1m': honeyIndexByPeriod['1m'].value,
+        '3m': honeyIndexByPeriod['3m'].value,
+      },
+      latest: findLatest(honeyMapped),
+    }
+
+    // 13. 전인구 적중 상세 통계
+    const correctPriceStats = calcPriceStats(jigMapped)
+    const correctStats = {
+      count: jigHits.length,
+      total: validAnalyses.length,
+      percentage: validAnalyses.length > 0 
+        ? Math.round((jigHits.length / validAnalyses.length) * 1000) / 10 
+        : 0,
+      avgPriceChange: correctPriceStats.avg,
+      maxPriceChange: correctPriceStats.max,
+      maxPriceAsset: correctPriceStats.maxAsset,
+      byPeriod: {
+        '1d': 100 - honeyIndexByPeriod['1d'].value,
+        '1w': 100 - honeyIndexByPeriod['1w'].value,
+        '1m': 100 - honeyIndexByPeriod['1m'].value,
+        '3m': 100 - honeyIndexByPeriod['3m'].value,
+      },
+      latest: findLatest(jigMapped),
+    }
+
+    // 14. 대기 중 통계
+    const pendingAnalyses = withMarketData.filter(a => (a.market_data as any)?.is_honey === null)
+    const pendingMapped = pendingAnalyses.map(mapMention)
+    
+    // 다음 결과 발표 예정 (tradingDate 기준)
+    const nextResults = pendingMapped
+      .filter(p => p.tradingDate)
+      .map(p => {
+        const tradingDate = new Date(p.tradingDate!)
+        const daysLeft = Math.max(0, Math.ceil(
+          (tradingDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
+        ))
+        return {
+          asset: p.asset,
+          direction: p.predictedDirection,
+          daysLeft,
+          tradingDate: p.tradingDate,
+        }
+      })
+      .sort((a, b) => a.daysLeft - b.daysLeft)
+      .slice(0, 5)
+
+    const pendingStats = {
+      count: pendingAnalyses.length + pendingReviews.length,
+      nextResults,
+    }
+
     return NextResponse.json({
       // 핵심 지표
       overallHoneyIndex: honeyIndex,
@@ -263,9 +384,15 @@ export async function GET() {
       votableItems,
 
       // 탭별 예측 목록
-      honeyHits: honeyHits.map(mapMention),
-      jigHits: jigHits.map(mapMention),
+      honeyHits: honeyMapped,
+      jigHits: jigMapped,
       pendingReviews,
+
+      // 상세 통계 (카드 UI용)
+      topHoneyHits,
+      honeyStats,
+      correctStats,
+      pendingStats,
 
       // 하위 호환
       recentPredictions: validAnalyses.slice(0, 20).map(mapMention),

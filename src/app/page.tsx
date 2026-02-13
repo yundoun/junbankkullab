@@ -11,10 +11,10 @@ import {
   AnalysisFunnel,
   TodaySignal,
   ShareButtons,
+  TopHoneyHits,
+  PredictionSummaryCards,
 } from '@/components/domain'
 import { Badge } from '@/components/ui/badge'
-import { Pagination } from '@/components/ui/pagination'
-import { ChipFilter } from '@/components/ui/chip-filter'
 
 interface AssetStat {
   asset: string
@@ -71,6 +71,56 @@ interface PeriodData {
   honey: number
 }
 
+interface TopHit {
+  rank: number
+  videoId: string
+  title: string
+  asset: string
+  predictedDirection: 'bullish' | 'bearish'
+  priceChange: number
+  publishedAt: string
+  thumbnail: string
+}
+
+interface LatestItem {
+  asset: string
+  priceChange?: number
+  daysAgo: number
+}
+
+interface NextResult {
+  asset: string
+  direction: 'bullish' | 'bearish'
+  daysLeft: number
+}
+
+interface HoneyStats {
+  count: number
+  total: number
+  percentage: number
+  avgPriceChange: number
+  maxPriceChange: number
+  maxPriceAsset: string | null
+  byPeriod: { '1d': number; '1w': number; '1m': number; '3m': number }
+  latest: LatestItem | null
+}
+
+interface CorrectStats {
+  count: number
+  total: number
+  percentage: number
+  avgPriceChange: number
+  maxPriceChange: number
+  maxPriceAsset: string | null
+  byPeriod: { '1d': number; '1w': number; '1m': number; '3m': number }
+  latest: LatestItem | null
+}
+
+interface PendingStats {
+  count: number
+  nextResults: NextResult[]
+}
+
 interface Stats {
   overallHoneyIndex: number
   totalPredictions: number
@@ -89,7 +139,7 @@ interface Stats {
   funnel?: FunnelData
   unanalyzedCount?: number
   excludedCount?: number
-  // 기간별 꿀지수 (신규)
+  // 기간별 꿀지수
   honeyIndexByPeriod?: {
     '1d': PeriodData
     '1w': PeriodData
@@ -97,6 +147,11 @@ interface Stats {
     '3m': PeriodData
   }
   defaultPeriod?: '1d' | '1w' | '1m' | '3m'
+  // 상세 통계 (카드 UI용)
+  topHoneyHits?: TopHit[]
+  honeyStats?: HoneyStats
+  correctStats?: CorrectStats
+  pendingStats?: PendingStats
 }
 
 // 종목 이름 매핑
@@ -110,115 +165,6 @@ const ASSET_NAMES: Record<string, string> = {
   Google: '구글',
   Tesla: '테슬라',
   Bitcoin: '비트코인',
-}
-
-const ITEMS_PER_PAGE = 10
-
-// 예측 탭 컴포넌트
-// 필터 타입
-type FilterType = 'honey' | 'jig' | 'pending'
-
-function PredictionList({ stats }: { stats: Stats | null }) {
-  const [activeFilters, setActiveFilters] = useState<string[]>(['honey'])
-  const [currentPage, setCurrentPage] = useState(1)
-
-  if (!stats) return null
-
-  const honeyHits = stats.honeyHits || []
-  const jigHits = stats.jigHits || []
-  const pendingReviews = stats.pendingReviews || []
-
-  // 칩 필터 옵션
-  const filterOptions = [
-    { value: 'honey', label: '전반꿀', icon: '🍯', count: honeyHits.length },
-    { value: 'jig', label: '전인구', icon: '📈', count: jigHits.length },
-    { value: 'pending', label: '검토대기', icon: '🔍', count: pendingReviews.length },
-  ]
-
-  // 선택된 필터에 따라 데이터 병합
-  const filteredData: Prediction[] = []
-  if (activeFilters.includes('honey')) {
-    filteredData.push(...honeyHits)
-  }
-  if (activeFilters.includes('jig')) {
-    filteredData.push(...jigHits)
-  }
-  if (activeFilters.includes('pending')) {
-    filteredData.push(...pendingReviews.map(p => ({ ...p, status: 'pending' as const })))
-  }
-
-  // 날짜순 정렬 (최신순)
-  const sortedData = [...filteredData].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  )
-
-  // 페이지네이션
-  const totalPages = Math.ceil(sortedData.length / ITEMS_PER_PAGE)
-  const paginatedData = sortedData.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  )
-
-  // 필터 변경 시 페이지 초기화
-  const handleFilterChange = (newFilters: string[]) => {
-    // 최소 하나는 선택되어야 함
-    if (newFilters.length === 0) return
-    setActiveFilters(newFilters)
-    setCurrentPage(1)
-  }
-
-  return (
-    <section className="animate-fade-up fill-backwards delay-500">
-      {/* 칩 필터 */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-        <ChipFilter
-          options={filterOptions}
-          value={activeFilters}
-          onChange={handleFilterChange}
-          multiple={true}
-        />
-        <p className="text-sm text-muted-foreground">
-          {sortedData.length}개 결과
-        </p>
-      </div>
-
-      {/* 카드 리스트 */}
-      {paginatedData.length > 0 ? (
-        <>
-          <div className="space-y-3">
-            {paginatedData.map((prediction, idx) => (
-              <PredictionCard
-                key={`${prediction.videoId}-${prediction.asset}-${idx}`}
-                title={prediction.title}
-                thumbnail={prediction.thumbnail}
-                videoId={prediction.videoId}
-                publishedAt={prediction.publishedAt}
-                asset={ASSET_NAMES[prediction.asset] || prediction.asset}
-                predictedDirection={prediction.predictedDirection}
-                status={prediction.status}
-                actualDirection={prediction.actualDirection}
-                priceChange={prediction.priceChange}
-                tradingDate={prediction.tradingDate}
-                index={idx}
-              />
-            ))}
-          </div>
-          {totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-              className="mt-6"
-            />
-          )}
-        </>
-      ) : (
-        <div className="text-center py-12 text-muted-foreground animate-fade-in">
-          선택된 필터에 해당하는 데이터가 없습니다
-        </div>
-      )}
-    </section>
-  )
 }
 
 export default function Home() {
@@ -432,8 +378,26 @@ export default function Home() {
           </section>
         )}
         
-        {/* 예측 분석 탭 */}
-        <PredictionList stats={stats} />
+        {/* 🏆 역대급 역지표 TOP 5 */}
+        {stats?.topHoneyHits && stats.topHoneyHits.length > 0 && (
+          <section className="mb-6 sm:mb-8 animate-fade-up fill-backwards delay-450">
+            <TopHoneyHits hits={stats.topHoneyHits} />
+          </section>
+        )}
+
+        {/* 예측 요약 카드 (3열) */}
+        {stats?.honeyStats && stats?.correctStats && stats?.pendingStats && (
+          <section className="mb-6 sm:mb-8 animate-fade-up fill-backwards delay-500">
+            <PredictionSummaryCards
+              honeyStats={stats.honeyStats}
+              correctStats={stats.correctStats}
+              pendingStats={stats.pendingStats}
+              honeyHits={stats.honeyHits || []}
+              jigHits={stats.jigHits || []}
+              pendingReviews={stats.pendingReviews || []}
+            />
+          </section>
+        )}
       </main>
 
       {/* Footer */}
