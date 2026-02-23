@@ -1,63 +1,70 @@
 # 🍯 전반꿀 연구소 (JunBanKkul Lab)
 
-## 전인구 소장 예측, 반대로 하면 진짜 돈 벌까?
+## "전인구 반대로 하면 꿀" — 진짜일까? 데이터로 검증해봤습니다
 
-주식/코인 커뮤니티의 유명한 밈 **"전반꿀"**(전인구 반대로 하면 꿀)을 실제 데이터로 검증하는 프로젝트입니다.
+주식 커뮤니티에서 유명한 밈 **"전반꿀"**을 604개 영상 데이터로 검증하는 프로젝트입니다.
 
-> **현재 역지표 적중률: 32.3%** (127개 예측 분석 기준)
+> **🍯 전반꿀 지수: 43.9%** — 동전 던지기보다 낮습니다
+> 
+> 커뮤니티는 "100% 역지표"라고 믿는데, 실제 데이터는 절반도 안 됩니다.
 
-🔗 **[jbklab.vercel.app](https://jbklab.vercel.app)** — 지금 바로 확인하기
-
-![전반꿀 스코어보드](./docs/screenshot-hero.png)
-
-![월별 꿀지수 추이](./docs/screenshot-chart.png)
+🔗 **[jbklab.vercel.app](https://jbklab.vercel.app)**
 
 ---
 
-## 📖 배경
+## 📊 현재 상태 (솔직하게)
 
-전인구경제연구소는 유튜브에서 시장 전망을 공유하는 채널입니다. 투자 커뮤니티에서는 오래전부터 이런 밈이 돌았죠:
+| 지표 | 값 | 비고 |
+|------|-----|------|
+| **전반꿀 지수** | 43.9% | 50% 미만 = 역지표 아님 |
+| **수집된 영상** | 604개 | 전인구경제연구소 전체 |
+| **분석 완료** | 132개 | 아직 진행 중 |
+| **기간별 지수** | 1d 43.9% / 1w 39.7% / 1m 48.2% / 3m 41% | 1개월이 가장 높음 |
 
-> "전인구가 오른다고 하면 내린다"
-> "전인구 반대로 하면 꿀"
+**핵심 발견:**
+- 커뮤니티 인식: 🔮 **"거의 100% 역지표"**
+- 실제 데이터: 📊 **43.9%**
+- **신화가 과장됐거나, 분석 방법이 틀렸거나. 둘 중 하나.**
 
-**과연 사실일까요?**
+---
 
-궁금해서 직접 데이터로 검증해봤습니다.
+## 🤖 만든 과정 (AI 협업)
+
+혼자 만든 게 아니라 **AI 에이전트 2개랑 디스코드에서 대화하면서** 만들었습니다.
+
+| 역할 | 담당 | 작업 |
+|------|------|------|
+| **칼 (Karl)** | 개발 에이전트 | 데이터 수집, 분석 파이프라인, 배포 |
+| **유키 (Yuki)** | 디자인 에이전트 | UI/UX 피드백, 레퍼런스 제안 |
+| **Doun** | 인간 | 방향 설정, 의사결정 |
+
+디스코드 채널에서 셋이 대화하면서:
+1. YouTube API로 영상 메타데이터 수집
+2. GPT-4o-mini로 종목/톤 분석
+3. yfinance로 실제 주가 검증
+4. 커뮤니티 반응 크롤링 (에펨코리아, 디시, 나무위키)
 
 ---
 
 ## 🔬 어떻게 동작하나요?
 
 ```
-📺 YouTube API     →  영상 제목 수집
+📺 YouTube API     →  영상 수집 (604개)
         ↓
-🤖 GPT-4o-mini    →  예측 방향 추출 (상승/하락/중립)
+🤖 GPT-4o-mini    →  종목/톤 추출 (상승/하락/중립)
         ↓
-📊 yfinance       →  실제 시장 가격 조회
+📊 yfinance       →  실제 주가 조회
         ↓
 ⚖️ 비교 분석      →  1일/1주/1개월/3개월 후 결과
         ↓
-🍯 전반꿀 지수    →  역지표 유효성 계산
+🍯 전반꿀 지수    →  역지표 적중률 계산
 ```
 
-### 분석 기간
-- **1일 후**: 단기 트레이더 관점
-- **1주 후**: 스윙 트레이더 관점
-- **1개월 후**: 중기 투자자 관점 (기본값)
-- **3개월 후**: 장기 투자자 관점
-
----
-
-## ✨ 주요 기능
-
-| 기능 | 설명 |
-|------|------|
-| **전반꿀 지수** | 역지표 적중률 (50% 이상이면 역지표 유효) |
-| **기간별 분석** | 1일/1주/1개월/3개월 탭으로 전환 |
-| **종목별 통계** | 비트코인, 코스피, 나스닥, 개별 종목별 분석 |
-| **커뮤니티 투표** | 다음 예측 방향 투표 참여 |
-| **실시간 업데이트** | GitHub Actions로 자동 수집 |
+**분석 기간:**
+- 1일 후: 단기 (43.9%)
+- 1주 후: 스윙 (39.7%)
+- **1개월 후: 중기 (48.2%)** ← 가장 높음
+- 3개월 후: 장기 (41%)
 
 ---
 
@@ -68,24 +75,17 @@
 | **Frontend** | Next.js 14 (App Router), React 18, TypeScript |
 | **Styling** | Tailwind CSS, shadcn/ui |
 | **Database** | Supabase (PostgreSQL) |
-| **AI/ML** | OpenAI GPT-4o-mini (영상 분석) |
+| **AI** | OpenAI GPT-4o-mini |
 | **Data** | YouTube Data API, yfinance |
 | **Deploy** | Vercel |
-| **CI/CD** | GitHub Actions |
+| **CI/CD** | GitHub Actions (시간당 자동 수집) |
 
 ---
 
 ## 🚀 로컬에서 실행하기
 
-### 요구사항
-- Node.js 18+
-- pnpm (권장)
-- Python 3.9+ (데이터 수집용)
-
-### 설치
-
 ```bash
-# 저장소 클론
+# 클론
 git clone https://github.com/yundoun/junbankkullab.git
 cd junbankkullab
 
@@ -110,52 +110,25 @@ OPENAI_API_KEY=your_openai_api_key
 
 ---
 
-## 📁 프로젝트 구조
+## 🙏 피드백 환영
 
-```
-src/
-├── app/                    # Next.js App Router
-│   ├── api/                # API Routes
-│   └── video/[videoId]/    # 상세 페이지
-├── components/
-│   ├── ui/                 # shadcn/ui 컴포넌트
-│   └── domain/             # 도메인 컴포넌트
-│       ├── hero-scoreboard.tsx
-│       ├── vote-card.tsx
-│       ├── today-signal.tsx
-│       └── ...
-├── lib/                    # 유틸리티
-└── styles/                 # 글로벌 스타일
+아직 실험 단계입니다:
 
-scripts/
-├── analyze-v3.ts           # 영상 분석 스크립트
-├── market_data.py          # 시장 데이터 수집
-└── backfill-multi-period.ts # 백필 스크립트
-```
+- 분석 방법론 괜찮은가요?
+- 43.9%가 "역지표 아님"인 건가요, 표본이 부족한 건가요?
+- 더 추가하면 좋을 기능?
 
----
-
-## 🤝 기여하기
-
-기여를 환영합니다! 
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-자세한 내용은 [CONTRIBUTING.md](./CONTRIBUTING.md)를 참조하세요.
+**이슈, PR 모두 환영합니다!**
 
 ---
 
 ## ⚠️ 면책조항
 
-**이 프로젝트는 순수하게 엔터테인먼트 및 교육 목적입니다.**
+**이 프로젝트는 엔터테인먼트 및 교육 목적입니다.**
 
 - ❌ 투자 조언이 아닙니다
 - ❌ 실제 투자 결정에 사용하지 마세요
-- ✅ 밈을 데이터로 검증하는 재미있는 실험입니다
+- ✅ 밈을 데이터로 검증하는 실험입니다
 
 ---
 
@@ -167,8 +140,8 @@ MIT License
 
 <div align="center">
 
-**"Talk is cheap. Show me the data."**
+**"커뮤니티는 100%라고 믿는데, 데이터는 43.9%라고 말한다."**
 
-[🔗 Live Demo](https://jbklab.vercel.app) · [🐛 Report Bug](https://github.com/yundoun/junbankkullab/issues) · [💡 Request Feature](https://github.com/yundoun/junbankkullab/issues)
+[🔗 Live Demo](https://jbklab.vercel.app) · [🐛 Report Bug](https://github.com/yundoun/junbankkullab/issues)
 
 </div>
