@@ -144,10 +144,10 @@ function getMarketData(ticker: string, date: string): {
 } | null {
   try {
     const projectDir = path.join(__dirname, '..')
-    const pythonScript = path.join(__dirname, 'get_direction.py')
+    const pythonScript = path.join(__dirname, 'market_data.py')
     
     const result = execSync(
-      `cd "${projectDir}" && python3 "${pythonScript}" close ${ticker} ${date}`,
+      `cd "${projectDir}" && ./venv/bin/python "${pythonScript}" close ${ticker} ${date}`,
       { encoding: 'utf-8', timeout: 30000, stdio: ['pipe', 'pipe', 'pipe'] }
     )
 
