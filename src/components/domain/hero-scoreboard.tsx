@@ -37,10 +37,10 @@ interface HeroScoreboardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 // 기간 라벨
 const PERIOD_LABELS: Record<PeriodKey, string> = {
-  '1d': '1일',
-  '1w': '1주',
-  '1m': '1개월',
-  '3m': '3개월',
+  '1d': '1일 후',
+  '1w': '1주 후',
+  '1m': '1개월 후',
+  '3m': '3개월 후',
 }
 
 // 숫자 애니메이션 훅
@@ -176,7 +176,7 @@ export function HeroScoreboard({
                   onClick={() => hasData && setSelectedPeriod(period)}
                   disabled={!hasData}
                   className={cn(
-                    "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                    "px-3 py-2 rounded-full text-sm font-medium transition-all duration-200",
                     isSelected
                       ? "bg-primary/20 text-primary border border-primary/50"
                       : hasData
@@ -185,7 +185,10 @@ export function HeroScoreboard({
                     isSelected && "scale-105"
                   )}
                 >
-                  {PERIOD_LABELS[period]}
+                  <span>{PERIOD_LABELS[period]}</span>
+                  {hasData && (
+                    <span className="ml-1 text-xs opacity-70">({periodData.total}건)</span>
+                  )}
                   {!hasData && (
                     <span className="ml-1 text-xs opacity-70">준비중</span>
                   )}
@@ -355,12 +358,19 @@ export function HeroScoreboard({
         {/* 분석 기간 표시 */}
         <div className={cn(
           "border-t border-border/50 px-6 py-3 sm:px-8",
-          "flex items-center justify-between text-xs text-muted-foreground",
+          "text-xs text-muted-foreground",
           "transition-all duration-700 delay-600",
           isVisible ? "opacity-100" : "opacity-0"
         )}>
-          <span>📊 분석 대상: {currentTotal}개 예측</span>
-          <span>2025.01 ~ 현재</span>
+          <div className="flex items-center justify-between">
+            <span>📊 분석 대상: {currentTotal}개 예측</span>
+            <span>2025.01 ~ 현재</span>
+          </div>
+          {usePeriodTabs && (
+            <p className="mt-2 text-center text-muted-foreground/80">
+              ※ 예측 발행일로부터 <strong className="text-foreground">{PERIOD_LABELS[selectedPeriod]}</strong> 시장 결과로 검증
+            </p>
+          )}
         </div>
       </div>
     </div>
