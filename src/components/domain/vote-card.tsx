@@ -239,13 +239,26 @@ export function VoteCard({
               <Play className="w-5 h-5 text-black ml-0.5" fill="currentColor" />
             </div>
           </div>
-          {/* 종목 뱃지 */}
-          {asset && (
-            <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/60 backdrop-blur-sm rounded text-xs font-bold text-white">
-              {asset}
-            </div>
-          )}
         </a>
+
+        {/* 종목 + 예측 방향 뱃지 (눈에 띄게!) */}
+        {asset && (
+          <div className="flex items-center gap-2 mb-2 flex-wrap">
+            <span className="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-sm font-bold text-primary">
+              📊 {asset}
+            </span>
+            {predictedDirection && predictedDirection !== 'neutral' && (
+              <span className={cn(
+                "px-2 py-1 rounded-full text-xs font-semibold",
+                predictedDirection === 'bullish' 
+                  ? "bg-bullish/10 text-bullish border border-bullish/30" 
+                  : "bg-red-500/10 text-red-500 border border-red-500/30"
+              )}>
+                {predictedDirection === 'bullish' ? '📈 상승' : '📉 하락'} 예측
+              </span>
+            )}
+          </div>
+        )}
 
         {/* 영상 제목 + 업로드 시간 */}
         <div className="mb-4">
