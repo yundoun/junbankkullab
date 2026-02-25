@@ -122,6 +122,8 @@ interface PendingStats {
   nextResults: NextResult[]
 }
 
+type PeriodKey = '1d' | '1w' | '1m' | '3m'
+
 interface Stats {
   overallHoneyIndex: number
   totalPredictions: number
@@ -147,7 +149,14 @@ interface Stats {
     '1m': PeriodData
     '3m': PeriodData
   }
-  defaultPeriod?: '1d' | '1w' | '1m' | '3m'
+  // 기간별 타임라인
+  timelineByPeriod?: {
+    '1d': TimelineData[]
+    '1w': TimelineData[]
+    '1m': TimelineData[]
+    '3m': TimelineData[]
+  }
+  defaultPeriod?: PeriodKey
   // 상세 통계 (카드 UI용)
   topHoneyHits?: TopHit[]
   honeyStats?: HoneyStats
@@ -171,12 +180,17 @@ const ASSET_NAMES: Record<string, string> = {
 export default function Home() {
   const [stats, setStats] = useState<Stats | null>(null)
   const [loading, setLoading] = useState(true)
+  const [selectedPeriod, setSelectedPeriod] = useState<PeriodKey>('1m')
 
   useEffect(() => {
     fetch('/api/stats')
       .then(res => res.json())
       .then(data => {
         setStats(data)
+        // API에서 반환한 기본 기간 사용
+        if (data.defaultPeriod) {
+          setSelectedPeriod(data.defaultPeriod)
+        }
         setLoading(false)
       })
       .catch(() => setLoading(false))
@@ -244,7 +258,8 @@ export default function Home() {
             totalPredictions={stats?.totalPredictions ?? 0}
             honeyIndex={honeyIndex}
             honeyIndexByPeriod={stats?.honeyIndexByPeriod}
-            defaultPeriod={stats?.defaultPeriod ?? '1m'}
+            selectedPeriod={selectedPeriod}
+            onPeriodChange={setSelectedPeriod}
           />
           {/* 공유 버튼 */}
           <div className="flex justify-end mt-3">
@@ -252,14 +267,15 @@ export default function Home() {
           </div>
         </div>
         
-        {/* 월별 트렌드 차트 (선택적 표시) */}
-        {stats?.timeline && stats.timeline.length > 3 && (
+        {/* 월별 트렌드 차트 (선택적 표시) - 선택된 기간에 연동 */}
+        {stats?.timelineByPeriod && stats.timelineByPeriod[selectedPeriod]?.length > 3 && (
           <div className="animate-fade-up fill-backwards delay-100 mb-6 sm:mb-8">
             <HeroChart
-              currentIndex={honeyIndex}
-              totalPredictions={stats?.totalPredictions ?? 0}
-              honeyCount={stats?.honeyCount ?? 0}
-              timeline={stats?.timeline ?? []}
+              currentIndex={stats?.honeyIndexByPeriod?.[selectedPeriod]?.value ?? honeyIndex}
+              totalPredictions={stats?.honeyIndexByPeriod?.[selectedPeriod]?.total ?? 0}
+              honeyCount={stats?.honeyIndexByPeriod?.[selectedPeriod]?.honey ?? 0}
+              timeline={stats?.timelineByPeriod?.[selectedPeriod] ?? []}
+              periodLabel={selectedPeriod === '1d' ? '1일 후' : selectedPeriod === '1w' ? '1주 후' : selectedPeriod === '1m' ? '1개월 후' : '3개월 후'}
             />
           </div>
         )}

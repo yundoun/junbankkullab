@@ -30,6 +30,8 @@ interface HeroChartProps extends React.HTMLAttributes<HTMLDivElement> {
   totalPredictions: number
   honeyCount: number
   timeline: MonthlyData[]
+  /** 측정 기간 라벨 (예: "1개월 후") */
+  periodLabel?: string
 }
 
 // Animated number hook
@@ -66,6 +68,7 @@ export function HeroChart({
   totalPredictions,
   honeyCount,
   timeline,
+  periodLabel = '1일 후',
   className, 
   ...props 
 }: HeroChartProps) {
@@ -132,7 +135,7 @@ export function HeroChart({
                   isVisible && "animate-bounce-subtle"
                 )}>🍯</span>
                 <span className="text-sm sm:text-base text-muted-foreground font-medium">
-                  전반꿀 지수
+                  전반꿀 지수 <span className="text-primary">({periodLabel})</span>
                 </span>
               </div>
               <HelpModal />
@@ -376,7 +379,7 @@ export function HeroChart({
               </div>
             </div>
             <p className="text-muted-foreground/80">
-              50% 이상 = 전인구 예측의 <span className="text-foreground font-medium">반대</span>로 움직임
+              <span className="text-foreground font-medium">{periodLabel}</span> 기준, 50% 이상 = 역지표 유효
             </p>
           </div>
         </div>

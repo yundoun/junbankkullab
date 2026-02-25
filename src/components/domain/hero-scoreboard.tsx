@@ -31,8 +31,10 @@ interface HeroScoreboardProps extends React.HTMLAttributes<HTMLDivElement> {
     '1m': PeriodData
     '3m': PeriodData
   }
-  /** 기본 선택 기간 */
-  defaultPeriod?: PeriodKey
+  /** 현재 선택된 기간 (제어형) */
+  selectedPeriod?: PeriodKey
+  /** 기간 변경 콜백 (제어형) */
+  onPeriodChange?: (period: PeriodKey) => void
 }
 
 // 기간 라벨
@@ -73,12 +75,23 @@ export function HeroScoreboard({
   totalPredictions,
   honeyIndex,
   honeyIndexByPeriod,
-  defaultPeriod = '1m',
+  selectedPeriod: controlledPeriod,
+  onPeriodChange,
   className,
   ...props
 }: HeroScoreboardProps) {
   const [isVisible, setIsVisible] = useState(false)
-  const [selectedPeriod, setSelectedPeriod] = useState<PeriodKey>(defaultPeriod)
+  // 제어형 또는 비제어형 지원
+  const [internalPeriod, setInternalPeriod] = useState<PeriodKey>('1m')
+  const selectedPeriod = controlledPeriod ?? internalPeriod
+  
+  const handlePeriodChange = (period: PeriodKey) => {
+    if (onPeriodChange) {
+      onPeriodChange(period)
+    } else {
+      setInternalPeriod(period)
+    }
+  }
   
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100)
@@ -173,7 +186,7 @@ export function HeroScoreboard({
               return (
                 <button
                   key={period}
-                  onClick={() => hasData && setSelectedPeriod(period)}
+                  onClick={() => hasData && handlePeriodChange(period)}
                   disabled={!hasData}
                   className={cn(
                     "px-3 py-2 rounded-full text-sm font-medium transition-all duration-200",

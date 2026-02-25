@@ -114,31 +114,50 @@ export async function GET() {
       }))
       .sort((a, b) => b.honeyIndex - a.honeyIndex || b.total - a.total)
 
-    // 4. 월별 타임라인
-    const monthlyMap = new Map<string, { predictions: number; honey: number }>()
-    for (const a of validAnalyses) {
-      const video = a.videos as any
-      const date = new Date(video.published_at)
-      const key = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}`
-      const stats = monthlyMap.get(key) || { predictions: 0, honey: 0 }
-      stats.predictions++
-      if ((a.market_data as any)?.is_honey) stats.honey++
-      monthlyMap.set(key, stats)
+    // 4. 월별 타임라인 (기간별)
+    const calcTimeline = (honeyField: string) => {
+      const monthlyMap = new Map<string, { predictions: number; honey: number }>()
+      for (const a of withMarketData) {
+        const md = a.market_data as any
+        // 해당 기간의 is_honey 값이 있는 항목만 포함
+        if (md?.[honeyField] === null || md?.[honeyField] === undefined) continue
+        
+        const video = a.videos as any
+        const date = new Date(video.published_at)
+        const key = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}`
+        const stats = monthlyMap.get(key) || { predictions: 0, honey: 0 }
+        stats.predictions++
+        if (md[honeyField] === true) stats.honey++
+        monthlyMap.set(key, stats)
+      }
+
+      return Array.from(monthlyMap.entries())
+        .map(([label, stats]) => {
+          const [year, month] = label.split('.').map(Number)
+          return {
+            label,
+            year,
+            month,
+            predictions: stats.predictions,
+            honey: stats.honey,
+            honeyIndex: stats.predictions > 0 
+              ? Math.round((stats.honey / stats.predictions) * 1000) / 10 
+              : 0,
+          }
+        })
+        .sort((a, b) => a.label.localeCompare(b.label))
     }
 
-    const timeline = Array.from(monthlyMap.entries())
-      .map(([label, stats]) => {
-        const [year, month] = label.split('.').map(Number)
-        return {
-          label,
-          year,
-          month,
-          predictions: stats.predictions,
-          honey: stats.honey,
-          honeyIndex: Math.round((stats.honey / stats.predictions) * 1000) / 10,
-        }
-      })
-      .sort((a, b) => a.label.localeCompare(b.label))
+    // 기간별 타임라인
+    const timelineByPeriod = {
+      '1d': calcTimeline('is_honey'),
+      '1w': calcTimeline('is_honey_1w'),
+      '1m': calcTimeline('is_honey_1m'),
+      '3m': calcTimeline('is_honey_3m'),
+    }
+
+    // 기본 timeline은 1d (하위 호환)
+    const timeline = timelineByPeriod['1d']
 
     // 5. 전체 비디오 수 조회
     const { count: totalVideos } = await supabase
@@ -380,6 +399,7 @@ export async function GET() {
 
       // 월별 타임라인
       timeline,
+      timelineByPeriod,
 
       // 투표 가능 항목
       votableItems,
