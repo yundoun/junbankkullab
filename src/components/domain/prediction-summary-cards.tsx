@@ -73,6 +73,14 @@ interface Prediction {
   tradingDate?: string
 }
 
+type PeriodKey = '1d' | '1w' | '1m' | '3m'
+
+interface PeriodInfo {
+  value: number
+  total: number
+  honey: number
+}
+
 interface PredictionSummaryCardsProps {
   honeyStats: HoneyStats
   correctStats: CorrectStats
@@ -80,7 +88,18 @@ interface PredictionSummaryCardsProps {
   honeyHits: Prediction[]
   jigHits: Prediction[]
   pendingReviews: Prediction[]
+  /** 현재 선택된 기간 */
+  selectedPeriod?: PeriodKey
+  /** 기간별 데이터 (선택 기간에 맞는 count/total 표시용) */
+  honeyIndexByPeriod?: Record<PeriodKey, PeriodInfo>
   className?: string
+}
+
+const PERIOD_LABELS: Record<PeriodKey, string> = {
+  '1d': '1일 후',
+  '1w': '1주 후',
+  '1m': '1개월 후',
+  '3m': '3개월 후',
 }
 
 const ITEMS_PER_PAGE = 10
@@ -169,7 +188,11 @@ function PaginatedPredictionList({ items, title, emoji }: {
 }
 
 // 기간별 적중률 컴포넌트
-function PeriodStats({ byPeriod, type }: { byPeriod: PeriodData; type: 'honey' | 'correct' }) {
+function PeriodStats({ byPeriod, type, selectedPeriod }: { 
+  byPeriod: PeriodData
+  type: 'honey' | 'correct'
+  selectedPeriod?: PeriodKey
+}) {
   const bestPeriod = Object.entries(byPeriod).reduce((best, [key, value]) => 
     value > best.value ? { key, value } : best
   , { key: '1d', value: 0 })
@@ -178,28 +201,50 @@ function PeriodStats({ byPeriod, type }: { byPeriod: PeriodData; type: 'honey' |
     <div className="rounded-lg bg-background/50 p-3 space-y-2">
       <div className="text-xs font-medium text-muted-foreground">📊 기간별 적중률</div>
       <div className="grid grid-cols-2 gap-2 text-sm">
-        {Object.entries(byPeriod).map(([key, value]) => (
-          <div key={key} className="flex items-center justify-between">
-            <span className="text-muted-foreground">
-              {key === '1d' ? '1일' : key === '1w' ? '1주' : key === '1m' ? '1개월' : '3개월'}:
-            </span>
-            <span className={cn(
-              'font-medium tabular-nums',
-              key === bestPeriod.key && type === 'honey' && 'text-amber-500',
-              key === bestPeriod.key && type === 'correct' && 'text-blue-500'
+        {Object.entries(byPeriod).map(([key, value]) => {
+          const isSelected = key === selectedPeriod
+          const isBest = key === bestPeriod.key
+          return (
+            <div key={key} className={cn(
+              "flex items-center justify-between",
+              isSelected && "font-semibold"
             )}>
-              {value.toFixed(1)}%
-              {key === bestPeriod.key && ' ⭐'}
-            </span>
-          </div>
-        ))}
+              <span className={cn(
+                "text-muted-foreground",
+                isSelected && "text-foreground"
+              )}>
+                {isSelected && '▸ '}{PERIOD_LABELS[key as PeriodKey]}:
+              </span>
+              <span className={cn(
+                'font-medium tabular-nums',
+                isSelected && type === 'honey' && 'text-amber-500',
+                isSelected && type === 'correct' && 'text-blue-500',
+                !isSelected && isBest && type === 'honey' && 'text-amber-500/70',
+                !isSelected && isBest && type === 'correct' && 'text-blue-500/70'
+              )}>
+                {value.toFixed(1)}%
+                {isBest && !isSelected && ' ⭐'}
+              </span>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
 }
 
 // 역지표 카드
-function HoneyCard({ stats, hits }: { stats: HoneyStats; hits: Prediction[] }) {
+function HoneyCard({ stats, hits, selectedPeriod, periodData }: { 
+  stats: HoneyStats
+  hits: Prediction[]
+  selectedPeriod?: PeriodKey
+  periodData?: PeriodInfo
+}) {
+  // 선택된 기간의 데이터 사용 (없으면 기본 stats 사용)
+  const displayCount = periodData?.honey ?? stats.count
+  const displayTotal = periodData?.total ?? stats.total
+  const displayPercentage = periodData?.value ?? stats.percentage
+
   return (
     <Dialog>
       <div className={cn(
@@ -211,26 +256,31 @@ function HoneyCard({ stats, hits }: { stats: HoneyStats; hits: Prediction[] }) {
         <div className="flex items-center gap-2 mb-4">
           <span className="text-2xl">🍯</span>
           <span className="font-bold text-lg">역지표 적중</span>
+          {selectedPeriod && (
+            <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400">
+              {PERIOD_LABELS[selectedPeriod]}
+            </span>
+          )}
         </div>
 
         {/* 메인 스탯 */}
         <div className="mb-4">
           <div className="text-3xl font-bold tabular-nums text-amber-500">
-            {stats.count}<span className="text-lg text-muted-foreground">/{stats.total}건</span>
+            {displayCount}<span className="text-lg text-muted-foreground">/{displayTotal}건</span>
           </div>
           <div className="mt-2 relative h-2 rounded-full bg-muted overflow-hidden">
             <div 
               className="absolute left-0 top-0 h-full bg-amber-500 rounded-full transition-all duration-500"
-              style={{ width: `${stats.percentage}%` }}
+              style={{ width: `${displayPercentage}%` }}
             />
           </div>
           <div className="mt-1 text-right text-sm font-medium text-amber-500">
-            {stats.percentage.toFixed(1)}%
+            {displayPercentage.toFixed(1)}%
           </div>
         </div>
 
         {/* 기간별 */}
-        <PeriodStats byPeriod={stats.byPeriod} type="honey" />
+        <PeriodStats byPeriod={stats.byPeriod} type="honey" selectedPeriod={selectedPeriod} />
 
         {/* 추가 통계 */}
         <div className="mt-4 space-y-2 text-sm">
@@ -289,7 +339,17 @@ function HoneyCard({ stats, hits }: { stats: HoneyStats; hits: Prediction[] }) {
 }
 
 // 전인구 적중 카드
-function CorrectCard({ stats, hits }: { stats: CorrectStats; hits: Prediction[] }) {
+function CorrectCard({ stats, hits, selectedPeriod, periodData }: { 
+  stats: CorrectStats
+  hits: Prediction[]
+  selectedPeriod?: PeriodKey
+  periodData?: PeriodInfo
+}) {
+  // 선택된 기간의 데이터 사용 (없으면 기본 stats 사용)
+  const displayCount = periodData ? (periodData.total - periodData.honey) : stats.count
+  const displayTotal = periodData?.total ?? stats.total
+  const displayPercentage = periodData ? (100 - periodData.value) : stats.percentage
+
   return (
     <Dialog>
       <div className={cn(
@@ -301,26 +361,31 @@ function CorrectCard({ stats, hits }: { stats: CorrectStats; hits: Prediction[] 
         <div className="flex items-center gap-2 mb-4">
           <span className="text-2xl">📈</span>
           <span className="font-bold text-lg">전인구 적중</span>
+          {selectedPeriod && (
+            <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-600 dark:text-blue-400">
+              {PERIOD_LABELS[selectedPeriod]}
+            </span>
+          )}
         </div>
 
         {/* 메인 스탯 */}
         <div className="mb-4">
           <div className="text-3xl font-bold tabular-nums text-blue-500">
-            {stats.count}<span className="text-lg text-muted-foreground">/{stats.total}건</span>
+            {displayCount}<span className="text-lg text-muted-foreground">/{displayTotal}건</span>
           </div>
           <div className="mt-2 relative h-2 rounded-full bg-muted overflow-hidden">
             <div 
               className="absolute right-0 top-0 h-full bg-blue-500 rounded-full transition-all duration-500"
-              style={{ width: `${stats.percentage}%` }}
+              style={{ width: `${displayPercentage}%` }}
             />
           </div>
           <div className="mt-1 text-right text-sm font-medium text-blue-500">
-            {stats.percentage.toFixed(1)}%
+            {displayPercentage.toFixed(1)}%
           </div>
         </div>
 
         {/* 기간별 */}
-        <PeriodStats byPeriod={stats.byPeriod} type="correct" />
+        <PeriodStats byPeriod={stats.byPeriod} type="correct" selectedPeriod={selectedPeriod} />
 
         {/* 추가 통계 */}
         <div className="mt-4 space-y-2 text-sm">
@@ -453,12 +518,29 @@ export function PredictionSummaryCards({
   honeyHits,
   jigHits,
   pendingReviews,
+  selectedPeriod,
+  honeyIndexByPeriod,
   className,
 }: PredictionSummaryCardsProps) {
+  // 선택된 기간의 데이터
+  const periodData = selectedPeriod && honeyIndexByPeriod 
+    ? honeyIndexByPeriod[selectedPeriod] 
+    : undefined
+
   return (
     <div className={cn('grid grid-cols-1 md:grid-cols-3 gap-4', className)}>
-      <HoneyCard stats={honeyStats} hits={honeyHits} />
-      <CorrectCard stats={correctStats} hits={jigHits} />
+      <HoneyCard 
+        stats={honeyStats} 
+        hits={honeyHits} 
+        selectedPeriod={selectedPeriod}
+        periodData={periodData}
+      />
+      <CorrectCard 
+        stats={correctStats} 
+        hits={jigHits} 
+        selectedPeriod={selectedPeriod}
+        periodData={periodData}
+      />
       <PendingCard stats={pendingStats} pending={pendingReviews} />
     </div>
   )

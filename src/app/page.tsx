@@ -402,7 +402,7 @@ export default function Home() {
           </section>
         )}
 
-        {/* 예측 요약 카드 (3열) */}
+        {/* 예측 요약 카드 (3열) - 선택된 기간에 연동 */}
         {stats?.honeyStats && stats?.correctStats && stats?.pendingStats && (
           <section className="mb-6 sm:mb-8 animate-fade-up fill-backwards delay-500">
             <PredictionSummaryCards
@@ -412,6 +412,8 @@ export default function Home() {
               honeyHits={stats.honeyHits || []}
               jigHits={stats.jigHits || []}
               pendingReviews={stats.pendingReviews || []}
+              selectedPeriod={selectedPeriod}
+              honeyIndexByPeriod={stats.honeyIndexByPeriod}
             />
           </section>
         )}
