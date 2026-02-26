@@ -2,11 +2,19 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-// Supabase 클라이언트 (읽기 전용)
+// Supabase 설정
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+// 요청마다 새 클라이언트 생성 (캐싱 방지)
+function getSupabaseClient() {
+  return createClient(supabaseUrl, supabaseAnonKey, {
+    auth: { persistSession: false },
+    db: { schema: 'public' },
+  })
+}
 
 // 종목명 한글 변환
 const ASSET_KO: Record<string, string> = {
@@ -38,6 +46,9 @@ const ASSET_KO: Record<string, string> = {
 const toKorean = (asset: string) => ASSET_KO[asset] || asset
 
 export async function GET() {
+  // 요청마다 새 클라이언트 생성
+  const supabase = getSupabaseClient()
+  
   try {
     // 1. 전체 통계 조회
     const { data: allAnalyses, error: analysesError } = await supabase
