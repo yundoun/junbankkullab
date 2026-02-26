@@ -366,7 +366,7 @@ export async function GET() {
       nextResults,
     }
 
-    return NextResponse.json({
+    const response = NextResponse.json({
       // 핵심 지표
       overallHoneyIndex: honeyIndex,
       totalPredictions: validAnalyses.length,
@@ -420,7 +420,15 @@ export async function GET() {
 
       // 업데이트 시간
       updatedAt: new Date().toISOString(),
+      _serverTime: Date.now(), // 캐시 디버깅용
     })
+    
+    // 캐시 방지 헤더 추가
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+    response.headers.set('Pragma', 'no-cache')
+    response.headers.set('Expires', '0')
+    
+    return response
   } catch (error) {
     console.error('Error fetching stats from Supabase:', error)
 
